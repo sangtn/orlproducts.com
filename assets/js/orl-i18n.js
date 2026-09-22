@@ -9,6 +9,7 @@
   var SUPPORTED = ['en', 'vi', 'ja', 'es', 'zh-Hans'];
   var STORE_KEY = 'orl-lang';
   var EMAIL = 'info@orlproducts.com';
+  var CONTACT = 'https://t.me/+MF4aYRoVeEJlMTVl';
   var cache = {};
 
   /* The English text only exists in the HTML, so it has to be snapshotted
@@ -68,12 +69,16 @@
         v.split('%EMAIL%').forEach(function (part, i) {
           if (i > 0) {
             var a = document.createElement('a');
-            a.href = 'mailto:' + EMAIL;
+            a.href = CONTACT;
+            a.target = '_blank';
+            a.rel = 'noopener';
             a.textContent = EMAIL;
             el.appendChild(a);
           }
           el.appendChild(document.createTextNode(part));
         });
+      } else if (el.getAttribute('data-i18n-html') === 'keep') {
+        el.innerHTML = v;
       } else {
         el.textContent = v;
       }
