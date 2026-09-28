@@ -1,34 +1,16 @@
-/* Page translation for the app pages on orlproducts.com (Origami Learn, Raykin).
+/* Origami Learn — page translation.
  *
- * One page per document, one JSON file per app and language:
- * assets/i18n/<app>.<lang>.json, shared by that app's landing, privacy, terms
- * and support pages. Everything marked data-i18n is replaced in place; the
- * English written into the HTML is the fallback, so a failed fetch leaves a
- * readable page rather than an empty one.
- *
- * A page can set, on <html>:
- *   data-i18n-page="raykin"        which JSON files to load (default: origamilearn)
- *   data-i18n-contact="mailto:…"   where %EMAIL% links to (default: the Telegram group)
- * The languages offered are the <option>s of the page's [data-lang-select]
- * picker; a page without one gets the original Origami Learn list.
+ * One page per document, one JSON file per language. Everything marked
+ * data-i18n is replaced in place; the English written into the HTML is the
+ * fallback, so a failed fetch leaves a readable page rather than an empty one.
  */
 (function () {
   'use strict';
-  var root = document.documentElement;
-  var PAGE = root.getAttribute('data-i18n-page') || 'origamilearn';
   var SUPPORTED = ['en', 'vi', 'ja', 'es', 'zh-Hans'];
   var STORE_KEY = 'orl-lang';
   var EMAIL = 'info@orlproducts.com';
-  var CONTACT = root.getAttribute('data-i18n-contact') || 'https://t.me/+MF4aYRoVeEJlMTVl';
+  var CONTACT = 'https://t.me/+MF4aYRoVeEJlMTVl';
   var cache = {};
-
-  function readLanguages() {
-    var picker = document.querySelector('[data-lang-select]');
-    if (!picker || !picker.options.length) return;
-    var list = [];
-    for (var i = 0; i < picker.options.length; i++) list.push(picker.options[i].value);
-    SUPPORTED = list;
-  }
 
   /* The English text only exists in the HTML, so it has to be snapshotted
    * before anything overwrites it — otherwise switching to another language
@@ -47,26 +29,17 @@
     cache.en = dict;
   }
 
-  function supported(code) { return SUPPORTED.indexOf(code) >= 0 ? code : null; }
-
-  /* Maps a browser or ?lang= tag onto one of the page's languages. Chinese is
-   * matched by script: zh-TW, zh-HK and zh-MO are Traditional, so a page that
-   * only has Simplified leaves them in English rather than the wrong script. */
   function normalise(tag) {
     if (!tag) return null;
-    var t = String(tag).toLowerCase().replace(/_/g, '-');
-    for (var i = 0; i < SUPPORTED.length; i++) {
-      if (SUPPORTED[i].toLowerCase() === t) return SUPPORTED[i];
-    }
-    var base = t.split('-')[0];
-    if (base === 'zh') {
-      if (t.indexOf('hans') >= 0) return supported('zh-Hans');
-      if (t.indexOf('hant') >= 0 || /-(tw|hk|mo)(-|$)/.test(t)) return supported('zh-Hant');
-      return supported('zh-Hans');
-    }
-    for (var j = 0; j < SUPPORTED.length; j++) {
-      if (SUPPORTED[j].toLowerCase().split('-')[0] === base) return SUPPORTED[j];
-    }
+    var t = String(tag).toLowerCase();
+    if (t.indexOf('vi') === 0) return 'vi';
+    if (t.indexOf('ja') === 0) return 'ja';
+    if (t.indexOf('es') === 0) return 'es';
+    // zh-TW and zh-HK are traditional; only simplified is translated, so they
+    // fall through to English rather than being shown the wrong script.
+    if (t === 'zh' || t.indexOf('zh-cn') === 0 || t.indexOf('zh-hans') === 0 ||
+        t.indexOf('zh-sg') === 0) return 'zh-Hans';
+    if (t.indexOf('en') === 0) return 'en';
     return null;
   }
 
@@ -87,7 +60,7 @@
   }
 
   function apply(dict, lang) {
-    root.setAttribute('lang', lang);
+    document.documentElement.setAttribute('lang', lang);
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var v = dict[el.getAttribute('data-i18n')];
       if (typeof v !== 'string') return;
@@ -97,10 +70,8 @@
           if (i > 0) {
             var a = document.createElement('a');
             a.href = CONTACT;
-            if (/^https?:/i.test(CONTACT)) {
-              a.target = '_blank';
-              a.rel = 'noopener';
-            }
+            a.target = '_blank';
+            a.rel = 'noopener';
             a.textContent = EMAIL;
             el.appendChild(a);
           }
@@ -119,22 +90,20 @@
         if (typeof v === 'string') el.setAttribute(attr, v);
       });
     });
-    // A <title> with its own data-i18n key was set above; only pages without
-    // one take the landing page's title.
     var t = dict['meta.title'];
-    if (t && !document.querySelector('title[data-i18n]')) document.title = t;
+    if (t) document.title = t;
     document.querySelectorAll('[data-lang-option]').forEach(function (el) {
       el.setAttribute('aria-current', el.getAttribute('data-lang-option') === lang
         ? 'true' : 'false');
     });
     var picker = document.querySelector('[data-lang-select]');
     if (picker) picker.value = lang;
-    root.classList.add('i18n-ready');
+    document.documentElement.classList.add('i18n-ready');
   }
 
   function load(lang) {
     if (cache[lang]) { apply(cache[lang], lang); return Promise.resolve(); }
-    return fetch('assets/i18n/' + PAGE + '.' + lang + '.json')
+    return fetch('assets/i18n/origamilearn.' + lang + '.json')
       .then(function (r) {
         if (!r.ok) throw new Error(r.status);
         return r.json();
@@ -142,7 +111,7 @@
       .then(function (dict) { cache[lang] = dict; apply(dict, lang); })
       .catch(function () {
         // Leave the English in place; a missing file must not blank the page.
-        root.classList.add('i18n-ready');
+        document.documentElement.classList.add('i18n-ready');
       });
   }
 
@@ -167,7 +136,7 @@
     if (picker) picker.addEventListener('change', function () { choose(picker.value); });
   }
 
-  function start() { readLanguages(); snapshotEnglish(); wire(); load(preferred()); }
+  function start() { snapshotEnglish(); wire(); load(preferred()); }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', start);
   } else {
