@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "buildDate": "2026-10-03T16:44:51Z",
+  "osmDataTimestamp": "2026-10-03T14:57:06Z",
+  "source": "OpenStreetMap via Overpass API (overpass-api.de, overpass.kumi.systems, lz4.overpass-api.de, z.overpass-api.de, maps.mail.ru)",
+  "attribution": "© OpenStreetMap contributors",
+  "attributionURL": "https://www.openstreetmap.org/copyright",
+  "license": "ODbL-1.0",
+  "licenseText": "Contains information from OpenStreetMap (© OpenStreetMap contributors), which is made available under the Open Database License (ODbL) 1.0: https://opendatacommons.org/licenses/odbl/1-0/ . See https://www.openstreetmap.org/copyright . This derivative database (launches, hazards, portages, waters) is itself licensed under the ODbL 1.0.",
+  "compression": "raw DEFLATE (RFC 1951), decode with NSData.decompressed(using: .zlib)",
+  "file": "launchdb.json.zlib",
+  "bytesCompressed": 3860371,
+  "bytesUncompressed": 16391657,
+  "sha256": "0f134a6fede0bafc9d87cf35411fb620c4d5629c4564f427ebf0370c7ae1a696",
+  "counts": {
+    "launches": 39752,
+    "launchesByKind": {
+      "accessPoint": 11080,
+      "bank": 152,
+      "beach": 97,
+      "dock": 2,
+      "ramp": 27347,
+      "slipway": 1050,
+      "takeOut": 24
+    },
+    "launchesWithWater": 37152,
+    "hazards": 111849,
+    "hazardsByKind": {
+      "dam": 99995,
+      "lowHeadDam": 111,
+      "other": 16,
+      "weir": 11727
+    },
+    "portages": 5545,
+    "waters": 15254,
+    "watersByKind": {
+      "coast": 830,
+      "lake": 9348,
+      "river": 5076
+    },
+    "duplicatesHidden": {
+      "launches": 3738,
+      "hazards": 4361
+    },
+    "droppedPrivateLaunches": 1288,
+    "droppedOutsideUSCanada": 527
+  },
+  "coverage": {
+    "tilesTotal": 159,
+    "tilesCompleted": 159,
+    "missingTiles": [],
+    "priorityRegions": {
+      "NC": "6/6 tiles",
+      "VA": "6/6 tiles",
+      "MN": "9/9 tiles",
+      "WI": "4/4 tiles",
+      "MI": "12/12 tiles",
+      "NY": "9/9 tiles",
+      "PA": "4/4 tiles",
+      "FL": "9/9 tiles",
+      "TX": "17/17 tiles",
+      "WA": "6/6 tiles",
+      "OR": "9/9 tiles",
+      "CA": "15/15 tiles",
+      "MO": "6/6 tiles",
+      "ON": "31/31 tiles",
+      "QC": "20/20 tiles",
+      "BC": "10/10 tiles"
+    },
+    "bbox": "US + Canada (CONUS 24–50°N, Canada 50–84°N, Alaska, Hawaii); coarse country mask"
+  }
+}
