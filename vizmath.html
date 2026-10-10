@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-page="vizmath" data-i18n-contact="mailto:info@orlproducts.com">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta.title">VizMath: 3D Math Visualizer — graph, solve and explore</title>
+<meta name="description" data-i18n-content="meta.description" content="Graph equations, drag sliders, see surfaces in 3D, build geometry constructions and solve problems step by step on iPhone, iPad, Mac and Apple Watch. No account, no ads, no tracking.">
+<meta name="apple-mobile-web-app-title" content="ORIENTPRO">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://orlproducts.com/vizmath.html">
+<link rel="icon" type="image/png" href="./assets/images/vizmath/icon-512.png">
+<link rel="apple-touch-icon" href="./assets/images/vizmath/icon-512.png">
+<meta property="og:type" content="website">
+<meta property="og:title" data-i18n-content="meta.title" content="VizMath: 3D Math Visualizer — graph, solve and explore">
+<meta property="og:description" data-i18n-content="meta.description" content="Graph equations, drag sliders, see surfaces in 3D, build geometry constructions and solve problems step by step on iPhone, iPad, Mac and Apple Watch. No account, no ads, no tracking.">
+<meta property="og:url" content="https://orlproducts.com/vizmath.html">
+<meta property="og:image" content="https://orlproducts.com/assets/images/vizmath/ipad-04-3d-ripple-style.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="./assets/fonts/GT-Walsheim-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/GT-Walsheim-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'GT Walsheim';src:url('./assets/fonts/GT-Walsheim-Regular.woff2') format('woff2'),url('./assets/fonts/GT-Walsheim-Regular.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'GT Walsheim';src:url('./assets/fonts/GT-Walsheim-Medium.woff2') format('woff2'),url('./assets/fonts/GT-Walsheim-Medium.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'GT Walsheim';src:url('./assets/fonts/GT-Walsheim-Bold.woff2') format('woff2'),url('./assets/fonts/GT-Walsheim-Bold.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
+
+:root{--foot-bg:#f3f3f3;--foot-ink:#333;--foot-soft:#555;--foot-line:#777;
+      --foot-strong:#111;
+  --paper:#FDFBF7; --paper-2:#F6EFE4; --ink:#1B1814; --ink-soft:#57504A;
+  --ink-faint:#8B8177; --rule:#E7DFD3; --accent:#5B4CF0; --accent-deep:#4636D8; --on-accent:#fff;
+  --mint:#0E9E6E; --radius:18px; --max:1120px;
+  --vz-plot-bg:#FFFFFF; --vz-grid:#EFEDF7; --vz-grid-strong:#DCD8EE; --vz-axis:#2B2840; --vz-tick:#6B6785;
+  --vz-wire:rgba(20,16,40,.30); --vz-good:#0E9E6E;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#17140F;--paper-2:#1F1B15;--ink:#F5EFE6;--ink-soft:#B6ADA2;
+        --ink-faint:#8A8177;--rule:#2E2820;--accent:#8B7FFF;--accent-deep:#A99FFF;--on-accent:#14112B;
+        --foot-bg:#1C1812;--foot-ink:#E8E1D6;--foot-soft:#A79E93;--foot-line:#8C8479;
+        --foot-strong:#F5EFE6;
+        --vz-plot-bg:#141220;--vz-grid:#211E30;--vz-grid-strong:#302C45;--vz-axis:#D9D5F0;--vz-tick:#9C97B8;
+        --vz-wire:rgba(0,0,0,.35);--vz-good:#3DD68C}
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:'GT Walsheim',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent-deep);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+@media (max-width:420px){.wrap{padding:0 16px}}
+
+.top{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(14px);
+  -webkit-backdrop-filter:saturate(140%) blur(14px);
+  background:color-mix(in srgb,var(--paper) 86%,transparent);
+  border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:66px;flex-wrap:wrap}
+.top .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink)}
+.top .logo img{height:26px;width:auto}
+.top nav{margin-left:auto;display:flex;gap:20px;font-size:15px;font-weight:500;align-items:center}
+.top nav a{color:var(--ink-soft)}
+.top nav a:hover{color:var(--ink);text-decoration:none}
+@media (max-width:860px){.top nav .hide-s{display:none}}
+
+/* language picker: a real <select>, so it works with a keyboard and on a phone */
+.langpick{display:flex;align-items:center;gap:7px;color:var(--ink-soft);font-size:14px}
+.langpick select{font:inherit;font-size:14px;color:var(--ink);background:var(--paper-2);
+  border:1px solid var(--rule);border-radius:999px;padding:7px 30px 7px 12px;
+  appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--ink-faint) 50%),linear-gradient(135deg,var(--ink-faint) 50%,transparent 50%);
+  background-position:calc(100% - 15px) 52%,calc(100% - 10px) 52%;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.langpick select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.hero{padding:76px 0 56px;
+  background:radial-gradient(1200px 520px at 18% -10%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 62%)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:34px}}
+.app-icon{width:76px;height:76px;border-radius:18px;margin-bottom:18px;box-shadow:0 10px 26px rgba(40,30,110,.22)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);
+  background:color-mix(in srgb,var(--accent) 14%,transparent);
+  padding:7px 13px;border-radius:999px;margin-bottom:20px}
+h1{font-size:clamp(2.3rem,5.2vw,3.6rem);line-height:1.06;letter-spacing:-.025em;
+  margin:0 0 18px;font-weight:700}
+.lede{font-size:clamp(1.05rem,1.9vw,1.24rem);color:var(--ink-soft);margin:0 0 28px;max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:16px;
+  padding:14px 26px;border-radius:999px;border:1.5px solid transparent;transition:.16s}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--accent-deep);color:var(--on-accent);text-decoration:none;transform:translateY(-1px)}
+.btn-ghost{border-color:var(--rule);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink-faint);text-decoration:none}
+.hero-note{font-size:14px;color:var(--ink-faint);margin-top:16px}
+.hero-img img{border-radius:24px;box-shadow:0 26px 60px rgba(40,30,110,.20)}
+.hero-img.phone img{max-width:340px;margin:0 auto;border-radius:34px}
+
+.stats{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper-2)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding-top:30px;padding-bottom:30px;text-align:center}
+@media (max-width:720px){.stats .wrap{grid-template-columns:repeat(2,1fr);gap:22px}}
+.stat b{display:block;font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:700;line-height:1.1}
+.stat span{font-size:14px;color:var(--ink-soft)}
+
+section{padding:74px 0}
+.sec-head{max-width:40em;margin-bottom:38px}
+h2{font-size:clamp(1.65rem,3.4vw,2.3rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 12px;font-weight:700}
+.sec-head p{color:var(--ink-soft);margin:0;font-size:1.05rem}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split.rev>*:first-child{order:2}
+@media (max-width:900px){.split,.split.rev{grid-template-columns:1fr;gap:30px}.split.rev>*:first-child{order:0}}
+.split img{border-radius:20px;box-shadow:0 18px 44px rgba(40,30,110,.16)}
+h3{font-size:1.22rem;margin:0 0 8px;font-weight:700}
+.split p{color:var(--ink-soft);margin:0 0 14px}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.cards{grid-template-columns:1fr}}
+.card{background:var(--paper-2);border:1px solid var(--rule);border-radius:var(--radius);padding:24px}
+.card .ico{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+  background:color-mix(in srgb,var(--accent) 18%,transparent);margin-bottom:14px;font-size:19px}
+.card h3{margin-bottom:6px}
+.card p{color:var(--ink-soft);margin:0;font-size:15.5px}
+
+.shots{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:start}
+@media (max-width:980px){.shots{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:620px){.shots{grid-template-columns:repeat(2,1fr);gap:12px}}
+.shots img{border-radius:16px;border:1px solid var(--rule);box-shadow:0 10px 26px rgba(40,30,110,.12)}
+.shots figcaption{font-size:13px;color:var(--ink-faint);margin-top:9px;text-align:center}
+figure{margin:0}
+
+.renders{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  background:radial-gradient(900px 400px at 50% 0,color-mix(in srgb,var(--accent) 22%,#1d1a33),#16142a);
+  border-radius:24px;padding:26px}
+@media (max-width:720px){.renders{grid-template-columns:repeat(2,1fr);padding:16px}}
+.renders figcaption{color:#cfcbe8;font-size:13px;text-align:center;margin-top:4px}
+
+.watch{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:900px}
+@media (max-width:620px){.watch{grid-template-columns:1fr 1fr;max-width:420px}}
+.watch-face{aspect-ratio:416/496;border-radius:28%/24%;background:#000;color:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:18px;text-align:center;
+  box-shadow:0 0 0 6px #2a2733,0 16px 36px rgba(0,0,0,.25)}
+.watch-face .wico{font-size:30px;line-height:1}
+.watch-face span{font-size:14px;line-height:1.35;color:#e9e6ff}
+.watch figcaption{font-size:13px;color:var(--ink-faint);margin-top:14px;text-align:center}
+
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:900px){.prices{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.prices{grid-template-columns:1fr}}
+.price{border:1px solid var(--rule);border-radius:var(--radius);padding:22px;background:var(--paper-2);position:relative}
+.price.best{border-color:var(--accent);border-width:2px}
+.price .badge{position:absolute;top:-11px;left:20px;font-size:11px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;background:var(--accent);
+  color:var(--on-accent);padding:4px 10px;border-radius:999px}
+.price b{display:block;font-size:1.05rem}
+.price .amt{font-size:1.9rem;font-weight:700;margin:6px 0 2px}
+.price small{color:var(--ink-faint);font-size:13.5px}
+.pro-list{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 26px;padding:0;list-style:none}
+.pro-list li{font-size:14px;font-weight:500;padding:7px 15px;border-radius:999px;
+  border:1px solid var(--rule);color:var(--ink-soft);background:var(--paper-2)}
+
+details{border-bottom:1px solid var(--rule);padding:18px 0}
+summary{cursor:pointer;font-weight:500;font-size:1.05rem;list-style:none;
+  display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--accent-deep);font-size:1.4rem;line-height:1;flex:none}
+details[open] summary:after{content:"\2013"}
+details p{color:var(--ink-soft);margin:12px 0 0;max-width:56em}
+
+.band{background:var(--paper-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.band .wrap{padding-top:58px;padding-bottom:58px;text-align:center}
+.band h2{margin-bottom:10px}
+.band p{color:var(--ink-soft);max-width:44em;margin:0 auto 20px}
+
+/* ---------- web studio ---------- */
+.studio{background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 7%,var(--paper)),var(--paper))}
+.vz-app{background:var(--paper);border:1px solid var(--rule);border-radius:24px;padding:18px;
+  box-shadow:0 18px 44px rgba(40,30,110,.10)}
+.vz-tabs{display:flex;gap:6px;background:var(--paper-2);border:1px solid var(--rule);border-radius:999px;padding:4px;width:max-content;max-width:100%;margin-bottom:18px}
+.vz-tabs button{font:inherit;font-size:15px;font-weight:600;border:0;background:transparent;color:var(--ink-soft);
+  padding:8px 18px;border-radius:999px;cursor:pointer}
+.vz-tabs button[aria-selected=true]{background:var(--accent);color:var(--on-accent)}
+.vz-tabs button:focus-visible,.vz-chip:focus-visible,.vz-btn:focus-visible,.vz-canvas:focus-visible,.vz-input:focus-visible,.vz-slider input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.vz-grid{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:860px){.vz-grid{grid-template-columns:minmax(0,1fr)}}
+.vz-side label.vz-label{display:block;font-weight:600;font-size:14.5px;margin-bottom:6px}
+.vz-input{width:100%;font:15px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);
+  background:var(--vz-plot-bg);border:1px solid var(--rule);border-radius:14px;padding:10px 12px;resize:vertical}
+.vz-hint{font-size:13px;color:var(--ink-faint);margin:6px 0 0}
+.vz-chips{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 4px}
+.vz-chips-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:12px 0 0}
+.vz-chip{font:13.5px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink);background:var(--paper-2);
+  border:1px solid var(--rule);border-radius:999px;padding:7px 11px;cursor:pointer}
+.vz-chip:hover{border-color:var(--accent)}
+.vz-sliders{margin-top:14px;display:grid;gap:8px}
+.vz-slider{display:grid;grid-template-columns:22px minmax(0,1fr) 46px;gap:10px;align-items:center;
+  background:var(--paper-2);border:1px solid var(--rule);border-radius:12px;padding:6px 10px}
+.vz-slider label{font:italic 600 17px/1 Georgia,'Times New Roman',serif;color:var(--accent-deep)}
+.vz-slider input{width:100%;accent-color:var(--accent)}
+.vz-slider output{font:14px ui-monospace,Menlo,monospace;text-align:right;color:var(--ink-soft)}
+.vz-stage{position:relative}
+.vz-canvas{display:block;width:100%;height:440px;border:1px solid var(--rule);border-radius:16px;touch-action:none;cursor:grab;background:var(--vz-plot-bg)}
+.vz-canvas:active{cursor:grabbing}
+@media (max-width:620px){.vz-canvas{height:320px}}
+.vz-canvas-mini{height:320px}
+.vz-tools{position:absolute;right:10px;top:10px;display:flex;gap:6px}
+.vz-btn{font:inherit;font-size:14px;font-weight:600;min-width:36px;height:36px;padding:0 10px;border-radius:10px;
+  border:1px solid var(--rule);background:color-mix(in srgb,var(--paper) 90%,transparent);color:var(--ink);cursor:pointer}
+.vz-btn[aria-pressed=true]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.vz-btn.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent);height:42px;padding:0 20px;border-radius:999px}
+.vz-error{color:#C62D3E;font-size:14px;margin:8px 0 0}
+@media (prefers-color-scheme:dark){.vz-error{color:#FF8A9A}}
+.vz-muted{font-size:13px;color:var(--ink-faint);margin:8px 0 0}
+.vz-feat{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px}
+.vz-feat li{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;font-size:14.5px;color:var(--ink-soft);
+  background:var(--paper-2);border:1px solid var(--rule);border-radius:12px;padding:9px 12px}
+.vz-feat strong{color:var(--ink);font-weight:600;font-family:ui-monospace,Menlo,monospace;font-size:14px}
+.vz-swatch{width:12px;height:12px;border-radius:50%;flex:none;align-self:center}
+.vz-solve-form{display:flex;gap:10px;align-items:flex-start}
+.vz-solve-form .vz-input{flex:1}
+@media (max-width:520px){.vz-solve-form{flex-direction:column}.vz-solve-form .vz-btn{width:100%}}
+.vz-out{display:grid;gap:14px}
+.vz-answer{border:2px solid var(--accent);background:color-mix(in srgb,var(--accent) 9%,var(--paper));border-radius:16px;padding:14px 16px}
+.vz-answer-label{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-deep)}
+.vz-answer-math{font-size:1.25rem;font-weight:700;margin-top:4px;overflow-wrap:anywhere}
+.vz-answer-sub{color:var(--ink-soft);font-size:14.5px;margin-top:4px;overflow-wrap:anywhere}
+.vz-steps h4{margin:0 0 6px;font-size:15px}
+.vz-steps ol{margin:0;padding-left:1.4em;color:var(--ink-soft);font-size:15px;overflow-wrap:anywhere}
+.vz-steps li{margin:3px 0;white-space:pre-wrap}
+.vz-solve-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-top:14px;align-items:start}
+@media (max-width:860px){.vz-solve-layout{grid-template-columns:minmax(0,1fr)}}
+.vz-privacy{font-size:13.5px;color:var(--ink-faint);margin:16px 0 0}
+
+/* The footer is the one part of these pages that is not theirs: it is the
+   orlproducts.com footer, so a reader arriving from the app and one arriving
+   from the rest of the site are looking at the same place. Rebuilt in this
+   page's own CSS rather than pulled in with the theme's, which would have
+   meant a grid framework and an icon font for one block. */
+footer{background:var(--foot-bg);color:var(--foot-ink);padding:78px 0 46px;font-size:15px;
+  border-top:1px solid var(--rule)}
+footer .cols{display:flex;flex-wrap:wrap;align-items:flex-start;gap:36px 56px;
+  margin-bottom:40px}
+footer .brand{flex:0 0 210px}
+footer .brand .logo{display:block;margin-bottom:24px}
+footer .brand .logo img{height:44px;width:auto;display:block}
+footer nav{display:flex;flex-direction:column;gap:13px;min-width:148px}
+footer nav a{color:var(--foot-ink);font-size:16px;line-height:1.5}
+footer nav a:hover{color:var(--accent-deep)}
+footer .join{display:inline-flex;align-items:center;gap:8px;color:var(--foot-ink);font-size:15px}
+footer .join svg{width:17px;height:17px;flex:none}
+footer .apps{margin-left:auto;max-width:340px}
+footer .apps h3{font-size:22px;margin:0 0 6px;display:flex;align-items:center;gap:8px;color:var(--foot-strong)}
+footer .apps p{color:var(--foot-soft);font-size:14px;margin:0 0 16px}
+footer .getapp{display:inline-flex;align-items:center;gap:10px;
+  border:1px solid var(--foot-strong);border-radius:999px;padding:12px 26px;
+  color:var(--foot-strong);font-size:12.5px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase}
+footer .getapp:hover{background:var(--foot-strong);color:var(--foot-bg)}
+footer .fine{color:var(--foot-line);font-size:12.5px;margin:0}
+@media (max-width:900px){footer .apps{margin-left:0;flex-basis:100%}}
+@media (max-width:640px){footer{padding:54px 0 38px}footer .cols{gap:28px}}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:14px;top:14px;background:var(--accent);color:var(--on-accent);padding:10px 16px;
+  border-radius:10px;z-index:100}
+.watch figure{margin:0;min-width:0}
+.watch-shot{display:block;width:100%;max-width:211px;height:auto;margin:0 auto;border-radius:30%/24%;border:8px solid #2a2a30;background:#000;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="./index.html"><img src="./assets/images/ORL_Logo.svg" alt="ORIENTPRO"></a>
+    <nav>
+      <a class="hide-s" href="#features" data-i18n="nav.features">Features</a>
+      <a class="hide-s" href="#studio" data-i18n="nav.studio">Try it</a>
+      <a class="hide-s" href="#watch" data-i18n="nav.watch">Apple Watch</a>
+      <a class="hide-s" href="#pricing" data-i18n="nav.pricing">Pricing</a>
+      <a class="hide-s" href="#support" data-i18n="nav.support">Support</a>
+      <div class="langpick">
+        <label for="orl-lang" class="sr" data-i18n="nav.language">Language</label>
+        <select id="orl-lang" data-lang-select aria-label="Language"><option value="en">English</option><option value="vi">Tiếng Việt</option><option value="es">Español</option></select>
+      </div>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <img class="app-icon" src="./assets/images/vizmath/icon-512.png" width="76" height="76" alt="">
+      <span class="eyebrow" data-i18n="hero.eyebrow">iPhone · iPad · Mac · Apple Watch</span>
+      <h1 data-i18n="hero.h1">See the math move.</h1>
+      <p class="lede" data-i18n="hero.lede">Type an equation and VizMath draws it. Every extra letter becomes a slider, and as you drag it the curve, its roots and its vertex move with it. Then keep going: surfaces in 3D, geometry constructions, a problem solver that shows every step, and shapes you can stand on your desk in AR.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#studio" data-i18n="hero.cta.primary">Try it in your browser</a>
+        <a class="btn btn-ghost" href="#features" data-i18n="hero.cta.secondary">See what it does</a>
+      </div>
+      <p class="hero-note" data-i18n="hero.note">Free to download · no account, no ads, no tracking</p>
+    </div>
+    <div class="hero-img phone"><img src="./assets/images/vizmath/iphone-02-sliders-vertex-form.jpg" width="552" height="1200" data-i18n-alt="hero.alt" alt="VizMath on iPhone: the parabola y = a(x − h)² + k with sliders for a, h and k" decoding="async"></div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>2D + 3D</b><span data-i18n="stats.graphs">graphs, surfaces and solids</span></div>
+    <div class="stat"><b>50</b><span data-i18n="stats.lessons">ready-made lessons</span></div>
+    <div class="stat"><b>4</b><span data-i18n="stats.devices">devices: iPhone, iPad, Mac, Watch</span></div>
+    <div class="stat"><b>0</b><span data-i18n="stats.data">data collected</span></div>
+  </div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-i18n="feat.h2">Type it. Drag it. Understand it.</h2>
+      <p data-i18n="feat.sub">Functions, polar and parametric curves, inequalities and implicit curves, all on one graph, all answering back with exact numbers.</p>
+    </div>
+    <div class="split">
+      <img src="./assets/images/vizmath/ipad-02-explain.jpg" width="1200" height="900" data-i18n-alt="feat.alt" alt="VizMath on iPad: a parabola with sliders on the left and an explanation of its vertex and roots on the right" loading="lazy" decoding="async">
+      <div>
+        <h3 data-i18n="feat.sliders.h">Letters become sliders</h3>
+        <p data-i18n="feat.sliders.p">Write y = a(x − h)² + k and a, h and k appear as sliders. Drag one and see exactly what that number does to the shape.</p>
+        <h3 data-i18n="feat.exact.h">Exact answers, not just a picture</h3>
+        <p data-i18n="feat.exact.p">Roots, vertex, intercepts, extrema, asymptotes and intersections are worked out and marked on the graph, as exact values where they exist.</p>
+        <h3 data-i18n="feat.explain.h">Explanations you can check</h3>
+        <p data-i18n="feat.explain.p">Every number in an explanation is checked by the app’s math engine. Ask follow-up questions about a graph; they are answered on your device by Apple Intelligence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="split rev">
+      <img src="./assets/images/vizmath/ipad-04-3d-ripple-style.jpg" width="1200" height="900" data-i18n-alt="s3d.alt" alt="A ripple surface in 3D with labeled axes, grid lines and a height color scale" loading="lazy" decoding="async">
+      <div>
+        <h2 data-i18n="s3d.h2">Surfaces you can walk around</h2>
+        <p data-i18n="s3d.p1">Explicit, parametric and implicit surfaces, drawn with labeled axes and grid lines. Turn them, color them by height or slope, and cut them with a plane.</p>
+        <p data-i18n="s3d.p2">On iPhone and iPad, place a surface in the room at its real size with AR, then check it for 3D printing and export it as STL, OBJ or USDZ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="split">
+      <img src="./assets/images/vizmath/ipad-03-geometry-tools.jpg" width="1200" height="900" data-i18n-alt="geo.alt" alt="A triangle with its circumcircle, built from perpendicular bisectors, with the construction tools open" loading="lazy" decoding="async">
+      <div>
+        <h2 data-i18n="geo.h2">Constructions, the way you draw them on paper</h2>
+        <p data-i18n="geo.p1">Points, segments, lines, perpendiculars, bisectors, circles, polygons, angles, tangents, reflections, rotations and loci. Drag a point and every length, angle and area updates.</p>
+        <p data-i18n="geo.p2">In 3D: planes, spheres, pyramids, prisms and cubes, their cross-sections, and the curves where surfaces meet. Tap with a tool, or type commands such as Circle(A, 3).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cards">
+      <div class="card">
+        <div class="ico" aria-hidden="true">&#129518;</div>
+        <h3 data-i18n="card.solver.h">Problem Solver</h3>
+        <p data-i18n="card.solver.p">Type, photograph or scan a problem: equations, systems, inequalities, expressions, derivatives, integrals, function analysis. Get the answer with steps, then change the numbers with sliders and get new results instantly.</p>
+      </div>
+      <div class="card">
+        <div class="ico" aria-hidden="true">&#128301;</div>
+        <h3 data-i18n="card.ar.h">AR at real size</h3>
+        <p data-i18n="card.ar.p">Put a surface or solid on your desk on iPhone and iPad and walk around it, at the size it really is.</p>
+      </div>
+      <div class="card">
+        <div class="ico" aria-hidden="true">&#128424;&#65039;</div>
+        <h3 data-i18n="card.print.h">Ready for the 3D printer</h3>
+        <p data-i18n="card.print.p">A print check before you export, and STL, OBJ or USDZ files when it passes.</p>
+      </div>
+      <div class="card">
+        <div class="ico" aria-hidden="true">&#127916;</div>
+        <h3 data-i18n="card.story.h">Math Story lessons</h3>
+        <p data-i18n="card.story.p">Build a lesson scene by scene and present it, with a presenter view on a second display and Apple Pencil ink and laser pointer.</p>
+      </div>
+      <div class="card">
+        <div class="ico" aria-hidden="true">&#128218;</div>
+        <h3 data-i18n="card.lessons.h">50 ready-made lessons</h3>
+        <p data-i18n="card.lessons.p">From slope-intercept lines and vertex form to sine waves, tangent lines and surfaces, sorted by course and ready to open.</p>
+      </div>
+      <div class="card">
+        <div class="ico" aria-hidden="true">&#128228;</div>
+        <h3 data-i18n="card.export.h">Export anything</h3>
+        <p data-i18n="card.export.p">PNG, SVG and PDF for worksheets and slides; GIF and MP4 to show a slider in motion.</p>
+      </div>
+      <div class="card">
+        <div class="ico" aria-hidden="true">&#9855;</div>
+        <h3 data-i18n="card.a11y.h">Graphs you can hear</h3>
+        <p data-i18n="card.a11y.p">VoiceOver reads the graph and plays it as sound, so the shape of a curve comes through without seeing it.</p>
+      </div>
+      <div class="card">
+        <div class="ico" aria-hidden="true">&#127760;</div>
+        <h3 data-i18n="card.lang.h">English, Español, Tiếng Việt</h3>
+        <p data-i18n="card.lang.p">The whole app, including explanations and lessons, in three languages.</p>
+      </div>
+      <div class="card">
+        <div class="ico" aria-hidden="true">&#128274;</div>
+        <h3 data-i18n="card.private.h">Private and offline</h3>
+        <p data-i18n="card.private.p">No account and no server. Your work stays on your device, the AI runs on the device, and everything works without a connection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="studio" class="studio" aria-labelledby="studio-h2">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="studio-h2" data-i18n="studio.h2">Try VizMath in your browser</h2>
+      <p data-i18n="studio.sub">A small web version of three things the app does. Type an equation, drag the sliders, turn a surface, solve a problem with steps.</p>
+    </div>
+    <div class="vz-app" id="vz-studio">
+      <div class="vz-tabs" role="tablist" data-i18n-aria-label="studio.tabs" aria-label="Web studio">
+        <button type="button" role="tab" id="vz-tab-graph" aria-controls="vz-panel-graph" aria-selected="true" tabindex="0" data-i18n="studio.tab.graph">Graph</button>
+        <button type="button" role="tab" id="vz-tab-3d" aria-controls="vz-panel-3d" aria-selected="false" tabindex="-1" data-i18n="studio.tab.3d">3D</button>
+        <button type="button" role="tab" id="vz-tab-solve" aria-controls="vz-panel-solve" aria-selected="false" tabindex="-1" data-i18n="studio.tab.solve">Solve</button>
+      </div>
+
+      <div role="tabpanel" id="vz-panel-graph" aria-labelledby="vz-tab-graph">
+        <div class="vz-grid">
+          <div class="vz-side">
+            <label class="vz-label" for="vz-graph-input" data-i18n="studio.graph.label">Equations, one per line</label>
+            <textarea class="vz-input" id="vz-graph-input" rows="4" spellcheck="false" autocomplete="off" autocapitalize="off">y = a(x - h)^2 + k
+x^2 + y^2 = 9</textarea>
+            <p class="vz-hint" data-i18n="studio.graph.hint">y = f(x), a bare expression in x, or a curve like x² + y² = 9. Use y &lt; … to shade a region.</p>
+            <p class="vz-chips-label" data-i18n="studio.examples">Examples</p>
+            <div class="vz-chips">
+              <button type="button" class="vz-chip" data-vz-graph-example="y = a sin(b x)">y = a sin(bx)</button>
+              <button type="button" class="vz-chip" data-vz-graph-example="y = x^3 - 3x\ny = m x + c">x³ − 3x, mx + c</button>
+              <button type="button" class="vz-chip" data-vz-graph-example="y = 1/(x - a)">y = 1/(x − a)</button>
+              <button type="button" class="vz-chip" data-vz-graph-example="x^2/9 + y^2/4 = 1\ny^2 = x^3 - x + b">x²/9 + y²/4 = 1</button>
+              <button type="button" class="vz-chip" data-vz-graph-example="y > x^2 - 4\ny = e^(-x^2)">y &gt; x² − 4</button>
+            </div>
+            <div class="vz-sliders" id="vz-graph-sliders" hidden></div>
+            <p class="vz-error" id="vz-graph-error" role="status" hidden></p>
+          </div>
+          <div class="vz-stage">
+            <canvas class="vz-canvas" id="vz-graph-canvas" tabindex="0" role="img" data-i18n-aria-label="studio.graph.canvas" aria-label="Graph. Drag to pan, scroll or pinch to zoom; arrow keys pan, plus and minus zoom."></canvas>
+            <div class="vz-tools">
+              <button type="button" class="vz-btn" data-vz-graph-zoom="in" data-i18n-aria-label="studio.zoomin" aria-label="Zoom in">+</button>
+              <button type="button" class="vz-btn" data-vz-graph-zoom="out" data-i18n-aria-label="studio.zoomout" aria-label="Zoom out">−</button>
+              <button type="button" class="vz-btn" data-vz-graph-zoom="reset" data-i18n="studio.reset">Reset</button>
+            </div>
+          </div>
+        </div>
+        <div id="vz-graph-features" aria-live="polite"></div>
+      </div>
+
+      <div role="tabpanel" id="vz-panel-3d" aria-labelledby="vz-tab-3d" hidden>
+        <div class="vz-grid">
+          <div class="vz-side">
+            <label class="vz-label" for="vz-3d-input" data-i18n="studio.3d.label">Surface z = f(x, y)</label>
+            <input class="vz-input" id="vz-3d-input" type="text" value="z = a sin(x) cos(y)" spellcheck="false" autocomplete="off" autocapitalize="off">
+            <p class="vz-hint" data-i18n="studio.3d.hint">Drag to turn the surface, scroll to zoom. Arrow keys turn it too.</p>
+            <p class="vz-chips-label" data-i18n="studio.examples">Examples</p>
+            <div class="vz-chips">
+              <button type="button" class="vz-chip" data-vz-3d-example="z = (x^2 - y^2)/4">(x² − y²)/4</button>
+              <button type="button" class="vz-chip" data-vz-3d-example="z = a cos(sqrt(x^2 + y^2))">a cos(√(x² + y²))</button>
+              <button type="button" class="vz-chip" data-vz-3d-example="z = 3 e^(-(x^2 + y^2)/b)">3e^(−(x² + y²)/b)</button>
+              <button type="button" class="vz-chip" data-vz-3d-example="z = (x^2 + y^2)/5 - 2">paraboloid</button>
+            </div>
+            <div class="vz-sliders" id="vz-3d-sliders" hidden></div>
+            <p class="vz-error" id="vz-3d-error" role="status" hidden></p>
+            <p class="vz-muted" id="vz-3d-info" aria-live="polite"></p>
+          </div>
+          <div class="vz-stage">
+            <canvas class="vz-canvas" id="vz-3d-canvas" tabindex="0" role="img" data-i18n-aria-label="studio.3d.canvas" aria-label="3D surface. Drag or use the arrow keys to turn it; space starts or stops the rotation."></canvas>
+            <div class="vz-tools">
+              <button type="button" class="vz-btn" id="vz-3d-rotate" aria-pressed="true" data-i18n="studio.3d.rotate">Rotate</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div role="tabpanel" id="vz-panel-solve" aria-labelledby="vz-tab-solve" hidden>
+        <form class="vz-solve-form" id="vz-solve-form">
+          <label class="sr" for="vz-solve-input" data-i18n="studio.solve.label" style="position:absolute;left:-9999px">Problem</label>
+          <textarea class="vz-input" id="vz-solve-input" rows="2" spellcheck="false" autocomplete="off" autocapitalize="off">a x^2 + b x - 6 = 0</textarea>
+          <button type="submit" class="vz-btn primary" data-i18n="studio.solve.button">Solve</button>
+        </form>
+        <p class="vz-hint" data-i18n="studio.solve.hint">Equations, systems (separate them with commas), inequalities, arithmetic, d/dx …, integral of … from … to …, f(x) = … . Extra letters become sliders.</p>
+        <p class="vz-chips-label" data-i18n="studio.examples">Examples</p>
+        <div class="vz-chips">
+          <button type="button" class="vz-chip" data-vz-solve-example="2x + 3 = 7">2x + 3 = 7</button>
+          <button type="button" class="vz-chip" data-vz-solve-example="x^2 - 5x + 6 = 0">x² − 5x + 6 = 0</button>
+          <button type="button" class="vz-chip" data-vz-solve-example="x^2 + x - 1 = 0">x² + x − 1 = 0</button>
+          <button type="button" class="vz-chip" data-vz-solve-example="2x + y = 5, x - y = 1">2x + y = 5, x − y = 1</button>
+          <button type="button" class="vz-chip" data-vz-solve-example="x^2 - 4 > 0">x² − 4 &gt; 0</button>
+          <button type="button" class="vz-chip" data-vz-solve-example="3/4 + 1/6">3/4 + 1/6</button>
+          <button type="button" class="vz-chip" data-vz-solve-example="d/dx x^3 sin(x)">d/dx x³ sin(x)</button>
+          <button type="button" class="vz-chip" data-vz-solve-example="integral of x^2 from 0 to 3">∫ x² from 0 to 3</button>
+          <button type="button" class="vz-chip" data-vz-solve-example="f(x) = x^3 - 3x">f(x) = x³ − 3x</button>
+          <button type="button" class="vz-chip" data-vz-solve-example="cos(x) = x">cos(x) = x</button>
+        </div>
+        <div class="vz-sliders" id="vz-solve-sliders" hidden></div>
+        <div class="vz-out" id="vz-solve-output" aria-live="polite"></div>
+      </div>
+      <p class="vz-privacy" data-i18n="studio.privacy">Everything here runs in this page. Nothing you type is sent anywhere. The app does much more: scanning, constructions, AR and lessons.</p>
+    </div>
+  </div>
+</section>
+
+<section id="objects">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-i18n="obj.h2">Math you can hold</h2>
+      <p data-i18n="obj.sub">Surfaces and solids made in VizMath, ready to place in AR or send to a 3D printer.</p>
+    </div>
+    <div class="renders">
+      <figure><img src="./assets/images/vizmath/ar-paraboloid-transparent.png" width="900" height="900" data-i18n-alt="obj.alt.paraboloid" alt="A paraboloid surface" loading="lazy" decoding="async"><figcaption data-i18n="obj.cap.paraboloid">Paraboloid</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/ar-saddle-cut-transparent.png" width="900" height="900" data-i18n-alt="obj.alt.saddle" alt="A saddle surface cut by a plane, with the intersection curve" loading="lazy" decoding="async"><figcaption data-i18n="obj.cap.saddle">Saddle and plane</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/ar-vase-transparent.png" width="900" height="900" data-i18n-alt="obj.alt.vase" alt="A vase-shaped surface of revolution" loading="lazy" decoding="async"><figcaption data-i18n="obj.cap.vase">Vase</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/ar-wave-surface-transparent.png" width="900" height="900" data-i18n-alt="obj.alt.wave" alt="A wave surface with its peaks and valleys marked" loading="lazy" decoding="async"><figcaption data-i18n="obj.cap.wave">Wave surface</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/ar-ripple-transparent.png" width="900" height="900" data-i18n-alt="obj.alt.ripple" alt="A ripple surface" loading="lazy" decoding="async"><figcaption data-i18n="obj.cap.ripple">Ripple</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/ar-pyramid-section-transparent.png" width="900" height="900" data-i18n-alt="obj.alt.pyramid" alt="A pyramid with a cross-section plane" loading="lazy" decoding="async"><figcaption data-i18n="obj.cap.pyramid">Pyramid section</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/ar-sphere-and-plane-transparent.png" width="900" height="900" data-i18n-alt="obj.alt.sphere" alt="A sphere meeting a plane" loading="lazy" decoding="async"><figcaption data-i18n="obj.cap.sphere">Sphere and plane</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/ar-nautilus-shell-transparent.png" width="900" height="900" data-i18n-alt="obj.alt.nautilus" alt="A nautilus shell surface" loading="lazy" decoding="async"><figcaption data-i18n="obj.cap.nautilus">Nautilus shell</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="split rev">
+      <img src="./assets/images/vizmath/ipad-06-3d-pyramid-section.jpg" width="1200" height="900" data-i18n-alt="ipad.alt" alt="VizMath on iPad: a pyramid cut by a plane, with the construction list beside it" loading="lazy" decoding="async">
+      <div>
+        <h2 data-i18n="ipad.h2">Made for iPad and Mac too</h2>
+        <p data-i18n="ipad.p1">The equation list, the canvas and the explanation side by side on a big screen. Present a Math Story on a second display with a presenter view on the iPad, and mark it up with Apple Pencil ink or a laser pointer.</p>
+        <p data-i18n="ipad.p2">One purchase covers iPhone, iPad and Mac.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="watch" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-i18n="watch.h2">Math on your wrist</h2>
+      <p data-i18n="watch.sub">The Apple Watch app solves a problem you dictate or write with Scribble, shows graphs and slowly rotating 3D surfaces, and lets you turn the Digital Crown to move a slider.</p>
+    </div>
+    <div class="watch" id="watch-shots">
+      <figure><img class="watch-shot" src="./assets/images/vizmath/watch-02-solve-quadratic.jpg" width="211" height="257" alt="VizMath on Apple Watch: x² − 5x + 6 = 0 solved, x = 2 or x = 3" loading="lazy" decoding="async">
+        <figcaption data-i18n="watch.cap1">Solve by dictation or Scribble</figcaption></figure>
+      <figure><img class="watch-shot" src="./assets/images/vizmath/watch-04-graph-sine.jpg" width="211" height="257" alt="VizMath on Apple Watch: a sine wave with its roots and turning points marked" loading="lazy" decoding="async">
+        <figcaption data-i18n="watch.cap2">See it on your wrist</figcaption></figure>
+      <figure><img class="watch-shot" src="./assets/images/vizmath/watch-03-solve-parameter.jpg" width="211" height="257" alt="VizMath on Apple Watch: a x² − 4 = 0 with the parameter a on the Digital Crown" loading="lazy" decoding="async">
+        <figcaption data-i18n="watch.cap3">Turn the crown to move a slider</figcaption></figure>
+      <figure><img class="watch-shot" src="./assets/images/vizmath/watch-05-3d.jpg" width="211" height="257" alt="VizMath on Apple Watch: a rotating 3D surface" loading="lazy" decoding="async">
+        <figcaption data-i18n="watch.cap4">3D surfaces, always turning</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-i18n="shots.h2">A closer look</h2></div>
+    <div class="shots">
+      <figure><img src="./assets/images/vizmath/iphone-01-home.jpg" width="552" height="1200" data-i18n-alt="shots.alt.home" alt="Home screen with an equation field, starter lessons and courses" loading="lazy" decoding="async">
+        <figcaption data-i18n="shots.cap.home">Start here</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/iphone-02-sliders-vertex-form.jpg" width="552" height="1200" data-i18n-alt="shots.alt.sliders" alt="A parabola in vertex form with sliders for a, h and k" loading="lazy" decoding="async">
+        <figcaption data-i18n="shots.cap.sliders">Sliders</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/iphone-03-3d-wave-surface.jpg" width="552" height="1200" data-i18n-alt="shots.alt.wave" alt="A 3D wave surface with a height color scale" loading="lazy" decoding="async">
+        <figcaption data-i18n="shots.cap.wave">3D surfaces</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/iphone-04-geometry-thales.jpg" width="552" height="1200" data-i18n-alt="shots.alt.thales" alt="Thales’ theorem: a right angle in a semicircle, built from points" loading="lazy" decoding="async">
+        <figcaption data-i18n="shots.cap.thales">Constructions</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/iphone-05-3d-pyramid-section.jpg" width="552" height="1200" data-i18n-alt="shots.alt.pyramid" alt="A pyramid with a cross-section in 3D" loading="lazy" decoding="async">
+        <figcaption data-i18n="shots.cap.pyramid">3D solids</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/iphone-06-surface-intersection.jpg" width="552" height="1200" data-i18n-alt="shots.alt.intersection" alt="A saddle surface meeting a plane, with the intersection curve" loading="lazy" decoding="async">
+        <figcaption data-i18n="shots.cap.intersection">Intersections</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/iphone-07-math-story-present.jpg" width="552" height="1200" data-i18n-alt="shots.alt.story" alt="A Math Story being presented, one step at a time" loading="lazy" decoding="async">
+        <figcaption data-i18n="shots.cap.story">Math Story</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/iphone-08-gallery.jpg" width="552" height="1200" data-i18n-alt="shots.alt.gallery" alt="The gallery of ready-made lessons, sorted by course" loading="lazy" decoding="async">
+        <figcaption data-i18n="shots.cap.gallery">Lessons</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/iphone-09-solve-problem.jpg" width="552" height="1200" data-i18n-alt="shots.alt.solve" alt="Solve: a x² + b x − 6 = 0 with sliders for a and b, the roots, the graph and the steps" loading="lazy" decoding="async">
+        <figcaption data-i18n="shots.cap.solve">Solve a problem</figcaption></figure>
+      <figure><img src="./assets/images/vizmath/iphone-10-solve-system.jpg" width="552" height="1200" data-i18n-alt="shots.alt.system" alt="A system of a circle and a line solved, with both intersection points and the graph" loading="lazy" decoding="async">
+        <figcaption data-i18n="shots.cap.system">Systems and more</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-i18n="price.h2">Free to explore. Pro when you publish.</h2>
+      <p data-i18n="price.sub">VizMath is free. VizMath Pro adds production-quality exports for teachers and creators:</p>
+    </div>
+    <ul class="pro-list">
+      <li data-i18n="pro.video">4K / 60 fps video</li>
+      <li data-i18n="pro.long">Longer video and GIF without the mark</li>
+      <li data-i18n="pro.images">Extra-high-resolution images</li>
+      <li data-i18n="pro.ar">AR video</li>
+      <li data-i18n="pro.print">Print Fix Studio</li>
+      <li data-i18n="pro.story">12-scene stories</li>
+      <li data-i18n="pro.handout">Story video and handouts</li>
+    </ul>
+    <div class="prices">
+      <div class="price"><b data-i18n="price.weekly">Weekly</b>
+        <div class="amt">$1.99</div><small data-i18n="price.weekly.note">renews weekly</small></div>
+      <div class="price"><b data-i18n="price.monthly">Monthly</b>
+        <div class="amt">$4.99</div><small data-i18n="price.monthly.note">renews monthly</small></div>
+      <div class="price best"><span class="badge" data-i18n="price.best">Best value</span>
+        <b data-i18n="price.yearly">Yearly</b>
+        <div class="amt">$29.99</div><small data-i18n="price.yearly.note">7-day free trial for new subscribers</small></div>
+      <div class="price"><b data-i18n="price.lifetime">Lifetime</b>
+        <div class="amt">$79.99</div><small data-i18n="price.lifetime.note">one payment, no renewal</small></div>
+    </div>
+    <p class="hero-note" data-i18n="price.fine">Prices shown are US dollars; the App Store charges in your own currency. One purchase covers iPhone, iPad and Mac with the same Apple Account. Subscriptions renew automatically until cancelled in your Apple Account settings at least 24 hours before the period ends.</p>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <h2 data-i18n="band.h2">No account. No ads. No tracking.</h2>
+    <p data-i18n="band.p">VizMath collects no data. Your equations, constructions and projects stay on your device, the AI explanations run on the device, and everything works offline.</p>
+    <a class="btn btn-ghost" href="./vizmath-privacy.html" data-i18n="band.cta">Read the privacy policy</a>
+  </div>
+</div>
+
+<section id="support">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 data-i18n="sup.h2">Support</h2>
+      <p data-i18n="sup.p" data-i18n-html="keep">Write to <a href="mailto:info@orlproducts.com">info@orlproducts.com</a>. A person reads it, usually within two working days. Say which device you are on and, if something went wrong, the equation or problem you typed.</p>
+    </div>
+    <details>
+      <summary data-i18n="faq.free.q">What is free, and what does Pro add?</summary>
+      <p data-i18n="faq.free.a">VizMath is free to download and use. Pro is for production exports: 4K / 60 fps video, longer video and GIF without the mark, extra-high-resolution images, AR video, Print Fix Studio, 12-scene stories, and Story video and handouts.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq.restore.q">I paid but Pro is not unlocked.</summary>
+      <p data-i18n="faq.restore.a">Open Settings → Subscription → Restore Purchases. Purchases are tied to your Apple Account, so use the same one you bought with; one purchase unlocks iPhone, iPad and Mac. If it still does not appear, write to us with the date of purchase.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq.cancel.q">How do I cancel a subscription?</summary>
+      <p data-i18n="faq.cancel.a">Settings → Subscription → Manage Subscription in the app, or in your Apple Account settings. Cancel at least 24 hours before the period renews. Lifetime is a single payment and never renews.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq.solver.q">How do I get the best out of the Problem Solver?</summary>
+      <p data-i18n="faq.solver.a">Type a problem as you would write it: 2x + 3 = 7, x^2 − 5x + 6 = 0, a system separated by commas, d/dx x^3 sin(x), integral of x^2 from 0 to 3. To scan, hold the page flat in good light with one problem in the frame, and check the recognised text before solving; correct any symbol that was misread. Letters such as a, b or k become sliders, so you can change the numbers and see the new answer at once.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq.constructions.q">How do I build a construction?</summary>
+      <p data-i18n="faq.constructions.a">Open the Tools tab, pick a tool and tap points on the canvas, or type commands such as A = (1, 2), Segment(A, B), Circle(A, 3), Intersect(c1, c2) or Pyramid(A, B, C, D). Drag any free point and everything built from it follows.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq.watch.q">What does the Apple Watch app do?</summary>
+      <p data-i18n="faq.watch.a">Dictate a problem or write it with Scribble and get the answer, look at graphs and rotating 3D surfaces, and turn the Digital Crown to change a slider.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq.wrong.q">I think VizMath got the math wrong.</summary>
+      <p data-i18n="faq.wrong.a">Send us the equation and a screenshot. Wrong math is the bug we fix first; we aim to fix it within 72 hours. Explanations are checked by the math engine, but for anything that matters, check the result yourself.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq.offline.q">Does it work offline?</summary>
+      <p data-i18n="faq.offline.a">Yes. Graphing, 3D, constructions, the solver and the on-device AI all work without a connection. Only buying or restoring Pro needs the network.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq.langs.q">Which languages?</summary>
+      <p data-i18n="faq.langs.a">English, Español and Tiếng Việt.</p>
+    </details>
+    <p style="margin-top:22px"><a href="./vizmath-support.html" data-i18n="sup.more">All support topics</a></p>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <a class="logo" href="./index.html"><img src="./assets/images/ORL_Logo.svg" alt="ORIENTPRO"></a>
+        <a class="join" href="https://t.me/+MF4aYRoVeEJlMTVl" target="_blank" rel="noopener"
+           ><span data-i18n="footer.join">Join the community 💬</span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.9 4.3 18.9 19c-.2 1-.8 1.3-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-.9.5l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.2 13.1 2.6 11.7c-1-.3-1-1 .2-1.5l18-6.9c.8-.3 1.5.2 1.1 1z"/></svg></a>
+      </div>
+      <nav>
+        <a href="https://orlproducts.com/#ld-fancy-heading-62f5e03785eca" data-i18n="footer.about">About Us</a>
+        <a href="https://orlproducts.com/#ld-fancy-heading-6306309477109" data-i18n="footer.products">Products</a>
+        <a href="https://t.me/+MF4aYRoVeEJlMTVl" target="_blank" rel="noopener" data-i18n="footer.contact">Contact Us</a>
+        <a href="https://orlproducts.com/terms.html" data-i18n="footer.tos">Terms Of Services</a>
+      </nav>
+      <nav>
+        <a href="./vizmath.html">VizMath</a>
+        <a href="./vizmath-support.html" data-i18n="footer.support">Support</a>
+        <a href="./vizmath-privacy.html" data-i18n="footer.privacy">Privacy</a>
+        <a href="./vizmath-terms.html" data-i18n="footer.terms">Terms</a>
+      </nav>
+      <div class="apps">
+        <h3><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M16.4 12.8c0-2.4 2-3.6 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.1-.8-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.2 1.2 9.6.8 1.1 1.8 2.4 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.1.8 1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-1-2.5-3.9zM14 5.8c.7-.8 1.1-1.9 1-3-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.2-.6 2.9-1.4z"/></svg><span data-i18n="footer.apps">Get FREE Our Apps 💬</span></h3>
+        <p data-i18n="footer.apps.sub">All available on App Store.</p>
+        <a class="getapp" href="https://apps.apple.com/us/developer/orientpro-lam-an-investment-trading-company-limited/id1671583510" target="_blank" rel="noopener"
+           ><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M16.4 12.8c0-2.4 2-3.6 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.1-.8-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.2 1.2 9.6.8 1.1 1.8 2.4 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.1.8 1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-1-2.5-3.9zM14 5.8c.7-.8 1.1-1.9 1-3-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.2-.6 2.9-1.4z"/></svg><span data-i18n="footer.getapp">Get the app</span></a>
+      </div>
+    </div>
+    <p class="fine" data-i18n="footer.fine.short">© 2026 ORIENTPRO. All Rights Reserved.</p>
+  </div>
+</footer>
+<script src="./assets/js/orl-i18n.js?v=20260929" defer></script>
+<script src="./assets/js/vizmath-web.js?v=20261009" defer></script>
+</body>
+</html>

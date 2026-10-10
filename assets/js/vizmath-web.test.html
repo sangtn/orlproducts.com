@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>VizMath web studio self-test</title>
+<style>
+body{font:15px/1.5 -apple-system,system-ui,sans-serif;max-width:900px;margin:24px auto;padding:0 16px;color:#1d1b33;background:#fff}
+@media (prefers-color-scheme:dark){body{background:#14121f;color:#ece9ff}}
+h1{font-size:22px}
+#summary{font-weight:700;font-size:18px;padding:10px 14px;border-radius:10px}
+.pass{color:#0E7A55}.fail{color:#C62D3E}
+#summary.pass{background:#e4f6ee}#summary.fail{background:#fde8eb}
+li{margin:3px 0;font-family:ui-monospace,Menlo,monospace;font-size:13px}
+</style>
+</head>
+<body>
+<h1>VizMath web studio — self-test</h1>
+<p id="summary">Running…</p>
+<ol id="results"></ol>
+<script src="vizmath-web.js"></script>
+<script id="vizmath-tests">
+/* The cases. Kept free of the DOM so they can also run in a bare JS engine. */
+function vizmathTests(VM) {
+  var out = [];
+  function norm(s) { return String(s).replace(/[−–]/g, '-').replace(/\s+/g, ' ').trim(); }
+  function near(a, b, tol) { return Math.abs(a - b) <= (tol || 1e-6) * Math.max(1, Math.abs(b)); }
+  function sameList(vals, exp, tol) {
+    if (!vals || vals.length !== exp.length) return false;
+    var v = vals.slice().sort(function (a, b) { return a - b; });
+    for (var i = 0; i < exp.length; i++) if (!near(v[i], exp[i], tol)) return false;
+    return true;
+  }
+  function check(name, fn) {
+    var ok = false, detail = '';
+    try { var r = fn(); ok = r === true; if (r !== true) detail = typeof r === 'string' ? r : JSON.stringify(r); }
+    catch (e) { detail = 'threw ' + (e && e.message); }
+    out.push({ name: name, ok: ok, detail: detail });
+  }
+  function solved(input, expect, params) {
+    var r = VM.solve(input, params);
+    if (!r.ok) return 'error: ' + r.error;
+    var res = expect(r);
+    return res === true ? true : ('got ' + norm(r.answer) + ' ' + JSON.stringify(r.values));
+  }
+
+  // equations
+  check('2x+3=7 → x = 2', function () { return solved('2x+3=7', function (r) { return sameList(r.values, [2]) && norm(r.answer) === 'x = 2'; }); });
+  check('3x - 1 = x + 4 → x = 5/2', function () { return solved('3x - 1 = x + 4', function (r) { return sameList(r.values, [2.5]) && r.roots[0] === '5/2'; }); });
+  check('x^2-5x+6=0 → 2, 3', function () { return solved('x^2-5x+6=0', function (r) { return sameList(r.values, [2, 3]) && r.type === 'quadratic'; }); });
+  check('x^2+1=0 → no real, ±i', function () { return solved('x^2+1=0', function (r) { return r.values.length === 0 && /No real/.test(r.answer) && norm(r.complex) === 'x = ±i'; }); });
+  check('x^2-2=0 → ±√2', function () { return solved('x^2-2=0', function (r) { return sameList(r.values, [-Math.SQRT2, Math.SQRT2]) && /±√2/.test(r.answer); }); });
+  check('x^2+x-1=0 → (−1 ± √5)/2', function () { return solved('x^2+x-1=0', function (r) { return /\(-1 ± √5\)\/2/.test(norm(r.answer)) && sameList(r.values, [(-1 - Math.sqrt(5)) / 2, (-1 + Math.sqrt(5)) / 2]); }); });
+  check('x² + 2x + 5 = 0 → −1 ± 2i', function () { return solved('x² + 2x + 5 = 0', function (r) { return norm(r.complex) === 'x = -1 ± 2i'; }); });
+  check('x^2 - 6x + 9 = 0 → double root 3', function () { return solved('x^2 - 6x + 9 = 0', function (r) { return sameList(r.values, [3]); }); });
+  check('x^3-6x^2+11x-6=0 → 1, 2, 3', function () { return solved('x^3-6x^2+11x-6=0', function (r) { return sameList(r.values, [1, 2, 3]); }); });
+  check('x^3 = 2 → ∛2 numerically', function () { return solved('x^3 = 2', function (r) { return sameList(r.values, [Math.cbrt(2)], 1e-8); }); });
+  check('cos(x) = x → 0.739085', function () { return solved('cos(x) = x', function (r) { return sameList(r.values, [0.7390851332], 1e-7); }); });
+  check('e^x = 5 → ln 5', function () { return solved('e^x = 5', function (r) { return sameList(r.values, [Math.log(5)], 1e-8); }); });
+  check('ax + b = 0 with a=2, b=−3 → 3/2', function () { return solved('ax + b = 0', function (r) { return sameList(r.values, [1.5]) && r.params.join() === 'a,b'; }, { a: 2, b: -3 }); });
+  // systems
+  check('2x+y=5, x-y=1 → (2, 1)', function () { return solved('2x+y=5, x-y=1', function (r) { return r.status === 'unique' && sameList([r.values[0]], [2]) && near(r.values[1], 1); }); });
+  check('3 equations → (1, 2, 3)', function () { return solved('x+y+z=6; 2x-y+z=3; x+2y-z=2', function (r) { return r.status === 'unique' && near(r.values[0], 1) && near(r.values[1], 2) && near(r.values[2], 3); }); });
+  check('x+y=1, 2x+2y=5 → no solution', function () { return solved('x+y=1\n2x+2y=5', function (r) { return r.status === 'none'; }); });
+  check('x+y=1, 2x+2y=2 → infinitely many', function () { return solved('x+y=1; 2x+2y=2', function (r) { return r.status === 'infinite'; }); });
+  check('x/3 + y/2 = 1, x - y = 1/2 → (3/2, 1)', function () { return solved('x/3 + y/2 = 1, x - y = 1/2', function (r) { return r.solution.x === '3/2' && r.solution.y === '1'; }); });
+  check('x/2 + y/3 = 1, x - y = 1/4 → (13/10, 21/20)', function () { return solved('x/2 + y/3 = 1, x - y = 1/4', function (r) { return r.solution.x === '13/10' && r.solution.y === '21/20'; }); });
+  // inequalities
+  check('x^2-4>0 → x<−2 or x>2', function () { return solved('x^2-4>0', function (r) { return norm(r.answer) === 'x < -2 or x > 2'; }); });
+  check('2x - 3 <= 5 → x ≤ 4', function () { return solved('2x - 3 <= 5', function (r) { return norm(r.answer) === 'x <= 4'; }); });
+  check('-3x + 6 > 0 → x < 2', function () { return solved('-3x + 6 > 0', function (r) { return norm(r.answer) === 'x < 2'; }); });
+  check('x^2 - 5x + 6 ≤ 0 → 2 ≤ x ≤ 3', function () { return solved('x^2 - 5x + 6 ≤ 0', function (r) { return norm(r.answer) === '2 <= x <= 3'; }); });
+  check('1/x > 0 → x > 0', function () { return solved('1/x > 0', function (r) { return norm(r.answer) === 'x > 0'; }); });
+  check('x^2 + 1 < 0 → no solution', function () { return solved('x^2 + 1 < 0', function (r) { return /No solution/.test(r.answer); }); });
+  // arithmetic
+  check('3/4+1/6 → 11/12', function () { return solved('3/4+1/6', function (r) { return r.exact === '11/12'; }); });
+  check('2^10 - 0.5 → 2047/2', function () { return solved('2^10 - 0.5', function (r) { return r.exact === '2047/2'; }); });
+  check('√16 + 3×2 → 10', function () { return solved('√16 + 3×2', function (r) { return r.exact === '10'; }); });
+  check('sqrt(2) → 1.414213562', function () { return solved('sqrt(2)', function (r) { return r.exact === null && near(r.values[0], Math.SQRT2, 1e-12); }); });
+  check('2(3+4)−5 → 9 (implicit ×, Unicode −)', function () { return solved('2(3+4)−5', function (r) { return r.exact === '9'; }); });
+  // derivatives
+  check('d/dx x^3 → 3x^2', function () { return solved('d/dx x^3', function (r) { return r.derivative === '3x^2'; }); });
+  check('d/dx x^3 sin(x) → product rule', function () {
+    return solved('d/dx x^3 sin(x)', function (r) {
+      var d = VM.compile(VM.parse(r.derivative.replace(/\*/g, '*'))), x = 0.7;
+      return near(d({ x: x }), 3 * x * x * Math.sin(x) + x * x * x * Math.cos(x), 1e-12) && /cos\(x\)/.test(r.derivative) && /sin\(x\)/.test(r.derivative);
+    });
+  });
+  check('derivative of x^2 + 3x at x = 2 → 7', function () { return solved('derivative of x^2 + 3x at x = 2', function (r) { return r.derivative === '2x + 3' && near(r.values[0], 7); }); });
+  check('d/dx ln(x^2+1) → 2x/(x^2 + 1)', function () {
+    return solved('d/dx ln(x^2+1)', function (r) { var d = VM.compile(VM.parse(r.derivative)); return near(d({ x: 1.3 }), 2 * 1.3 / (1.69 + 1), 1e-12); });
+  });
+  check('d/dx e^(2x) → 2e^(2x)', function () {
+    return solved('d/dx e^(2x)', function (r) { var d = VM.compile(VM.parse(r.derivative)); return near(d({ x: 0.4 }), 2 * Math.exp(0.8), 1e-12); });
+  });
+  // integrals
+  check('integral of x^2 from 0 to 3 → 9', function () { return solved('integral of x^2 from 0 to 3', function (r) { return norm(r.answer) === '∫ = 9' && near(r.values[0], 9); }); });
+  check('∫ x^2 dx from 0 to 3 → 9', function () { return solved('∫ x^2 dx from 0 to 3', function (r) { return near(r.values[0], 9); }); });
+  check('∫ sin(x) dx from 0 to pi → 2 (Simpson)', function () { return solved('∫ sin(x) dx from 0 to pi', function (r) { return near(r.values[0], 2, 1e-9); }); });
+  check('integral of x from 0 to 1 → 1/2', function () { return solved('integral of x from 0 to 1', function (r) { return /1\/2/.test(r.answer); }); });
+  // function analysis
+  check('f(x) = x^3 - 3x → roots, extrema, inflection', function () {
+    return solved('f(x) = x^3 - 3x', function (r) {
+      var ex = r.extrema.map(function (e) { return e.kind + ':' + e.x + ',' + e.y; }).join(' ');
+      return sameList(r.roots, [-Math.sqrt(3), 0, Math.sqrt(3)]) && r.yint === 0 && ex === 'max:-1,2 min:1,-2' && r.inflections.length === 1 && near(r.inflections[0].x, 0);
+    });
+  });
+  check('y = x^2 - 4x + 3 → vertex (2, −1)', function () { return solved('y = x^2 - 4x + 3', function (r) { return r.extrema.length === 1 && r.extrema[0].vertex && near(r.extrema[0].x, 2) && near(r.extrema[0].y, -1); }); });
+  // parser
+  check('parser: 2x(x+1) at x=3 → 24', function () { return near(VM.compile(VM.parse('2x(x+1)'))({ x: 3 }), 24); });
+  check('parser: −x² at x=3 → −9', function () { return near(VM.compile(VM.parse('−x²'))({ x: 3 }), -9); });
+  check('parser: 2^-1 → 0.5, 2^3^2 → 512', function () { return near(VM.compile(VM.parse('2^-1'))({}), 0.5) && near(VM.compile(VM.parse('2^3^2'))({}), 512); });
+  check('parser: xy, πx, sin x, |x|', function () {
+    var a = VM.compile(VM.parse('xy'))({ x: 2, y: 5 }), b = VM.compile(VM.parse('πx'))({ x: 2 }), c = VM.compile(VM.parse('sin x'))({ x: 1 }), d = VM.compile(VM.parse('|x - 5|'))({ x: 2 });
+    return near(a, 10) && near(b, 2 * Math.PI) && near(c, Math.sin(1)) && near(d, 3);
+  });
+  check('parser: errors are messages, not exceptions', function () {
+    var bad = ['2+', '(x+1', 'x # 2', 'sin', '', '1 = 2 = 3'];
+    for (var i = 0; i < bad.length; i++) { var r = VM.solve(bad[i]); if (r.ok || !r.error) return 'accepted ' + bad[i]; }
+    return true;
+  });
+  return out;
+}
+</script>
+<script>
+(function () {
+  var results = vizmathTests(window.VizMath), pass = 0, ol = document.getElementById('results');
+  results.forEach(function (r) {
+    if (r.ok) pass++;
+    var li = document.createElement('li');
+    li.className = r.ok ? 'pass' : 'fail';
+    li.textContent = (r.ok ? 'PASS ' : 'FAIL ') + r.name + (r.detail ? ' — ' + r.detail : '');
+    ol.appendChild(li);
+  });
+  var s = document.getElementById('summary');
+  s.textContent = pass + ' / ' + results.length + ' passed';
+  s.className = pass === results.length ? 'pass' : 'fail';
+  window.VIZMATH_TEST_RESULT = { pass: pass, total: results.length };
+})();
+</script>
+</body>
+</html>
