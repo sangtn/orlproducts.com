@@ -74,8 +74,8 @@
   "card.export.p": "PNG, SVG và PDF cho phiếu bài tập và bài trình chiếu; GIF và MP4 để cho thấy thanh trượt chuyển động.",
   "card.a11y.h": "Đồ thị nghe được",
   "card.a11y.p": "VoiceOver đọc đồ thị, phát nó thành âm thanh và có thể dời một điểm từng bước, để hình dạng đường cong được cảm nhận mà không cần nhìn.",
-  "card.lang.h": "English, Español, Tiếng Việt",
-  "card.lang.p": "Giao diện ứng dụng bằng ba ngôn ngữ; các bài học có sẵn và lời giải từng bước bằng tiếng Anh.",
+  "card.lang.h": "20 ngôn ngữ",
+  "card.lang.p": "English, Español, Tiếng Việt, 日本語, 한국어, 中文, العربية và nhiều hơn nữa: giao diện, bài học và lời giải từng bước, đổi ngay trong Cài đặt.",
   "card.private.h": "Riêng tư và ngoại tuyến",
   "card.private.p": "Không tài khoản, không máy chủ. Bài làm của bạn ở lại trên thiết bị, AI chạy ngay trên thiết bị, và mọi thứ hoạt động khi không có mạng.",
   "studio.h2": "Dùng thử VizMath ngay trên trình duyệt",
@@ -137,7 +137,7 @@
   "price.monthly.note": "gia hạn mỗi tháng",
   "price.best": "Đáng tiền nhất",
   "price.yearly": "Theo năm",
-  "price.yearly.note": "dùng thử miễn phí 7 ngày cho người đăng ký mới",
+  "price.yearly.note": "Tiết kiệm nhất · thanh toán mỗi năm một lần",
   "price.lifetime": "Vĩnh viễn",
   "price.lifetime.note": "trả một lần, không gia hạn",
   "price.fine": "Giá hiển thị là đô la Mỹ; App Store sẽ tính bằng tiền của bạn. Một lần mua dùng được trên iPhone, iPad, Mac và Apple Vision Pro với cùng một Apple Account. Gói đăng ký tự động gia hạn cho tới khi bạn huỷ trong cài đặt Apple Account, ít nhất 24 giờ trước khi kỳ hạn kết thúc.",
@@ -221,5 +221,6 @@
   "card.data.h": "Dữ liệu và thống kê",
   "card.data.p": "Nhập dữ liệu hoặc đọc bảng từ ảnh chụp. Biểu đồ tán xạ, histogram, biểu đồ hộp và đường hồi quy kèm r², cập nhật khi bạn kéo một điểm.",
   "card.vision.h": "Trên Apple Vision Pro",
-  "card.vision.p": "Mở đồ thị 3D trong một khối không gian bên cạnh bạn, xoay bằng cử chỉ chụm ngón, kéo thanh trượt, và chụm vào một đỉnh để dời nó trong không gian."
+  "card.vision.p": "Mở đồ thị 3D trong một khối không gian bên cạnh bạn, xoay bằng cử chỉ chụm ngón, kéo thanh trượt, và chụm vào một đỉnh để dời nó trong không gian.",
+  "hero.cta.store": "Tải về trên App Store"
 }

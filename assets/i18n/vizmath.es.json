@@ -74,8 +74,8 @@
   "card.export.p": "PNG, SVG y PDF para fichas y presentaciones; GIF y MP4 para mostrar un deslizador en movimiento.",
   "card.a11y.h": "Gráficas que se oyen",
   "card.a11y.p": "VoiceOver lee la gráfica, la reproduce como sonido y puede mover un punto paso a paso, para que la forma de una curva se perciba sin verla.",
-  "card.lang.h": "English, Español, Tiếng Việt",
-  "card.lang.p": "Las pantallas de la app en tres idiomas; las lecciones listas y los pasos resueltos están en inglés.",
+  "card.lang.h": "20 idiomas",
+  "card.lang.p": "English, Español, Tiếng Việt, 日本語, 한국어, 中文, العربية y más: pantallas, lecciones y pasos resueltos, con cambio instantáneo en Ajustes.",
   "card.private.h": "Privada y sin conexión",
   "card.private.p": "Sin cuenta y sin servidor. Tu trabajo se queda en tu dispositivo, la IA funciona en el dispositivo y todo funciona sin conexión.",
   "studio.h2": "Prueba VizMath en tu navegador",
@@ -137,7 +137,7 @@
   "price.monthly.note": "se renueva cada mes",
   "price.best": "La mejor opción",
   "price.yearly": "Anual",
-  "price.yearly.note": "7 días de prueba gratis para nuevos suscriptores",
+  "price.yearly.note": "La mejor opción · se cobra una vez al año",
   "price.lifetime": "Para siempre",
   "price.lifetime.note": "un pago, sin renovación",
   "price.fine": "Los precios están en dólares estadounidenses; el App Store cobra en tu moneda. Una sola compra sirve para iPhone, iPad, Mac y Apple Vision Pro con la misma cuenta de Apple. Las suscripciones se renuevan automáticamente hasta que las canceles en los ajustes de tu cuenta de Apple, al menos 24 horas antes de que termine el periodo.",
@@ -221,5 +221,6 @@
   "card.data.h": "Datos y estadística",
   "card.data.p": "Escribe datos o lee una tabla de una foto. Diagramas de dispersión, histogramas, diagramas de caja y curvas de ajuste con r² que se actualizan al arrastrar un punto.",
   "card.vision.h": "En Apple Vision Pro",
-  "card.vision.p": "Abre una gráfica 3D en un volumen a tu lado, gírala con un pellizco, mueve los deslizadores y pellizca un pico para moverlo en el espacio."
+  "card.vision.p": "Abre una gráfica 3D en un volumen a tu lado, gírala con un pellizco, mueve los deslizadores y pellizca un pico para moverlo en el espacio.",
+  "hero.cta.store": "Descargar en el App Store"
 }
