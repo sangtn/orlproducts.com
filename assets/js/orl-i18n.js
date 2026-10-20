@@ -39,7 +39,7 @@
       dict[el.getAttribute('data-i18n')] = el.getAttribute('data-i18n-html') === 'keep'
         ? el.innerHTML : el.textContent;
     });
-    ['alt', 'content', 'title', 'placeholder', 'aria-label'].forEach(function (attr) {
+    ['alt', 'content', 'title', 'placeholder', 'aria-label', 'src'].forEach(function (attr) {
       document.querySelectorAll('[data-i18n-' + attr + ']').forEach(function (el) {
         dict[el.getAttribute('data-i18n-' + attr)] = el.getAttribute(attr);
       });
@@ -113,7 +113,7 @@
       }
     });
     // Attributes: data-i18n-alt="key", data-i18n-content="key", and so on.
-    ['alt', 'content', 'title', 'placeholder', 'aria-label'].forEach(function (attr) {
+    ['alt', 'content', 'title', 'placeholder', 'aria-label', 'src'].forEach(function (attr) {
       document.querySelectorAll('[data-i18n-' + attr + ']').forEach(function (el) {
         var v = dict[el.getAttribute('data-i18n-' + attr)];
         if (typeof v === 'string') el.setAttribute(attr, v);
