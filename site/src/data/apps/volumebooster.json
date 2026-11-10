@@ -1,0 +1,71 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "volumebooster",
+  "name": "Volume Booster - Music Player",
+  "subtitle": null,
+  "group": "legacy",
+  "priority": false,
+  "accent": {
+    "base": "#224B55",
+    "ink": "#224B55",
+    "inkDark": "#3E889A",
+    "on": "#FFFFFF"
+  },
+  "category": "Music",
+  "appStore": {
+    "id": 6482849425,
+    "url": "https://apps.apple.com/app/id6482849425",
+    "bundleId": "com.orientpro.volumebooster",
+    "version": "1.6",
+    "released": "2024-04-15",
+    "updated": "2025-05-21",
+    "minimumOs": "16.0",
+    "languages": [],
+    "price": "Free",
+    "rating": {
+      "value": 4.17,
+      "count": 40
+    },
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/2b/dd/30/2bdd306f-c11e-f8b4-3d6e-dbac40d1e8ea/AppIcon-0-0-1x_U007epad-0-1-85-220.jpeg/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/",
+    "screenshots": {
+      "iphone": 6,
+      "ipad": 6
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": false,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": false,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": false,
+    "siri": false,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": "/volumebooster.html",
+    "privacy": null,
+    "terms": null,
+    "support": "/howtovb.html"
+  },
+  "issues": [
+    "No app-specific privacy policy page on orlproducts.com."
+  ]
+}

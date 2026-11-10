@@ -1,0 +1,510 @@
+{
+  "_doc": "Hand-maintained facts per app. tools/sync_store_data.py merges these with live App Store data into site/src/data/apps/<slug>.json. Edit this file, not the generated ones.",
+  "apps": [
+    {
+      "slug": "vizmath",
+      "appStoreId": 6822687291,
+      "playPackage": "com.orientpro.vizmath",
+      "web": {
+        "landing": "/vizmath.html",
+        "privacy": "/vizmath-privacy.html",
+        "terms": "/vizmath-terms.html",
+        "support": "/vizmath-support.html"
+      },
+      "priority": false,
+      "group": "current",
+      "accent": "#5B4CF0",
+      "wearOs": true,
+      "subtitle": "Graph, Animate, AR & 3D Print",
+      "accentInk": "#5B4CF0",
+      "accentInkDark": "#796DF3",
+      "accentOn": "#FFFFFF",
+      "visionNative": true
+    },
+    {
+      "slug": "raykin",
+      "appStoreId": null,
+      "playPackage": "com.orientpro.dicomviewer",
+      "web": {
+        "landing": "/raykin.html",
+        "privacy": "/raykin-privacy.html",
+        "terms": "/raykin-terms.html",
+        "support": "/raykin-support.html"
+      },
+      "priority": false,
+      "group": "current",
+      "accent": "#1B609A",
+      "wearOs": true,
+      "iosStatus": "in-review",
+      "name": "DICOM Viewer: Raykin",
+      "subtitle": null,
+      "category": "Medical",
+      "accentInk": "#1B609A",
+      "accentInkDark": "#2583D2",
+      "accentOn": "#FFFFFF"
+    },
+    {
+      "slug": "chemistry3d",
+      "appStoreId": null,
+      "playPackage": "com.orientpro.chemistry3d",
+      "web": {
+        "landing": "/chemistry3d.html",
+        "privacy": "/chemistry3d-privacy.html",
+        "terms": "/chemistry3d-terms.html",
+        "support": "/chemistry3d-support.html"
+      },
+      "priority": false,
+      "group": "current",
+      "accent": "#136C85",
+      "iosStatus": "in-review",
+      "name": "Chemistry 3D: Molecule Lab",
+      "subtitle": null,
+      "category": "Education",
+      "accentInk": "#136C85",
+      "accentInkDark": "#1889A9",
+      "accentOn": "#FFFFFF"
+    },
+    {
+      "slug": "omnidoc",
+      "appStoreId": null,
+      "playPackage": "com.orientpro.omnidoc",
+      "web": {
+        "landing": null,
+        "privacy": "/omnidoc-privacy.html",
+        "terms": "/omnidoc-terms.html",
+        "support": "/omnidoc-support.html"
+      },
+      "priority": true,
+      "group": "current",
+      "accent": "#3E98FA",
+      "iosStatus": "in-review",
+      "name": "OmniDoc: Meeting & Class Notes",
+      "subtitle": null,
+      "category": "Productivity",
+      "accentInk": "#0671E6",
+      "accentInkDark": "#3E98FA",
+      "accentOn": "#1B1814"
+    },
+    {
+      "slug": "origamilearn",
+      "appStoreId": 6817002288,
+      "playPackage": null,
+      "web": {
+        "landing": "/origamilearn.html",
+        "privacy": "/origamilearn-privacy.html",
+        "terms": "/origamilearn-terms.html",
+        "support": "/origamilearn-support.html"
+      },
+      "priority": false,
+      "group": "current",
+      "accent": "#FF8A1F",
+      "subtitle": "Origami Guide, Creative Crafts",
+      "accentInk": "#B85800",
+      "accentInkDark": "#FF8A1F",
+      "accentOn": "#1B1814"
+    },
+    {
+      "slug": "paddlepilot",
+      "appStoreId": 6818945751,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": "/paddlepilot-privacy.html",
+        "terms": null,
+        "support": "/paddlepilot-support.html"
+      },
+      "priority": false,
+      "group": "current",
+      "accent": "#F9CC20",
+      "subtitle": "Canoe & SUP River Trip Planner",
+      "accentInk": "#8C6F04",
+      "accentInkDark": "#F9CC20",
+      "accentOn": "#1B1814"
+    },
+    {
+      "slug": "turbulenceforecast",
+      "appStoreId": 6816296527,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": "/turbulenceforecast-privacy.html",
+        "terms": "/turbulenceforecast-terms.html",
+        "support": "/turbulenceforecast-support.html"
+      },
+      "priority": false,
+      "group": "current",
+      "accent": "#428BCD",
+      "subtitle": "Know the bumps before you fly",
+      "accentInk": "#3076B6",
+      "accentInkDark": "#428BCD",
+      "accentOn": "#1B1814"
+    },
+    {
+      "slug": "globalsdr",
+      "appStoreId": 6815033866,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": "/globalsdr-privacy.html",
+        "terms": null,
+        "support": null
+      },
+      "priority": true,
+      "group": "current",
+      "accent": "#8C4426",
+      "subtitle": "Ham, Scanner & Live SWL Tuner",
+      "accentInk": "#8C4426",
+      "accentInkDark": "#C86136",
+      "accentOn": "#FFFFFF"
+    },
+    {
+      "slug": "world-monitor",
+      "appStoreId": 6816421549,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": "/world-monitor-privacy.html",
+        "terms": null,
+        "support": null
+      },
+      "priority": true,
+      "group": "current",
+      "accent": "#164E89",
+      "subtitle": "Live War Tracker Live Conflict",
+      "accentInk": "#164E89",
+      "accentInkDark": "#2880DD",
+      "accentOn": "#FFFFFF"
+    },
+    {
+      "slug": "babi",
+      "appStoreId": 6818679164,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "current",
+      "accent": "#FCD752",
+      "subtitle": "Dress, Pack, Plan the day",
+      "accentInk": "#8F7002",
+      "accentInkDark": "#FCD752",
+      "accentOn": "#1B1814"
+    },
+    {
+      "slug": "somavue",
+      "appStoreId": 6815892596,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "current",
+      "accent": "#1968B1",
+      "subtitle": "Learn & Recall the Human Body",
+      "accentInk": "#1968B1",
+      "accentInkDark": "#1F80D9",
+      "accentOn": "#FFFFFF"
+    },
+    {
+      "slug": "speedgunner",
+      "appStoreId": 6812750104,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": true,
+      "group": "current",
+      "accent": "#720102",
+      "androidStatus": "in-progress",
+      "subtitle": "Measure speed with your Camera",
+      "accentInk": "#720102",
+      "accentInkDark": "#FD0507",
+      "accentOn": "#FFFFFF"
+    },
+    {
+      "slug": "videoupscale",
+      "appStoreId": 6814751776,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "current",
+      "accent": "#17A2C9",
+      "subtitle": "Restore Old Family Videos",
+      "accentInk": "#127D9B",
+      "accentInkDark": "#17A2C9",
+      "accentOn": "#1B1814"
+    },
+    {
+      "slug": "voiceclock",
+      "appStoreId": 6809999771,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "current",
+      "accent": "#D0514C",
+      "subtitle": "Talking Clock Voice Alerts",
+      "accentInk": "#CC413C",
+      "accentInkDark": "#D25954",
+      "accentOn": "#FFFFFF"
+    },
+    {
+      "slug": "aurora",
+      "appStoreId": 6810007650,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": true,
+      "group": "current",
+      "accent": "#94112C",
+      "subtitle": null,
+      "accentInk": "#94112C",
+      "accentInkDark": "#E93C5F",
+      "accentOn": "#FFFFFF"
+    },
+    {
+      "slug": "pinbord",
+      "appStoreId": 6809150709,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "current",
+      "accent": "#EBC534",
+      "subtitle": null,
+      "accentInk": "#886E0D",
+      "accentInkDark": "#EBC534",
+      "accentOn": "#1B1814"
+    },
+    {
+      "slug": "giavang",
+      "appStoreId": 6754908231,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "current",
+      "accent": "#B47A07",
+      "subtitle": null,
+      "accentInk": "#9B6906",
+      "accentInkDark": "#B47A07",
+      "accentOn": "#1B1814"
+    },
+    {
+      "slug": "livemate",
+      "appStoreId": 6756957225,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "current",
+      "accent": "#61C8EF",
+      "subtitle": null,
+      "accentInk": "#117DA6",
+      "accentInkDark": "#61C8EF",
+      "accentOn": "#1B1814"
+    },
+    {
+      "slug": "randonauting",
+      "appStoreId": 1616481958,
+      "playPackage": null,
+      "web": {
+        "landing": "/randonauting.html",
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "legacy",
+      "accent": "#BF8504",
+      "subtitle": null,
+      "accentInk": "#976903",
+      "accentInkDark": "#BF8504",
+      "accentOn": "#1B1814"
+    },
+    {
+      "slug": "volumebooster",
+      "appStoreId": 6482849425,
+      "playPackage": null,
+      "web": {
+        "landing": "/volumebooster.html",
+        "privacy": null,
+        "terms": null,
+        "support": "/howtovb.html"
+      },
+      "priority": false,
+      "group": "legacy",
+      "accent": "#224B55",
+      "subtitle": null,
+      "accentInk": "#224B55",
+      "accentInkDark": "#3E889A",
+      "accentOn": "#FFFFFF"
+    },
+    {
+      "slug": "offlinefiles",
+      "appStoreId": 6478867245,
+      "playPackage": null,
+      "web": {
+        "landing": "/offline.html",
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "legacy",
+      "accent": "#2882EB",
+      "subtitle": null,
+      "accentInk": "#1572E0",
+      "accentInkDark": "#2882EB",
+      "accentOn": "#1B1814"
+    },
+    {
+      "slug": "pixeai",
+      "appStoreId": 6450380621,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "legacy",
+      "accent": "#AC27A6",
+      "subtitle": null,
+      "accentInk": "#AC27A6",
+      "accentInkDark": "#D239CB",
+      "accentOn": "#FFFFFF"
+    },
+    {
+      "slug": "cartoonphoto",
+      "appStoreId": 1614396365,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "legacy",
+      "accent": "#EA7420",
+      "subtitle": null,
+      "accentInk": "#B75611",
+      "accentInkDark": "#EA7420",
+      "accentOn": "#1B1814"
+    },
+    {
+      "slug": "compressphoto",
+      "appStoreId": 1615572010,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "legacy",
+      "accent": "#11C838",
+      "subtitle": null,
+      "accentInk": "#0B8626",
+      "accentInkDark": "#11C838",
+      "accentOn": "#1B1814"
+    },
+    {
+      "slug": "compressvideos",
+      "appStoreId": 1615883784,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "legacy",
+      "accent": "#2F6AFD",
+      "subtitle": null,
+      "accentInk": "#2A66FD",
+      "accentInkDark": "#3E75FD",
+      "accentOn": "#FFFFFF"
+    },
+    {
+      "slug": "contactsbackup",
+      "appStoreId": 6484267417,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "legacy",
+      "accent": "#218AFA",
+      "subtitle": null,
+      "accentInk": "#0570E3",
+      "accentInkDark": "#218AFA",
+      "accentOn": "#1B1814"
+    },
+    {
+      "slug": "idpassport",
+      "appStoreId": 6474580317,
+      "playPackage": null,
+      "web": {
+        "landing": null,
+        "privacy": null,
+        "terms": null,
+        "support": null
+      },
+      "priority": false,
+      "group": "legacy",
+      "accent": "#278DFD",
+      "subtitle": null,
+      "accentInk": "#026EE5",
+      "accentInkDark": "#278DFD",
+      "accentOn": "#1B1814"
+    }
+  ],
+  "brand": {
+    "accent": "#F77E04",
+    "accentInk": "#B15A03",
+    "accentInkDark": "#F77E04",
+    "accentOn": "#1B1814"
+  }
+}

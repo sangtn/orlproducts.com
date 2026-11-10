@@ -1,0 +1,72 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "origamilearn",
+  "name": "Origami Learn: Guide, Practice",
+  "subtitle": "Origami Guide, Creative Crafts",
+  "group": "current",
+  "priority": false,
+  "accent": {
+    "base": "#FF8A1F",
+    "ink": "#B85800",
+    "inkDark": "#FF8A1F",
+    "on": "#1B1814"
+  },
+  "category": "Education",
+  "appStore": {
+    "id": 6817002288,
+    "url": "https://apps.apple.com/app/id6817002288",
+    "bundleId": "com.orientpro.OrigamiLearn",
+    "version": "1.0",
+    "released": "2026-10-02",
+    "updated": "2026-10-02",
+    "minimumOs": "17.0",
+    "languages": [
+      "en",
+      "ja",
+      "zh",
+      "es",
+      "vi"
+    ],
+    "price": "Free",
+    "rating": null,
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ff/f0/70/fff0705f-d10d-37cb-4fae-5c8ffeddffec/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/origamilearn.html",
+    "screenshots": {
+      "iphone": 6,
+      "ipad": 6
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": true,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": false,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": true,
+    "siri": false,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": "/origamilearn.html",
+    "privacy": "/origamilearn-privacy.html",
+    "terms": "/origamilearn-terms.html",
+    "support": "/origamilearn-support.html"
+  },
+  "issues": []
+}

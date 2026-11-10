@@ -1,0 +1,72 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "voiceclock",
+  "name": "Voice Clock: Talking Clock",
+  "subtitle": "Talking Clock Voice Alerts",
+  "group": "current",
+  "priority": false,
+  "accent": {
+    "base": "#D0514C",
+    "ink": "#CC413C",
+    "inkDark": "#D25954",
+    "on": "#FFFFFF"
+  },
+  "category": "Lifestyle",
+  "appStore": {
+    "id": 6809999771,
+    "url": "https://apps.apple.com/app/id6809999771",
+    "bundleId": "com.orientpro.VoiceClock",
+    "version": "1.0",
+    "released": "2026-09-27",
+    "updated": "2026-09-28",
+    "minimumOs": "26.0",
+    "languages": [
+      "en",
+      "vi"
+    ],
+    "price": "Free",
+    "rating": null,
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/23/2b/9b/232b9b99-6045-aa7e-6056-ae1bd3227b92/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/",
+    "screenshots": {
+      "iphone": 6,
+      "ipad": 6
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": true,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": true,
+    "liveActivities": true,
+    "dynamicIsland": false,
+    "controlCenter": true,
+    "standBy": true,
+    "complications": true,
+    "siri": true,
+    "shortcuts": true,
+    "spotlight": false,
+    "iCloud": true,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": null,
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "No app-specific privacy policy page on orlproducts.com.",
+    "No landing page on orlproducts.com."
+  ]
+}

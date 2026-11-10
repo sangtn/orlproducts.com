@@ -1,0 +1,71 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "paddlepilot",
+  "name": "Kayak Canoe SUP: PaddlePilot",
+  "subtitle": "Canoe & SUP River Trip Planner",
+  "group": "current",
+  "priority": false,
+  "accent": {
+    "base": "#F9CC20",
+    "ink": "#8C6F04",
+    "inkDark": "#F9CC20",
+    "on": "#1B1814"
+  },
+  "category": "Sports",
+  "appStore": {
+    "id": 6818945751,
+    "url": "https://apps.apple.com/app/id6818945751",
+    "bundleId": "com.orientpro.PaddlePilot",
+    "version": "1.0",
+    "released": "2026-11-09",
+    "updated": "2026-11-10",
+    "minimumOs": "26.0",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "price": "Free",
+    "rating": null,
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/49/21/71/492171a1-c6ac-6243-75fd-0802ce523c96/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/",
+    "screenshots": {
+      "iphone": 8,
+      "ipad": 5
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": true,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": false,
+    "liveActivities": true,
+    "dynamicIsland": true,
+    "controlCenter": true,
+    "standBy": false,
+    "complications": true,
+    "siri": true,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": true,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": "/paddlepilot-privacy.html",
+    "terms": null,
+    "support": "/paddlepilot-support.html"
+  },
+  "issues": [
+    "No landing page on orlproducts.com."
+  ]
+}

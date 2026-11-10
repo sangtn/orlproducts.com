@@ -1,0 +1,48 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "omnidoc",
+  "name": "OmniDoc: Meeting & Class Notes",
+  "subtitle": null,
+  "group": "current",
+  "priority": true,
+  "accent": {
+    "base": "#3E98FA",
+    "ink": "#0671E6",
+    "inkDark": "#3E98FA",
+    "on": "#1B1814"
+  },
+  "category": "Productivity",
+  "appStore": null,
+  "iosStatus": "in-review",
+  "googlePlay": {
+    "package": "com.orientpro.omnidoc",
+    "url": "https://play.google.com/store/apps/details?id=com.orientpro.omnidoc"
+  },
+  "androidStatus": "live",
+  "platforms": {
+    "android": true,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": false,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": false,
+    "siri": false,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": "/omnidoc-privacy.html",
+    "terms": "/omnidoc-terms.html",
+    "support": "/omnidoc-support.html"
+  },
+  "issues": [
+    "No landing page on orlproducts.com."
+  ]
+}

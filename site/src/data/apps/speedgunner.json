@@ -1,0 +1,87 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "speedgunner",
+  "name": "SpeedGunner AI: Speed Camera",
+  "subtitle": "Measure speed with your Camera",
+  "group": "current",
+  "priority": true,
+  "accent": {
+    "base": "#720102",
+    "ink": "#720102",
+    "inkDark": "#FD0507",
+    "on": "#FFFFFF"
+  },
+  "category": "Productivity",
+  "appStore": {
+    "id": 6812750104,
+    "url": "https://apps.apple.com/app/id6812750104",
+    "bundleId": "com.orientpro.SpeedCam",
+    "version": "1.0",
+    "released": "2026-09-24",
+    "updated": "2026-09-24",
+    "minimumOs": "26.0",
+    "languages": [
+      "nl",
+      "en",
+      "fr",
+      "de",
+      "id",
+      "it",
+      "ja",
+      "ko",
+      "pt",
+      "zh",
+      "es",
+      "zh",
+      "tr",
+      "vi"
+    ],
+    "price": "Free",
+    "rating": {
+      "value": 2.33,
+      "count": 3
+    },
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a9/f3/97/a9f3973e-2eb1-c505-cc60-c699c80c93f8/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/",
+    "screenshots": {
+      "iphone": 8,
+      "ipad": 8
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": "in-progress",
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": true,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": true,
+    "liveActivities": true,
+    "dynamicIsland": true,
+    "controlCenter": true,
+    "standBy": false,
+    "complications": false,
+    "siri": false,
+    "shortcuts": true,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": null,
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "No app-specific privacy policy page on orlproducts.com.",
+    "No landing page on orlproducts.com."
+  ]
+}

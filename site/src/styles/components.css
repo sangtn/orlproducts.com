@@ -1,0 +1,158 @@
+/* ORIENTPRO Paper — components. Requires tokens.css and app-accents.css.
+   Every class starts with op- so it never collides with the legacy WordPress CSS. */
+
+/* Base */
+.op-page {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: var(--weight-regular) var(--text-md)/var(--leading-body) var(--font);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.op-page :lang(ja) { font-family: var(--font-ja); }
+.op-wrap {
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-left: var(--gutter);
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.op-page h1, .op-page h2, .op-page h3 {
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  margin: 0;
+}
+.op-page h1 { font-size: clamp(2rem, 6vw, var(--text-3xl)); }
+.op-page h2 { font-size: clamp(1.5rem, 4vw, var(--text-2xl)); }
+.op-page h3 { font-size: var(--text-xl); line-height: var(--leading-snug); }
+.op-page p { margin: 0 0 var(--space-4); max-width: var(--measure); }
+.op-page a { color: var(--app-accent-ink); text-underline-offset: 3px; }
+.op-page :focus-visible { outline: 2px solid var(--app-accent-ink); outline-offset: 3px; border-radius: 4px; }
+.op-eyebrow {
+  font: var(--weight-bold) var(--text-xs)/1 var(--font);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--app-accent-ink);
+}
+.op-lead { font-size: var(--text-lg); color: var(--ink-soft); }
+
+/* Buttons */
+.op-button {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  min-height: 44px; padding: 0 var(--space-5);
+  border: 1px solid transparent; border-radius: var(--radius-pill);
+  font: var(--weight-bold) var(--text-sm)/1 var(--font);
+  text-decoration: none; cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.op-button:active { transform: scale(0.98); }
+.op-button--primary { background: var(--app-accent); color: var(--app-on-accent); }
+.op-button--primary:hover { filter: brightness(1.05); }
+.op-button--secondary { background: transparent; color: var(--ink); border-color: var(--rule-strong); }
+.op-button--secondary:hover { border-color: var(--ink-soft); }
+
+/* Store badges: official Apple and Google artwork, never redrawn or recolored.
+   The Google Play PNGs in assets/badges are cropped to the badge edge (no transparent padding),
+   so both badges simply share one height. */
+.op-badges { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+.op-badges a { display: inline-flex; line-height: 0; border-radius: var(--radius-sm); }
+.op-badge-apple, .op-badge-google { height: var(--badge-height); width: auto; }
+.op-badges-legal { font-size: var(--text-xs); color: var(--ink-faint); margin-top: var(--space-2); }
+
+/* Platform chips: only for platforms the app data says are supported */
+.op-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); padding: 0; margin: 0; list-style: none; }
+.op-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border: 1px solid var(--rule); border-radius: var(--radius-pill);
+  background: var(--paper); color: var(--ink);
+  font: var(--weight-medium) var(--text-xs)/1.2 var(--font);
+}
+.op-chip svg { width: 16px; height: 16px; flex: none; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.op-chip--note { color: var(--ink-soft); }
+
+/* App icon and card */
+.op-icon { display: block; width: 64px; height: 64px; border-radius: var(--radius-icon); object-fit: cover; box-shadow: 0 0 0 1px rgb(0 0 0 / 6%); background: var(--paper-2); }
+.op-icon--lg { width: 112px; height: 112px; }
+.op-appcard {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-2) var(--space-4); align-items: center;
+  padding: var(--space-4); border: 1px solid var(--rule); border-radius: var(--radius-lg);
+  background: var(--paper); color: inherit; text-decoration: none;
+  transition: border-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+.op-appcard:hover { border-color: var(--app-accent); transform: translateY(-2px); }
+.op-appcard__name { font-weight: var(--weight-bold); font-size: var(--text-md); line-height: var(--leading-snug); margin: 0; }
+.op-appcard__sub { font-size: var(--text-sm); color: var(--ink-soft); margin: 2px 0 0; }
+.op-appcard .op-chips { grid-column: 1 / -1; }
+.op-appgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: var(--space-4); }
+
+/* Device frames. Put a screenshot <img> inside; the frame keeps the real aspect ratio. */
+.op-device { position: relative; display: inline-block; max-width: 100%; background: #0E0D0C; box-shadow: var(--shadow-2); overflow: hidden; }
+.op-device > img, .op-device > video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.op-device--iphone { aspect-ratio: 1320 / 2868; width: 280px; border-radius: 48px; padding: 10px; }
+.op-device--iphone > img, .op-device--iphone > video { border-radius: 38px; }
+.op-device--ipad { aspect-ratio: 2064 / 2752; width: 420px; border-radius: 32px; padding: 14px; }
+.op-device--ipad > img, .op-device--ipad > video { border-radius: 20px; }
+.op-device--ipad.is-landscape { aspect-ratio: 2752 / 2064; width: 520px; }
+.op-device--mac { aspect-ratio: 16 / 10; width: 640px; border-radius: 16px 16px 4px 4px; padding: 14px 14px 22px; }
+.op-device--watch-round, .op-device--wear { aspect-ratio: 1; width: 200px; border-radius: 50%; padding: 12px; }
+.op-device--watch-round > img, .op-device--wear > img { border-radius: 50%; }
+.op-device--watch { aspect-ratio: 422 / 514; width: 200px; border-radius: 56px; padding: 12px; }
+.op-device--watch > img { border-radius: 44px; }
+.op-device--vision { aspect-ratio: 16 / 9; width: 640px; border-radius: 28px; padding: 0; background: transparent; }
+.op-device--android { aspect-ratio: 1080 / 2400; width: 270px; border-radius: 36px; padding: 9px; }
+.op-device--android > img { border-radius: 28px; }
+/* Frames shrink with their column on small screens */
+@media (max-width: 600px) { .op-device { width: 100% !important; } .op-device--iphone, .op-device--android { width: 70% !important; } .op-device--watch, .op-device--watch-round, .op-device--wear { width: 50% !important; } }
+
+/* FAQ: native details/summary, mirrored into FAQPage JSON-LD by the page template */
+.op-faq { border-top: 1px solid var(--rule); }
+.op-faq details { border-bottom: 1px solid var(--rule); }
+.op-faq summary {
+  display: flex; justify-content: space-between; gap: var(--space-4); align-items: center;
+  padding: var(--space-4) 0; cursor: pointer; list-style: none;
+  font-weight: var(--weight-bold); line-height: var(--leading-snug);
+}
+.op-faq summary::-webkit-details-marker { display: none; }
+.op-faq summary::after { content: "+"; font-size: 1.4em; color: var(--app-accent-ink); transition: transform var(--dur-base) var(--ease-out); }
+.op-faq details[open] summary::after { transform: rotate(45deg); }
+.op-faq details > div { padding: 0 0 var(--space-5); color: var(--ink-soft); }
+
+/* Legal pages: privacy, terms, support */
+.op-legal { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-7); padding-block: var(--space-7) var(--space-9); }
+@media (min-width: 900px) { .op-legal { grid-template-columns: 240px minmax(0, 1fr); } }
+.op-legal__toc { position: sticky; top: var(--space-5); align-self: start; font-size: var(--text-sm); }
+.op-legal__toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+.op-legal__toc a { color: var(--ink-soft); text-decoration: none; }
+.op-legal__toc a:hover { color: var(--app-accent-ink); }
+.op-legal__meta { font-size: var(--text-sm); color: var(--ink-faint); }
+.op-legal h2 { font-size: var(--text-xl); margin-top: var(--space-7); scroll-margin-top: var(--space-5); }
+.op-legal table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.op-legal th, .op-legal td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--rule); vertical-align: top; }
+.op-legal .op-tablewrap { overflow-x: auto; }
+
+/* Contact block: the address is plain text so search engines and reviewers can read it */
+.op-contact { padding: var(--space-5); border-radius: var(--radius-lg); background: var(--paper-2); }
+.op-contact address { font-style: normal; }
+
+/* Language switcher: real links to each language's URL */
+.op-lang { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-3); padding: 0; margin: 0; list-style: none; font-size: var(--text-sm); }
+.op-lang a { color: var(--ink-soft); text-decoration: none; }
+.op-lang a[aria-current="page"] { color: var(--ink); font-weight: var(--weight-bold); }
+
+/* Footer */
+.op-footer { border-top: 1px solid var(--rule); padding-block: var(--space-7); font-size: var(--text-sm); color: var(--ink-soft); }
+.op-footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: var(--space-5); }
+.op-footer h2 { font-size: var(--text-sm); color: var(--ink); margin-bottom: var(--space-3); }
+.op-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+.op-footer a { color: inherit; text-decoration: none; }
+.op-footer a:hover { color: var(--app-accent-ink); }
+
+/* Entrance motion: content is visible at rest; this only adds a short rise when supported */
+@media (prefers-reduced-motion: no-preference) {
+  .op-rise { animation: op-rise var(--dur-slow) var(--ease-out) both; }
+  .op-rise:nth-child(2) { animation-delay: 60ms; }
+  .op-rise:nth-child(3) { animation-delay: 120ms; }
+  @keyframes op-rise { from { transform: translateY(12px); opacity: .001; } }
+}

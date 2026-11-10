@@ -1,0 +1,74 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "cartoonphoto",
+  "name": "Cartoon Photo - AI Cartoon",
+  "subtitle": null,
+  "group": "legacy",
+  "priority": false,
+  "accent": {
+    "base": "#EA7420",
+    "ink": "#B75611",
+    "inkDark": "#EA7420",
+    "on": "#1B1814"
+  },
+  "category": "Graphics & Design",
+  "appStore": {
+    "id": 1614396365,
+    "url": "https://apps.apple.com/app/id1614396365",
+    "bundleId": "com.orientpro.cartoonphoto",
+    "version": "1.1",
+    "released": "2022-03-25",
+    "updated": "2024-01-15",
+    "minimumOs": "13.0",
+    "languages": [
+      "en"
+    ],
+    "price": "Free",
+    "rating": {
+      "value": 4.3,
+      "count": 10
+    },
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/2f/e6/a0/2fe6a048-8e46-229e-1ece-1c0fa0c08d05/AppIcon-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/",
+    "screenshots": {
+      "iphone": 6,
+      "ipad": 6
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": false,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": false,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": false,
+    "siri": false,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": null,
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "No app-specific privacy policy page on orlproducts.com.",
+    "No landing page on orlproducts.com."
+  ]
+}

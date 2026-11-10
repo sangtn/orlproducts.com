@@ -1,0 +1,80 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "pixeai",
+  "name": "PixeAI - AI Video Photo Editor",
+  "subtitle": null,
+  "group": "legacy",
+  "priority": false,
+  "accent": {
+    "base": "#AC27A6",
+    "ink": "#AC27A6",
+    "inkDark": "#D239CB",
+    "on": "#FFFFFF"
+  },
+  "category": "Graphics & Design",
+  "appStore": {
+    "id": 6450380621,
+    "url": "https://apps.apple.com/app/id6450380621",
+    "bundleId": "com.orientpro.snapai",
+    "version": "2.3",
+    "released": "2023-06-26",
+    "updated": "2025-02-26",
+    "minimumOs": "15.0",
+    "languages": [
+      "en",
+      "hi",
+      "id",
+      "ko",
+      "pt",
+      "es",
+      "vi"
+    ],
+    "price": "Free",
+    "rating": {
+      "value": 4.2,
+      "count": 5
+    },
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/23/7a/ee/237aee23-af20-adac-c0ca-31bb8aa57b59/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/",
+    "screenshots": {
+      "iphone": 9,
+      "ipad": 10
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": false,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": false,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": false,
+    "siri": false,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": null,
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "No app-specific privacy policy page on orlproducts.com.",
+    "No landing page on orlproducts.com."
+  ]
+}

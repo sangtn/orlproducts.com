@@ -1,0 +1,79 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "turbulenceforecast",
+  "name": "Turbulence Forecast : Bumpline",
+  "subtitle": "Know the bumps before you fly",
+  "group": "current",
+  "priority": false,
+  "accent": {
+    "base": "#428BCD",
+    "ink": "#3076B6",
+    "inkDark": "#428BCD",
+    "on": "#1B1814"
+  },
+  "category": "Weather",
+  "appStore": {
+    "id": 6816296527,
+    "url": "https://apps.apple.com/app/id6816296527",
+    "bundleId": "com.orientpro.TurbulenceForecast",
+    "version": "1.0",
+    "released": "2026-10-14",
+    "updated": "2026-10-14",
+    "minimumOs": "26.0",
+    "languages": [
+      "en",
+      "fr",
+      "de",
+      "it",
+      "ja",
+      "ko",
+      "pt",
+      "zh",
+      "es",
+      "vi"
+    ],
+    "price": "Free",
+    "rating": null,
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b3/32/63/b332634d-a91e-a2ec-a88b-396755f8f83e/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/",
+    "screenshots": {
+      "iphone": 8,
+      "ipad": 6
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": true,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": true,
+    "liveActivities": true,
+    "dynamicIsland": true,
+    "controlCenter": true,
+    "standBy": true,
+    "complications": true,
+    "siri": true,
+    "shortcuts": false,
+    "spotlight": true,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": "/turbulenceforecast-privacy.html",
+    "terms": "/turbulenceforecast-terms.html",
+    "support": "/turbulenceforecast-support.html"
+  },
+  "issues": [
+    "No landing page on orlproducts.com."
+  ]
+}

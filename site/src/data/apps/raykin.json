@@ -1,0 +1,46 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "raykin",
+  "name": "DICOM Viewer: Raykin",
+  "subtitle": null,
+  "group": "current",
+  "priority": false,
+  "accent": {
+    "base": "#1B609A",
+    "ink": "#1B609A",
+    "inkDark": "#2583D2",
+    "on": "#FFFFFF"
+  },
+  "category": "Medical",
+  "appStore": null,
+  "iosStatus": "in-review",
+  "googlePlay": {
+    "package": "com.orientpro.dicomviewer",
+    "url": "https://play.google.com/store/apps/details?id=com.orientpro.dicomviewer"
+  },
+  "androidStatus": "live",
+  "platforms": {
+    "android": true,
+    "wearOs": true
+  },
+  "surfaces": {
+    "widgets": false,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": false,
+    "siri": false,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": "/raykin.html",
+    "privacy": "/raykin-privacy.html",
+    "terms": "/raykin-terms.html",
+    "support": "/raykin-support.html"
+  },
+  "issues": []
+}
