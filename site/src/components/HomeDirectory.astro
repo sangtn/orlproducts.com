@@ -1,0 +1,13 @@
+---
+// Plain links to every app's page and policies. The 404 page links to #app-directory and store reviewers use it.
+import { directory } from '../lib/home';
+---
+<section class="op-section" id="app-directory" aria-labelledby="directory">
+  <h2 id="directory">Apps, privacy and support</h2>
+  <p>Every app with its privacy policy, terms of use and support page. General policies: <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a> · <a href="/contact.html">Contact</a>.</p>
+  <ul class="op-directory">
+    {directory.map((d) => (
+      <li><strong>{d.name}</strong><span>{d.links.map(([label, href], i) => <>{i > 0 && ' · '}<a href={href}>{label}</a></>)}</span></li>
+    ))}
+  </ul>
+</section>
