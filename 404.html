@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — ORIENTPRO</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="This page does not exist. Find every ORIENTPRO app, privacy policy and support page from here.">
+<link rel="icon" href="/assets/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap">
+<style>
+  /* ORIENTPRO Paper tokens (shared by every page of the new site) */
+  :root{
+    --paper:#FDFBF7; --paper-2:#F6EFE4; --ink:#1B1814; --ink-soft:#57504A; --rule:#E7DFD3;
+    --accent:#3D5AFE; --on-accent:#FFFFFF;
+    --font:'Comfortaa','Arial Rounded MT Bold','Hiragino Maru Gothic ProN','Yu Gothic UI',system-ui,sans-serif;
+    --radius:16px;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --paper:#17140F; --paper-2:#1F1B15; --ink:#F5EFE6; --ink-soft:#B6ADA2; --rule:#2E2820; --accent:#8C9EFF; --on-accent:#0E1430; color-scheme:dark}}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--paper);color:var(--ink);font:400 17px/1.7 var(--font);padding:48px 20px}
+  main{max-width:640px;width:100%}
+  .code{font-weight:700;font-size:clamp(72px,18vw,128px);line-height:1;letter-spacing:-.04em;color:var(--accent)}
+  h1{font-weight:700;font-size:clamp(26px,5vw,34px);line-height:1.25;margin:16px 0 8px}
+  p{color:var(--ink-soft);margin:0 0 28px}
+  nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+  a{color:inherit}
+  nav a{display:block;padding:14px 16px;border:1px solid var(--rule);border-radius:var(--radius);background:var(--paper-2);text-decoration:none;font-weight:600;transition:border-color .12s cubic-bezier(.2,.8,.2,1)}
+  nav a:hover{border-color:var(--accent)}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .home{display:inline-block;margin-top:28px;padding:12px 22px;border-radius:999px;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:700}
+</style>
+</head>
+<body>
+<main>
+  <div class="code" aria-hidden="true">404</div>
+  <h1>This page doesn’t exist</h1>
+  <p>The link may be old, or the address may have a typo. These pages are a good place to start.</p>
+  <nav aria-label="Popular pages">
+    <a href="/vizmath.html">VizMath</a>
+    <a href="/raykin.html">Raykin</a>
+    <a href="/chemistry3d.html">Chemistry 3D</a>
+    <a href="/origamilearn.html">Origami Learn</a>
+    <a href="/#app-directory">All apps and support</a>
+    <a href="/privacy.html">Privacy Policy</a>
+  </nav>
+  <a class="home" href="/">Go to the homepage</a>
+</main>
+</body>
+</html>
