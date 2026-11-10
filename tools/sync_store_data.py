@@ -121,6 +121,13 @@ def main():
         if m["appStoreId"] and not a:
             print(f'WARNING {m["slug"]}: App Store id {m["appStoreId"]} not returned by the API')
         desc = a.get("description", "") if a else ""
+        # orlproducts.pages.dev no longer resolves: point those links at the live site
+        desc = re.sub(r"https?://orlproducts\.pages\.dev/(privacy|terms)(\.html)?", r"https://orlproducts.com/\1.html", desc)
+        desc = re.sub(r"https?://orlproducts\.pages\.dev/?", "https://orlproducts.com/", desc)
+        for find, repl in m.get("textFixes", []):
+            if find not in desc and desc:
+                print(f'WARNING {m["slug"]}: text fix not applied, source changed: {find[:50]!r}')
+            desc = desc.replace(find, repl)
         play_shots = []
         if not a and m.get("playPackage"):
             try:
@@ -170,6 +177,8 @@ def main():
             "surfaces": {**{k: bool(re.search(p, desc, re.I)) for k, p in SURFACES.items()}, "carPlay": False},
             "web": m["web"],
             "generatePage": bool(m.get("generatePage")),
+            "contentLang": m.get("contentLang", "en"),
+            "metaDescription": m.get("metaDescription"),
             "description": desc,
             "screenshots": shots,
             "issues": [],

@@ -67,9 +67,22 @@
     "terms": null,
     "support": null
   },
-  "generatePage": false,
-  "description": "Save storage space on your iPhone or iPad by compressing your photos and reducing their size without reducing their quality. \n\n6 REASONS TO USE COMPRESS PHOTOS\n- Save space on your iPhone or iPad by reducing photos file size\n- Optimized for best image quality possible\n- Shrink photos to share them faster with friends and family\n- Quickly compress photos before posting them to social media\n- Very easy to use\n\nSAVE SPACE ON YOUR iPHONE\nAre you plagued by the “Storage almost full” alert on your iPhone or iPad? If so, this app can help! \nUse Compress Photos to shrink the file size of photos and regain storage space on your device. When applied to all your pictures, Compress Photos can help you store up to 10 times more photos on your iPhone or iPad.\n\nKEEP IMAGE QUALITY SHARP\nCompress Photos is easy to use but it is incredibly powerful. \nThe intelligent compression engine allows you to reduce the file size of photos without reducing their quality. With two compression settings to choose from, Compress Photos can easily shrink photos by 90% or more without a notable difference.\n\nEASILY LOCATE COMPRESSED PHOTOS\nCompressed photos are saved to both your main library and a dedicated album conveniently called “Compressed Photos” on your device, allowing you to easily locate processed pictures. This new album is automatically created when you run the app and save compressed photos to your device.\n\nSUPPORTED FILE TYPES\nCompress Photos works with all PNG, JPEG, HEIF, and HEIC image files.\n\nPayment will be charged to your iTunes account at confirmation of purchase and will auto-renew at the same price every year, unless canceled in your iTunes account settings at least 24 hours before the end of the current period. Subscriptions may be managed and auto-renewal may be turned off at any time by going to your account settings after purchase.\n\nTerms of use: https://orlincproducts.wixsite.com/compressphotos/termsofservice\n\nPrivacy policy: https://orlincproducts.wixsite.com/compressphotos/privacypolicy",
-  "screenshots": {},
+  "generatePage": true,
+  "contentLang": "en",
+  "metaDescription": null,
+  "description": "Save storage space on your iPhone or iPad by compressing your photos and reducing their size without reducing their quality. \n\n6 REASONS TO USE COMPRESS PHOTOS\n- Save space on your iPhone or iPad by reducing photos file size\n- Optimized for best image quality possible\n- Shrink photos to share them faster with friends and family\n- Quickly compress photos before posting them to social media\n- Very easy to use\n- Find every compressed photo in its own “Compressed Photos” album\n\nSAVE SPACE ON YOUR iPHONE\nAre you plagued by the “Storage almost full” alert on your iPhone or iPad? If so, this app can help! \nUse Compress Photos to shrink the file size of photos and regain storage space on your device. When applied to all your pictures, Compress Photos can help you store up to 10 times more photos on your iPhone or iPad.\n\nKEEP IMAGE QUALITY SHARP\nCompress Photos is easy to use but it is incredibly powerful. \nThe intelligent compression engine allows you to reduce the file size of photos without reducing their quality. With two compression settings to choose from, Compress Photos can easily shrink photos by 90% or more without a notable difference.\n\nEASILY LOCATE COMPRESSED PHOTOS\nCompressed photos are saved to both your main library and a dedicated album conveniently called “Compressed Photos” on your device, allowing you to easily locate processed pictures. This new album is automatically created when you run the app and save compressed photos to your device.\n\nSUPPORTED FILE TYPES\nCompress Photos works with all PNG, JPEG, HEIF, and HEIC image files.\n\nPayment will be charged to your iTunes account at confirmation of purchase and will auto-renew at the same price every year, unless canceled in your iTunes account settings at least 24 hours before the end of the current period. Subscriptions may be managed and auto-renewal may be turned off at any time by going to your account settings after purchase.\n\nTerms of use: https://orlincproducts.wixsite.com/compressphotos/termsofservice\n\nPrivacy policy: https://orlincproducts.wixsite.com/compressphotos/privacypolicy",
+  "screenshots": {
+    "iphone": [
+      "/assets/apps/compressphoto/iphone-01.webp",
+      "/assets/apps/compressphoto/iphone-02.webp",
+      "/assets/apps/compressphoto/iphone-03.webp"
+    ],
+    "ipad": [
+      "/assets/apps/compressphoto/ipad-01.webp",
+      "/assets/apps/compressphoto/ipad-02.webp",
+      "/assets/apps/compressphoto/ipad-03.webp"
+    ]
+  },
   "issues": [
     "No app-specific privacy policy page on orlproducts.com.",
     "No landing page on orlproducts.com."

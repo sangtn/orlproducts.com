@@ -21,6 +21,8 @@ export interface App {
   surfaces: Record<string, boolean>;
   web: { landing: string | null; privacy: string | null; terms: string | null; support: string | null };
   generatePage: boolean;
+  contentLang: string;
+  metaDescription: string | null;
   description: string;
   screenshots: { iphone?: string[]; ipad?: string[]; android?: string[] };
   issues: string[];

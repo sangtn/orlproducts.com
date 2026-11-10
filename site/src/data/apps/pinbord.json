@@ -65,9 +65,32 @@
     "terms": null,
     "support": null
   },
-  "generatePage": false,
-  "description": "Your note. On your Lock Screen. Every time you pick up your phone.\nTick items off without unlocking. No ads, nothing to share to unlock.\nAnd unlike every other Lock Screen note app — it comes back by itself.\n\nWHY PEOPLE USE PINBORD\n• The shopping list you actually see at the shop\n• The gate code, the parking level, the seat number\n• Three things to do today, ticked off without unlocking\n• A sentence you want in front of you a hundred times a day\n• Bin day, medication, the school trip on Thursday\n\nIT DOESN'T DISAPPEAR\nOther Lock Screen note apps rely on one iOS feature that the system switches off after a few hours — which is why your note keeps vanishing. Pinbord uses three: the big interactive card, a permanent Lock Screen widget, and an optional wallpaper. When the card expires, Pinbord brings it straight back — from a widget tap, Control Center, your Action Button, Siri, or a Shortcuts automation we help you set up in 20 seconds. Quietly: no buzzing, no notifications.\n\nTICK IT OFF WITHOUT UNLOCKING\nTap a checkbox right on the Lock Screen. The note updates instantly. Completed items can hide themselves so your list stays clean.\n\nMAKE IT YOURS\n120 papers in eight families — amber, sticky, retro, plain, night, calm, clear and gradient. Lined, grid, dotted or blank. 30 fonts including handwriting styles. Draw with pen or marker. Add photos and stickers. Five text sizes, up to 34 pt, so it reads at arm's length.\n\nBOARDS\nKeep Shopping, Work and Personal notes apart. Pin one, switch with Siri or from your Watch.\n\nSCHEDULED PINS\nSet a note to appear on the days it matters — every Tuesday, on the 1st, or one specific morning.\n\nEVERYWHERE YOU LOOK\niPhone, iPad, Apple Watch, StandBy, CarPlay Dashboard, Control Center, Action Button, Shortcuts and Siri. Optional private iCloud sync.\n\nNEVER LOSE A WORD\nEvery edit is saved and every version is restorable. Undo and redo anywhere. Deleted notes wait 30 days.\n\nPRIVATE BY DESIGN\nNo servers, no accounts, no third-party trackers. Notes stay on your device, or in your own private iCloud. Our privacy label says Data Not Collected — because we collect nothing.\n\nFREE FOREVER\nThe Lock Screen note, checkboxes, widgets, boards, sync and 30 papers are free, permanently. Studio Pass unlocks the full design library, unlimited boards and images, private boards and unlimited Scheduled Pins — as a one-time Forever purchase or a subscription.\n\nSubscriptions renew automatically unless cancelled at least 24 hours before the end of the current period and are charged to your Apple Account. Manage or cancel in Settings → Apple Account → Subscriptions.\n\nPrivacy Policy: https://orlproducts.pages.dev/privacy.html\nTerms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n\nGot ideas or feedback? Send them our way: info@orlproducts.com",
-  "screenshots": {},
+  "generatePage": true,
+  "contentLang": "en",
+  "metaDescription": null,
+  "description": "Your note. On your Lock Screen. Every time you pick up your phone.\nTick items off without unlocking. No ads, nothing to share to unlock.\nAnd unlike every other Lock Screen note app — it comes back by itself.\n\nWHY PEOPLE USE PINBORD\n• The shopping list you actually see at the shop\n• The gate code, the parking level, the seat number\n• Three things to do today, ticked off without unlocking\n• A sentence you want in front of you a hundred times a day\n• Bin day, medication, the school trip on Thursday\n\nIT DOESN'T DISAPPEAR\nOther Lock Screen note apps rely on one iOS feature that the system switches off after a few hours — which is why your note keeps vanishing. Pinbord uses three: the big interactive card, a permanent Lock Screen widget, and an optional wallpaper. When the card expires, Pinbord brings it straight back — from a widget tap, Control Center, your Action Button, Siri, or a Shortcuts automation we help you set up in 20 seconds. Quietly: no buzzing, no notifications.\n\nTICK IT OFF WITHOUT UNLOCKING\nTap a checkbox right on the Lock Screen. The note updates instantly. Completed items can hide themselves so your list stays clean.\n\nMAKE IT YOURS\n120 papers in eight families — amber, sticky, retro, plain, night, calm, clear and gradient. Lined, grid, dotted or blank. 30 fonts including handwriting styles. Draw with pen or marker. Add photos and stickers. Five text sizes, up to 34 pt, so it reads at arm's length.\n\nBOARDS\nKeep Shopping, Work and Personal notes apart. Pin one, switch with Siri or from your Watch.\n\nSCHEDULED PINS\nSet a note to appear on the days it matters — every Tuesday, on the 1st, or one specific morning.\n\nEVERYWHERE YOU LOOK\niPhone, iPad, Apple Watch, StandBy, CarPlay Dashboard, Control Center, Action Button, Shortcuts and Siri. Optional private iCloud sync.\n\nNEVER LOSE A WORD\nEvery edit is saved and every version is restorable. Undo and redo anywhere. Deleted notes wait 30 days.\n\nPRIVATE BY DESIGN\nNo servers, no accounts, no third-party trackers. Notes stay on your device, or in your own private iCloud. Our privacy label says Data Not Collected — because we collect nothing.\n\nFREE FOREVER\nThe Lock Screen note, checkboxes, widgets, boards, sync and 30 papers are free, permanently. Studio Pass unlocks the full design library, unlimited boards and images, private boards and unlimited Scheduled Pins — as a one-time Forever purchase or a subscription.\n\nSubscriptions renew automatically unless cancelled at least 24 hours before the end of the current period and are charged to your Apple Account. Manage or cancel in Settings → Apple Account → Subscriptions.\n\nPrivacy Policy: https://orlproducts.com/privacy.html\nTerms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n\nGot ideas or feedback? Send them our way: info@orlproducts.com",
+  "screenshots": {
+    "iphone": [
+      "/assets/apps/pinbord/iphone-01.webp",
+      "/assets/apps/pinbord/iphone-02.webp",
+      "/assets/apps/pinbord/iphone-03.webp",
+      "/assets/apps/pinbord/iphone-04.webp",
+      "/assets/apps/pinbord/iphone-05.webp",
+      "/assets/apps/pinbord/iphone-06.webp",
+      "/assets/apps/pinbord/iphone-07.webp",
+      "/assets/apps/pinbord/iphone-08.webp"
+    ],
+    "ipad": [
+      "/assets/apps/pinbord/ipad-01.webp",
+      "/assets/apps/pinbord/ipad-02.webp",
+      "/assets/apps/pinbord/ipad-03.webp",
+      "/assets/apps/pinbord/ipad-04.webp",
+      "/assets/apps/pinbord/ipad-05.webp",
+      "/assets/apps/pinbord/ipad-06.webp",
+      "/assets/apps/pinbord/ipad-07.webp",
+      "/assets/apps/pinbord/ipad-08.webp"
+    ]
+  },
   "issues": [
     "App Store Developer Website points to https://orlproducts.pages.dev/, which does not resolve.",
     "No app-specific privacy policy page on orlproducts.com.",

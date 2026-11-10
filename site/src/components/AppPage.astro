@@ -1,0 +1,188 @@
+---
+// An app landing page in one language. Used by pages/[app].astro (original language)
+// and pages/[lang]/[app].astro (translations from site/src/data/i18n).
+import Base from '../layouts/Base.astro';
+import StoreBadges from './StoreBadges.astro';
+import PlatformChips from './PlatformChips.astro';
+import AppCard from './AppCard.astro';
+import { apps, shortName, type App } from '../lib/apps';
+import { parseDescription, summary } from '../lib/description';
+import { translationFor, translatedLangs, appPageUrl, localizedLegacy, type Translation } from '../lib/translations';
+import { t, categoryName, BADGE_LANG } from '../lib/ui';
+
+interface Props { app: App; lang: string }
+const { app, lang } = Astro.props;
+const tr: Translation | undefined = lang === app.contentLang ? undefined : translationFor(app.slug, lang);
+const s = t(lang);
+const site = Astro.site!.origin;
+const path = appPageUrl(app, lang);
+const name = shortName(app);
+
+const subtitle = tr ? tr.subtitle : app.subtitle;
+const text = tr ? tr.description : app.description;
+const nameWords = new Set(app.name.toLowerCase().match(/[\p{L}\d]+/gu) ?? []);
+const repeats = (subtitle?.toLowerCase().match(/[\p{L}\d]+/gu) ?? []).some((w) => w.length > 3 && nameWords.has(w));
+const withSub = `${app.name} — ${subtitle}`;
+// Translations always carry words in their own language, so every language version has its own title
+const title = subtitle && !repeats && withSub.length <= 60 ? withSub
+  : !tr ? app.name
+  : subtitle && `${name} — ${subtitle}`.length <= 65 ? `${name} — ${subtitle}`
+  : `${app.name} — ${categoryName(lang, app.category)}`;
+const description = tr ? tr.metaDescription : app.metaDescription ?? summary(app.description);
+const blocks = parseDescription(text);
+
+const shots = app.screenshots.iphone?.length ? app.screenshots.iphone : app.screenshots.android ?? [];
+const shotFrame = app.screenshots.iphone?.length ? 'iphone' : 'android';
+const ipadShots = app.screenshots.ipad ?? [];
+const heroImage = shots[0] ?? `/assets/icons/${app.slug}.png`;
+
+const works: string[] = [];
+if (app.platforms.iphone) works.push('iPhone');
+if (app.platforms.ipad) works.push('iPad');
+if (app.platforms.mac === 'native') works.push('Mac');
+if (app.platforms.watch) works.push('Apple Watch');
+if (app.platforms.vision === 'native') works.push('Apple Vision Pro');
+if (app.platforms.android) works.push('Android');
+if (app.platforms.wearOs) works.push('Wear OS');
+
+const langNames = new Intl.DisplayNames([lang], { type: 'language' });
+const langs = (app.appStore?.languages ?? []).map((l) => { try { return langNames.of(l) ?? l; } catch { return l; } });
+const dateFmt = (d: string) => new Date(d).toLocaleDateString(lang, { day: 'numeric', month: 'long', year: 'numeric' });
+const facts: [string, string][] = [];
+if (app.category) facts.push([s.category, categoryName(lang, app.category)]);
+if (app.appStore) facts.push([s.price, app.appStore.price === 'Free' ? s.free : app.appStore.price]);
+if (app.appStore) facts.push([s.requires, s.iosOrLater(app.appStore.minimumOs)]);
+if (works.length) facts.push([s.worksOn, works.join(', ')]);
+if (langs.length) facts.push([langs.length === 1 ? s.language : s.languages(langs.length), langs.join(', ')]);
+if (app.appStore) facts.push([s.version, `${app.appStore.version}, ${s.updated} ${dateFmt(app.appStore.updated)}`]);
+if (app.appStore?.contentRating) facts.push([s.ageRating, app.appStore.contentRating]);
+facts.push([s.developer, 'ORIENTPRO (Lam An Investment and Trade JSC)']);
+
+const related = apps
+  .filter((a) => a.slug !== app.slug && a.group === 'current')
+  .sort((a, b) => Number(b.category === app.category) - Number(a.category === app.category) || Number(b.priority) - Number(a.priority))
+  .slice(0, 3);
+
+// Every language version of this page, for hreflang (x-default = the original language)
+const versions: [string, string][] = [[app.contentLang, `/${app.slug}.html`], ...translatedLangs(app.slug).filter((l) => l !== app.contentLang).map((l) => [l, `/${l}/${app.slug}.html`] as [string, string])];
+const alternates: [string, string][] = versions.length > 1 ? [...versions, ['x-default', `/${app.slug}.html`]] : [];
+
+const os: string[] = [];
+if (app.appStore) os.push(`iOS ${app.appStore.minimumOs}`);
+if (app.platforms.watch) os.push('watchOS');
+if (app.platforms.mac === 'native') os.push('macOS');
+if (app.platforms.vision === 'native') os.push('visionOS');
+if (app.platforms.android) os.push('Android');
+
+const appLd: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  '@id': `${site}/${app.slug}.html#app`,
+  name: app.name,
+  alternateName: name !== app.name ? name : undefined,
+  description,
+  url: `${site}${path}`,
+  image: `${site}/assets/icons/${app.slug}.png`,
+  screenshot: shots.slice(0, 4).map((x) => `${site}${x}`),
+  applicationCategory: app.category,
+  operatingSystem: os.join(', '),
+  installUrl: app.appStore?.url ?? app.googlePlay?.url,
+  inLanguage: lang,
+  softwareVersion: app.appStore?.version,
+  datePublished: app.appStore?.released,
+  dateModified: app.appStore?.updated,
+  contentRating: app.appStore?.contentRating,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  author: { '@id': `${site}/#org` },
+  publisher: { '@type': 'Organization', '@id': `${site}/#org`, name: 'ORIENTPRO', url: `${site}/` },
+  ...(app.appStore?.rating && app.appStore.rating.count > 0
+    ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: app.appStore.rating.value, ratingCount: app.appStore.rating.count, bestRating: 5, worstRating: 1 } }
+    : {}),
+};
+const crumbsLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'ORIENTPRO', item: `${site}/` },
+    { '@type': 'ListItem', position: 2, name: s.allApps, item: `${site}/apps.html` },
+    { '@type': 'ListItem', position: 3, name, item: `${site}${path}` },
+  ],
+};
+const legal: [string, string][] = [];
+if (app.web.support) legal.push([s.support, localizedLegacy(app.web.support, lang)]);
+legal.push([s.privacy, localizedLegacy(app.web.privacy ?? '/privacy.html', lang)]);
+legal.push([s.terms, localizedLegacy(app.web.terms ?? '/terms.html', lang)]);
+const LANG_LABEL: Record<string, string> = { en: 'English', vi: 'Tiếng Việt', ja: '日本語', es: 'Español', fr: 'Français', de: 'Deutsch' };
+---
+<Base title={title} description={description} path={path} image={heroImage} imageAlt={s.shot(name, 1)} app={app.slug} appStoreId={app.appStore?.id} jsonLd={[appLd, crumbsLd]} lang={lang} alternates={alternates}>
+  <div class="op-wrap">
+    <section class="op-hero">
+      <div class="op-hero__head">
+        <img class="op-icon op-icon--lg" src={`/assets/icons/${app.slug}.png`} alt={s.icon(name)} width="112" height="112" />
+        <div>
+          <p class="op-eyebrow">{categoryName(lang, app.category)}</p>
+          <h1>{app.name}</h1>
+          {subtitle && <p class="op-lead" style="margin:var(--space-2) 0 0">{subtitle}</p>}
+        </div>
+      </div>
+      <StoreBadges app={app} lang={BADGE_LANG[lang] ?? 'en'} />
+      {app.iosStatus === 'in-review' && <p class="op-hero__note">{s.inReview}</p>}
+      <PlatformChips app={app} lang={lang} />
+      {versions.length > 1 && (
+        <ul class="op-lang" aria-label="Language">
+          {versions.map(([l, p]) => <li><a href={p} hreflang={l} lang={l} aria-current={l === lang ? 'page' : undefined}>{LANG_LABEL[l] ?? l}</a></li>)}
+        </ul>
+      )}
+    </section>
+
+    {shots.length > 0 && (
+      <section class="op-section" aria-labelledby="shots">
+        <h2 id="shots">{s.screenshots}</h2>
+        <div class="op-shots" tabindex="0" aria-label={s.screenshots}>
+          {shots.map((x, i) => (
+            <div class={`op-device op-device--${shotFrame}`}><img src={x} alt={s.shot(name, i + 1)} loading={i < 2 ? 'eager' : 'lazy'} decoding="async" /></div>
+          ))}
+        </div>
+        {ipadShots.length > 0 && (
+          <div class="op-shots" tabindex="0" aria-label={`${name} ${s.onIpad}`}>
+            {ipadShots.map((x, i) => (
+              <div class="op-device op-device--ipad"><img src={x} alt={s.shotIpad(name, i + 1)} loading="lazy" decoding="async" /></div>
+            ))}
+          </div>
+        )}
+      </section>
+    )}
+
+    <section class="op-section" aria-labelledby="about">
+      <h2 id="about">{s.about(name)}</h2>
+      <div class="op-desc">
+        {blocks.map((b) =>
+          b.type === 'h' ? <h3>{b.text}</h3> : b.type === 'ul' ? <ul>{b.items.map((x) => <li>{x}</li>)}</ul> : <p>{b.text}</p>,
+        )}
+        {tr && s.machineNote && <p class="op-legal__meta">{s.machineNote}</p>}
+      </div>
+    </section>
+
+    <section class="op-section" aria-labelledby="facts">
+      <h2 id="facts">{s.information}</h2>
+      <dl class="op-facts">
+        {facts.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
+      </dl>
+    </section>
+
+    <section class="op-section" aria-labelledby="help">
+      <h2 id="help">{s.help}</h2>
+      <ul class="op-links">
+        {legal.map(([label, href]) => <li><a class="op-button op-button--secondary" href={href}>{label}</a></li>)}
+      </ul>
+      <div class="op-contact" style="margin-top:var(--space-5)">
+        <p style="margin:0">{s.questions(name)} {s.writeTo} <a href={`mailto:info@orlproducts.com?subject=${encodeURIComponent(name)}`}>info@orlproducts.com</a>.</p>
+      </div>
+    </section>
+
+    <section class="op-section" aria-labelledby="more">
+      <h2 id="more">{s.more}</h2>
+      <div class="op-appgrid">{related.map((a) => <AppCard app={a} lang={lang} />)}</div>
+    </section>
+  </div>
+</Base>

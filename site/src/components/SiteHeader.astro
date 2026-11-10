@@ -1,4 +1,8 @@
 ---
+import { t } from '../lib/ui';
+interface Props { lang?: string }
+const { lang = 'en' } = Astro.props;
+const s = t(lang);
 ---
 <header class="op-header">
   <div class="op-wrap op-header__inner">
@@ -7,8 +11,8 @@
       <span>ORIENTPRO</span>
     </a>
     <nav aria-label="Main">
-      <a href="/apps.html">All apps</a>
-      <a href="/contact.html">Contact</a>
+      <a href="/apps.html">{s.allApps}</a>
+      <a href="/contact.html">{s.contact}</a>
     </nav>
   </div>
 </header>
