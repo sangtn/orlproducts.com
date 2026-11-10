@@ -3,6 +3,8 @@
   "slug": "aurora",
   "name": "Aurora Forecast: Auroline",
   "subtitle": null,
+  "brand": "Auroline",
+  "tagline": "Aurora Forecast",
   "group": "current",
   "priority": true,
   "accent": {

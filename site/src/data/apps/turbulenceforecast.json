@@ -3,6 +3,8 @@
   "slug": "turbulenceforecast",
   "name": "Turbulence Forecast : Bumpline",
   "subtitle": "Know the bumps before you fly",
+  "brand": "Bumpline",
+  "tagline": "Turbulence Forecast",
   "group": "current",
   "priority": false,
   "accent": {

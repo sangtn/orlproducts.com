@@ -3,6 +3,8 @@
   "slug": "globalsdr",
   "name": "Shortwave SDR Radio: GlobalSDR",
   "subtitle": "Ham, Scanner & Live SWL Tuner",
+  "brand": "GlobalSDR",
+  "tagline": "Shortwave SDR Radio",
   "group": "current",
   "priority": true,
   "accent": {

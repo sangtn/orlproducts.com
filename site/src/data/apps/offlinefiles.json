@@ -3,6 +3,8 @@
   "slug": "offlinefiles",
   "name": "Offline Files Download Manager",
   "subtitle": null,
+  "brand": "Offline Files",
+  "tagline": "Download Manager",
   "group": "legacy",
   "priority": false,
   "accent": {

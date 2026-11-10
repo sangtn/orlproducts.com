@@ -218,3 +218,6 @@
 /* App lists inside legal pages */
 .op-legal__body .op-columns { columns: 2 220px; column-gap: var(--space-6); padding-left: 1.1em; }
 .op-legal__body .op-columns li { break-inside: avoid; margin-bottom: var(--space-1); }
+
+/* "New" marker for apps released in the last 30 days */
+.home-new { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: var(--radius-pill); background: var(--app-accent); color: var(--app-on-accent); font: var(--weight-bold) 11px/1.5 var(--font); font-style: normal; letter-spacing: .03em; vertical-align: 2px; }

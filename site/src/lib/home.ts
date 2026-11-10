@@ -1,5 +1,5 @@
 // Everything the homepage shows, derived from the app data (site/src/data/apps/*.json).
-import { apps, pageUrl, shortName, type App } from './apps';
+import { apps, pageUrl, shortName, isNew, type App } from './apps';
 
 export const site = (origin: string) => ({
   '@context': 'https://schema.org',
@@ -16,10 +16,16 @@ export const site = (origin: string) => ({
 
 export const TELEGRAM = 'https://t.me/+MF4aYRoVeEJlMTVl';
 
-export const current = apps.filter((a) => a.group === 'current');
-export const legacy = apps.filter((a) => a.group === 'legacy');
+const released = (a: App) => a.appStore?.released ?? '';
 const updated = (a: App) => a.appStore?.updated ?? '';
-export const featured = [...current].sort((a, b) => Number(b.priority) - Number(a.priority) || updated(b).localeCompare(updated(a))).slice(0, 6);
+const byBrand = (a: App, b: App) => shortName(a).localeCompare(shortName(b));
+/** Newest releases first (the last 30 days), then A–Z by the name people know the app by. */
+export const current = apps.filter((a) => a.group === 'current')
+  .sort((a, b) => Number(isNew(b)) - Number(isNew(a)) || (isNew(a) && isNew(b) ? released(b).localeCompare(released(a)) : byBrand(a, b)));
+export const legacy = apps.filter((a) => a.group === 'legacy').sort(byBrand);
+/** New releases lead, then priority apps, then the most recently updated. */
+export const featured = [...current].sort((a, b) => Number(isNew(b)) - Number(isNew(a)) || released(b).localeCompare(released(a)) * Number(isNew(a) && isNew(b))
+  || Number(b.priority) - Number(a.priority) || updated(b).localeCompare(updated(a))).slice(0, 6);
 
 export const stats = {
   total: apps.length,

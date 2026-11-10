@@ -3,6 +3,8 @@
   "slug": "cartoonphoto",
   "name": "Cartoon Photo - AI Cartoon",
   "subtitle": null,
+  "brand": "Cartoon Photo",
+  "tagline": "AI Cartoon",
   "group": "legacy",
   "priority": false,
   "accent": {

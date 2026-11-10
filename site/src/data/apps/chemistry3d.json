@@ -3,6 +3,8 @@
   "slug": "chemistry3d",
   "name": "Chemistry 3D: Molecule Lab",
   "subtitle": null,
+  "brand": "Chemistry 3D",
+  "tagline": "Molecule Lab",
   "group": "current",
   "priority": false,
   "accent": {

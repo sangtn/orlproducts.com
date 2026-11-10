@@ -3,6 +3,8 @@
   "slug": "vizmath",
   "name": "VizMath: 3D Math Visualizer",
   "subtitle": "Graph, Animate, AR & 3D Print",
+  "brand": "VizMath",
+  "tagline": "3D Math Visualizer",
   "group": "current",
   "priority": false,
   "accent": {

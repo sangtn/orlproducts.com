@@ -3,6 +3,8 @@
   "slug": "compressvideos",
   "name": "Compress Videos - Shrink Video",
   "subtitle": null,
+  "brand": "Compress Videos",
+  "tagline": "Shrink Video",
   "group": "legacy",
   "priority": false,
   "accent": {

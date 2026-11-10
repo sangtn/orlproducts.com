@@ -3,6 +3,8 @@
   "slug": "babi",
   "name": "Babi: Baby Care & Daily Guide",
   "subtitle": "Dress, Pack, Plan the day",
+  "brand": "Babi",
+  "tagline": "Baby Care & Daily Guide",
   "group": "current",
   "priority": false,
   "accent": {

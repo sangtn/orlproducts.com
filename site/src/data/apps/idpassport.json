@@ -3,6 +3,8 @@
   "slug": "idpassport",
   "name": "ID Passport Photo Booth AI",
   "subtitle": null,
+  "brand": "ID Passport",
+  "tagline": "Photo Booth AI",
   "group": "legacy",
   "priority": false,
   "accent": {

@@ -3,6 +3,8 @@
   "slug": "origamilearn",
   "name": "Origami Learn: Guide, Practice",
   "subtitle": "Origami Guide, Creative Crafts",
+  "brand": "Origami Learn",
+  "tagline": "Guide & Practice",
   "group": "current",
   "priority": false,
   "accent": {

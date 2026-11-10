@@ -20,7 +20,9 @@
       "accentInkDark": "#796DF3",
       "accentOn": "#FFFFFF",
       "visionNative": true,
-      "generatePage": false
+      "generatePage": false,
+      "brand": "VizMath",
+      "tagline": "3D Math Visualizer"
     },
     {
       "slug": "raykin",
@@ -43,7 +45,9 @@
       "accentInk": "#1B609A",
       "accentInkDark": "#2583D2",
       "accentOn": "#FFFFFF",
-      "generatePage": false
+      "generatePage": false,
+      "brand": "Raykin",
+      "tagline": "DICOM Viewer"
     },
     {
       "slug": "chemistry3d",
@@ -65,7 +69,9 @@
       "accentInk": "#136C85",
       "accentInkDark": "#1889A9",
       "accentOn": "#FFFFFF",
-      "generatePage": false
+      "generatePage": false,
+      "brand": "Chemistry 3D",
+      "tagline": "Molecule Lab"
     },
     {
       "slug": "omnidoc",
@@ -87,7 +93,9 @@
       "accentInk": "#0671E6",
       "accentInkDark": "#3E98FA",
       "accentOn": "#1B1814",
-      "generatePage": true
+      "generatePage": true,
+      "brand": "OmniDoc",
+      "tagline": "Meeting & Class Notes"
     },
     {
       "slug": "origamilearn",
@@ -106,7 +114,9 @@
       "accentInk": "#B85800",
       "accentInkDark": "#FF8A1F",
       "accentOn": "#1B1814",
-      "generatePage": false
+      "generatePage": false,
+      "brand": "Origami Learn",
+      "tagline": "Guide & Practice"
     },
     {
       "slug": "paddlepilot",
@@ -125,7 +135,9 @@
       "accentInk": "#8C6F04",
       "accentInkDark": "#F9CC20",
       "accentOn": "#1B1814",
-      "generatePage": true
+      "generatePage": true,
+      "brand": "PaddlePilot",
+      "tagline": "Kayak, Canoe & SUP"
     },
     {
       "slug": "turbulenceforecast",
@@ -144,7 +156,9 @@
       "accentInk": "#3076B6",
       "accentInkDark": "#428BCD",
       "accentOn": "#1B1814",
-      "generatePage": true
+      "generatePage": true,
+      "brand": "Bumpline",
+      "tagline": "Turbulence Forecast"
     },
     {
       "slug": "globalsdr",
@@ -170,7 +184,9 @@
           "GlobalSDR"
         ]
       ],
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "GlobalSDR",
+      "tagline": "Shortwave SDR Radio"
     },
     {
       "slug": "world-monitor",
@@ -190,7 +206,9 @@
       "accentInkDark": "#2880DD",
       "accentOn": "#FFFFFF",
       "generatePage": true,
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "World Monitor",
+      "tagline": "Real-Time Events"
     },
     {
       "slug": "babi",
@@ -210,7 +228,9 @@
       "accentInkDark": "#FCD752",
       "accentOn": "#1B1814",
       "generatePage": true,
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "Babi",
+      "tagline": "Baby Care & Daily Guide"
     },
     {
       "slug": "somavue",
@@ -230,7 +250,9 @@
       "accentInkDark": "#1F80D9",
       "accentOn": "#FFFFFF",
       "generatePage": true,
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "Somavue",
+      "tagline": "3D Anatomy Learning"
     },
     {
       "slug": "speedgunner",
@@ -251,7 +273,9 @@
       "accentInkDark": "#FD0507",
       "accentOn": "#FFFFFF",
       "generatePage": true,
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "SpeedGunner AI",
+      "tagline": "Speed Camera"
     },
     {
       "slug": "videoupscale",
@@ -271,7 +295,9 @@
       "accentInkDark": "#17A2C9",
       "accentOn": "#1B1814",
       "generatePage": true,
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "Video Upscale",
+      "tagline": "4K, 8K Restore"
     },
     {
       "slug": "voiceclock",
@@ -292,7 +318,9 @@
       "accentOn": "#FFFFFF",
       "generatePage": true,
       "carPlay": true,
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "Voice Clock",
+      "tagline": "Talking Clock"
     },
     {
       "slug": "aurora",
@@ -313,7 +341,9 @@
       "accentOn": "#FFFFFF",
       "generatePage": true,
       "carPlay": true,
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "Auroline",
+      "tagline": "Aurora Forecast"
     },
     {
       "slug": "pinbord",
@@ -334,7 +364,9 @@
       "accentOn": "#1B1814",
       "generatePage": true,
       "carPlay": true,
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "Pinbord",
+      "tagline": "Lock Screen Notes"
     },
     {
       "slug": "giavang",
@@ -361,7 +393,9 @@
           "Giá Vàng Live giúp nhà đầu tư vàng và ngoại tệ tại Việt Nam theo dõi giá trực tiếp, đầy đủ và tiện lợi trong một ứng dụng."
         ]
       ],
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "Giá Vàng Live",
+      "tagline": "Giá Ngoại Tệ"
     },
     {
       "slug": "livemate",
@@ -382,7 +416,9 @@
       "accentOn": "#1B1814",
       "generatePage": true,
       "metaDescription": "LiveMate plays IPTV playlists from Xtream API, M3U and M3U8 links, with live TV channel switching, favorites, multiple playlists and AirPlay to your TV.",
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "LiveMate",
+      "tagline": "IPTV Player"
     },
     {
       "slug": "randonauting",
@@ -402,7 +438,9 @@
       "accentInkDark": "#BF8504",
       "accentOn": "#1B1814",
       "generatePage": true,
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "Randonauting",
+      "tagline": "Adventure Around"
     },
     {
       "slug": "volumebooster",
@@ -421,7 +459,9 @@
       "accentInk": "#224B55",
       "accentInkDark": "#3E889A",
       "accentOn": "#FFFFFF",
-      "generatePage": true
+      "generatePage": true,
+      "brand": "Volume Booster",
+      "tagline": "Music Player"
     },
     {
       "slug": "offlinefiles",
@@ -441,7 +481,9 @@
       "accentInkDark": "#2882EB",
       "accentOn": "#1B1814",
       "generatePage": true,
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "Offline Files",
+      "tagline": "Download Manager"
     },
     {
       "slug": "pixeai",
@@ -462,7 +504,9 @@
       "accentOn": "#FFFFFF",
       "generatePage": true,
       "metaDescription": "PixeAI is an AI photo editor and video maker for iPhone and iPad: turn photos and footage into AI videos, and create art from an image and a prompt.",
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "PixeAI",
+      "tagline": "AI Video & Photo Editor"
     },
     {
       "slug": "cartoonphoto",
@@ -483,7 +527,9 @@
       "accentOn": "#1B1814",
       "generatePage": true,
       "metaDescription": "Turn your photos into 2D and 3D cartoons with one tap, then add backgrounds, layouts, stickers and text, and export with a transparent background.",
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "Cartoon Photo",
+      "tagline": "AI Cartoon"
     },
     {
       "slug": "compressphoto",
@@ -509,7 +555,9 @@
           "- Very easy to use\n- Find every compressed photo in its own “Compressed Photos” album\n"
         ]
       ],
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "Compress Photo",
+      "tagline": "Save Space"
     },
     {
       "slug": "compressvideos",
@@ -530,7 +578,9 @@
       "accentOn": "#FFFFFF",
       "generatePage": true,
       "metaDescription": "Compress one video, several videos or whole albums on iPhone and iPad. Choose resolution and bitrate, preview the quality and see the space you save.",
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "Compress Videos",
+      "tagline": "Shrink Video"
     },
     {
       "slug": "contactsbackup",
@@ -551,7 +601,9 @@
       "accentOn": "#1B1814",
       "generatePage": true,
       "metaDescription": "Back up all your iPhone contacts to .vcf and .csv files you email to yourself, merge duplicates and remove empty contacts. No server needed.",
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "Contacts Backup",
+      "tagline": "Restore & Clean"
     },
     {
       "slug": "idpassport",
@@ -578,7 +630,9 @@
           "info@orlproducts.com"
         ]
       ],
-      "generateSupport": true
+      "generateSupport": true,
+      "brand": "ID Passport",
+      "tagline": "Photo Booth AI"
     }
   ],
   "brand": {

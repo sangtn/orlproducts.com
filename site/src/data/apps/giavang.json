@@ -3,6 +3,8 @@
   "slug": "giavang",
   "name": "Giá Vàng Live - Giá Ngoại Tệ",
   "subtitle": null,
+  "brand": "Giá Vàng Live",
+  "tagline": "Giá Ngoại Tệ",
   "group": "current",
   "priority": false,
   "accent": {

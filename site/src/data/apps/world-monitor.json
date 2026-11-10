@@ -3,6 +3,8 @@
   "slug": "world-monitor",
   "name": "World Monitor: Real-Time Event",
   "subtitle": "Live War Tracker Live Conflict",
+  "brand": "World Monitor",
+  "tagline": "Real-Time Events",
   "group": "current",
   "priority": true,
   "accent": {

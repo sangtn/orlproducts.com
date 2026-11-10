@@ -146,6 +146,8 @@ def main():
             "slug": m["slug"],
             "name": (a["trackName"] if a else m.get("name")),
             "subtitle": m.get("subtitle"),
+            "brand": m.get("brand"),      # short name people know the app by (PaddlePilot)
+            "tagline": m.get("tagline"),  # what it is, from the store name (Kayak, Canoe & SUP)
             "group": m["group"],
             "priority": m["priority"],
             "accent": {"base": m.get("accent"), "ink": m.get("accentInk"), "inkDark": m.get("accentInkDark"), "on": m.get("accentOn")},

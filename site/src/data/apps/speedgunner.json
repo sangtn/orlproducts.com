@@ -3,6 +3,8 @@
   "slug": "speedgunner",
   "name": "SpeedGunner AI: Speed Camera",
   "subtitle": "Measure speed with your Camera",
+  "brand": "SpeedGunner AI",
+  "tagline": "Speed Camera",
   "group": "current",
   "priority": true,
   "accent": {

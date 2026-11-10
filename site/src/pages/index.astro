@@ -7,6 +7,7 @@ import PlatformChips from '../components/PlatformChips.astro';
 import HomeDirectory from '../components/HomeDirectory.astro';
 import DeveloperBadges from '../components/DeveloperBadges.astro';
 import { site, apps, current, legacy, featured, stats, cleanShot, poster, frameFor, pageUrl, shortName, TELEGRAM } from '../lib/home';
+import { tagline, isNew } from '../lib/apps';
 import '../styles/home.css';
 
 const wall = [...apps].sort((a, b) => a.slug.localeCompare(b.slug));
@@ -48,7 +49,7 @@ const wall = [...apps].sort((a, b) => a.slug.localeCompare(b.slug));
           <a class="home-feature" data-app={a.slug} href={pageUrl(a)}>
             <div class="home-feature__text">
               <img class="op-icon" src={`/assets/icons/${a.slug}.png`} alt="" width="64" height="64" loading="lazy" />
-              <p class="home-feature__name">{shortName(a)}</p>
+              <p class="home-feature__name">{shortName(a)}{isNew(a) && <em class="home-new">New</em>}</p>
               <p class="home-feature__sub">{a.subtitle ?? a.category}</p>
               <PlatformChips app={a} surfaces={false} />
             </div>
@@ -66,7 +67,7 @@ const wall = [...apps].sort((a, b) => a.slug.localeCompare(b.slug));
       <h2 id="current">All current apps</h2>
       <ul class="home-icons">
         {current.map((a) => (
-          <li data-app={a.slug}><a href={pageUrl(a)}><img src={`/assets/icons/${a.slug}.png`} alt="" width="72" height="72" loading="lazy" /><span>{shortName(a)}</span><small>{a.category}</small></a></li>
+          <li data-app={a.slug}><a href={pageUrl(a)}><img src={`/assets/icons/${a.slug}.png`} alt="" width="72" height="72" loading="lazy" /><span>{shortName(a)}{isNew(a) && <em class="home-new">New</em>}</span><small>{tagline(a)}</small></a></li>
         ))}
       </ul>
     </section>
@@ -75,7 +76,7 @@ const wall = [...apps].sort((a, b) => a.slug.localeCompare(b.slug));
       <h2 id="earlier">Earlier apps</h2>
       <ul class="home-icons home-icons--small">
         {legacy.map((a) => (
-          <li data-app={a.slug}><a href={pageUrl(a)}><img src={`/assets/icons/${a.slug}.png`} alt="" width="56" height="56" loading="lazy" /><span>{shortName(a)}</span></a></li>
+          <li data-app={a.slug}><a href={pageUrl(a)}><img src={`/assets/icons/${a.slug}.png`} alt="" width="56" height="56" loading="lazy" /><span>{shortName(a)}</span><small>{tagline(a)}</small></a></li>
         ))}
       </ul>
     </section>

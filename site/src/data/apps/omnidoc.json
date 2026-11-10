@@ -3,6 +3,8 @@
   "slug": "omnidoc",
   "name": "OmniDoc: Meeting & Class Notes",
   "subtitle": null,
+  "brand": "OmniDoc",
+  "tagline": "Meeting & Class Notes",
   "group": "current",
   "priority": true,
   "accent": {

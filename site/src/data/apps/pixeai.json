@@ -3,6 +3,8 @@
   "slug": "pixeai",
   "name": "PixeAI - AI Video Photo Editor",
   "subtitle": null,
+  "brand": "PixeAI",
+  "tagline": "AI Video & Photo Editor",
   "group": "legacy",
   "priority": false,
   "accent": {

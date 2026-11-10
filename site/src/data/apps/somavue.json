@@ -3,6 +3,8 @@
   "slug": "somavue",
   "name": "3D Anatomy Learning: Somavue",
   "subtitle": "Learn & Recall the Human Body",
+  "brand": "Somavue",
+  "tagline": "3D Anatomy Learning",
   "group": "current",
   "priority": false,
   "accent": {

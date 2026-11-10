@@ -3,6 +3,8 @@
   "slug": "paddlepilot",
   "name": "Kayak Canoe SUP: PaddlePilot",
   "subtitle": "Canoe & SUP River Trip Planner",
+  "brand": "PaddlePilot",
+  "tagline": "Kayak, Canoe & SUP",
   "group": "current",
   "priority": false,
   "accent": {

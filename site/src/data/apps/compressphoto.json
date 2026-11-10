@@ -3,6 +3,8 @@
   "slug": "compressphoto",
   "name": "Compress Photo & Save Space",
   "subtitle": null,
+  "brand": "Compress Photo",
+  "tagline": "Save Space",
   "group": "legacy",
   "priority": false,
   "accent": {

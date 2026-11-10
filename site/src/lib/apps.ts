@@ -4,6 +4,8 @@ export interface App {
   slug: string;
   name: string;
   subtitle: string | null;
+  brand: string | null;
+  tagline: string | null;
   group: 'current' | 'legacy';
   priority: boolean;
   accent: { base: string; ink: string; inkDark: string; on: string };
@@ -35,7 +37,13 @@ export const apps: App[] = Object.values(modules).sort((a, b) =>
 export const bySlug = (slug: string) => apps.find((a) => a.slug === slug)!;
 
 /** Short display name: "VizMath: 3D Math Visualizer" -> "VizMath". */
-export const shortName = (a: App) => a.name.split(/\s[:\-–]\s|:\s/)[0].trim();
+export const shortName = (a: App) => a.brand ?? a.name.split(/\s[:\-–]\s|:\s/)[0].trim();
+/** What the app is, in a few words, from its store name ("Kayak, Canoe & SUP"). */
+export const tagline = (a: App) => a.tagline ?? a.subtitle ?? a.category ?? '';
+
+/** Released on the App Store or Google Play in the last 30 days (at build time). */
+export const NEW_DAYS = 30;
+export const isNew = (a: App) => !!a.appStore?.released && Date.now() - Date.parse(a.appStore.released) < NEW_DAYS * 864e5;
 
 /** Where a card should link: our page if there is one, otherwise the store listing. */
 export const pageUrl = (a: App) =>

@@ -3,6 +3,8 @@
   "slug": "raykin",
   "name": "DICOM Viewer: Raykin",
   "subtitle": null,
+  "brand": "Raykin",
+  "tagline": "DICOM Viewer",
   "group": "current",
   "priority": false,
   "accent": {

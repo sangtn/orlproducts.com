@@ -3,6 +3,8 @@
   "slug": "contactsbackup",
   "name": "Contacts Backup. Restore.Clean",
   "subtitle": null,
+  "brand": "Contacts Backup",
+  "tagline": "Restore & Clean",
   "group": "legacy",
   "priority": false,
   "accent": {

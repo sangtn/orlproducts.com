@@ -3,6 +3,8 @@
   "slug": "livemate",
   "name": "LiveMate – IPTV Player",
   "subtitle": null,
+  "brand": "LiveMate",
+  "tagline": "IPTV Player",
   "group": "current",
   "priority": false,
   "accent": {

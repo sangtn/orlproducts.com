@@ -3,6 +3,8 @@
   "slug": "videoupscale",
   "name": "Video Upscale: 4K, 8K Restore",
   "subtitle": "Restore Old Family Videos",
+  "brand": "Video Upscale",
+  "tagline": "4K, 8K Restore",
   "group": "current",
   "priority": false,
   "accent": {

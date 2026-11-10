@@ -3,6 +3,8 @@
   "slug": "randonauting",
   "name": "Randonauting Adventure Around",
   "subtitle": null,
+  "brand": "Randonauting",
+  "tagline": "Adventure Around",
   "group": "legacy",
   "priority": false,
   "accent": {

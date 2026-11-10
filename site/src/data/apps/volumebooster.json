@@ -3,6 +3,8 @@
   "slug": "volumebooster",
   "name": "Volume Booster - Music Player",
   "subtitle": null,
+  "brand": "Volume Booster",
+  "tagline": "Music Player",
   "group": "legacy",
   "priority": false,
   "accent": {

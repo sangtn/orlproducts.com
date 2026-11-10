@@ -3,6 +3,8 @@
   "slug": "voiceclock",
   "name": "Voice Clock: Talking Clock",
   "subtitle": "Talking Clock Voice Alerts",
+  "brand": "Voice Clock",
+  "tagline": "Talking Clock",
   "group": "current",
   "priority": false,
   "accent": {

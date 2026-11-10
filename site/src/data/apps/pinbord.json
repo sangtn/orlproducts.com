@@ -3,6 +3,8 @@
   "slug": "pinbord",
   "name": "Lock Screen Notes - Pinbord",
   "subtitle": null,
+  "brand": "Pinbord",
+  "tagline": "Lock Screen Notes",
   "group": "current",
   "priority": false,
   "accent": {
