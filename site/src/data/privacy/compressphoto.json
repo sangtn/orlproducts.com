@@ -1,0 +1,45 @@
+{
+  "slug": "compressphoto",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Used to Track You",
+      "items": [
+        "Usage Data"
+      ]
+    },
+    {
+      "type": "Data Linked to You",
+      "items": [
+        "User Content",
+        "Usage Data",
+        "Diagnostics"
+      ]
+    }
+  ],
+  "basis": "App Store privacy label, the app's App Store description and its earlier privacy policy (orlincproducts.wixsite.com).",
+  "confirmed": false,
+  "partners": [
+    {
+      "name": "Google Firebase Analytics",
+      "what": "Usage and diagnostic analytics, as named in this app's earlier privacy policy.",
+      "policy": "https://policies.google.com/privacy"
+    }
+  ],
+  "extra": [],
+  "icloud": false,
+  "summary": "Compress Photo makes your photos smaller to save storage on your iPhone or iPad. Compression runs on your device.",
+  "onDevice": [
+    "Your photos, and the compressed copies saved to your library and the “Compressed Photos” album"
+  ],
+  "permissions": [
+    {
+      "name": "Photos",
+      "why": "To read the photos you choose and save compressed copies.",
+      "optional": false
+    }
+  ],
+  "services": [],
+  "purchases": "Premium is sold through the App Store as a yearly subscription. Apple handles payment.",
+  "tracking": true
+}

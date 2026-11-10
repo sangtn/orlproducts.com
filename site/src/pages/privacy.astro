@@ -1,14 +1,75 @@
 ---
-// /privacy.html: the general ORIENTPRO privacy policy (text unchanged from the previous page; see tools/extract_legal.py).
-// Babi, Turbulence Forecast, World Monitor and Origami Learn link here from the App Store.
+// /privacy.html: the company-wide ORIENTPRO privacy policy. App-specific facts (store privacy label,
+// permissions, services, SDKs) are on each app's own page, listed below from the app data.
 import LegalPage from '../components/LegalPage.astro';
-import text from '../content/legal/privacy.html?raw';
+import { apps } from '../lib/apps';
+
+const EFFECTIVE = '10 November 2026';
+const withPage = apps.filter((a) => a.web.privacy && a.web.privacy !== '/privacy.html');
+const list = withPage.map((a) => `<li><a href="${a.web.privacy}">${a.name}</a></li>`).join('');
+
+const html = `
+<h2>Who we are</h2>
+<p>ORIENTPRO is the trading name of LA Investment and Trade JSC. We make the apps listed below for iPhone, iPad, Mac, Apple Watch, Apple Vision Pro and Android, and we run this website, orlproducts.com. In this policy "we" and "us" mean ORIENTPRO. Write to us at <a href="mailto:info@orlproducts.com">info@orlproducts.com</a>.</p>
+
+<h2>How this policy works with each app's page</h2>
+<p>Our apps do very different things, so each app has its own privacy page. It lists what we declared to Apple and Google for that app, the permissions it asks for, and the services and partners it uses. This page covers what applies to all of them: the kinds of data our apps can involve, your rights, and how we look after data. If an app's own page is more specific than this one, the app's page applies to that app.</p>
+<ul class="op-columns">${list}</ul>
+
+<h2>Our principles</h2>
+<ul>
+<li>Most of our apps need no account and keep what you create on your device, or in your own private iCloud when you turn sync on. We cannot read data stored there.</li>
+<li>Apps whose App Store label says "Data Not Collected" send us nothing about you and contain no advertising or analytics SDK.</li>
+<li>We do not sell personal data.</li>
+<li>We ask for a permission (location, camera, photos, microphone, contacts, notifications) only when you use the feature that needs it, and the app keeps working without the ones that are optional.</li>
+</ul>
+
+<h2>Information that can be involved</h2>
+<p><strong>Messages you send us.</strong> If you email us, we receive your email address and whatever you write, and use them to answer you.</p>
+<p><strong>Content you create.</strong> Notes, photos, recordings, measurements, study progress and similar content stay on your device or in your iCloud, unless an app's page says a feature sends something for processing (for example an AI feature), and then only what you choose to submit.</p>
+<p><strong>Purchases.</strong> In-app purchases and subscriptions are sold by Apple or Google. They handle payment and send us only a confirmation of what was bought, never your card details. Some apps check that confirmation to unlock features.</p>
+<p id="advertising"><strong>Advertising and analytics in some apps.</strong> Some older apps and the free Android version of some apps show ads or measure usage with third-party SDKs, such as Google AdMob and Google Firebase. These can collect device identifiers (such as the advertising identifier), usage data and diagnostics, as listed in that app's store privacy label and on its page. On iPhone and iPad we ask your permission through App Tracking Transparency before any tracking; on Android you can reset or delete your advertising ID in your device settings. These partners process data under their own privacy policies, for example <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+<p><strong>Public data services.</strong> Some apps download public information, such as weather, space-weather or price data. Those requests do not include your name or contact details; where a request needs your location (for example a local forecast), the app's page says so.</p>
+<p><strong>This website.</strong> orlproducts.com is hosted by Vercel and served through Cloudflare. They process technical data such as your IP address and browser type to deliver the site and protect it from abuse, and may set strictly necessary security cookies. The website has no advertising or analytics cookies.</p>
+
+<h2>Why we use it, and on what basis</h2>
+<ul>
+<li>To provide the app features you use and the purchases you made (performance of a contract).</li>
+<li>To answer your messages (performance of a contract, or our legitimate interest in supporting our users).</li>
+<li>To show ads and measure use in the apps that have them (your consent, where the law requires it, given through App Tracking Transparency or your device and ad settings).</li>
+<li>To keep our apps and website secure and to meet legal obligations (legitimate interest and legal obligation).</li>
+</ul>
+
+<h2>Sharing</h2>
+<p>We share data only with service providers that help us run our apps and website (the hosting, advertising and analytics providers named above or on an app's page), with Apple and Google for purchases, and with authorities when the law requires it. We do not sell personal data. Where an app shows personalised ads, the advertising identifier and related data may count as "sharing" for cross-context behavioural advertising under California law; you can stop it with the controls described above.</p>
+
+<h2>International transfers</h2>
+<p>We are based in Vietnam and our providers operate worldwide, so data can be processed outside your country. Where the law requires it, we rely on safeguards such as the European Commission's standard contractual clauses offered by our providers.</p>
+
+<h2>How long we keep data</h2>
+<p>Data on your device or in your iCloud stays under your control: deleting the app, or the app's data in iCloud settings, removes it. We keep support emails only as long as we need them to help you and to meet legal obligations. Advertising and analytics partners keep data according to their own policies.</p>
+
+<h2>Your rights</h2>
+<p>Depending on where you live, including under the EU and UK GDPR, California law (CCPA/CPRA) and Vietnam's Decree 13/2023/ND-CP on personal data protection, you can ask us to tell you what personal data we hold about you, correct it, delete it, restrict or object to its use, and receive a copy. You can withdraw consent at any time in your device settings. Write to <a href="mailto:info@orlproducts.com">info@orlproducts.com</a>; we will not treat you differently for using these rights. You can also complain to your local data protection authority.</p>
+
+<h2>Children</h2>
+<p>Our apps are not directed to children under 13, and we do not knowingly collect personal data from them. Apps for parents, such as Babi, are meant to be used by the parent. If you believe a child has sent us personal data, contact us and we will delete it.</p>
+
+<h2>Security</h2>
+<p>We keep the data we handle to a minimum and use the security measures of Apple, Google and our providers, including encryption in transit. No system is perfectly secure, so please contact us if you notice a problem.</p>
+
+<h2>Changes to this policy</h2>
+<p>We will update this page and its effective date when our practices change, and update each app's store privacy label at the same time. Significant changes will also be shown in the affected apps.</p>
+
+<h2>Contact</h2>
+<p>ORIENTPRO, LA Investment and Trade JSC · <a href="mailto:info@orlproducts.com">info@orlproducts.com</a></p>
+`;
 ---
 <LegalPage
   title="Privacy Policy — ORIENTPRO"
   heading="Privacy Policy"
-  description="The general ORIENTPRO privacy policy: what our apps and website collect, how it is used, and how to contact us about your data."
+  description="How ORIENTPRO apps and orlproducts.com handle personal data, your rights, and links to the privacy page of every ORIENTPRO app."
   path="/privacy.html"
-  html={text}
-  meta="Applies to ORIENTPRO apps, games, websites and related services. Questions: info@orlproducts.com"
+  html={html}
+  meta={`Effective ${EFFECTIVE} · Applies to all ORIENTPRO apps and orlproducts.com, together with each app's own privacy page.`}
 />

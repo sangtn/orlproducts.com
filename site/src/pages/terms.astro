@@ -1,13 +1,63 @@
 ---
-// /terms.html: ORIENTPRO Terms of Service (text unchanged from the previous page; see tools/extract_legal.py).
+// /terms.html: the company-wide ORIENTPRO Terms of Service. Apps with extra terms (subscriptions,
+// medical or safety notices) have their own page, listed below from the app data.
 import LegalPage from '../components/LegalPage.astro';
-import text from '../content/legal/terms.html?raw';
+import { apps } from '../lib/apps';
+
+const EFFECTIVE = '10 November 2026';
+const withTerms = apps.filter((a) => a.web.terms && a.web.terms !== '/terms.html');
+const list = withTerms.map((a) => `<li><a href="${a.web.terms}">${a.name}</a></li>`).join('');
+
+const html = `
+<h2>About these terms</h2>
+<p>These terms apply when you use an ORIENTPRO app or this website, orlproducts.com. ORIENTPRO is the trading name of LA Investment and Trade JSC ("we", "us"). By downloading or using an app, you agree to them. Some apps add terms of their own; for those apps, the app's terms apply together with these:</p>
+<ul class="op-columns">${list}</ul>
+
+<h2>Licence to use our apps</h2>
+<p>Apps downloaded from the App Store are licensed to you under <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's Standard Licensed Application End User License Agreement</a>. Apps downloaded from Google Play are provided under the <a href="https://play.google.com/about/play-terms/">Google Play Terms of Service</a>. These terms add to those agreements and do not reduce any right they give you.</p>
+
+<h2>Purchases and subscriptions</h2>
+<ul>
+<li>Our apps are free to download. Some offer optional paid features as subscriptions or one-time purchases, sold by Apple or Google.</li>
+<li>Subscriptions renew automatically at the price shown until you cancel them at least 24 hours before the end of the current period, in your Apple Account or Google Play settings. A free trial, if offered, ends when you buy a subscription.</li>
+<li>One-time (Lifetime) purchases do not renew.</li>
+<li>Refunds are handled by Apple or Google under their own policies; you can request one from them.</li>
+<li>Prices can change; a new price applies to a subscription only after you are told and, where required, agree.</li>
+</ul>
+
+<h2>Free features and ads</h2>
+<p>Free features stay free as described in each app. Some apps, or their free Android versions, show ads, as described on the app's privacy page.</p>
+
+<h2>Your content</h2>
+<p>What you create in our apps, such as notes, photos, recordings or measurements, belongs to you. You are responsible for content you import or create, and for having the right to use it. We do not claim any rights to it.</p>
+
+<h2>Acceptable use</h2>
+<p>Do not use our apps to break the law or anyone's rights, to access content or services you are not allowed to use, or to interfere with the apps or the services they connect to. Do not copy, resell or reverse-engineer the apps except as the law allows.</p>
+
+<h2>Third-party content and services</h2>
+<p>Some apps show data or connect to services that we do not control, such as weather and space-weather data, price feeds, radio receivers, maps or the IPTV playlists you add. We are not responsible for their content or availability, and their own terms apply.</p>
+
+<h2>Information, not professional advice</h2>
+<p>Our apps give estimates and information to help you, not professional advice. Medical images in Raykin are for viewing, not diagnosis. Forecasts of weather, turbulence or aurora, speed estimates, and gold or currency prices can be wrong or out of date. Do not rely on an app where an error could harm you or others; follow the official guidance for your situation.</p>
+
+<h2>Our responsibility</h2>
+<p>We work to keep our apps accurate and available, but they are provided "as is". To the extent the law allows, we are not liable for indirect or consequential losses, and our total liability to you is limited to the amount you paid us for the app in the six months before your claim. Nothing in these terms limits liability that cannot be limited by law, or your rights under the consumer protection laws where you live.</p>
+
+<h2>Changes and ending</h2>
+<p>We may update an app or these terms. We will post changes here with a new effective date; significant changes will also be shown in the affected apps. You can stop using an app at any time by deleting it and cancelling any subscription.</p>
+
+<h2>Disputes</h2>
+<p>If something goes wrong, please contact us first at <a href="mailto:info@orlproducts.com">info@orlproducts.com</a>; most problems can be solved quickly that way. This does not affect your right to go to a court or consumer body where you live.</p>
+
+<h2>Contact</h2>
+<p>ORIENTPRO, LA Investment and Trade JSC · <a href="mailto:info@orlproducts.com">info@orlproducts.com</a></p>
+`;
 ---
 <LegalPage
   title="Terms of Service — ORIENTPRO"
   heading="Terms of Service"
-  description="The terms that govern your use of ORIENTPRO apps, games, websites and related services, published by LA Investment & Trade JSC."
+  description="The terms for using ORIENTPRO apps and orlproducts.com: licences, purchases and subscriptions, your content, and app-specific terms."
   path="/terms.html"
-  html={text}
-  meta="Between you and ORIENTPRO – LA Investment & Trade JSC. Questions: info@orlproducts.com"
+  html={html}
+  meta={`Effective ${EFFECTIVE} · LA Investment and Trade JSC`}
 />

@@ -1,0 +1,50 @@
+{
+  "slug": "compressvideos",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Used to Track You",
+      "items": [
+        "Usage Data"
+      ]
+    },
+    {
+      "type": "Data Linked to You",
+      "items": [
+        "User Content",
+        "Identifiers"
+      ]
+    },
+    {
+      "type": "Data Not Linked to You",
+      "items": [
+        "Usage Data"
+      ]
+    }
+  ],
+  "basis": "App Store privacy label, the app's App Store description and its earlier privacy policy (orlincproducts.wixsite.com).",
+  "confirmed": false,
+  "partners": [
+    {
+      "name": "Google Firebase Analytics",
+      "what": "Usage and diagnostic analytics, as named in this app's earlier privacy policy.",
+      "policy": "https://policies.google.com/privacy"
+    }
+  ],
+  "extra": [],
+  "icloud": false,
+  "summary": "Compress Videos makes your videos smaller to save storage or share them more easily. Compression runs on your device.",
+  "onDevice": [
+    "Your videos, and the compressed copies you save"
+  ],
+  "permissions": [
+    {
+      "name": "Photos",
+      "why": "To read the videos you choose, save compressed copies and, if you ask, delete the originals.",
+      "optional": false
+    }
+  ],
+  "services": [],
+  "purchases": "Pro removes ads and compresses several videos at once. It is sold through the App Store as a yearly subscription. Apple handles payment.",
+  "tracking": true
+}

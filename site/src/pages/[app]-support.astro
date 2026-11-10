@@ -1,0 +1,91 @@
+---
+// Support pages -> /<slug>-support.html for apps with generateSupport in apps.manual.json.
+// Every answer comes from the app's data: platforms, store privacy label, permissions, languages,
+// and the store description's own sentence about the paid tier. Questions without data are left out.
+import Base from '../layouts/Base.astro';
+import { apps, bySlug, shortName, type App } from '../lib/apps';
+
+interface PrivacyData { summary: string; storeLabel: { type: string; items: string[] }[]; permissions: { name: string; why: string; optional: boolean }[]; purchases: string | null }
+const privacy = import.meta.glob<PrivacyData>('../data/privacy/*.json', { eager: true, import: 'default' });
+
+export function getStaticPaths() {
+  return apps.filter((a) => (a as App & { generateSupport?: boolean }).generateSupport).map((a) => ({ params: { app: a.slug }, props: { slug: a.slug } }));
+}
+
+const { slug } = Astro.props as { slug: string };
+const app = bySlug(slug);
+const name = shortName(app);
+const pd = privacy[`../data/privacy/${slug}.json`];
+const site = Astro.site!.origin;
+const path = `/${slug}-support.html`;
+
+const works: string[] = [];
+const p = app.platforms;
+if (p.iphone) works.push('iPhone');
+if (p.ipad) works.push('iPad');
+if (p.mac === 'native') works.push('Mac');
+if (p.watch) works.push('Apple Watch');
+if (p.vision === 'native') works.push('Apple Vision Pro');
+if (p.android) works.push('Android');
+if (p.wearOs) works.push('Wear OS');
+const surfaces = [app.surfaces.widgets && 'widgets', app.surfaces.liveActivities && 'Live Activities', app.surfaces.controlCenter && 'Control Center', app.surfaces.siri && 'Siri', app.surfaces.carPlay && 'CarPlay'].filter(Boolean) as string[];
+const list = (xs: string[]) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}`);
+
+const desc = app.description;
+const tier = desc.match(/[^.\n:]*(?:\bPro\b|\bPremium\b|\bPlus\b|Babi\+|Studio Pass)[^.\n]*\b(?:adds|unlocks|includes|removes?|gives)\b[^.\n]*\./)?.[0].trim();
+const hasSubscription = /subscri/i.test(desc) || /subscri/i.test(pd?.purchases ?? '');
+const hasPurchase = hasSubscription || /lifetime|purchase|premium|\bpro\b/i.test(desc);
+const noAccount = /no account|nothing to sign in|no accounts/i.test(desc + ' ' + (pd?.summary ?? ''));
+const notCollected = pd?.storeLabel.some((c) => c.type === 'Data Not Collected');
+const langNames = new Intl.DisplayNames(['en'], { type: 'language' });
+const langs = (app.appStore?.languages ?? []).map((l) => { try { return langNames.of(l) ?? l; } catch { return l; } });
+
+const faq: [string, string][] = [];
+faq.push([`Which devices does ${name} work on?`, `${name} works on ${list(works)}${app.appStore ? `, and needs iOS ${app.appStore.minimumOs} or later on iPhone` : ''}.${surfaces.length ? ` It also supports ${list(surfaces)}.` : ''}`]);
+if (noAccount) faq.push([`Do I need an account?`, `No. ${name} works without an account or sign-in.`]);
+if (pd) faq.push([`Does ${name} collect my data?`, notCollected
+  ? `No. ${name}'s App Store privacy label is "Data Not Collected". Details are on the ${name} privacy page.`
+  : `${name}'s App Store privacy label lists: ${pd.storeLabel.map((c) => `${c.type.toLowerCase()} (${c.items.join(', ').toLowerCase()})`).join('; ')}. The ${name} privacy page explains each one and how to turn tracking off.`]);
+if (pd && pd.permissions.length) faq.push([`Why does ${name} ask for permissions?`, pd.permissions.map((x) => `${x.name}: ${x.why}`).join(' ')]);
+if (tier) faq.push([`What do I get by upgrading?`, tier]);
+if (hasPurchase) faq.push([`How do I restore a purchase?`, `Sign in with the same Apple Account${p.android ? ' or Google account' : ''} you used to buy, open ${name}'s upgrade screen and tap Restore Purchases. Purchases belong to your account, so they also come back when you reinstall or move to a new device.`]);
+if (hasSubscription) faq.push([`How do I cancel a subscription?`, `On iPhone or iPad, open Settings, tap your name, then Subscriptions, choose ${name} and tap Cancel Subscription.${p.android ? ' On Android, open Google Play, tap your profile, then Payments and subscriptions, then Subscriptions.' : ''} Cancel at least 24 hours before the renewal date. Refunds are handled by Apple${p.android ? ' or Google' : ''}.`]);
+if (langs.length > 1) faq.push([`Which languages does ${name} support?`, `${list(langs)}. ${name} follows your device language.`]);
+faq.push([`How do I contact you?`, `Write to info@orlproducts.com. Tell us your device, the version of ${name} and what happened; a person reads every message.`]);
+
+const ld = [
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'ORIENTPRO', item: `${site}/` },
+    { '@type': 'ListItem', position: 2, name, item: `${site}/${slug}.html` },
+    { '@type': 'ListItem', position: 3, name: 'Support', item: `${site}${path}` },
+  ] },
+];
+const description = `Help with ${name}: devices, ${hasPurchase ? 'purchases and subscriptions, ' : ''}permissions, privacy and how to contact the ORIENTPRO team.`;
+---
+<Base title={`Support — ${app.name}`.slice(0, 70)} description={description.slice(0, 158)} path={path} app={slug} appStoreId={app.appStore?.id} jsonLd={ld}>
+  <div class="op-wrap op-legal">
+    <nav class="op-legal__toc" aria-label="On this page">
+      <ol>{faq.map(([q], i) => <li><a href={`#q${i + 1}`}>{q}</a></li>)}</ol>
+    </nav>
+    <article>
+      <p class="op-eyebrow">{app.name}</p>
+      <h1>{name} Support</h1>
+      <p class="op-lead">Answers to common questions about {name}. Can't find yours? Write to info@orlproducts.com.</p>
+      <div class="op-faq" style="margin-top:var(--space-6)">
+        {faq.map(([q, a], i) => (
+          <details id={`q${i + 1}`} open={i < 3}>
+            <summary>{q}</summary>
+            <div><p>{a}</p></div>
+          </details>
+        ))}
+      </div>
+      <ul class="op-links" style="margin-top:var(--space-6)">
+        <li><a class="op-button op-button--secondary" href={`/${slug}.html`}>About {name}</a></li>
+        {app.web.privacy && <li><a class="op-button op-button--secondary" href={app.web.privacy}>Privacy Policy</a></li>}
+        <li><a class="op-button op-button--secondary" href={app.web.terms ?? '/terms.html'}>Terms</a></li>
+        <li><a class="op-button op-button--primary" href={`mailto:info@orlproducts.com?subject=${encodeURIComponent(name + ' support')}`}>Email support</a></li>
+      </ul>
+    </article>
+  </div>
+</Base>

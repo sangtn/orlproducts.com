@@ -11,7 +11,7 @@ const root = join(siteDir, '..');
 const dist = join(siteDir, 'dist');
 
 // Repo-root entries that are tooling, not website
-const SKIP = new Set(['site', 'tools', '.git', '.github', '.claude', '.vercel', 'node_modules', 'ui-system.html',
+const SKIP = new Set(['site', 'tools', 'docs', '.git', '.github', '.claude', '.vercel', 'node_modules', 'ui-system.html',
   '.gitignore', '.vercelignore', 'vercel.json', 'package.json', 'package-lock.json', 'sitemap.xml', '.DS_Store']);
 
 const walk = (dir) => readdirSync(dir).flatMap((n) => {

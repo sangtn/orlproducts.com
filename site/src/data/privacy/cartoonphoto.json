@@ -1,0 +1,55 @@
+{
+  "slug": "cartoonphoto",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Used to Track You",
+      "items": [
+        "User Content",
+        "Identifiers"
+      ]
+    },
+    {
+      "type": "Data Not Linked to You",
+      "items": [
+        "User Content",
+        "Identifiers"
+      ]
+    }
+  ],
+  "basis": "App Store privacy label, the app's App Store description and its earlier privacy policy (orlincproducts.wixsite.com).",
+  "confirmed": false,
+  "partners": [
+    {
+      "name": "Google Firebase Analytics",
+      "what": "Usage and diagnostic analytics, as named in this app's earlier privacy policy.",
+      "policy": "https://policies.google.com/privacy"
+    }
+  ],
+  "extra": [],
+  "icloud": false,
+  "summary": "Cartoon Photo turns photos you choose into cartoons, with stickers, text and backgrounds.",
+  "onDevice": [
+    "Photos you choose and the cartoons you save or share"
+  ],
+  "permissions": [
+    {
+      "name": "Photos",
+      "why": "To choose a photo to turn into a cartoon and to save the result.",
+      "optional": true
+    },
+    {
+      "name": "Camera",
+      "why": "Only if you take a new photo in the app.",
+      "optional": true
+    }
+  ],
+  "services": [
+    {
+      "name": "AI cartoon processing",
+      "what": "Photos you submit for the 2D or 3D cartoon effects are processed to create your result."
+    }
+  ],
+  "purchases": "Premium is sold through the App Store as a subscription. Apple handles payment.",
+  "tracking": true
+}

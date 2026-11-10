@@ -1,7 +1,7 @@
 ---
-// Per-app privacy policies -> /<slug>-privacy.html for apps that had none on this site.
-// Sources: site/src/data/privacy/<slug>.json (built from the App Store privacy label and the app's own
-// store description) or site/src/content/privacy/<slug>.html (an existing policy moved from Wix, unchanged).
+// Per-app privacy policies -> /<slug>-privacy.html for apps without a hand-written page.
+// Source: site/src/data/privacy/<slug>.json, built from the App Store privacy label and the app's own store
+// description. Company-wide terms (rights, retention, transfers, children) live in /privacy.html.
 import Base from '../layouts/Base.astro';
 import { bySlug, shortName, type App } from '../lib/apps';
 
@@ -11,23 +11,20 @@ interface PrivacyData {
   storeLabel: { type: string; items: string[] }[];
   onDevice: string[]; permissions: Permission[]; services: { name: string; what: string }[];
   purchases: string | null; extra: string[]; confirmed: boolean;
+  partners?: { name: string; what: string; policy?: string }[];
 }
 
 const data = import.meta.glob<PrivacyData>('../data/privacy/*.json', { eager: true, import: 'default' });
-const ported = import.meta.glob<string>('../content/privacy/*.html', { eager: true, query: '?raw', import: 'default' });
 
 export function getStaticPaths() {
   const d = import.meta.glob('../data/privacy/*.json', { eager: true });
-  const p = import.meta.glob('../content/privacy/*.html', { eager: true });
-  const slugs = [...Object.keys(d), ...Object.keys(p)].map((k) => k.split('/').pop()!.replace(/\.(json|html)$/, ''));
-  return [...new Set(slugs)].map((slug) => ({ params: { app: slug }, props: { slug } }));
+  return Object.keys(d).map((k) => k.split('/').pop()!.replace(/\.json$/, '')).map((slug) => ({ params: { app: slug }, props: { slug } }));
 }
 
 const { slug } = Astro.props as { slug: string };
 const app: App = bySlug(slug);
 const name = shortName(app);
 const pd = data[`../data/privacy/${slug}.json`];
-const portedHtml = ported[`../content/privacy/${slug}.html`];
 const site = Astro.site!.origin;
 const path = `/${slug}-privacy.html`;
 
@@ -71,9 +68,8 @@ const ld = {
     <article>
       <p class="op-eyebrow">{app.name}</p>
       <h1>Privacy Policy</h1>
-      <p class="op-legal__meta">{pd ? `Effective ${effective}` : 'Policy text unchanged from the version previously published at orlincproducts.wixsite.com'} · <a href={`/${slug}.html`}>{name}</a> · ORIENTPRO (LA Investment and Trade JSC)</p>
+      <p class="op-legal__meta">{`Effective ${effective}`} · <a href={`/${slug}.html`}>{name}</a> · ORIENTPRO (LA Investment and Trade JSC)</p>
 
-      {portedHtml && <div class="op-legal__body" set:html={portedHtml} />}
 
       {pd && (
         <div class="op-legal__body">
@@ -115,7 +111,10 @@ const ld = {
           <h2 id="tracking">Tracking and advertising</h2>
           {pd.tracking ? (
             <>
-              <p>The App Store label for {name} lists data used to track you: {pd.storeLabel.find((c) => c.type === 'Data Used to Track You')?.items.join(', ')}. This data is handled by third-party advertising and analytics services built into the app, as described in the <a href="/privacy.html">ORIENTPRO Privacy Policy</a>.</p>
+              <p>The App Store label for {name} lists data used to track you: {pd.storeLabel.find((c) => c.type === 'Data Used to Track You')?.items.join(', ')}. This data is handled by third-party advertising and analytics services built into the app, as described in the <a href="/privacy.html#advertising">ORIENTPRO Privacy Policy</a>.</p>
+              {pd.partners && pd.partners.length > 0 && (
+                <ul>{pd.partners.map((x) => <li><strong>{x.name}.</strong> {x.what}{x.policy && <> <a href={x.policy}>Privacy policy</a>.</>}</li>)}</ul>
+              )}
               <p>On iPhone and iPad, the app asks your permission through App Tracking Transparency before any tracking. If you choose "Ask App Not to Track", the advertising identifier is not shared. You can change this at any time in Settings › Privacy &amp; Security › Tracking.</p>
             </>
           ) : (
