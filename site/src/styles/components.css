@@ -190,3 +190,19 @@
 .op-links { display: flex; flex-wrap: wrap; gap: var(--space-3); padding: 0; margin: 0; list-style: none; }
 /* Cards are links, but their text keeps the ink color; only the border picks up the app accent */
 .op-page .op-appcard { color: var(--ink); }
+
+/* Homepage */
+.op-home-hero h1 { font-size: clamp(2.25rem, 7vw, var(--text-4xl)); max-width: 18ch; }
+.op-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: var(--space-4); margin: var(--space-5) 0 0; }
+.op-stats div { border-top: 2px solid var(--app-accent); padding-top: var(--space-3); }
+.op-stats dt { font-size: var(--text-xs); color: var(--ink-faint); }
+.op-stats dd { margin: var(--space-1) 0 0; font-size: var(--text-2xl); font-weight: var(--weight-bold); font-variant-numeric: tabular-nums; }
+.op-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: var(--space-5); }
+.op-pillars h3 { margin-bottom: var(--space-2); }
+.op-pillars p { color: var(--ink-soft); margin: 0; }
+.op-directory { list-style: none; margin: var(--space-4) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 0 var(--space-6); }
+.op-directory li { display: flex; flex-direction: column; gap: 2px; padding: var(--space-3) 0; border-bottom: 1px solid var(--rule); min-width: 0; }
+.op-directory span { font-size: var(--text-sm); }
+/* Buttons are links too: keep their own text colors over the generic link color */
+.op-page .op-button--primary { color: var(--app-on-accent); }
+.op-page .op-button--secondary { color: var(--ink); }
