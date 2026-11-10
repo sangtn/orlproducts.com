@@ -178,5 +178,5 @@
  "tos.what.p1": "Turbulence Forecast 估算一次航班可能有多颠，以及在什么时候颠。它根据两个机场构建航路，获取该航路与时段的公开气象模式数据和官方航空警报，并在你的设备上计算出预报。它会告诉你哪些区段可能不平稳、有多不平稳、大约持续多久，以及这个估算有多可信。",
  "tos.what.p2": "预报是估算，不是承诺。气象模式每天更新数次，彼此之间也会有分歧；航路会变；机型和载重也会改变你的感受。Turbulence Forecast 显示的每一个数字都附带来源和当时有效的时间，方便你自己判断。",
  "tos.who.h": "1. 我们是谁",
- "tos.who.p1": "Turbulence Forecast 由 ORIENTPRO（Lam An Investment Trading Company Limited）开发。你可以通过 %EMAIL% 联系我们。"
+ "tos.who.p1": "Turbulence Forecast 由 ORIENTPRO（LA Investment and Trade JSC）开发。你可以通过 %EMAIL% 联系我们。"
 }

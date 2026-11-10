@@ -178,5 +178,5 @@
  "tos.what.p1": "O Turbulence Forecast estima o quanto um voo tende a ser agitado, e quando. Ele monta uma rota a partir dos dois aeroportos, busca dados públicos de modelos meteorológicos e os avisos aeronáuticos oficiais para essa rota e esse horário, e calcula uma previsão no seu dispositivo. Ele mostra quais trechos podem ser agitados, o quanto, por aproximadamente quanto tempo e com quanta confiança.",
  "tos.what.p2": "Uma previsão é uma estimativa, não uma promessa. Os modelos meteorológicos são atualizados várias vezes por dia e discordam entre si; rotas mudam; o tipo de aeronave e o carregamento mudam o que você sente. Cada número que o Turbulence Forecast mostra vem com a sua fonte e o horário em que era válido, para você julgar por conta própria.",
  "tos.who.h": "1. Quem somos",
- "tos.who.p1": "O Turbulence Forecast é desenvolvido pela ORIENTPRO (Lam An Investment Trading Company Limited). Você pode falar com a gente em %EMAIL%."
+ "tos.who.p1": "O Turbulence Forecast é desenvolvido pela ORIENTPRO (LA Investment and Trade JSC). Você pode falar com a gente em %EMAIL%."
 }

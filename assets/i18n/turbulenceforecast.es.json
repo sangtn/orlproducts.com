@@ -178,5 +178,5 @@
  "tos.what.p1": "Turbulence Forecast estima lo movido que puede resultar un vuelo, y cuándo. Construye una ruta a partir de los dos aeropuertos, descarga datos públicos de modelos meteorológicos y los avisos aeronáuticos oficiales de esa ruta y esa hora, y calcula un pronóstico en tu dispositivo. Te muestra qué tramos pueden ser movidos, cuánto, durante aproximadamente cuánto tiempo y con cuánta confianza.",
  "tos.what.p2": "Un pronóstico es una estimación, no una promesa. Los modelos meteorológicos se actualizan varias veces al día y discrepan entre sí; las rutas cambian; el tipo de avión y su carga cambian lo que se siente. Cada cifra que muestra Turbulence Forecast lleva su fuente y la hora en que era válida, para que puedas juzgarla por ti mismo.",
  "tos.who.h": "1. Quiénes somos",
- "tos.who.p1": "Turbulence Forecast está desarrollada por ORIENTPRO (Lam An Investment Trading Company Limited). Puedes escribirnos a %EMAIL%."
+ "tos.who.p1": "Turbulence Forecast está desarrollada por ORIENTPRO (LA Investment and Trade JSC). Puedes escribirnos a %EMAIL%."
 }

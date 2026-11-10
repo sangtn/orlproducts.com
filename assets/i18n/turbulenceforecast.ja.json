@@ -178,5 +178,5 @@
  "tos.what.p1": "Turbulence Forecastは、フライトがどれくらい揺れそうか、そしていつ揺れそうかを推定します。2つの空港から経路を作成し、その経路と時刻に対応する公開気象モデルデータと公式の航空警報を取得して、お客様のデバイス上で予測を計算します。どの区間が荒れる可能性があるか、どの程度か、おおよそどのくらい続くか、その推定がどの程度確かかを示します。",
  "tos.what.p2": "予測は推定であり、約束ではありません。気象モデルは1日に数回更新され、互いに食い違います。経路は変わりますし、機種や搭載状況によって体感も変わります。Turbulence Forecastが示すすべての数値には、その出典と有効だった時刻が添えられており、お客様ご自身で判断できます。",
  "tos.who.h": "1. 当社について",
- "tos.who.p1": "Turbulence ForecastはORIENTPRO（Lam An Investment Trading Company Limited）が開発しています。お問い合わせは %EMAIL% までお願いします。"
+ "tos.who.p1": "Turbulence ForecastはORIENTPRO（LA Investment and Trade JSC）が開発しています。お問い合わせは %EMAIL% までお願いします。"
 }

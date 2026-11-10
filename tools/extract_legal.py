@@ -72,6 +72,7 @@ def extract(src, start_marker):
 for src, marker, dst in [("privacy.html", "Privacy Policy</h2>", "privacy.html"), ("terms.html", "Terms Of Services</h2>", "terms.html")]:
     out, same, b, a = extract(src, marker)
     out = re.sub(r"^\s*(Privacy Policy|Terms Of Services)</h2>", "", out).strip()   # the page template supplies the h1
+    out = out.replace("LAM AN INVESTMENT &amp; TRADE.,Jsc", "LA INVESTMENT &amp; TRADE.,Jsc")   # company name decided 2026-11-10
     open(os.path.join(ROOT, "site/src/content/legal", dst), "w").write(out + "\n")
     print(f"{src}: {len(a.split())} words, identical text: {same}")
     if not same:

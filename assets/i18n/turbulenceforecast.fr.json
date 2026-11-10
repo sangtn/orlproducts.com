@@ -178,5 +178,5 @@
  "tos.what.p1": "Turbulence Forecast estime à quel point un vol risque d’être secoué, et à quel moment. L’app construit une route à partir des deux aéroports, récupère des données publiques de modèles météo et les avertissements aéronautiques officiels pour cette route et cet horaire, puis calcule une prévision sur votre appareil. Elle vous indique quels segments peuvent être agités, à quel point, pendant combien de temps environ, et avec quelle fiabilité.",
  "tos.what.p2": "Une prévision est une estimation, pas une promesse. Les modèles météo sont mis à jour plusieurs fois par jour et se contredisent ; les routes changent ; le type d’avion et son chargement modifient le ressenti. Chaque chiffre affiché par Turbulence Forecast porte sa source et l’heure de sa validité, pour que vous puissiez en juger vous-même.",
  "tos.who.h": "1. Qui nous sommes",
- "tos.who.p1": "Turbulence Forecast est développée par ORIENTPRO (Lam An Investment Trading Company Limited). Vous pouvez nous joindre à %EMAIL%."
+ "tos.who.p1": "Turbulence Forecast est développée par ORIENTPRO (LA Investment and Trade JSC). Vous pouvez nous joindre à %EMAIL%."
 }

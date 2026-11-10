@@ -56,7 +56,7 @@ if (works.length) facts.push([s.worksOn, works.join(', ')]);
 if (langs.length) facts.push([langs.length === 1 ? s.language : s.languages(langs.length), langs.join(', ')]);
 if (app.appStore) facts.push([s.version, `${app.appStore.version}, ${s.updated} ${dateFmt(app.appStore.updated)}`]);
 if (app.appStore?.contentRating) facts.push([s.ageRating, app.appStore.contentRating]);
-facts.push([s.developer, 'ORIENTPRO (Lam An Investment and Trade JSC)']);
+facts.push([s.developer, 'ORIENTPRO (LA Investment and Trade JSC)']);
 
 const related = apps
   .filter((a) => a.slug !== app.slug && a.group === 'current')

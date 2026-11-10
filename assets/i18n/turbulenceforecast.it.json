@@ -178,5 +178,5 @@
  "tos.what.p1": "Turbulence Forecast stima quanto un volo rischia di essere movimentato, e quando. Costruisce una rotta a partire dai due aeroporti, recupera dati pubblici dei modelli meteo e gli avvisi aeronautici ufficiali per quella rotta e quell’orario, e calcola una previsione sul tuo dispositivo. Ti mostra quali tratti possono essere mossi, quanto, per quanto tempo circa e con quanta affidabilità.",
  "tos.what.p2": "Una previsione è una stima, non una promessa. I modelli meteo vengono aggiornati diverse volte al giorno e non concordano fra loro; le rotte cambiano; il tipo di aeromobile e il carico cambiano ciò che si percepisce. Ogni dato mostrato da Turbulence Forecast riporta la sua fonte e l’ora in cui era valido, così puoi giudicare da te.",
  "tos.who.h": "1. Chi siamo",
- "tos.who.p1": "Turbulence Forecast è sviluppata da ORIENTPRO (Lam An Investment Trading Company Limited). Puoi contattarci a %EMAIL%."
+ "tos.who.p1": "Turbulence Forecast è sviluppata da ORIENTPRO (LA Investment and Trade JSC). Puoi contattarci a %EMAIL%."
 }

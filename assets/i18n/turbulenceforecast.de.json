@@ -178,5 +178,5 @@
  "tos.what.p1": "Turbulence Forecast schätzt, wie unruhig ein Flug sich anfühlen dürfte, und wann. Die App bildet aus den beiden Flughäfen eine Route, ruft öffentliche Wettermodelldaten und offizielle Luftfahrtwarnungen für diese Route und Zeit ab und berechnet eine Vorhersage auf Ihrem Gerät. Sie zeigt Ihnen, welche Abschnitte unruhig werden können, wie stark, wie lange etwa und wie verlässlich die Schätzung ist.",
  "tos.what.p2": "Eine Vorhersage ist eine Schätzung, kein Versprechen. Wettermodelle werden mehrmals täglich aktualisiert und widersprechen sich; Routen ändern sich; Flugzeugtyp und Beladung verändern, was man spürt. Jede Zahl, die Turbulence Forecast zeigt, trägt ihre Quelle und den Zeitpunkt ihrer Gültigkeit, damit Sie selbst urteilen können.",
  "tos.who.h": "1. Wer wir sind",
- "tos.who.p1": "Turbulence Forecast wird von ORIENTPRO (Lam An Investment Trading Company Limited) entwickelt. Sie erreichen uns unter %EMAIL%."
+ "tos.who.p1": "Turbulence Forecast wird von ORIENTPRO (LA Investment and Trade JSC) entwickelt. Sie erreichen uns unter %EMAIL%."
 }
