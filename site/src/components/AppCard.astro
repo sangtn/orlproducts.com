@@ -2,10 +2,11 @@
 import type { App } from '../lib/apps';
 import { appPageUrl, translationFor } from '../lib/translations';
 import { categoryName } from '../lib/ui';
+import { tagline } from '../lib/apps';
 import PlatformChips from './PlatformChips.astro';
 interface Props { app: App; lang?: string }
 const { app, lang = 'en' } = Astro.props;
-const sub = translationFor(app.slug, lang)?.subtitle ?? (lang === 'en' ? app.subtitle : null) ?? categoryName(lang, app.category);
+const sub = translationFor(app.slug, lang)?.subtitle ?? (lang === 'en' ? app.subtitle ?? app.tagline : null) ?? categoryName(lang, app.category);
 ---
 <a class="op-appcard" data-app={app.slug} href={appPageUrl(app, lang)}>
   <img class="op-icon" src={`/assets/icons/${app.slug}.png`} alt="" width="64" height="64" loading="lazy" decoding="async" />

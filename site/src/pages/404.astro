@@ -1,0 +1,31 @@
+---
+// /404.html: served by Vercel for any missing URL. Same header (logo to the homepage) and footer as every page.
+import Base from '../layouts/Base.astro';
+import AppCard from '../components/AppCard.astro';
+import { apps } from '../lib/apps';
+const popular = apps.filter((a) => a.group === 'current' && a.priority).slice(0, 3);
+---
+<Base
+  title="Page not found — ORIENTPRO"
+  description="This page does not exist. Find every ORIENTPRO app, privacy policy and support page from here."
+  path="/404.html"
+  noindex
+>
+  <div class="op-wrap">
+    <section class="op-hero">
+      <p class="op-eyebrow">404</p>
+      <h1>This page doesn’t exist</h1>
+      <p class="op-lead">The link may be old, or the address may have a typo. These pages are a good place to start.</p>
+      <ul class="op-links">
+        <li><a class="op-button op-button--primary" href="/">Go to the homepage</a></li>
+        <li><a class="op-button op-button--secondary" href="/apps.html">All apps</a></li>
+        <li><a class="op-button op-button--secondary" href="/#app-directory">Privacy and support for each app</a></li>
+        <li><a class="op-button op-button--secondary" href="/contact.html">Contact</a></li>
+      </ul>
+    </section>
+    <section class="op-section" aria-labelledby="popular">
+      <h2 id="popular">Popular apps</h2>
+      <div class="op-appgrid">{popular.map((a) => <AppCard app={a} />)}</div>
+    </section>
+  </div>
+</Base>
