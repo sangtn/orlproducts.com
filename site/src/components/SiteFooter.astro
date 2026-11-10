@@ -1,0 +1,41 @@
+---
+import { apps, shortName, pageUrl } from '../lib/apps';
+const current = apps.filter((a) => a.group === 'current');
+const half = Math.ceil(current.length / 2);
+---
+<footer class="op-footer">
+  <div class="op-wrap">
+    <div class="op-footer__grid">
+      <div>
+        <h2>ORIENTPRO</h2>
+        <ul>
+          <li>Lam An Investment and Trade JSC</li>
+          <li>info@orlproducts.com</li>
+          <li><a href="https://apps.apple.com/us/developer/orientpro-lam-an-investment-trade-jsc/id1614396757">App Store developer page</a></li>
+          <li><a href="https://play.google.com/store/apps/developer?id=ORIENTPRO">Google Play developer page</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Apps</h2>
+        <ul>{current.slice(0, half).map((a) => <li><a href={pageUrl(a)}>{shortName(a)}</a></li>)}</ul>
+      </div>
+      <div>
+        <h2 class="op-footer__spacer" aria-hidden="true">&nbsp;</h2>
+        <ul>{current.slice(half).map((a) => <li><a href={pageUrl(a)}>{shortName(a)}</a></li>)}</ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="/apps.html">All apps</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Service</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="op-badges-legal">
+      © {new Date().getFullYear()} ORIENTPRO. Apple, the Apple logo, iPhone, iPad, Apple Watch, Mac and Apple Vision Pro are trademarks of Apple Inc.,
+      registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.
+    </p>
+  </div>
+</footer>

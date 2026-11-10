@@ -156,3 +156,37 @@
   .op-rise:nth-child(3) { animation-delay: 120ms; }
   @keyframes op-rise { from { transform: translateY(12px); opacity: .001; } }
 }
+
+/* Site header */
+.op-skip { position: absolute; left: -9999px; top: 0; }
+.op-skip:focus { left: var(--space-4); top: var(--space-4); z-index: 20; padding: var(--space-2) var(--space-4); background: var(--paper); border-radius: var(--radius-sm); }
+.op-header { border-bottom: 1px solid var(--rule); padding-top: env(safe-area-inset-top, 0px); }
+.op-header__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); min-height: 64px; }
+.op-header__brand { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--ink) !important; text-decoration: none; font-weight: var(--weight-bold); letter-spacing: 0.02em; }
+.op-header__brand img { border-radius: 7px; }
+.op-header nav { display: flex; gap: var(--space-5); font-size: var(--text-sm); }
+.op-header nav a { color: var(--ink-soft); text-decoration: none; }
+.op-header nav a:hover { color: var(--app-accent-ink); }
+@media (max-width: 899px) { .op-footer__spacer { display: none; } }
+
+/* App page */
+.op-hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-5); padding-block: var(--space-8) var(--space-7); }
+.op-hero__head { display: flex; gap: var(--space-5); align-items: center; flex-wrap: wrap; }
+.op-hero__note { font-size: var(--text-sm); color: var(--ink-soft); margin: 0; }
+.op-shots { display: flex; gap: var(--space-5); overflow-x: auto; scroll-snap-type: x mandatory; padding: var(--space-2) var(--space-1) var(--space-5); margin-inline: calc(var(--space-1) * -1); }
+.op-shots > * { flex: none; scroll-snap-align: start; }
+.op-shots .op-device--iphone, .op-shots .op-device--android { width: 220px; }
+.op-shots .op-device--ipad { width: 300px; }
+.op-section { padding-block: var(--space-7); border-top: 1px solid var(--rule); }
+.op-section > h2 { margin-bottom: var(--space-5); }
+.op-desc { max-width: var(--measure); }
+.op-desc h3 { font-size: var(--text-sm); letter-spacing: 0.06em; text-transform: uppercase; color: var(--app-accent-ink); margin: var(--space-6) 0 var(--space-3); }
+.op-desc ul { padding-left: 1.2em; margin: 0 0 var(--space-4); }
+.op-desc li { margin-bottom: var(--space-2); }
+.op-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: var(--space-4) var(--space-5); margin: 0; }
+.op-facts div { border-top: 1px solid var(--rule); padding-top: var(--space-3); min-width: 0; }
+.op-facts dt { font-size: var(--text-xs); color: var(--ink-faint); margin-bottom: var(--space-1); }
+.op-facts dd { margin: 0; font-weight: var(--weight-medium); overflow-wrap: anywhere; }
+.op-links { display: flex; flex-wrap: wrap; gap: var(--space-3); padding: 0; margin: 0; list-style: none; }
+/* Cards are links, but their text keeps the ink color; only the border picks up the app accent */
+.op-page .op-appcard { color: var(--ink); }

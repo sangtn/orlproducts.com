@@ -1,0 +1,11 @@
+{
+  "name": "orlproducts-com",
+  "private": true,
+  "description": "orlproducts.com: the Astro build in site/ plus the hand-written pages at the repo root.",
+  "engines": { "node": "24.x" },
+  "scripts": {
+    "build": "cd site && npm run build",
+    "sync": "python3 tools/sync_store_data.py",
+    "ui-system": "python3 tools/build_ui_system.py"
+  }
+}

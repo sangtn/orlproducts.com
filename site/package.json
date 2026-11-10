@@ -1,0 +1,16 @@
+{
+  "name": "orlproducts-site",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/merge-legacy.mjs",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "7.4.2"
+  }
+}

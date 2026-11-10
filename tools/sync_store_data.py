@@ -8,7 +8,7 @@ Writes  site/src/data/apps/<slug>.json   (generated; do not edit by hand)
 App Store data comes from the public iTunes Lookup API (US storefront).
 Google Play has no public API, so Play facts live in apps.manual.json.
 """
-import json, os, re, sys, urllib.request
+import html, json, os, re, sys, urllib.request
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,6 +35,48 @@ def lookup():
     with urllib.request.urlopen(url, timeout=30) as r:
         res = json.load(r)["results"]
     return {a["trackId"]: a for a in res if a.get("wrapperType") == "software"}
+
+
+UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"}
+
+
+def fetch(url):
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as r:
+        return r.read()
+
+
+def play_listing(package):
+    """Best-effort read of the public Play listing: description and screenshot URLs.
+    Google Play has no public API, so this parses the page and may need updating if Google changes it."""
+    page = fetch(f"https://play.google.com/store/apps/details?id={package}&hl=en&gl=US").decode("utf-8", "ignore")
+    m = re.search(r'<div[^>]*data-g-id="description"[^>]*>(.*?)</div>', page, re.S)
+    desc = ""
+    if m:
+        desc = html.unescape(re.sub(r"<[^>]+>", "", re.sub(r"<br\s*/?>", "\n", m.group(1)))).strip()
+    shots = []
+    for src in re.findall(r'<img src="(https://play-lh\.googleusercontent\.com/[^"=]+)=[^"]*"[^>]*alt="Screenshot image"', page):
+        if src not in shots:
+            shots.append(src)
+    return desc, shots
+
+
+def download_screenshots(slug, urls, kind):
+    """Save store screenshots next to the site so pages never hotlink Apple's or Google's CDN."""
+    out = os.path.join(ROOT, "assets", "apps", slug)
+    os.makedirs(out, exist_ok=True)
+    saved = []
+    for i, u in enumerate(urls[:8], 1):
+        if "mzstatic.com" in u:
+            u = u.rsplit("/", 1)[0] + "/600x0w.webp"   # Apple's CDN resizes and converts on request
+        else:
+            u = u + "=w600-rw"                          # Google's CDN: 600px wide, WebP
+        name = f"{kind}-{i:02d}.webp"
+        path = os.path.join(out, name)
+        if not os.path.exists(path):
+            with open(path, "wb") as f:
+                f.write(fetch(u))
+        saved.append(f"/assets/apps/{slug}/{name}")
+    return saved
 
 
 def platforms(a):
@@ -79,6 +121,19 @@ def main():
         if m["appStoreId"] and not a:
             print(f'WARNING {m["slug"]}: App Store id {m["appStoreId"]} not returned by the API')
         desc = a.get("description", "") if a else ""
+        play_shots = []
+        if not a and m.get("playPackage"):
+            try:
+                desc, play_shots = play_listing(m["playPackage"])
+            except Exception as e:
+                print(f'WARNING {m["slug"]}: could not read the Play listing ({e})')
+        shots = {}
+        if m.get("generatePage"):
+            if a:
+                shots["iphone"] = download_screenshots(m["slug"], a.get("screenshotUrls", []), "iphone")
+                shots["ipad"] = download_screenshots(m["slug"], a.get("ipadScreenshotUrls", []), "ipad")
+            elif play_shots:
+                shots["android"] = download_screenshots(m["slug"], play_shots, "android")
         rec = {
             "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
             "slug": m["slug"],
@@ -114,6 +169,9 @@ def main():
             # CarPlay is never inferred from text: the word appears in some descriptions as an audio output.
             "surfaces": {**{k: bool(re.search(p, desc, re.I)) for k, p in SURFACES.items()}, "carPlay": False},
             "web": m["web"],
+            "generatePage": bool(m.get("generatePage")),
+            "description": desc,
+            "screenshots": shots,
             "issues": [],
         }
         site = (rec["appStore"] or {}).get("developerWebsite") or ""

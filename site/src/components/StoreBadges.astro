@@ -1,0 +1,24 @@
+---
+// Official badge artwork only (assets/badges). Apple's white badge is used in dark mode.
+import type { App } from '../lib/apps';
+interface Props { app: App; lang?: 'en' | 'vi' | 'ja' | 'es' | 'fr' | 'de' }
+const { app, lang = 'en' } = Astro.props;
+const appleLocale = { en: 'en-us', vi: 'vi-vn', ja: 'ja-jp', es: 'es-es', fr: 'fr-fr', de: 'de-de' }[lang];
+---
+{(app.appStore || app.googlePlay) && (
+  <div class="op-badges">
+    {app.appStore && (
+      <a href={app.appStore.url} aria-label={`Download ${app.name} on the App Store`}>
+        <picture>
+          <source srcset={`/assets/badges/app-store-white-${appleLocale}.svg`} media="(prefers-color-scheme: dark)" />
+          <img class="op-badge-apple" src={`/assets/badges/app-store-black-${appleLocale}.svg`} alt="Download on the App Store" width="120" height="40" />
+        </picture>
+      </a>
+    )}
+    {app.googlePlay && (
+      <a href={app.googlePlay.url} aria-label={`Get ${app.name} on Google Play`}>
+        <img class="op-badge-google" src={`/assets/badges/google-play-${lang}.png`} alt="Get it on Google Play" width="148" height="44" />
+      </a>
+    )}
+  </div>
+)}

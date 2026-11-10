@@ -1,0 +1,60 @@
+---
+// Shared page shell: every SEO tag is required by the props, so a page can't ship without them.
+import '../styles/tokens.css';
+import '../styles/app-accents.css';
+import '../styles/components.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  title: string;            // 30-60 chars, unique per page
+  description: string;      // 70-160 chars, unique per page
+  path: string;             // canonical path, e.g. "/world-monitor.html"
+  image?: string;           // absolute or root-relative social image
+  imageAlt?: string;
+  app?: string;             // slug: sets the accent color via data-app
+  appStoreId?: number;      // shows Safari's Smart App Banner
+  jsonLd?: object[];
+  lang?: string;
+  noindex?: boolean;
+}
+const { title, description, path, image = '/assets/images/favicon.png', imageAlt, app, appStoreId, jsonLd = [], lang = 'en', noindex = false } = Astro.props;
+const site = Astro.site!.origin;
+const canonical = new URL(path, site).href;
+const ogImage = new URL(image, site).href;
+const large = !image.endsWith('favicon.png') && !image.includes('/icons/');
+---
+<!doctype html>
+<html lang={lang} data-app={app}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonical}>
+  <meta name="robots" content={noindex ? 'noindex' : 'index, follow, max-image-preview:large'}>
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+  <meta name="theme-color" content="#FDFBF7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#17140F" media="(prefers-color-scheme: dark)">
+  {appStoreId && <meta name="apple-itunes-app" content={`app-id=${appStoreId}`}>}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ORIENTPRO">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={ogImage}>
+  {imageAlt && <meta property="og:image:alt" content={imageAlt}>}
+  <meta name="twitter:card" content={large ? 'summary_large_image' : 'summary'}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap">
+  {jsonLd.map((d) => <script type="application/ld+json" set:html={JSON.stringify(d)} />)}
+</head>
+<body class="op-page">
+  <a class="op-skip" href="#main">Skip to content</a>
+  <SiteHeader />
+  <main id="main"><slot /></main>
+  <SiteFooter />
+</body>
+</html>
