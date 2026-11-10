@@ -1,0 +1,68 @@
+/* ORIENTPRO Paper — homepage. Requires tokens.css, app-accents.css and components.css.
+   Each app element carries data-app, so --app-accent is that app's own color. */
+
+/* Hero: copy on the left, a tilted wall of every app icon on the right */
+.home-hero { overflow: clip; overflow-clip-margin: 12px; display: grid; gap: var(--space-7); align-items: center; padding-block: var(--space-8) var(--space-7); }
+@media (min-width: 900px) { .home-hero { grid-template-columns: 1fr 1fr; } }
+.home-hero__copy { min-width: 0; }
+.home-hero h1 { font-size: clamp(2.25rem, 6.5vw, 3.75rem); max-width: 14ch; margin-block: var(--space-3) var(--space-4); }
+.home-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-4); margin-top: var(--space-5); }
+.home-hero__actions .op-devbadges { margin: 0; }
+.home-stats { display: flex; flex-wrap: wrap; gap: var(--space-5) var(--space-6); margin: var(--space-6) 0 0; }
+.home-stats div { display: flex; flex-direction: column-reverse; }
+.home-stats dd { margin: 0; font-size: var(--text-2xl); font-weight: var(--weight-bold); line-height: 1; font-variant-numeric: tabular-nums; }
+.home-stats dt { font-size: var(--text-xs); color: var(--ink-faint); margin-top: 6px; }
+
+.home-wall { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: clamp(8px, 1.6vw, 16px);
+  transform: perspective(1200px) rotateX(14deg) rotateZ(-8deg); }
+.home-wall li:nth-child(6n+2), .home-wall li:nth-child(6n+4), .home-wall li:nth-child(6n+6) { translate: 0 30%; }
+.home-wall a { display: block; border-radius: var(--radius-icon); transition: transform var(--dur-base) var(--ease-spring); }
+.home-wall a:hover { transform: scale(1.12); }
+.home-wall img { display: block; width: 100%; height: auto; aspect-ratio: 1; border-radius: var(--radius-icon); box-shadow: 0 0 0 1px rgb(0 0 0 / 6%), 0 10px 24px -10px var(--app-accent); }
+/* Icons are visible at rest; motion only adds a short rise */
+@media (prefers-reduced-motion: no-preference) {
+  .home-wall li { animation: home-pop 500ms var(--ease-spring) both; animation-delay: calc(var(--i) * 25ms); }
+  @keyframes home-pop { from { transform: translateY(14px) scale(.9); } }
+}
+
+/* Sections */
+.home-section { padding-block: var(--space-8) 0; }
+.home-section > h2 { margin-bottom: var(--space-5); }
+
+/* Featured: panels tinted with each app's accent, a real screen peeking from the bottom */
+.home-features { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); }
+.home-feature { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 38%; gap: var(--space-4); min-height: 300px; overflow: hidden;
+  padding: var(--space-5) 0 0 var(--space-5); border-radius: var(--radius-xl); text-decoration: none;
+  background: linear-gradient(160deg, color-mix(in oklab, var(--app-accent) 22%, var(--paper)), color-mix(in oklab, var(--app-accent) 6%, var(--paper)));
+  transition: transform var(--dur-base) var(--ease-out); }
+.op-page .home-feature { color: var(--ink); }
+.home-feature:hover { transform: translateY(-4px); }
+.home-feature__text { display: flex; flex-direction: column; gap: var(--space-2); padding-bottom: var(--space-5); min-width: 0; }
+.home-feature__name { font-size: var(--text-xl); font-weight: var(--weight-bold); margin: var(--space-2) 0 0; line-height: 1.2; }
+.home-feature__sub { color: var(--ink-soft); font-size: var(--text-sm); margin: 0 0 var(--space-2); }
+.home-feature .op-chip { background: color-mix(in oklab, var(--paper) 70%, transparent); }
+.home-feature__shot, .home-feature__poster { align-self: end; width: 100% !important; margin-bottom: -28%; }
+.home-feature__shot.op-device { border-radius: 30px 30px 0 0; padding: 6px 6px 0; }
+.home-feature__shot.op-device > img { border-radius: 24px 24px 0 0; }
+.home-feature__poster { display: block; height: auto; border-radius: 28px 28px 0 0; box-shadow: var(--shadow-2); }
+
+/* All apps: an icon grid, like a home screen */
+.home-icons { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-5) var(--space-3); grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); }
+.home-icons a { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; text-decoration: none; }
+.op-page .home-icons a { color: var(--ink); }
+.home-icons img { width: 72px; height: 72px; border-radius: var(--radius-icon); box-shadow: 0 0 0 1px rgb(0 0 0 / 6%), 0 8px 20px -8px var(--app-accent); transition: transform var(--dur-base) var(--ease-spring); }
+.home-icons a:hover img { transform: translateY(-4px) scale(1.06); }
+.home-icons span { font-size: var(--text-sm); font-weight: var(--weight-bold); line-height: 1.25; }
+.home-icons small { font-size: var(--text-xs); color: var(--ink-faint); line-height: 1.2; }
+.home-icons--small img { width: 56px; height: 56px; filter: saturate(.85); }
+
+.home-pillars .op-pillars > div { padding: var(--space-5); border-radius: var(--radius-lg); background: var(--paper-2); }
+
+/* Community: one ink band (inverts in dark mode with the tokens) */
+.home-community { margin-block: var(--space-8) var(--space-6); padding: var(--space-7) var(--space-6); border-radius: var(--radius-xl); text-align: center; background: var(--ink); color: var(--paper); }
+.home-community p { margin-inline: auto; color: color-mix(in oklab, var(--paper) 75%, var(--ink)); }
+
+@media (max-width: 600px) {
+  .home-feature { grid-template-columns: minmax(0, 1fr) 42%; min-height: 260px; padding: var(--space-4) 0 0 var(--space-4); }
+  .home-community { padding: var(--space-6) var(--space-4); }
+}
