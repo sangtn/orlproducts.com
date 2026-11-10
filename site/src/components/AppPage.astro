@@ -6,7 +6,7 @@ import StoreBadges from './StoreBadges.astro';
 import PlatformChips from './PlatformChips.astro';
 import AppCard from './AppCard.astro';
 import { apps, shortName, type App } from '../lib/apps';
-import { parseDescription, summary } from '../lib/description';
+import { parseDescription, summary, linkify } from '../lib/description';
 import { translationFor, translatedLangs, appPageUrl, localizedLegacy, type Translation } from '../lib/translations';
 import { t, categoryName, BADGE_LANG } from '../lib/ui';
 
@@ -30,6 +30,8 @@ const title = subtitle && !repeats && withSub.length <= 60 ? withSub
   : `${app.name} — ${categoryName(lang, app.category)}`;
 const description = tr ? tr.metaDescription : app.metaDescription ?? summary(app.description);
 const blocks = parseDescription(text);
+// Policy links inside the store text point at this app's own pages
+const links = { site, privacy: app.web.privacy ?? '/privacy.html', terms: app.web.terms ?? '/terms.html' };
 
 const shots = app.screenshots.iphone?.length ? app.screenshots.iphone : app.screenshots.android ?? [];
 const shotFrame = app.screenshots.iphone?.length ? 'iphone' : 'android';
@@ -157,7 +159,7 @@ const LANG_LABEL: Record<string, string> = { en: 'English', vi: 'Tiếng Việt'
       <h2 id="about">{s.about(name)}</h2>
       <div class="op-desc">
         {blocks.map((b) =>
-          b.type === 'h' ? <h3>{b.text}</h3> : b.type === 'ul' ? <ul>{b.items.map((x) => <li>{x}</li>)}</ul> : <p>{b.text}</p>,
+          b.type === 'h' ? <h3 set:html={linkify(b.text, links)} /> : b.type === 'ul' ? <ul>{b.items.map((x) => <li set:html={linkify(x, links)} />)}</ul> : <p set:html={linkify(b.text, links)} />,
         )}
         {tr && s.machineNote && <p class="op-legal__meta">{s.machineNote}</p>}
       </div>
