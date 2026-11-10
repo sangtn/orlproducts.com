@@ -170,6 +170,8 @@ def main():
             "surfaces": {**{k: bool(re.search(p, desc, re.I)) for k, p in SURFACES.items()}, "carPlay": False},
             "web": m["web"],
             "generatePage": bool(m.get("generatePage")),
+            "contentLang": m.get("contentLang", "en"),
+            "metaDescription": m.get("metaDescription"),
             "description": desc,
             "screenshots": shots,
             "issues": [],

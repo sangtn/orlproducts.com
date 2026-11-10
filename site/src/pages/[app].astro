@@ -16,8 +16,12 @@ const site = Astro.site!.origin;
 const path = `/${app.slug}.html`;
 const name = shortName(app);
 
-const title = app.subtitle && `${app.name} — ${app.subtitle}`.length <= 60 ? `${app.name} — ${app.subtitle}` : app.name;
-const description = summary(app.description);
+// Add the store subtitle to the title only when it fits and doesn't repeat words from the name
+const nameWords = new Set(app.name.toLowerCase().match(/[\p{L}\d]+/gu) ?? []);
+const repeats = (app.subtitle?.toLowerCase().match(/[\p{L}\d]+/gu) ?? []).some((w) => w.length > 3 && nameWords.has(w));
+const withSub = `${app.name} — ${app.subtitle}`;
+const title = app.subtitle && !repeats && withSub.length <= 60 ? withSub : app.name;
+const description = app.metaDescription ?? summary(app.description);
 const blocks = parseDescription(app.description);
 
 const shots = app.screenshots.iphone?.length ? app.screenshots.iphone : app.screenshots.android ?? [];
@@ -70,7 +74,7 @@ const appLd: Record<string, unknown> = {
   applicationCategory: app.category,
   operatingSystem: os.join(', '),
   installUrl: app.appStore?.url ?? app.googlePlay?.url,
-  inLanguage: app.appStore?.languages,
+  inLanguage: app.contentLang !== 'en' ? app.contentLang : app.appStore?.languages,
   softwareVersion: app.appStore?.version,
   datePublished: app.appStore?.released,
   dateModified: app.appStore?.updated,
@@ -96,7 +100,7 @@ if (app.web.support) legal.push(['Support', app.web.support]);
 legal.push(['Privacy Policy', app.web.privacy ?? '/privacy.html']);
 legal.push(['Terms of Use', app.web.terms ?? '/terms.html']);
 ---
-<Base title={title} description={description} path={path} image={heroImage} imageAlt={`${name} screenshot`} app={app.slug} appStoreId={app.appStore?.id} jsonLd={[appLd, crumbsLd]}>
+<Base title={title} description={description} path={path} image={heroImage} imageAlt={`${name} screenshot`} app={app.slug} appStoreId={app.appStore?.id} jsonLd={[appLd, crumbsLd]} lang={app.contentLang}>
   <div class="op-wrap">
     <section class="op-hero">
       <div class="op-hero__head">

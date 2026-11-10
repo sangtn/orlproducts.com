@@ -125,7 +125,7 @@
       "accentInk": "#8C6F04",
       "accentInkDark": "#F9CC20",
       "accentOn": "#1B1814",
-      "generatePage": false
+      "generatePage": true
     },
     {
       "slug": "turbulenceforecast",
@@ -144,7 +144,7 @@
       "accentInk": "#3076B6",
       "accentInkDark": "#428BCD",
       "accentOn": "#1B1814",
-      "generatePage": false
+      "generatePage": true
     },
     {
       "slug": "globalsdr",
@@ -201,7 +201,7 @@
       "accentInk": "#8F7002",
       "accentInkDark": "#FCD752",
       "accentOn": "#1B1814",
-      "generatePage": false
+      "generatePage": true
     },
     {
       "slug": "somavue",
@@ -220,7 +220,7 @@
       "accentInk": "#1968B1",
       "accentInkDark": "#1F80D9",
       "accentOn": "#FFFFFF",
-      "generatePage": false
+      "generatePage": true
     },
     {
       "slug": "speedgunner",
@@ -259,7 +259,7 @@
       "accentInk": "#127D9B",
       "accentInkDark": "#17A2C9",
       "accentOn": "#1B1814",
-      "generatePage": false
+      "generatePage": true
     },
     {
       "slug": "voiceclock",
@@ -278,7 +278,7 @@
       "accentInk": "#CC413C",
       "accentInkDark": "#D25954",
       "accentOn": "#FFFFFF",
-      "generatePage": false
+      "generatePage": true
     },
     {
       "slug": "aurora",
@@ -316,7 +316,7 @@
       "accentInk": "#886E0D",
       "accentInkDark": "#EBC534",
       "accentOn": "#1B1814",
-      "generatePage": false
+      "generatePage": true
     },
     {
       "slug": "giavang",
@@ -335,7 +335,8 @@
       "accentInk": "#9B6906",
       "accentInkDark": "#B47A07",
       "accentOn": "#1B1814",
-      "generatePage": false
+      "generatePage": true,
+      "contentLang": "vi"
     },
     {
       "slug": "livemate",
@@ -354,7 +355,8 @@
       "accentInk": "#117DA6",
       "accentInkDark": "#61C8EF",
       "accentOn": "#1B1814",
-      "generatePage": false
+      "generatePage": true,
+      "metaDescription": "LiveMate plays IPTV playlists from Xtream API, M3U and M3U8 links, with live TV channel switching, favorites, multiple playlists and AirPlay to your TV."
     },
     {
       "slug": "randonauting",
@@ -430,7 +432,8 @@
       "accentInk": "#AC27A6",
       "accentInkDark": "#D239CB",
       "accentOn": "#FFFFFF",
-      "generatePage": false
+      "generatePage": true,
+      "metaDescription": "PixeAI is an AI photo editor and video maker for iPhone and iPad: turn photos and footage into AI videos, and create art from an image and a prompt."
     },
     {
       "slug": "cartoonphoto",
@@ -449,7 +452,8 @@
       "accentInk": "#B75611",
       "accentInkDark": "#EA7420",
       "accentOn": "#1B1814",
-      "generatePage": false
+      "generatePage": true,
+      "metaDescription": "Turn your photos into 2D and 3D cartoons with one tap, then add backgrounds, layouts, stickers and text, and export with a transparent background."
     },
     {
       "slug": "compressphoto",
@@ -468,7 +472,7 @@
       "accentInk": "#0B8626",
       "accentInkDark": "#11C838",
       "accentOn": "#1B1814",
-      "generatePage": false
+      "generatePage": true
     },
     {
       "slug": "compressvideos",
@@ -487,7 +491,8 @@
       "accentInk": "#2A66FD",
       "accentInkDark": "#3E75FD",
       "accentOn": "#FFFFFF",
-      "generatePage": false
+      "generatePage": true,
+      "metaDescription": "Compress one video, several videos or whole albums on iPhone and iPad. Choose resolution and bitrate, preview the quality and see the space you save."
     },
     {
       "slug": "contactsbackup",
@@ -506,7 +511,8 @@
       "accentInk": "#0570E3",
       "accentInkDark": "#218AFA",
       "accentOn": "#1B1814",
-      "generatePage": false
+      "generatePage": true,
+      "metaDescription": "Back up all your iPhone contacts to .vcf and .csv files you email to yourself, merge duplicates and remove empty contacts. No server needed."
     },
     {
       "slug": "idpassport",
@@ -525,7 +531,8 @@
       "accentInk": "#026EE5",
       "accentInkDark": "#278DFD",
       "accentOn": "#1B1814",
-      "generatePage": false
+      "generatePage": true,
+      "metaDescription": "Make passport, ID and visa photos at home for 100+ documents in 150+ countries, with automatic background removal and print-ready photo sheets."
     }
   ],
   "brand": {

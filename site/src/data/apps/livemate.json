@@ -67,9 +67,22 @@
     "terms": null,
     "support": null
   },
-  "generatePage": false,
+  "generatePage": true,
+  "contentLang": "en",
+  "metaDescription": "LiveMate plays IPTV playlists from Xtream API, M3U and M3U8 links, with live TV channel switching, favorites, multiple playlists and AirPlay to your TV.",
   "description": "LiveMate IPTV Smart Player can play extensions such as mqv, pls, aifc, m4r, wav, 3gp, 3g2, flac, avi, m2a, aac, mpa, xhe, m3u, mov, aiff, ttml, vtt, m4v, amr, caf, m4a, m4b, mp4, mp1, m1a, mp4, aax, mp2, w64, aa, mp3, itt, au, eac3, webvtt, vtt, ac3, m4p, loas and Live stream IPTV support.\n\nKey Features\n\n• Advanced IPTV Player – Smooth playback with support for Xtream Api, M3U & M3U8 playlists.\n• Live TV Experience – Switch channels instantly and enjoy responsive, high-quality streaming.\n• Playlist Manager – Organize, edit, and update your playlists with ease.\n• Favorites & Categories – Keep your most-watched channels within reach.\n• Multi-Playlist Support – Add as many playlists as you want.\n• AirPlay & Smart Casting – Stream to your TV with one tap.\n• Dark Mode UI – Clean, modern interface optimized for OLED and low-light viewing.\n• Fast Channel Search – Quickly find what you’re looking for.\n• High Performance – Designed for speed, stability, and a premium user experience.\n\nPrivacy First\n\nLiveMate does not store or distribute any streams, playlists, or user data.\nAll content stays on your device.\nYour privacy is always protected.\n\nLiveMate offers optional auto-renewable subscriptions; weekly, monthly and yearly premiums that unlock some advanced features.\n\nSubscription Details:\n• Subscriptions are billed automatically unless canceled at least 24 hours before the end of the current period\n• Payment is charged to your Apple ID\n• Subscriptions can be managed or canceled anytime in your App Store account settings\n• Any unused portion of a free trial (if offered) will be forfeited when a subscription is purchased\n\nDisclaimer\n\nLiveMate does NOT include any IPTV channels or provide content of any kind.\nYou must add your own playlists from legal, authorized sources.\nDownload & Play IPTV designed for ease of use for IPTV.\n\nPrivacy Policy: https://orlproducts.pages.dev/privacy\nTerms of Service(EULA): https://orlproducts.pages.dev/terms\n\nGot ideas or feedback? Send them our way: info@orlproducts.com",
-  "screenshots": {},
+  "screenshots": {
+    "iphone": [
+      "/assets/apps/livemate/iphone-01.webp",
+      "/assets/apps/livemate/iphone-02.webp",
+      "/assets/apps/livemate/iphone-03.webp"
+    ],
+    "ipad": [
+      "/assets/apps/livemate/ipad-01.webp",
+      "/assets/apps/livemate/ipad-02.webp",
+      "/assets/apps/livemate/ipad-03.webp"
+    ]
+  },
   "issues": [
     "App Store Developer Website points to https://orlproducts.pages.dev/, which does not resolve.",
     "No app-specific privacy policy page on orlproducts.com.",

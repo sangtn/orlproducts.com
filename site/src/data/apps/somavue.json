@@ -64,9 +64,26 @@
     "terms": null,
     "support": null
   },
-  "generatePage": false,
+  "generatePage": true,
+  "contentLang": "en",
+  "metaDescription": null,
   "description": "Somavue is a 3D anatomy app that tests you on the model itself.\n\nMost anatomy apps stop at looking. Somavue schedules what you have studied and brings it back as a question you answer on the body: the name appears, the labels disappear, and you rotate, peel and tap the right structure. Getting it right is the review.\n\nFIND IT ON THE BODY\n• Find-It: a structure is named, you locate it on the 3D model\n• Name-It: a structure is highlighted, you name it\n• Relate-It: tap the bone a muscle inserts on, or the vessel that supplies it\n• Reviews are scheduled with FSRS spaced repetition, computed on your device\n\nPEEL THROUGH THE LAYERS\n• One continuous depth control from skin to superficial muscle, deep muscle, skeleton and viscera\n• Not a list of on/off switches: hold any depth in between\n• Real-time cut plane in the axial, coronal and sagittal planes\n• Isolate, fade or hide any structure\n\nA LIBRARY THAT SHOWS ITS WORK\n• 256 anatomical structures across the skeletal, muscular and organ systems\n• Function, origin, insertion, innervation, blood supply, clinical note and synonyms\n• Every card names its reference source and its content version\n• Report an error from any card — corrections ship in content updates\n\nBUILT FOR YOUR COURSE\n• Syllabus Mode: paste or import the structure list your course examines\n• Somavue states plainly how much of your list it covers, then scopes browsing, search, quizzes and reviews to it\n• Study Sets, ten ready-made blocks, and progress reported against your list\n\nSTUDY TOOLS\n• Search by common name, Latin name, synonym or eponym — and it forgives spelling\n• Identify, Reverse Identify, Timed Drill, Region Test and Exam Mode\n• Mastery map, weak-area list and a 30-day review forecast\n• Capture, annotate with Apple Pencil, export PNG, PDF and USDZ\n• Spotlight, Siri and Shortcuts: \"Start my anatomy review\"\n\nPRIVACY, HONESTLY\n• No account. Nothing to sign in to.\n• No analytics, advertising or crash SDKs of any kind\n• Everything works offline, from the first launch\n• Your study data stays on your device\n\nFREE AND PREMIUM\nThe free plan is a real study tool: the complete skeletal and muscular systems, full Peel, full search, every structure card, and 40 reviews a day.\nPremium adds unlimited reviews, the organ system, Relate-It, Timed Drill, Region Test, Exam Mode, the annotation layer, PDF and USDZ export, unlimited Study Sets and syllabi, the review forecast and Presentation Mode.\n\nPremium is available weekly, monthly, yearly with a 7-day free trial, or as a one-time Lifetime purchase. Prices are shown in full before any purchase; cancel any time in the App Store.\n\nSomavue is an educational anatomy app for students and self-directed learners. It is not a medical device and does not provide medical advice.\n\n3D anatomical models: BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International.\n\nEducational Purpose\nThis app provides anatomy information for educational purposes only. It is not intended to diagnose, treat, prevent, or provide medical advice for any medical condition.\n\nGot ideas or feedback? Send them our way: info@orlproducts.com\n\nTerms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPrivacy Policy: https://orientpro.com/privacy",
-  "screenshots": {},
+  "screenshots": {
+    "iphone": [
+      "/assets/apps/somavue/iphone-01.webp",
+      "/assets/apps/somavue/iphone-02.webp",
+      "/assets/apps/somavue/iphone-03.webp",
+      "/assets/apps/somavue/iphone-04.webp",
+      "/assets/apps/somavue/iphone-05.webp"
+    ],
+    "ipad": [
+      "/assets/apps/somavue/ipad-01.webp",
+      "/assets/apps/somavue/ipad-02.webp",
+      "/assets/apps/somavue/ipad-03.webp",
+      "/assets/apps/somavue/ipad-04.webp",
+      "/assets/apps/somavue/ipad-05.webp"
+    ]
+  },
   "issues": [
     "No app-specific privacy policy page on orlproducts.com.",
     "No landing page on orlproducts.com."
