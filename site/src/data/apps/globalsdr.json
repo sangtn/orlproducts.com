@@ -74,6 +74,26 @@
     "terms": null,
     "support": null
   },
+  "generatePage": true,
+  "description": "Hear the world's radio, live, from your iPhone.\n\nTunar connects you to more than 1,300 real radio receivers run by volunteers on every continent. Tune a shortwave broadcast from Asia, listen to oceanic aviation weather, catch a ham radio contact or find a numbers station. No radio, no antenna, no hardware to buy.\n\nKnow what you're hearing\nTunar reads the clock as well as the dial. Tune any shortwave frequency and it shows which station is scheduled right now, from which country, in which language and for how much longer. Browse everything on air worldwide in your language, see what starts in the next hour, and get a reminder before a broadcast begins. The schedule works offline.\n\nSee the spectrum\nA native, hardware-accelerated spectrum and waterfall, drawn the way radio operators know it. Drag to tune, pinch to zoom, adjust the passband with your finger, and see station names right on the waterfall. Choose AM, SAM, LSB, USB, CW or NFM, set AGC, filter width and waterfall speed.\n\nKnow which bands are open\nA band conditions dashboard built from live NOAA space-weather data: K index, solar flux, sunspots, X-ray flares, band-by-band day and night outlooks and the time of your next greyline. The receiver map shows the day and night terminator.\n\nThe right receiver, picked for you\nType a frequency and Tunar connects to a free receiver that covers it. If a receiver is full or offline, it suggests the next best one. Browse the list or the map, filter by network, free slots or coverage, and save favorites.\n\nListen anywhere\nBackground audio with lock-screen controls, Live Activities and the Dynamic Island. Widgets for now listening, band conditions and one-tap channels. Control Center controls. Siri and Shortcuts. An Apple Watch remote with Digital Crown tuning. Sleep timer included.\n\nScan\nBuilt-in scan groups for time signals, aviation, military and utility, numbers stations, amateur digital modes and marine, or build your own with signal hold and an audible cue before each step.\n\nKeep a record\nLog a catch with one tap: frequency, mode, station, receiver and the space weather at that moment. Store numbered memory channels.\n\nTunar Pro\n• Record what you hear, including the 30 seconds before you tapped\n• Transcribe and translate recordings on your device\n• Unlimited memory channels, logbook entries and scan groups\n• Export your logbook as CSV or ADIF\n• Add your own KiwiSDR or OpenWebRX receivers\n• Find the best receiver to hear a chosen place\n• Sonified spectrum: hear the waterfall as tones\n\nPro is available as a weekly, monthly or yearly subscription, or as a one-time lifetime purchase. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Payment is charged to your Apple Account. Manage or cancel in your Apple Account settings.\n\nBuilt on respect\nEvery receiver is run by a volunteer paying for their own hardware and bandwidth. Tunar identifies itself honestly, opens one connection at a time and releases its slot the moment you stop. Receiver rules and donation links are one tap away. With thanks to the KiwiSDR, OpenWebRX and WebSDR communities, EIBI and NOAA SWPC.\n\nPrivate by design\nNo account. No analytics. No ads. No tracking. Your location, logbook and recordings stay on your device.\n\nAvailable in English, German, Spanish, Italian, Japanese, Portuguese, Dutch and Vietnamese.\n\nTunar is an independent app and is not affiliated with the operators of the receivers or networks it connects to. Receiver availability varies. Not for emergency use. Reception laws vary by country. Band forecasts are estimates.\n\nTerms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPrivacy Policy: https://orlproducts.com/privacy.html\nSupport: https://orlproducts.com/contact.html",
+  "screenshots": {
+    "iphone": [
+      "/assets/apps/globalsdr/iphone-01.webp",
+      "/assets/apps/globalsdr/iphone-02.webp",
+      "/assets/apps/globalsdr/iphone-03.webp",
+      "/assets/apps/globalsdr/iphone-04.webp",
+      "/assets/apps/globalsdr/iphone-05.webp",
+      "/assets/apps/globalsdr/iphone-06.webp"
+    ],
+    "ipad": [
+      "/assets/apps/globalsdr/ipad-01.webp",
+      "/assets/apps/globalsdr/ipad-02.webp",
+      "/assets/apps/globalsdr/ipad-03.webp",
+      "/assets/apps/globalsdr/ipad-04.webp",
+      "/assets/apps/globalsdr/ipad-05.webp",
+      "/assets/apps/globalsdr/ipad-06.webp"
+    ]
+  },
   "issues": [
     "No landing page on orlproducts.com."
   ]

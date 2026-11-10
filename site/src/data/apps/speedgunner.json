@@ -80,6 +80,30 @@
     "terms": null,
     "support": null
   },
+  "generatePage": true,
+  "description": "SpeedGunner AI: Speed Camera turns your iPhone or iPad into a camera-based speed gun. Point it at a car on your street, a baseball pitch, a tennis serve or an RC car and see its estimated speed, with an honest Trust Grade on every reading.\n\nDAY AND NIGHT\n• In daylight, the camera follows the moving object frame by frame.\n• After dark, the Night Engine measures vehicles by tracking pairs of headlights or taillights. The shutter stays fast so moving lights stay sharp instead of smearing into streaks.\n• On iPhone and iPad models with LiDAR, depth is checked for vehicles within 10 m.\n• When the lights can't show whether it was a car or a truck, you see a speed range and choose the vehicle. Nothing is guessed.\n• If it's too dark to measure reliably, the app tells you instead of showing a number.\n\nHOW A READING IS BUILT\n• Calibrate once: mark two points you can measure, use LiDAR on Pro devices, or pick a known object size.\n• Two independent estimates are compared before a reading is accepted.\n• Every reading gets a Trust Grade from A to D with its expected error band.\n\nFOUR MODES\n• Street: count vehicles, see the 85th-percentile speed and build a report for your neighborhood.\n• Sport: pitch, serve and ball speed with athlete profiles and season bests.\n• Vehicle: a handheld layout for one specific vehicle.\n• Lab: frame-by-frame review and CSV export for experiments and classrooms.\n\nMADE FOR REAL USE\n• Live Activity and Dynamic Island while a session runs.\n• Home Screen widgets and a Control Center control.\n• Apple Watch remote: start, stop and read results from your wrist (Pro).\n• iPad split view with keyboard shortcuts.\n• Available in 15 languages.\n\nNo account. No server. No tracking. Video is processed on your device and is never uploaded.\n\nFREE\n5 detailed measurements a day, Trust Grades, the Night Engine, Live Activity, Street and Sport modes, one free weekly session of Vehicle and Lab, your 3 most recent sessions and a summary image to share.\n\nSPEEDGUN PRO\nUnlimited measurements, Vehicle and Lab modes, PDF and CSV exports, full history, unlimited Spots and athletes, multi-object tracking, Gate Mode, radar Cross-Check, the Apple Watch remote and six alternate app icons.\n\n\nSubscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Your Apple Account is charged for renewal within 24 hours before the current period ends. Manage or cancel anytime in Settings › Apple Account › Subscriptions. Any unused part of a free trial ends when you buy a subscription. Lifetime is a one-time purchase and never renews.\n\nIMPORTANT\nSpeedGunner AI: Speed Camera gives estimates from camera vision. It is not a certified measuring device and must not be used for law enforcement, insurance or legal proceedings. Vehicles without lights, and unlit bicycles or people, cannot be measured after dark.\n\nGot ideas or feedback? Send them our way: info@orlproducts.com\n\nTerms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\nPrivacy Policy: https://orientpro.com/speedgunai/privacy",
+  "screenshots": {
+    "iphone": [
+      "/assets/apps/speedgunner/iphone-01.webp",
+      "/assets/apps/speedgunner/iphone-02.webp",
+      "/assets/apps/speedgunner/iphone-03.webp",
+      "/assets/apps/speedgunner/iphone-04.webp",
+      "/assets/apps/speedgunner/iphone-05.webp",
+      "/assets/apps/speedgunner/iphone-06.webp",
+      "/assets/apps/speedgunner/iphone-07.webp",
+      "/assets/apps/speedgunner/iphone-08.webp"
+    ],
+    "ipad": [
+      "/assets/apps/speedgunner/ipad-01.webp",
+      "/assets/apps/speedgunner/ipad-02.webp",
+      "/assets/apps/speedgunner/ipad-03.webp",
+      "/assets/apps/speedgunner/ipad-04.webp",
+      "/assets/apps/speedgunner/ipad-05.webp",
+      "/assets/apps/speedgunner/ipad-06.webp",
+      "/assets/apps/speedgunner/ipad-07.webp",
+      "/assets/apps/speedgunner/ipad-08.webp"
+    ]
+  },
   "issues": [
     "No app-specific privacy policy page on orlproducts.com.",
     "No landing page on orlproducts.com."

@@ -1,0 +1,15 @@
+---
+import type { App } from '../lib/apps';
+import { pageUrl } from '../lib/apps';
+import PlatformChips from './PlatformChips.astro';
+interface Props { app: App }
+const { app } = Astro.props;
+---
+<a class="op-appcard" data-app={app.slug} href={pageUrl(app)}>
+  <img class="op-icon" src={`/assets/icons/${app.slug}.png`} alt="" width="64" height="64" loading="lazy" decoding="async" />
+  <div>
+    <p class="op-appcard__name">{app.name}</p>
+    <p class="op-appcard__sub">{app.subtitle ?? app.category}</p>
+  </div>
+  <PlatformChips app={app} surfaces={false} />
+</a>

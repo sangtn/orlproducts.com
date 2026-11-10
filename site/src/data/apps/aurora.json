@@ -75,6 +75,28 @@
     "terms": null,
     "support": null
   },
+  "generatePage": true,
+  "description": "Most aurora apps show you a number. Auroline tells you whether you will actually see anything tonight.\n\nA Kp index is a global average from three hours ago. It cannot know that it is overcast where you are standing, that the moon is up, or that it will not be properly dark for another two hours. Auroline fuses all of it into one word.\n\n\nONE VERDICT, NOT A NUMBER\nGO, MAYBE, WAIT or SLEEP — worked out from the auroral oval at your geomagnetic latitude, live cloud cover, moon illumination and altitude, and the astronomical darkness window for your exact position.\n\nTap once and every factor is there: what each one contributed, what the raw feed said, and when it was measured. Shallow when you want an answer, deep when you want to argue with it.\n\n\nA SKY YOU CAN PLAY\nZoom out and the map becomes the globe — real Apple Maps imagery, the day/night terminator, and the auroral oval drawn across it. Then scrub through twenty-four hours and watch the band sweep as the Earth turns beneath it. Twelve hours of observed data behind you, twelve hours of NOAA forecast ahead, clearly marked so you always know which is which.\n\n\nALERTS THAT TELL YOU WHEN THEY ARE BROKEN\nAlerts fire on the fused score, not on raw Kp, so an overcast night stays quiet. They are scheduled on your device — there is no server in the path to fail.\n\nAnd there is an Alert Health screen: notification permission, Background App Refresh, when the last check actually ran, and the last five alerts sent with timestamps. If something is stopping alerts reaching you, it says so and offers the fix. No other aurora app shows you this.\n\nOne saved location and one alert threshold are free, permanently. The answer is not behind the paywall.\n\n\nPHOTOGRAPH IT\nISO, shutter, aperture, white balance and focus, worked out from tonight's darkness and moonlight for your camera type — and updated as the night changes. Plus a pre-flight checklist that knows it is minus eight outside.\n\n\nNORTH AND SOUTH\nFull Aurora Australis support from day one. Queenstown and Tromsø get the same forecast quality.\n\n\nEVERYWHERE YOU LOOK\n· Four Home Screen widgets — the verdict, a live globe, the factor breakdown\n  and all your places — in small, medium and large\n· Lock Screen widgets and StandBy\n· Live Activity and Dynamic Island for a night you are actively watching\n· Control Center module\n· Apple Watch app and complications, in all four families\n· Widgets on the CarPlay dashboard\n· Siri and Shortcuts — \"what's the aurora forecast?\"\n\nEvery surface reads one shared calculation, so your watch and your phone can never disagree about tonight.\n\n\nPRIVACY\nNo account. No login. No email. No tracking. No ads. No analytics SDK.\nYour location is used on your device to compute your forecast and is never uploaded. The single exception is a community sighting, which you have to tap to send — and it is rounded to the nearest 10 km before it leaves your phone, with no identifier attached.\n\n\nDATA\nKp index, the OVATION auroral oval, solar wind and the three-day forecast come from NOAA's Space Weather Prediction Center. Cloud cover comes from Apple WeatherKit. Moon phase, altitude and twilight are computed on your device, so they stay accurate with no signal at all.\n\n\nAUROLINE PRO\nUnlimited saved locations, each with its own threshold. The full Bz/Bt panel, three-day forecast and season history. Dark-sky finder, community sighting reports and quiet hours. The camera assistant, Live Activity, StandBy and Lock Screen widgets.\n\nPrivacy Policy: https://orlproducts.pages.dev/privacy.html\nTerms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\n\nGot ideas or feedback? Send them our way: info@orlproducts.com",
+  "screenshots": {
+    "iphone": [
+      "/assets/apps/aurora/iphone-01.webp",
+      "/assets/apps/aurora/iphone-02.webp",
+      "/assets/apps/aurora/iphone-03.webp",
+      "/assets/apps/aurora/iphone-04.webp",
+      "/assets/apps/aurora/iphone-05.webp",
+      "/assets/apps/aurora/iphone-06.webp",
+      "/assets/apps/aurora/iphone-07.webp"
+    ],
+    "ipad": [
+      "/assets/apps/aurora/ipad-01.webp",
+      "/assets/apps/aurora/ipad-02.webp",
+      "/assets/apps/aurora/ipad-03.webp",
+      "/assets/apps/aurora/ipad-04.webp",
+      "/assets/apps/aurora/ipad-05.webp",
+      "/assets/apps/aurora/ipad-06.webp",
+      "/assets/apps/aurora/ipad-07.webp"
+    ]
+  },
   "issues": [
     "No app-specific privacy policy page on orlproducts.com.",
     "No landing page on orlproducts.com."

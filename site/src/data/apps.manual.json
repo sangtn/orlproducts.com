@@ -19,7 +19,8 @@
       "accentInk": "#5B4CF0",
       "accentInkDark": "#796DF3",
       "accentOn": "#FFFFFF",
-      "visionNative": true
+      "visionNative": true,
+      "generatePage": false
     },
     {
       "slug": "raykin",
@@ -41,7 +42,8 @@
       "category": "Medical",
       "accentInk": "#1B609A",
       "accentInkDark": "#2583D2",
-      "accentOn": "#FFFFFF"
+      "accentOn": "#FFFFFF",
+      "generatePage": false
     },
     {
       "slug": "chemistry3d",
@@ -62,7 +64,8 @@
       "category": "Education",
       "accentInk": "#136C85",
       "accentInkDark": "#1889A9",
-      "accentOn": "#FFFFFF"
+      "accentOn": "#FFFFFF",
+      "generatePage": false
     },
     {
       "slug": "omnidoc",
@@ -83,7 +86,8 @@
       "category": "Productivity",
       "accentInk": "#0671E6",
       "accentInkDark": "#3E98FA",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": true
     },
     {
       "slug": "origamilearn",
@@ -101,7 +105,8 @@
       "subtitle": "Origami Guide, Creative Crafts",
       "accentInk": "#B85800",
       "accentInkDark": "#FF8A1F",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": false
     },
     {
       "slug": "paddlepilot",
@@ -119,7 +124,8 @@
       "subtitle": "Canoe & SUP River Trip Planner",
       "accentInk": "#8C6F04",
       "accentInkDark": "#F9CC20",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": false
     },
     {
       "slug": "turbulenceforecast",
@@ -137,7 +143,8 @@
       "subtitle": "Know the bumps before you fly",
       "accentInk": "#3076B6",
       "accentInkDark": "#428BCD",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": false
     },
     {
       "slug": "globalsdr",
@@ -155,7 +162,8 @@
       "subtitle": "Ham, Scanner & Live SWL Tuner",
       "accentInk": "#8C4426",
       "accentInkDark": "#C86136",
-      "accentOn": "#FFFFFF"
+      "accentOn": "#FFFFFF",
+      "generatePage": true
     },
     {
       "slug": "world-monitor",
@@ -173,7 +181,8 @@
       "subtitle": "Live War Tracker Live Conflict",
       "accentInk": "#164E89",
       "accentInkDark": "#2880DD",
-      "accentOn": "#FFFFFF"
+      "accentOn": "#FFFFFF",
+      "generatePage": true
     },
     {
       "slug": "babi",
@@ -191,7 +200,8 @@
       "subtitle": "Dress, Pack, Plan the day",
       "accentInk": "#8F7002",
       "accentInkDark": "#FCD752",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": false
     },
     {
       "slug": "somavue",
@@ -209,7 +219,8 @@
       "subtitle": "Learn & Recall the Human Body",
       "accentInk": "#1968B1",
       "accentInkDark": "#1F80D9",
-      "accentOn": "#FFFFFF"
+      "accentOn": "#FFFFFF",
+      "generatePage": false
     },
     {
       "slug": "speedgunner",
@@ -228,7 +239,8 @@
       "subtitle": "Measure speed with your Camera",
       "accentInk": "#720102",
       "accentInkDark": "#FD0507",
-      "accentOn": "#FFFFFF"
+      "accentOn": "#FFFFFF",
+      "generatePage": true
     },
     {
       "slug": "videoupscale",
@@ -246,7 +258,8 @@
       "subtitle": "Restore Old Family Videos",
       "accentInk": "#127D9B",
       "accentInkDark": "#17A2C9",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": false
     },
     {
       "slug": "voiceclock",
@@ -264,7 +277,8 @@
       "subtitle": "Talking Clock Voice Alerts",
       "accentInk": "#CC413C",
       "accentInkDark": "#D25954",
-      "accentOn": "#FFFFFF"
+      "accentOn": "#FFFFFF",
+      "generatePage": false
     },
     {
       "slug": "aurora",
@@ -282,7 +296,8 @@
       "subtitle": null,
       "accentInk": "#94112C",
       "accentInkDark": "#E93C5F",
-      "accentOn": "#FFFFFF"
+      "accentOn": "#FFFFFF",
+      "generatePage": true
     },
     {
       "slug": "pinbord",
@@ -300,7 +315,8 @@
       "subtitle": null,
       "accentInk": "#886E0D",
       "accentInkDark": "#EBC534",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": false
     },
     {
       "slug": "giavang",
@@ -318,7 +334,8 @@
       "subtitle": null,
       "accentInk": "#9B6906",
       "accentInkDark": "#B47A07",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": false
     },
     {
       "slug": "livemate",
@@ -336,7 +353,8 @@
       "subtitle": null,
       "accentInk": "#117DA6",
       "accentInkDark": "#61C8EF",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": false
     },
     {
       "slug": "randonauting",
@@ -354,7 +372,8 @@
       "subtitle": null,
       "accentInk": "#976903",
       "accentInkDark": "#BF8504",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": false
     },
     {
       "slug": "volumebooster",
@@ -372,7 +391,8 @@
       "subtitle": null,
       "accentInk": "#224B55",
       "accentInkDark": "#3E889A",
-      "accentOn": "#FFFFFF"
+      "accentOn": "#FFFFFF",
+      "generatePage": false
     },
     {
       "slug": "offlinefiles",
@@ -390,7 +410,8 @@
       "subtitle": null,
       "accentInk": "#1572E0",
       "accentInkDark": "#2882EB",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": false
     },
     {
       "slug": "pixeai",
@@ -408,7 +429,8 @@
       "subtitle": null,
       "accentInk": "#AC27A6",
       "accentInkDark": "#D239CB",
-      "accentOn": "#FFFFFF"
+      "accentOn": "#FFFFFF",
+      "generatePage": false
     },
     {
       "slug": "cartoonphoto",
@@ -426,7 +448,8 @@
       "subtitle": null,
       "accentInk": "#B75611",
       "accentInkDark": "#EA7420",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": false
     },
     {
       "slug": "compressphoto",
@@ -444,7 +467,8 @@
       "subtitle": null,
       "accentInk": "#0B8626",
       "accentInkDark": "#11C838",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": false
     },
     {
       "slug": "compressvideos",
@@ -462,7 +486,8 @@
       "subtitle": null,
       "accentInk": "#2A66FD",
       "accentInkDark": "#3E75FD",
-      "accentOn": "#FFFFFF"
+      "accentOn": "#FFFFFF",
+      "generatePage": false
     },
     {
       "slug": "contactsbackup",
@@ -480,7 +505,8 @@
       "subtitle": null,
       "accentInk": "#0570E3",
       "accentInkDark": "#218AFA",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": false
     },
     {
       "slug": "idpassport",
@@ -498,7 +524,8 @@
       "subtitle": null,
       "accentInk": "#026EE5",
       "accentInkDark": "#278DFD",
-      "accentOn": "#1B1814"
+      "accentOn": "#1B1814",
+      "generatePage": false
     }
   ],
   "brand": {
