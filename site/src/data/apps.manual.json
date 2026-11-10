@@ -163,7 +163,13 @@
       "accentInk": "#8C4426",
       "accentInkDark": "#C86136",
       "accentOn": "#FFFFFF",
-      "generatePage": true
+      "generatePage": true,
+      "textFixes": [
+        [
+          "Tunar",
+          "GlobalSDR"
+        ]
+      ]
     },
     {
       "slug": "world-monitor",
@@ -336,7 +342,13 @@
       "accentInkDark": "#B47A07",
       "accentOn": "#1B1814",
       "generatePage": true,
-      "contentLang": "vi"
+      "contentLang": "vi",
+      "textFixes": [
+        [
+          "Giá Vàng Live là ứng dụng duy nhất mang đến trải nghiệm trực tiếp, toàn diện và thông minh nhất cho nhà đầu tư vàng, ngoại tệ tại Việt Nam.",
+          "Giá Vàng Live giúp nhà đầu tư vàng và ngoại tệ tại Việt Nam theo dõi giá trực tiếp, đầy đủ và tiện lợi trong một ứng dụng."
+        ]
+      ]
     },
     {
       "slug": "livemate",
@@ -472,7 +484,13 @@
       "accentInk": "#0B8626",
       "accentInkDark": "#11C838",
       "accentOn": "#1B1814",
-      "generatePage": true
+      "generatePage": true,
+      "textFixes": [
+        [
+          "- Very easy to use\n",
+          "- Very easy to use\n- Find every compressed photo in its own “Compressed Photos” album\n"
+        ]
+      ]
     },
     {
       "slug": "compressvideos",
@@ -532,7 +550,13 @@
       "accentInkDark": "#278DFD",
       "accentOn": "#1B1814",
       "generatePage": true,
-      "metaDescription": "Make passport, ID and visa photos at home for 100+ documents in 150+ countries, with automatic background removal and print-ready photo sheets."
+      "metaDescription": "Make passport, ID and visa photos at home for 100+ documents in 150+ countries, with automatic background removal and print-ready photo sheets.",
+      "textFixes": [
+        [
+          "contact@snapai.app",
+          "info@orlproducts.com"
+        ]
+      ]
     }
   ],
   "brand": {
@@ -540,5 +564,6 @@
     "accentInk": "#B15A03",
     "accentInkDark": "#F77E04",
     "accentOn": "#1B1814"
-  }
+  },
+  "_textFixesDoc": "textFixes: [find, replace] pairs applied to the store description on every sync. Dead orlproducts.pages.dev links are rewritten to orlproducts.com for every app automatically."
 }

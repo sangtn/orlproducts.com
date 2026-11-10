@@ -3,6 +3,7 @@
 import { cpSync, existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { prerenderTranslations } from './prerender-i18n.mjs';
 
 const SITE = 'https://orlproducts.com';
 const siteDir = fileURLToPath(new URL('..', import.meta.url));
@@ -35,6 +36,10 @@ for (const name of readdirSync(root)) {
   copied++;
 }
 
+// 2b. Translations: /<lang>/<page>.html from assets/i18n, with hreflang (these must pass the checks too)
+const translated = prerenderTranslations(dist);
+for (const p of translated) generated.add(p);
+
 // 3. sitemap.xml: lastmod comes from app data for generated app pages, and from the previous sitemap for legacy pages
 const oldSitemap = existsSync(join(root, 'sitemap.xml')) ? readFileSync(join(root, 'sitemap.xml'), 'utf8') : '';
 const oldLastmod = Object.fromEntries([...oldSitemap.matchAll(/<loc>([^<]+)<\/loc><lastmod>([^<]+)<\/lastmod>/g)].map((m) => [m[1], m[2]]));
@@ -43,7 +48,7 @@ const appData = Object.fromEntries(readdirSync(join(siteDir, 'src/data/apps')).m
   return [`${a.slug}.html`, a.appStore?.updated];
 }));
 const pages = walk(dist).filter((f) => f.endsWith('.html')).map((f) => relative(dist, f))
-  .filter((p) => p !== '404.html' && !/^google[0-9a-f]+\.html$/.test(p) && !p.includes('/'))
+  .filter((p) => p !== '404.html' && !/^google[0-9a-f]+\.html$/.test(p) && (!p.includes('/') || /^[a-z]{2}(-[A-Za-z]{2,4})?\/[^/]+\.html$/.test(p)))
   .sort((a, b) => (a === 'index.html' ? -1 : b === 'index.html' ? 1 : a.localeCompare(b)));
 const urls = pages.map((p) => {
   const loc = p === 'index.html' ? `${SITE}/` : `${SITE}/${p}`;
@@ -65,9 +70,13 @@ for (const p of pages) {
   const canon = head.match(/<link rel="canonical" href="([^"]*)"/i)?.[1] ?? '';
   const h1s = (html.replace(/<svg[\s\S]*?<\/svg>/gi, '').match(/<h1[\s>]/gi) ?? []).length;
   if (!title) report.push(`${p}: missing <title>`);
-  else if (title.length > 70) report.push(`${p}: title is ${title.length} characters (keep under 70)`);
+  else if (title.length > 70) (p.includes('/') ? warnings : report).push(`${p}: title is ${title.length} characters (keep under 70)`);
   if (!desc) report.push(`${p}: missing meta description`);
-  else if (desc.length < 70 || desc.length > 160) report.push(`${p}: description is ${desc.length} characters (keep 70-160)`);
+  else {
+    // Japanese, Korean and Chinese say the same thing in far fewer characters
+    const min = /^(ja|ko|zh-Hans|zh-Hant)\//.test(p) ? 30 : 70;
+    if (desc.length < min || desc.length > 160) report.push(`${p}: description is ${desc.length} characters (keep ${min}-160)`);
+  }
   if (!canon.startsWith(`${SITE}/`)) report.push(`${p}: canonical is "${canon}"`);
   if (h1s !== 1) report.push(`${p}: ${h1s} <h1> elements`);
   for (const [, json] of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi)) {
@@ -79,8 +88,8 @@ for (const p of pages) {
 for (const [t, ps] of titles) if (ps.length > 1) errors.push(`duplicate title "${t}" on ${ps.join(', ')}`);
 for (const [, ps] of descs) if (ps.length > 1) errors.push(`duplicate description on ${ps.join(', ')}`);
 
-console.log(`merge-legacy: ${generated.size} generated pages, ${copied} legacy entries copied, ${pages.length} URLs in sitemap.xml`);
-for (const w of warnings) console.warn(`  warning (legacy page): ${w}`);
+console.log(`merge-legacy: ${generated.size} generated pages (${translated.length} translated), ${copied} legacy entries copied, ${pages.length} URLs in sitemap.xml`);
+for (const w of warnings) console.warn(`  warning: ${w}`);
 if (errors.length) {
   for (const e of errors) console.error(`  ERROR: ${e}`);
   process.exit(1);

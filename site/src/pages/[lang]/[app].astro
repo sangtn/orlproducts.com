@@ -1,0 +1,15 @@
+---
+// Translated app pages -> /<lang>/<slug>.html, one per file in site/src/data/i18n/<lang>/<slug>.json
+import AppPage from '../../components/AppPage.astro';
+import { bySlug, type App } from '../../lib/apps';
+import { translations } from '../../lib/translations';
+
+export function getStaticPaths() {
+  return translations
+    .filter((t) => bySlug(t.slug)?.generatePage && t.lang !== bySlug(t.slug).contentLang)
+    .map((t) => ({ params: { lang: t.lang, app: t.slug }, props: { app: bySlug(t.slug) } }));
+}
+const { app } = Astro.props as { app: App };
+const { lang } = Astro.params;
+---
+<AppPage app={app} lang={lang!} />

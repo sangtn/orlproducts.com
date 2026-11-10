@@ -2,9 +2,11 @@
 // Only what the store data supports. Mac and Vision Pro appear only for native builds;
 // CarPlay never appears unless the data says so (no app supports it today).
 import type { App } from '../lib/apps';
-interface Props { app: App; surfaces?: boolean }
-const { app, surfaces = true } = Astro.props;
-const p = app.platforms, s = app.surfaces;
+import { t } from '../lib/ui';
+interface Props { app: App; surfaces?: boolean; lang?: string }
+const { app, surfaces = true, lang = 'en' } = Astro.props;
+const s = t(lang);
+const p = app.platforms, f = app.surfaces;
 const items: [string, string][] = [];
 if (p.iphone) items.push(['iphone', 'iPhone']);
 if (p.ipad) items.push(['ipad', 'iPad']);
@@ -14,15 +16,15 @@ if (p.vision === 'native') items.push(['vision', 'Apple Vision Pro']);
 if (p.android) items.push(['android', 'Android']);
 if (p.wearOs) items.push(['wear', 'Wear OS']);
 if (surfaces) {
-  if (s.widgets) items.push(['widgets', 'Widgets']);
-  if (s.liveActivities) items.push(['live-activities', 'Live Activities']);
-  if (s.controlCenter) items.push(['control-center', 'Control Center']);
-  if (s.siri) items.push(['voice', 'Siri']);
+  if (f.widgets) items.push(['widgets', s.widgets]);
+  if (f.liveActivities) items.push(['live-activities', s.liveActivities]);
+  if (f.controlCenter) items.push(['control-center', s.controlCenter]);
+  if (f.siri) items.push(['voice', 'Siri']);
 }
 ---
-<ul class="op-chips" aria-label="Works on">
+<ul class="op-chips" aria-label={s.worksOn}>
   {items.map(([icon, label]) => (
     <li class="op-chip"><svg aria-hidden="true"><use href={`/assets/ui/platform-icons.svg#${icon}`} /></svg>{label}</li>
   ))}
-  {app.iosStatus === 'in-review' && <li class="op-chip op-chip--note">iPhone and iPad version in review</li>}
+  {app.iosStatus === 'in-review' && <li class="op-chip op-chip--note">{s.inReviewChip}</li>}
 </ul>

@@ -167,7 +167,41 @@
     if (picker) picker.addEventListener('change', function () { choose(picker.value); });
   }
 
-  function start() { readLanguages(); snapshotEnglish(); wire(); load(preferred()); }
+  /* Since the site is built, every translation also exists as a real page
+   * (/ja/raykin.html …) listed in <link rel="alternate" hreflang>. When those
+   * links are present, choosing a language opens that page instead of swapping
+   * text in place, so the address, the content and what search engines index
+   * all match. Old shared links with ?lang= are sent to the real page. */
+  function alternates() {
+    var map = {};
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function (l) {
+      var h = l.getAttribute('hreflang');
+      if (h !== 'x-default') map[h] = l.getAttribute('href');
+    });
+    return map;
+  }
+
+  function startStatic(urls) {
+    var current = root.getAttribute('data-i18n-static') || 'en';
+    choose = function (lang) {
+      if (!urls[lang] || lang === current) return;
+      try { localStorage.setItem(STORE_KEY, lang); } catch (e) { /* ignore */ }
+      location.href = urls[lang] + location.hash;
+    };
+    var q = normalise(new URLSearchParams(location.search).get('lang'));
+    if (q && q !== current && urls[q]) { location.replace(urls[q] + location.hash); return; }
+    wire();
+    var picker = document.querySelector('[data-lang-select]');
+    if (picker) picker.value = current;
+    root.classList.add('i18n-ready');
+  }
+
+  function start() {
+    readLanguages();
+    var urls = alternates();
+    if (Object.keys(urls).length > 1) { startStatic(urls); return; }
+    snapshotEnglish(); wire(); load(preferred());
+  }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', start);
   } else {
