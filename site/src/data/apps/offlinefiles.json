@@ -60,16 +60,31 @@
     "carPlay": false
   },
   "web": {
-    "landing": "/offline.html",
+    "landing": "/offlinefiles.html",
     "privacy": null,
     "terms": null,
     "support": null
   },
-  "generatePage": false,
+  "generatePage": true,
   "contentLang": "en",
   "metaDescription": null,
   "description": "Our app represents a reliable and unique all-in-one solution for efficient document and file management, seamless browsing, and a feature-packed media player. \n\nFEATURES:\n\n● Web browser\n• Provides a user experience very similar\n• Google search\n• Search auto-completion\n• Address bar auto-completion\n• HTTP basic authentication\n• Tabbed browsing\n• Tap and hold to force download\n• Save web pages with images for offline viewing\n• Full screen mode\n• Bookmark manager\n\n● Download files\n• Fast speed\n• Speed indicator and download progress bar\n• Download notification\n• Live download progress bar and speed indicator\n• Always download with correct filename\n\n● File manager\n• Full screen document viewer that supports .pdf, .doc, .xls, .ppt, .txt, .html and .rtf file formats\n• Folders support\n• Move, rename and delete files\n• Search by file name\n• Remember document scroll position\n• Attempt to open file of unrecognized format\n• Document Scanner\n\n● File sharing\n• Share files with any application (email, Files app)\n\n● Multitasking\n• Background downloading\n\n● AUDIO & VIDEO PLAYER\n• Listen to music online and offline with the Documents app\n• Watch movies by importing them from your computer or online sources\n• Get great and easy access to your photo and video library\n\n● Photo Editor.\n● Video Editor.\n\nWe respect your privacy and only request user permissions that are necessary for providing you with the best browsing experience. Push notifications are optional, and we only use them to notity you when downloads are complete. We may also ask for access to your camera roll to save downloaded photos and videos. \n\nNOTE: the app does not download audio and video from unauthorized websites.\n\nTerms of use: http://orlproducts.com/terms.html\nPrivacy policy: http://orlproducts.com/privacy.html\n\nLove the app? Rate us! Got questions? Contact us via Support section.\nContact for support, reporting bug or improvement suggestions\nemail: info@orlproducts.com",
-  "screenshots": {},
+  "screenshots": {
+    "iphone": [
+      "/assets/apps/offlinefiles/iphone-01.webp",
+      "/assets/apps/offlinefiles/iphone-02.webp",
+      "/assets/apps/offlinefiles/iphone-03.webp",
+      "/assets/apps/offlinefiles/iphone-04.webp",
+      "/assets/apps/offlinefiles/iphone-05.webp"
+    ],
+    "ipad": [
+      "/assets/apps/offlinefiles/ipad-01.webp",
+      "/assets/apps/offlinefiles/ipad-02.webp",
+      "/assets/apps/offlinefiles/ipad-03.webp",
+      "/assets/apps/offlinefiles/ipad-04.webp",
+      "/assets/apps/offlinefiles/ipad-05.webp"
+    ]
+  },
   "issues": [
     "No app-specific privacy policy page on orlproducts.com."
   ]

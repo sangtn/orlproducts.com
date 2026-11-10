@@ -1,0 +1,36 @@
+---
+// Long legal or help text with a sticky table of contents built from its <h2> headings.
+import Base from '../layouts/Base.astro';
+interface Props { title: string; heading: string; description: string; path: string; html: string; eyebrow?: string; meta?: string }
+const { title, heading, description, path, html, eyebrow = 'ORIENTPRO', meta } = Astro.props;
+const slug = (s: string) => s.toLowerCase().replace(/<[^>]+>/g, '').replace(/&[a-z]+;/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
+const seen = new Map<string, number>();
+const toc: [string, string][] = [];
+const body = html.replace(/<h2>(.*?)<\/h2>/g, (_, inner) => {
+  let id = slug(inner) || 'section';
+  const n = (seen.get(id) ?? 0) + 1; seen.set(id, n);
+  if (n > 1) id = `${id}-${n}`;
+  toc.push([id, inner.replace(/<[^>]+>/g, '').replace(/\.$/, '')]);
+  return `<h2 id="${id}">${inner}</h2>`;
+});
+const site = Astro.site!.origin;
+const ld = {
+  '@context': 'https://schema.org', '@type': 'WebPage', name: heading, url: new URL(path, site).href,
+  isPartOf: { '@id': `${site}/#website` }, publisher: { '@id': `${site}/#org` },
+};
+---
+<Base title={title} description={description} path={path} jsonLd={[ld]}>
+  <div class="op-wrap op-legal">
+    {toc.length > 2 && (
+      <nav class="op-legal__toc" aria-label="On this page">
+        <ol>{toc.map(([id, t]) => <li><a href={`#${id}`}>{t}</a></li>)}</ol>
+      </nav>
+    )}
+    <article>
+      <p class="op-eyebrow">{eyebrow}</p>
+      <h1>{heading}</h1>
+      {meta && <p class="op-legal__meta">{meta}</p>}
+      <div class="op-legal__body" set:html={body} />
+    </article>
+  </div>
+</Base>

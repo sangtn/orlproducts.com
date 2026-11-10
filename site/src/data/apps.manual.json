@@ -387,7 +387,7 @@
       "accentInk": "#976903",
       "accentInkDark": "#BF8504",
       "accentOn": "#1B1814",
-      "generatePage": false
+      "generatePage": true
     },
     {
       "slug": "volumebooster",
@@ -406,14 +406,14 @@
       "accentInk": "#224B55",
       "accentInkDark": "#3E889A",
       "accentOn": "#FFFFFF",
-      "generatePage": false
+      "generatePage": true
     },
     {
       "slug": "offlinefiles",
       "appStoreId": 6478867245,
       "playPackage": null,
       "web": {
-        "landing": "/offline.html",
+        "landing": "/offlinefiles.html",
         "privacy": null,
         "terms": null,
         "support": null
@@ -425,7 +425,7 @@
       "accentInk": "#1572E0",
       "accentInkDark": "#2882EB",
       "accentOn": "#1B1814",
-      "generatePage": false
+      "generatePage": true
     },
     {
       "slug": "pixeai",

@@ -29,7 +29,7 @@ for (const name of readdirSync(root)) {
   const src = join(root, name);
   const dst = join(dist, name);
   if (statSync(src).isDirectory()) {
-    cpSync(src, dst, { recursive: true, force: false, errorOnExist: false, filter: (s) => !s.endsWith('.DS_Store') });
+    cpSync(src, dst, { recursive: true, force: false, errorOnExist: false, filter: (s) => !s.endsWith('.DS_Store') && !s.endsWith('.test.html') });
   } else if (!existsSync(dst)) {
     cpSync(src, dst);
   } else continue;

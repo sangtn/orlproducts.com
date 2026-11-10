@@ -67,11 +67,28 @@
     "terms": null,
     "support": null
   },
-  "generatePage": false,
+  "generatePage": true,
   "contentLang": "en",
   "metaDescription": null,
   "description": "Randonauting Adventure is to discover something new in the world around you that may relate to something else in your life or even give you clarity on something you might be struggling with. \n\nEspecially a great update for you is that AI Randonauting has been successfully developed by us. You can chat with AI Randonauting to create interesting adventures for yourself.\n\nRandonauting Adventure is the first ever quantumly generated adventure game that takes you on a journey of true randomness. The adventure is yours to have and the legend will be yours to tell. \n\nThis app provides you with totally random coordinates within a set radius. You can then choose if you’d like to adventure to the point. It’s been said by the Randonauting Adventure community that breaking out of what’s called your “probability-tunnel” can bring about serendipitous experiences and provide great fun while journeying into the world around you.\n\nThis quantum random number generator app creates a random location on your map to which you can travel to. At that location you may find something that may appear to be a “coincidence” for you. Do this often enough and you’ll soon realize that these are not “coincidences” but actually synchronicities instead. \n\nThis app will bring you meaningful experiences and provide great fun while journeying into the world around you.\n\nRandonauting Adventure uses both pseudo and quantum entropy sources for randomization which provides a set of coordinates that can be opened in a map to navigate to.\n\nDISCLAIMER / NOTICE Legal:\n\n# All content and all copyrights in this application are owned by their respective copyright holders.\n\n# This is an unofficial for Randonautica games and this application complies with the \"fair use\" copyright laws of the United States.\n\n# This app is made by fans of free games to help other players win the game and this is not a game and this is not an official app\n\nSubscription information:\n\n- Subscribe to get access to all the Premium features\n- Free trial subscription is automatically renewed unless cancelled 24 hours before the renewal\n- Payment will be charged to iTunes Account at confirmation of purchase\n- Account will be charged for renewal within 24-hours prior to the end of the current period, at the same price\n- Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user’s Account Settings after purchase\n\nHomepage: https://orlproducts.com/randonauting.html\nTerms of use: http://orlproducts.com/terms.html\nPrivacy policy: http://orlproducts.com/privacy.html\n\n*Price are equal to the value that \"Apple's App Store Matrix\" determines is the equivalent of the subscription price in $USD.",
-  "screenshots": {},
+  "screenshots": {
+    "iphone": [
+      "/assets/apps/randonauting/iphone-01.webp",
+      "/assets/apps/randonauting/iphone-02.webp",
+      "/assets/apps/randonauting/iphone-03.webp",
+      "/assets/apps/randonauting/iphone-04.webp",
+      "/assets/apps/randonauting/iphone-05.webp",
+      "/assets/apps/randonauting/iphone-06.webp"
+    ],
+    "ipad": [
+      "/assets/apps/randonauting/ipad-01.webp",
+      "/assets/apps/randonauting/ipad-02.webp",
+      "/assets/apps/randonauting/ipad-03.webp",
+      "/assets/apps/randonauting/ipad-04.webp",
+      "/assets/apps/randonauting/ipad-05.webp",
+      "/assets/apps/randonauting/ipad-06.webp"
+    ]
+  },
   "issues": [
     "App Store Developer Website points to https://orlproducts.pages.dev, which does not resolve.",
     "No app-specific privacy policy page on orlproducts.com."

@@ -65,11 +65,28 @@
     "terms": null,
     "support": "/howtovb.html"
   },
-  "generatePage": false,
+  "generatePage": true,
   "contentLang": "en",
   "metaDescription": null,
   "description": "Your all-in-one music controller center.\nThe app works with all devices through AirPlay, Wifi, Bluetooth, TVCast and more. Create personalized playlists and enjoy the music immediately.\n\n• This is a powerful Volume Booster. Volume Booster is a simple way to make your iPhone sound louder!\n\n• Smart connect any speakers, headphones, TVCast, CarPlay that support AirPlay & Bluetooth with our app. Powerful Equalizer with personalized bass & treble.\n\n• Extra Volume Booster ensures that there is no distortion when increasing the volume, so that all sounds of low-level audio files or weak microphone speakers can be clearer and stronger.\n\n• Play offline (no data or Wi-Fi connection needed after downloading music).\n\n• Custom Equalizer presets for each playlist. \n\n• Improve the low quality sound files to louder and higher quality.\n\n• Play music in background. Lock screen playback controls.\n\nTerms of use: http://orlproducts.com/terms.html\nPrivacy policy: http://orlproducts.com/privacy.html\n\nLove the app? Rate us! \nGot ideas or feedback? Send them our way: info@orlproducts.com",
-  "screenshots": {},
+  "screenshots": {
+    "iphone": [
+      "/assets/apps/volumebooster/iphone-01.webp",
+      "/assets/apps/volumebooster/iphone-02.webp",
+      "/assets/apps/volumebooster/iphone-03.webp",
+      "/assets/apps/volumebooster/iphone-04.webp",
+      "/assets/apps/volumebooster/iphone-05.webp",
+      "/assets/apps/volumebooster/iphone-06.webp"
+    ],
+    "ipad": [
+      "/assets/apps/volumebooster/ipad-01.webp",
+      "/assets/apps/volumebooster/ipad-02.webp",
+      "/assets/apps/volumebooster/ipad-03.webp",
+      "/assets/apps/volumebooster/ipad-04.webp",
+      "/assets/apps/volumebooster/ipad-05.webp",
+      "/assets/apps/volumebooster/ipad-06.webp"
+    ]
+  },
   "issues": [
     "No app-specific privacy policy page on orlproducts.com."
   ]

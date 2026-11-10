@@ -1,0 +1,48 @@
+---
+// /contact.html: real contact channels only.
+import Base from '../layouts/Base.astro';
+import { apps } from '../lib/apps';
+const site = Astro.site!.origin;
+const withSupport = apps.filter((a) => a.web.support);
+const ld = {
+  '@context': 'https://schema.org', '@type': 'ContactPage', name: 'Contact ORIENTPRO', url: `${site}/contact.html`,
+  about: { '@id': `${site}/#org` },
+  mainEntity: { '@type': 'Organization', '@id': `${site}/#org`, name: 'ORIENTPRO', email: 'info@orlproducts.com',
+    contactPoint: [{ '@type': 'ContactPoint', contactType: 'customer support', email: 'info@orlproducts.com', availableLanguage: ['English', 'Vietnamese'] }] },
+};
+---
+<Base title="Contact — ORIENTPRO" description="Contact ORIENTPRO about our iPhone, iPad, Mac, Apple Watch and Android apps: support, privacy questions, partnerships and press." path="/contact.html" jsonLd={[ld]}>
+  <div class="op-wrap">
+    <section class="op-hero">
+      <p class="op-eyebrow">ORIENTPRO</p>
+      <h1>Contact us</h1>
+      <p class="op-lead">Questions about an app, your privacy, a purchase, a partnership or press: write to us. A person reads every message.</p>
+    </section>
+    <section class="op-section" aria-labelledby="email">
+      <div class="op-pillars">
+        <div class="op-contact">
+          <h2 id="email" style="font-size:var(--text-xl)">Email</h2>
+          <p><a href="mailto:info@orlproducts.com">info@orlproducts.com</a></p>
+          <p class="op-legal__meta" style="margin:0">Please tell us which app you use, your device, and what happened.</p>
+        </div>
+        <div class="op-contact">
+          <h2 style="font-size:var(--text-xl)">Community</h2>
+          <p><a href="https://t.me/+MF4aYRoVeEJlMTVl">ORIENTPRO on Telegram</a></p>
+          <p class="op-legal__meta" style="margin:0">News, ideas and help from other users.</p>
+        </div>
+        <div class="op-contact">
+          <h2 style="font-size:var(--text-xl)">Company</h2>
+          <address>ORIENTPRO<br>Lam An Investment and Trade Joint Stock Company</address>
+          <p class="op-legal__meta" style="margin:var(--space-2) 0 0"><a href="https://apps.apple.com/us/developer/orientpro-lam-an-investment-trade-jsc/id1614396757">App Store</a> · <a href="https://play.google.com/store/apps/developer?id=ORIENTPRO">Google Play</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="op-section" aria-labelledby="help">
+      <h2 id="help">Help for each app</h2>
+      <ul class="op-directory">
+        {withSupport.map((a) => <li><strong>{a.name}</strong><span><a href={a.web.support!}>Support</a>{a.web.privacy && <> · <a href={a.web.privacy}>Privacy</a></>}</span></li>)}
+      </ul>
+      <p style="margin-top:var(--space-5)">Policies for all apps: <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a> · <a href="/apps.html">All apps</a></p>
+    </section>
+  </div>
+</Base>

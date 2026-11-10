@@ -206,3 +206,6 @@
 /* Buttons are links too: keep their own text colors over the generic link color */
 .op-page .op-button--primary { color: var(--app-on-accent); }
 .op-page .op-button--secondary { color: var(--ink); }
+.op-legal__body h2 { font-size: var(--text-lg); }
+.op-legal__body p { max-width: var(--measure); }
+.op-legal__toc ol { max-height: calc(100vh - 48px); overflow: auto; }

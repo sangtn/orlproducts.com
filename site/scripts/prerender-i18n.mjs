@@ -149,6 +149,8 @@ export function prerenderTranslations(dist) {
         const short = appName.split(':')[0].trim();
         if (!t.includes(short)) titleEl.set_content(esc(`${t} — ${(t + appName).length <= 62 ? appName : short}`));
       }
+      // Social cards follow the translated title
+      if (titleEl) root.querySelector('meta[property="og:title"]')?.setAttribute('content', textOf(titleEl.innerHTML));
       const htmlEl = root.querySelector('html');
       htmlEl.setAttribute('lang', lang);
       htmlEl.setAttribute('data-i18n-static', lang);
@@ -166,7 +168,9 @@ export function prerenderTranslations(dist) {
       setHead(root, { url: urls[lang], lang, alternates });
       markPicker(root, lang, urls);
       mkdirSync(join(dist, lang), { recursive: true });
-      writeFileSync(join(dist, lang, file), root.toString());
+      // Inline CSS (fonts, backgrounds) also uses relative URLs that break one folder down
+      const out = root.toString().replace(/url\((['"]?)(?:\.\/)?(assets\/)/g, 'url($1/$2');
+      writeFileSync(join(dist, lang, file), out);
       written.push(`${lang}/${file}`);
     }
   }
