@@ -1,0 +1,74 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "contactsbackup",
+  "name": "Contacts Backup. Restore.Clean",
+  "subtitle": null,
+  "group": "legacy",
+  "priority": false,
+  "accent": {
+    "base": "#218AFA",
+    "ink": "#0570E3",
+    "inkDark": "#218AFA",
+    "on": "#1B1814"
+  },
+  "category": "Productivity",
+  "appStore": {
+    "id": 6484267417,
+    "url": "https://apps.apple.com/app/id6484267417",
+    "bundleId": "com.orientpro.contactbackuprestore",
+    "version": "1.1",
+    "released": "2024-04-15",
+    "updated": "2024-04-30",
+    "minimumOs": "15.0",
+    "languages": [
+      "en"
+    ],
+    "price": "Free",
+    "rating": {
+      "value": 5,
+      "count": 3
+    },
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6a/58/a7/6a58a7d5-6e1c-a673-aa32-2c4e1e683d0c/AppIcon-0-0-1x_U007epad-0-0-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/",
+    "screenshots": {
+      "iphone": 3,
+      "ipad": 3
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": false,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": false,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": false,
+    "siri": false,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": null,
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "No app-specific privacy policy page on orlproducts.com.",
+    "No landing page on orlproducts.com."
+  ]
+}

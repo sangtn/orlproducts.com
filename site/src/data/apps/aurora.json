@@ -1,0 +1,82 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "aurora",
+  "name": "Aurora Forecast: Auroline",
+  "subtitle": null,
+  "group": "current",
+  "priority": true,
+  "accent": {
+    "base": "#94112C",
+    "ink": "#94112C",
+    "inkDark": "#E93C5F",
+    "on": "#FFFFFF"
+  },
+  "category": "Lifestyle",
+  "appStore": {
+    "id": 6810007650,
+    "url": "https://apps.apple.com/app/id6810007650",
+    "bundleId": "com.orientpro.AuroraForecast",
+    "version": "1.0",
+    "released": "2026-09-17",
+    "updated": "2026-09-18",
+    "minimumOs": "18.6",
+    "languages": [
+      "da",
+      "en",
+      "fi",
+      "fr",
+      "de",
+      "is",
+      "ja",
+      "nb",
+      "zh",
+      "es",
+      "sv",
+      "vi"
+    ],
+    "price": "Free",
+    "rating": null,
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5b/6f/97/5b6f97c6-f500-c7e9-ff52-dfe98d0c89a2/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/",
+    "screenshots": {
+      "iphone": 7,
+      "ipad": 7
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": true,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": true,
+    "liveActivities": true,
+    "dynamicIsland": true,
+    "controlCenter": true,
+    "standBy": true,
+    "complications": true,
+    "siri": true,
+    "shortcuts": true,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": null,
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "No app-specific privacy policy page on orlproducts.com.",
+    "No landing page on orlproducts.com."
+  ]
+}

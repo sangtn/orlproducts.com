@@ -1,0 +1,74 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "compressvideos",
+  "name": "Compress Videos - Shrink Video",
+  "subtitle": null,
+  "group": "legacy",
+  "priority": false,
+  "accent": {
+    "base": "#2F6AFD",
+    "ink": "#2A66FD",
+    "inkDark": "#3E75FD",
+    "on": "#FFFFFF"
+  },
+  "category": "Productivity",
+  "appStore": {
+    "id": 1615883784,
+    "url": "https://apps.apple.com/app/id1615883784",
+    "bundleId": "com.orientpro.CompressVideos",
+    "version": "1.2",
+    "released": "2022-04-28",
+    "updated": "2024-01-22",
+    "minimumOs": "14.0",
+    "languages": [
+      "en"
+    ],
+    "price": "Free",
+    "rating": {
+      "value": 4.2,
+      "count": 5
+    },
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/af/bc/f6/afbcf612-6331-7a1f-ffe7-de324e094741/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/",
+    "screenshots": {
+      "iphone": 3,
+      "ipad": 3
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": false,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": false,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": false,
+    "siri": false,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": null,
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "No app-specific privacy policy page on orlproducts.com.",
+    "No landing page on orlproducts.com."
+  ]
+}

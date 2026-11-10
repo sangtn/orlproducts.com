@@ -1,0 +1,90 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "vizmath",
+  "name": "VizMath: 3D Math Visualizer",
+  "subtitle": "Graph, Animate, AR & 3D Print",
+  "group": "current",
+  "priority": false,
+  "accent": {
+    "base": "#5B4CF0",
+    "ink": "#5B4CF0",
+    "inkDark": "#796DF3",
+    "on": "#FFFFFF"
+  },
+  "category": "Education",
+  "appStore": {
+    "id": 6822687291,
+    "url": "https://apps.apple.com/app/id6822687291",
+    "bundleId": "com.orientpro.vizmath",
+    "version": "1.0",
+    "released": "2026-10-19",
+    "updated": "2026-10-20",
+    "minimumOs": "26.0",
+    "languages": [
+      "ar",
+      "nl",
+      "en",
+      "fr",
+      "de",
+      "hi",
+      "id",
+      "it",
+      "ja",
+      "ko",
+      "pl",
+      "pt",
+      "ru",
+      "zh",
+      "es",
+      "th",
+      "zh",
+      "tr",
+      "uk",
+      "vi"
+    ],
+    "price": "Free",
+    "rating": null,
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4d/29/bc/4d29bc19-5916-1d17-baac-9086747a104d/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/vizmath.html",
+    "screenshots": {
+      "iphone": 9,
+      "ipad": 9
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": {
+    "package": "com.orientpro.vizmath",
+    "url": "https://play.google.com/store/apps/details?id=com.orientpro.vizmath"
+  },
+  "androidStatus": "live",
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "native",
+    "watch": true,
+    "vision": "native",
+    "android": true,
+    "wearOs": true
+  },
+  "surfaces": {
+    "widgets": false,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": false,
+    "siri": false,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": "/vizmath.html",
+    "privacy": "/vizmath-privacy.html",
+    "terms": "/vizmath-terms.html",
+    "support": "/vizmath-support.html"
+  },
+  "issues": []
+}

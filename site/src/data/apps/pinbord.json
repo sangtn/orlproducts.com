@@ -1,0 +1,73 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "pinbord",
+  "name": "Lock Screen Notes - Pinbord",
+  "subtitle": null,
+  "group": "current",
+  "priority": false,
+  "accent": {
+    "base": "#EBC534",
+    "ink": "#886E0D",
+    "inkDark": "#EBC534",
+    "on": "#1B1814"
+  },
+  "category": "Productivity",
+  "appStore": {
+    "id": 6809150709,
+    "url": "https://apps.apple.com/app/id6809150709",
+    "bundleId": "com.orientpro.LockScreenNotes",
+    "version": "1.0",
+    "released": "2026-09-16",
+    "updated": "2026-09-16",
+    "minimumOs": "18.0",
+    "languages": [
+      "en",
+      "vi"
+    ],
+    "price": "Free",
+    "rating": null,
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/50/2b/09/502b0978-9771-2913-1cf1-982cfcb9a161/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.pages.dev/",
+    "screenshots": {
+      "iphone": 8,
+      "ipad": 8
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": true,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": true,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": true,
+    "standBy": true,
+    "complications": false,
+    "siri": true,
+    "shortcuts": true,
+    "spotlight": false,
+    "iCloud": true,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": null,
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "App Store Developer Website points to https://orlproducts.pages.dev/, which does not resolve.",
+    "No app-specific privacy policy page on orlproducts.com.",
+    "No landing page on orlproducts.com."
+  ]
+}

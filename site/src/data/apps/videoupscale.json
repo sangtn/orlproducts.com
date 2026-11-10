@@ -1,0 +1,71 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "videoupscale",
+  "name": "Video Upscale: 4K, 8K Restore",
+  "subtitle": "Restore Old Family Videos",
+  "group": "current",
+  "priority": false,
+  "accent": {
+    "base": "#17A2C9",
+    "ink": "#127D9B",
+    "inkDark": "#17A2C9",
+    "on": "#1B1814"
+  },
+  "category": "Photo & Video",
+  "appStore": {
+    "id": 6814751776,
+    "url": "https://apps.apple.com/app/id6814751776",
+    "bundleId": "com.orientpro.VideoUpscaler",
+    "version": "1.0",
+    "released": "2026-09-24",
+    "updated": "2026-09-25",
+    "minimumOs": "26.0",
+    "languages": [
+      "en"
+    ],
+    "price": "Free",
+    "rating": null,
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/4d/c3/9c/4dc39cbe-424f-c4e9-bcc4-7eddb94361d3/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/",
+    "screenshots": {
+      "iphone": 7,
+      "ipad": 9
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": false,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": false,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": false,
+    "siri": false,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": null,
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "No app-specific privacy policy page on orlproducts.com.",
+    "No landing page on orlproducts.com."
+  ]
+}

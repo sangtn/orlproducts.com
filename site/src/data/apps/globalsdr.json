@@ -1,0 +1,80 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "globalsdr",
+  "name": "Shortwave SDR Radio: GlobalSDR",
+  "subtitle": "Ham, Scanner & Live SWL Tuner",
+  "group": "current",
+  "priority": true,
+  "accent": {
+    "base": "#8C4426",
+    "ink": "#8C4426",
+    "inkDark": "#C86136",
+    "on": "#FFFFFF"
+  },
+  "category": "Utilities",
+  "appStore": {
+    "id": 6815033866,
+    "url": "https://apps.apple.com/app/id6815033866",
+    "bundleId": "com.orientpro.GlobalSDR",
+    "version": "1.0",
+    "released": "2026-10-05",
+    "updated": "2026-10-05",
+    "minimumOs": "18.6",
+    "languages": [
+      "nl",
+      "en",
+      "de",
+      "it",
+      "ja",
+      "pt",
+      "es",
+      "vi"
+    ],
+    "price": "Free",
+    "rating": {
+      "value": 5,
+      "count": 1
+    },
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e5/01/3d/e5013d86-7090-2e6c-91cd-96d51afd9547/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/",
+    "screenshots": {
+      "iphone": 6,
+      "ipad": 6
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": true,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": true,
+    "liveActivities": true,
+    "dynamicIsland": true,
+    "controlCenter": true,
+    "standBy": false,
+    "complications": false,
+    "siri": true,
+    "shortcuts": true,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": "/globalsdr-privacy.html",
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "No landing page on orlproducts.com."
+  ]
+}

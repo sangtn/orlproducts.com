@@ -1,0 +1,71 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "babi",
+  "name": "Babi: Baby Care & Daily Guide",
+  "subtitle": "Dress, Pack, Plan the day",
+  "group": "current",
+  "priority": false,
+  "accent": {
+    "base": "#FCD752",
+    "ink": "#8F7002",
+    "inkDark": "#FCD752",
+    "on": "#1B1814"
+  },
+  "category": "Lifestyle",
+  "appStore": {
+    "id": 6818679164,
+    "url": "https://apps.apple.com/app/id6818679164",
+    "bundleId": "com.orientpro.babi",
+    "version": "1.0",
+    "released": "2026-10-15",
+    "updated": "2026-10-15",
+    "minimumOs": "26.0",
+    "languages": [
+      "en"
+    ],
+    "price": "Free",
+    "rating": null,
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8e/d5/1f/8ed51f2e-4ab9-cc51-1faf-f37d67119ca2/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/",
+    "screenshots": {
+      "iphone": 5,
+      "ipad": 5
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": true,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": true,
+    "liveActivities": true,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": true,
+    "siri": true,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": true,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": null,
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "No app-specific privacy policy page on orlproducts.com.",
+    "No landing page on orlproducts.com."
+  ]
+}

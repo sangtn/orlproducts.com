@@ -1,0 +1,74 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "compressphoto",
+  "name": "Compress Photo & Save Space",
+  "subtitle": null,
+  "group": "legacy",
+  "priority": false,
+  "accent": {
+    "base": "#11C838",
+    "ink": "#0B8626",
+    "inkDark": "#11C838",
+    "on": "#1B1814"
+  },
+  "category": "Utilities",
+  "appStore": {
+    "id": 1615572010,
+    "url": "https://apps.apple.com/app/id1615572010",
+    "bundleId": "com.orientpro.PhotoCompress",
+    "version": "1.3.1",
+    "released": "2022-04-02",
+    "updated": "2025-03-29",
+    "minimumOs": "16.0",
+    "languages": [
+      "en"
+    ],
+    "price": "Free",
+    "rating": {
+      "value": 4.5,
+      "count": 2
+    },
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ab/8f/13/ab8f139f-aa50-7dd6-6642-521cec757590/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com",
+    "screenshots": {
+      "iphone": 3,
+      "ipad": 3
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": false,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": false,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": false,
+    "siri": false,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": null,
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "No app-specific privacy policy page on orlproducts.com.",
+    "No landing page on orlproducts.com."
+  ]
+}

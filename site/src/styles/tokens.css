@@ -1,0 +1,108 @@
+/* ORIENTPRO Paper — design tokens.
+   One shared system for every app page; each app only changes the accent
+   (see app-accents.css, generated from site/src/data/apps.manual.json).
+
+   Load the font once per page:
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap">
+   Japanese pages also load M PLUS Rounded 1c (Comfortaa has no Japanese glyphs). */
+
+:root {
+  /* Neutrals: warm paper and ink, already used by the VizMath and Origami pages */
+  --paper: #FDFBF7;
+  --paper-2: #F6EFE4;
+  --paper-3: #EFE6D8;
+  --ink: #1B1814;
+  --ink-soft: #57504A;
+  --ink-faint: #7A7168;
+  --rule: #E7DFD3;
+  --rule-strong: #D3C8B8;
+
+  /* Status (never used as an app accent) */
+  --ok: #16794C;
+  --warn: #9A5B00;
+  --danger: #B42318;
+
+  /* Type */
+  --font: 'Comfortaa', 'Arial Rounded MT Bold', 'Hiragino Maru Gothic ProN', 'Yu Gothic UI', system-ui, sans-serif;
+  --font-ja: 'M PLUS Rounded 1c', 'Hiragino Maru Gothic ProN', 'Yu Gothic UI', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --weight-regular: 400;
+  --weight-medium: 600;
+  --weight-bold: 700;
+
+  /* Type scale (px at 16px root). Comfortaa runs wide, so body sits at 17px with roomy leading. */
+  --text-xs: 0.8125rem;   /* 13 captions, legal footnotes */
+  --text-sm: 0.9375rem;   /* 15 secondary text, chips */
+  --text-md: 1.0625rem;   /* 17 body */
+  --text-lg: 1.25rem;     /* 20 lead paragraph, h4 */
+  --text-xl: 1.5rem;      /* 24 h3 */
+  --text-2xl: 2rem;       /* 32 h2 */
+  --text-3xl: 2.75rem;    /* 44 h1 on app pages */
+  --text-4xl: 3.5rem;     /* 56 hero display */
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-body: 1.7;
+  --measure: 66ch;
+
+  /* Space: 4pt grid */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --gutter: max(16px, env(safe-area-inset-left, 0px));
+  --page-max: 1120px;
+
+  /* Shape */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+  --radius-icon: 22.37%;   /* iOS app icon corner */
+
+  /* Depth: used sparingly, for device frames and floating elements only */
+  --shadow-1: 0 1px 2px rgb(27 24 20 / 6%), 0 2px 8px rgb(27 24 20 / 5%);
+  --shadow-2: 0 2px 6px rgb(27 24 20 / 8%), 0 16px 40px rgb(27 24 20 / 10%);
+
+  /* Motion */
+  --dur-fast: 120ms;    /* hover, press */
+  --dur-base: 240ms;    /* cards, menus, disclosure */
+  --dur-slow: 480ms;    /* hero entrance, page transitions */
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+  --ease-inout: cubic-bezier(.3, 0, .1, 1);
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+
+  /* Store badges: official artwork only, same height side by side */
+  --badge-height: 44px;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #17140F;
+    --paper-2: #1F1B15;
+    --paper-3: #29241C;
+    --ink: #F5EFE6;
+    --ink-soft: #B6ADA2;
+    --ink-faint: #958B80;
+    --rule: #2E2820;
+    --rule-strong: #43392E;
+    --ok: #5FD39A;
+    --warn: #F2B35B;
+    --danger: #FF8A75;
+    --shadow-1: 0 1px 2px rgb(0 0 0 / 40%);
+    --shadow-2: 0 2px 6px rgb(0 0 0 / 40%), 0 16px 40px rgb(0 0 0 / 45%);
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur-base: 0ms; --dur-slow: 0ms; }
+}

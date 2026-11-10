@@ -1,0 +1,71 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "somavue",
+  "name": "3D Anatomy Learning: Somavue",
+  "subtitle": "Learn & Recall the Human Body",
+  "group": "current",
+  "priority": false,
+  "accent": {
+    "base": "#1968B1",
+    "ink": "#1968B1",
+    "inkDark": "#1F80D9",
+    "on": "#FFFFFF"
+  },
+  "category": "Education",
+  "appStore": {
+    "id": 6815892596,
+    "url": "https://apps.apple.com/app/id6815892596",
+    "bundleId": "com.orientpro.somavue",
+    "version": "1.0",
+    "released": "2026-10-04",
+    "updated": "2026-10-05",
+    "minimumOs": "18.0",
+    "languages": [
+      "en"
+    ],
+    "price": "Free",
+    "rating": null,
+    "contentRating": "17+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d5/42/38/d54238a0-2de2-23bb-8ae6-71618061e643/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/",
+    "screenshots": {
+      "iphone": 5,
+      "ipad": 5
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": true,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": false,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": false,
+    "siri": true,
+    "shortcuts": true,
+    "spotlight": true,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": null,
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "No app-specific privacy policy page on orlproducts.com.",
+    "No landing page on orlproducts.com."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "giavang",
+  "name": "Giá Vàng Live - Giá Ngoại Tệ",
+  "subtitle": null,
+  "group": "current",
+  "priority": false,
+  "accent": {
+    "base": "#B47A07",
+    "ink": "#9B6906",
+    "inkDark": "#B47A07",
+    "on": "#1B1814"
+  },
+  "category": "Finance",
+  "appStore": {
+    "id": 6754908231,
+    "url": "https://apps.apple.com/app/id6754908231",
+    "bundleId": "com.orientpro.goldwaves",
+    "version": "1.0",
+    "released": "2025-11-10",
+    "updated": "2025-11-10",
+    "minimumOs": "16.0",
+    "languages": [
+      "en"
+    ],
+    "price": "Free",
+    "rating": null,
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a2/c5/d5/a2c5d57a-0ac5-ac59-c0b8-df0885092d70/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.pages.dev/",
+    "screenshots": {
+      "iphone": 4,
+      "ipad": 4
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": true,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": true,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": false,
+    "siri": false,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": null,
+    "privacy": null,
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "App Store Developer Website points to https://orlproducts.pages.dev/, which does not resolve.",
+    "No app-specific privacy policy page on orlproducts.com.",
+    "No landing page on orlproducts.com."
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
+  "slug": "randonauting",
+  "name": "Randonauting Adventure Around",
+  "subtitle": null,
+  "group": "legacy",
+  "priority": false,
+  "accent": {
+    "base": "#BF8504",
+    "ink": "#976903",
+    "inkDark": "#BF8504",
+    "on": "#1B1814"
+  },
+  "category": "Lifestyle",
+  "appStore": {
+    "id": 1616481958,
+    "url": "https://apps.apple.com/app/id1616481958",
+    "bundleId": "com.orientpro.randonauting",
+    "version": "2.1",
+    "released": "2022-04-02",
+    "updated": "2025-12-08",
+    "minimumOs": "16.0",
+    "languages": [
+      "en"
+    ],
+    "price": "Free",
+    "rating": {
+      "value": 4.29,
+      "count": 332
+    },
+    "contentRating": "4+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/47/4f/a3/474fa3b3-38d9-7624-df80-32eb9a5f1c7c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.pages.dev",
+    "screenshots": {
+      "iphone": 6,
+      "ipad": 6
+    }
+  },
+  "iosStatus": "live",
+  "googlePlay": null,
+  "androidStatus": null,
+  "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": false,
+    "vision": "ipad-app",
+    "android": false,
+    "wearOs": false
+  },
+  "surfaces": {
+    "widgets": false,
+    "liveActivities": false,
+    "dynamicIsland": false,
+    "controlCenter": false,
+    "standBy": false,
+    "complications": false,
+    "siri": false,
+    "shortcuts": false,
+    "spotlight": false,
+    "iCloud": false,
+    "carPlay": false
+  },
+  "web": {
+    "landing": "/randonauting.html",
+    "privacy": null,
+    "terms": null,
+    "support": null
+  },
+  "issues": [
+    "App Store Developer Website points to https://orlproducts.pages.dev, which does not resolve.",
+    "No app-specific privacy policy page on orlproducts.com."
+  ]
+}
