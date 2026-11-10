@@ -209,3 +209,7 @@
 .op-legal__body h2 { font-size: var(--text-lg); }
 .op-legal__body p { max-width: var(--measure); }
 .op-legal__toc ol { max-height: calc(100vh - 48px); overflow: auto; }
+
+/* Developer-page store badges (footer, /apps, contact) */
+.op-devbadges { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-5); margin: var(--space-6) 0 var(--space-4); }
+.op-devbadges__label { margin: 0; font-size: var(--text-sm); color: var(--ink-soft); }

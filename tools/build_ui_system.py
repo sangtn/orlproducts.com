@@ -33,6 +33,7 @@ def chips(a, surfaces=True):
         if s.get("liveActivities"): items.append(("live-activities", "Live Activities"))
         if s.get("controlCenter"): items.append(("control-center", "Control Center"))
         if s.get("siri"): items.append(("voice", "Siri"))
+        if s.get("carPlay"): items.append(("carplay", "CarPlay"))
     li = "".join(f'<li class="op-chip">{ICON(i)}{E(t)}</li>' for i, t in items)
     if a.get("iosStatus") == "in-review":
         li += '<li class="op-chip op-chip--note">iOS in review</li>'
@@ -218,13 +219,13 @@ page = f'''<meta charset="utf-8">
   </div>
   <div class="ds-rules">
     <div class="do"><h3>Nên</h3><ul><li>Dùng đúng file trong <code>assets/badges</code>, theo ngôn ngữ trang.</li><li>Bản đen trên nền sáng, bản trắng trên nền tối (dùng <code>&lt;picture&gt;</code> theo chế độ sáng/tối).</li><li>Link thẳng tới trang app trên store, không tới trang developer.</li><li>Đặt dòng ghi chú nhãn hiệu ở footer trang có badge.</li></ul></div>
-    <div class="dont"><h3>Không</h3><ul><li>Vẽ lại, đổi màu, bóp méo, thêm bóng cho badge.</li><li>Tự làm badge "Watch", "Widget", "CarPlay": Apple không phát hành các badge này.</li><li>Dùng logo Apple hay robot Android đứng một mình.</li><li>Hiện badge Google Play cho app chưa có trên Play.</li></ul></div>
+    <div class="dont"><h3>Không</h3><ul><li>Vẽ lại, đổi màu, bóp méo, thêm bóng cho badge.</li><li>Tự làm badge "Watch", "Widget", "CarPlay": Apple không phát hành các badge này.</li><li>Tự vẽ logo Apple, hay dùng logo Apple đứng một mình làm trang trí.</li><li>Dùng logo Apple hay robot Android đứng một mình.</li><li>Hiện badge Google Play cho app chưa có trên Play.</li></ul></div>
   </div>
 </section>
 
 <section class="ds-sec" id="nen-tang">
   <h2>Nền tảng và tính năng hệ thống</h2>
-  <p>Chip chỉ hiện những gì có trong dữ liệu store của app. Mac và Apple Vision Pro chỉ hiện khi app có bản gốc. App iPad chạy trên Mac không được ghi là "Mac app". Hiện không app nào hỗ trợ CarPlay, nên không có chip CarPlay. {n_watch} app có Apple Watch.</p>
+  <p>Chip chỉ hiện những gì có trong dữ liệu store của app. Mac và Apple Vision Pro chỉ hiện khi app có bản gốc. App iPad chạy trên Mac không được ghi là "Mac app". CarPlay chỉ hiện cho app có tính năng CarPlay thật ({', '.join(a['name'].split(':')[0].split(' - ')[0] for a in apps if a['surfaces'].get('carPlay'))}). {n_watch} app có Apple Watch.</p>
   <div class="ds-demo ds-demo--col" data-app="vizmath"><span class="ds-label">VizMath</span>{chips(by["vizmath"])}</div>
   <div class="ds-demo ds-demo--col" data-app="turbulenceforecast"><span class="ds-label">Turbulence Forecast</span>{chips(by["turbulenceforecast"])}</div>
   <div class="ds-demo ds-demo--col" data-app="raykin"><span class="ds-label">Raykin (iOS đang chờ duyệt)</span>{chips(by["raykin"])}</div>

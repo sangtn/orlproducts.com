@@ -1,0 +1,29 @@
+{
+  "slug": "videoupscale",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Not Collected",
+      "items": []
+    }
+  ],
+  "basis": "The App Store privacy label for this app and the app's App Store description. Draft prepared 10 November 2026; awaiting the developer's confirmation.",
+  "confirmed": false,
+  "summary": "Video Upscale collects no data. Nothing is uploaded: there is no server, no account and no analytics.",
+  "onDevice": [
+    "The videos you import and the restored copies you save",
+    "Your settings"
+  ],
+  "permissions": [
+    {
+      "name": "Photos",
+      "why": "To import the videos you choose and to save restored videos and frames.",
+      "optional": false
+    }
+  ],
+  "services": [],
+  "purchases": "Video Upscale Pro is sold through the App Store as a subscription or a one-time Lifetime purchase. Apple handles payment.",
+  "icloud": false,
+  "extra": [],
+  "tracking": false
+}

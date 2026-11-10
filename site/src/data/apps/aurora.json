@@ -67,11 +67,11 @@
     "shortcuts": true,
     "spotlight": false,
     "iCloud": false,
-    "carPlay": false
+    "carPlay": true
   },
   "web": {
     "landing": null,
-    "privacy": null,
+    "privacy": "/aurora-privacy.html",
     "terms": null,
     "support": null
   },
@@ -100,7 +100,6 @@
     ]
   },
   "issues": [
-    "No app-specific privacy policy page on orlproducts.com.",
     "No landing page on orlproducts.com."
   ]
 }

@@ -2,6 +2,7 @@
 // /contact.html: real contact channels only.
 import Base from '../layouts/Base.astro';
 import { apps } from '../lib/apps';
+import DeveloperBadges from '../components/DeveloperBadges.astro';
 const site = Astro.site!.origin;
 const withSupport = apps.filter((a) => a.web.support);
 const ld = {
@@ -17,6 +18,7 @@ const ld = {
       <p class="op-eyebrow">ORIENTPRO</p>
       <h1>Contact us</h1>
       <p class="op-lead">Questions about an app, your privacy, a purchase, a partnership or press: write to us. A person reads every message.</p>
+      <DeveloperBadges label="All our apps:" />
     </section>
     <section class="op-section" aria-labelledby="email">
       <div class="op-pillars">

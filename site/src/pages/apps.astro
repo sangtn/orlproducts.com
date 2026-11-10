@@ -2,6 +2,7 @@
 // /apps.html: every ORIENTPRO app, linked to its page or store listing.
 import Base from '../layouts/Base.astro';
 import AppCard from '../components/AppCard.astro';
+import DeveloperBadges from '../components/DeveloperBadges.astro';
 import { apps, pageUrl } from '../lib/apps';
 
 const site = Astro.site!.origin;
@@ -33,6 +34,7 @@ const listLd = {
       <p class="op-eyebrow">ORIENTPRO</p>
       <h1>All apps</h1>
       <p class="op-lead">{apps.filter((a) => a.appStore).length} apps on the App Store, {watchCount} of them with an Apple Watch app, and {apps.filter((a) => a.platforms.android).length} on Google Play.</p>
+      <DeveloperBadges />
     </section>
     <section class="op-section" aria-labelledby="current">
       <h2 id="current">Current apps</h2>

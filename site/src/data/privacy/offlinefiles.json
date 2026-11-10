@@ -1,0 +1,49 @@
+{
+  "slug": "offlinefiles",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Used to Track You",
+      "items": [
+        "Identifiers"
+      ]
+    },
+    {
+      "type": "Data Linked to You",
+      "items": [
+        "Identifiers",
+        "Usage Data",
+        "Diagnostics"
+      ]
+    }
+  ],
+  "basis": "The App Store privacy label for this app and the app's App Store description. Draft prepared 10 November 2026; awaiting the developer's confirmation.",
+  "confirmed": false,
+  "summary": "Offline Files downloads and manages files on your device. It only asks for the permissions it needs.",
+  "onDevice": [
+    "Files, web pages and media you download or import",
+    "Your folders and settings"
+  ],
+  "permissions": [
+    {
+      "name": "Notifications",
+      "why": "Optional: only to tell you when downloads are complete.",
+      "optional": true
+    },
+    {
+      "name": "Photos",
+      "why": "To save downloaded photos and videos to your library.",
+      "optional": true
+    }
+  ],
+  "services": [
+    {
+      "name": "Websites you visit",
+      "what": "The built-in browser connects to the sites you open and download from."
+    }
+  ],
+  "purchases": "Premium is sold through the App Store. Apple handles payment.",
+  "extra": [],
+  "icloud": false,
+  "tracking": true
+}

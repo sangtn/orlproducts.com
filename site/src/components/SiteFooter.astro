@@ -1,7 +1,8 @@
 ---
 import { apps, shortName } from '../lib/apps';
 import { appPageUrl } from '../lib/translations';
-import { t } from '../lib/ui';
+import { t, BADGE_LANG } from '../lib/ui';
+import DeveloperBadges from './DeveloperBadges.astro';
 interface Props { lang?: string }
 const { lang = 'en' } = Astro.props;
 const s = t(lang);
@@ -38,6 +39,7 @@ const half = Math.ceil(current.length / 2);
         </ul>
       </div>
     </div>
+    <DeveloperBadges lang={lang} />
     <p class="op-badges-legal">© {new Date().getFullYear()} ORIENTPRO. {s.legal}</p>
   </div>
 </footer>

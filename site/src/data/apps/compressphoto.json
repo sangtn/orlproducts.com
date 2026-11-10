@@ -63,7 +63,7 @@
   },
   "web": {
     "landing": null,
-    "privacy": null,
+    "privacy": "/compressphoto-privacy.html",
     "terms": null,
     "support": null
   },
@@ -84,7 +84,6 @@
     ]
   },
   "issues": [
-    "No app-specific privacy policy page on orlproducts.com.",
     "No landing page on orlproducts.com."
   ]
 }

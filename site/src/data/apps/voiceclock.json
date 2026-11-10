@@ -57,11 +57,11 @@
     "shortcuts": true,
     "spotlight": false,
     "iCloud": true,
-    "carPlay": false
+    "carPlay": true
   },
   "web": {
     "landing": null,
-    "privacy": null,
+    "privacy": "/voiceclock-privacy.html",
     "terms": null,
     "support": null
   },
@@ -88,7 +88,6 @@
     ]
   },
   "issues": [
-    "No app-specific privacy policy page on orlproducts.com.",
     "No landing page on orlproducts.com."
   ]
 }

@@ -1,0 +1,47 @@
+{
+  "slug": "babi",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Not Collected",
+      "items": []
+    }
+  ],
+  "basis": "The App Store privacy label for this app and the app's App Store description. Draft prepared 10 November 2026; awaiting the developer's confirmation.",
+  "confirmed": false,
+  "summary": "Babi collects no data. It has no account and no analytics. Your baby's details stay in your own iCloud, or only on your device if you prefer.",
+  "onDevice": [
+    "Your baby's details, lists, logs and settings: in your own iCloud account or only on your device",
+    "The day's handoff card and packing lists"
+  ],
+  "permissions": [
+    {
+      "name": "Location (approximate)",
+      "why": "To look up local weather, UV and air quality. You can pick a city by hand instead and never grant it.",
+      "optional": true
+    },
+    {
+      "name": "Apple Home",
+      "why": "Only if you choose to read room temperature from a sensor in Apple Home.",
+      "optional": true
+    },
+    {
+      "name": "Notifications",
+      "why": "For reminders such as the sunscreen reminder in the Live Activity.",
+      "optional": true
+    }
+  ],
+  "services": [
+    {
+      "name": "Weather, UV and air-quality data",
+      "what": "Looked up for your approximate location or the city you choose."
+    }
+  ],
+  "purchases": "Babi+ is sold through the App Store as a subscription or a one-time Lifetime purchase, shareable with Family Sharing. Apple handles payment.",
+  "icloud": true,
+  "extra": [
+    "Sharing with a partner or grandparent happens through iCloud sharing that you start and control.",
+    "Babi does not provide medical diagnosis or treatment."
+  ],
+  "tracking": false
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "aurora",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Not Collected",
+      "items": []
+    }
+  ],
+  "basis": "The App Store privacy label for this app and the app's App Store description. Draft prepared 10 November 2026; awaiting the developer's confirmation.",
+  "confirmed": false,
+  "summary": "Auroline collects no data. There is no account and no analytics SDK. Your location is used on your device to compute your forecast.",
+  "onDevice": [
+    "Your saved locations, alert thresholds and settings",
+    "Your forecast, which is calculated on your device",
+    "Alert schedules: alerts are scheduled on your device, with no server in between"
+  ],
+  "permissions": [
+    {
+      "name": "Location",
+      "why": "To work out your forecast for where you are. It is used on your device and is not uploaded to us.",
+      "optional": true
+    },
+    {
+      "name": "Notifications",
+      "why": "To send the aurora alerts you set up.",
+      "optional": true
+    },
+    {
+      "name": "Background App Refresh",
+      "why": "To check conditions and fire alerts while the app is closed.",
+      "optional": true
+    }
+  ],
+  "services": [
+    {
+      "name": "NOAA Space Weather Prediction Center",
+      "what": "Kp index, the OVATION auroral oval, solar wind and the three-day forecast. These are public data downloads."
+    },
+    {
+      "name": "Apple WeatherKit",
+      "what": "Cloud cover for your position. Apple's weather service receives the location it needs to answer, under Apple's privacy policy."
+    }
+  ],
+  "purchases": "Auroline Pro is sold through the App Store. Apple handles payment; we never see your card or Apple Account details.",
+  "icloud": false,
+  "extra": [],
+  "tracking": false
+}

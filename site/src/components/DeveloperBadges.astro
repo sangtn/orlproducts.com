@@ -1,0 +1,23 @@
+---
+// Official App Store and Google Play badges linking to the ORIENTPRO developer pages.
+// Artwork from assets/badges only (Apple Marketing Tools / Google Play badges); never redrawn.
+import { BADGE_LANG } from '../lib/ui';
+interface Props { lang?: string; label?: string }
+const { lang = 'en', label } = Astro.props;
+const l = BADGE_LANG[lang] ?? 'en';
+const apple = { en: 'en-us', vi: 'vi-vn', ja: 'ja-jp', es: 'es-es', fr: 'fr-fr', de: 'de-de' }[l];
+---
+<div class="op-devbadges">
+  {label && <p class="op-devbadges__label">{label}</p>}
+  <div class="op-badges">
+    <a href="https://apps.apple.com/us/developer/orientpro-lam-an-investment-trade-jsc/id1614396757" aria-label="ORIENTPRO apps on the App Store">
+      <picture>
+        <source srcset={`/assets/badges/app-store-white-${apple}.svg`} media="(prefers-color-scheme: dark)" />
+        <img class="op-badge-apple" src={`/assets/badges/app-store-black-${apple}.svg`} alt="Download on the App Store" width="132" height="44" loading="lazy" />
+      </picture>
+    </a>
+    <a href="https://play.google.com/store/apps/developer?id=ORIENTPRO" aria-label="ORIENTPRO apps on Google Play">
+      <img class="op-badge-google" src={`/assets/badges/google-play-${l}.png`} alt="Get it on Google Play" width="148" height="44" loading="lazy" />
+    </a>
+  </div>
+</div>

@@ -63,7 +63,7 @@
   },
   "web": {
     "landing": "/randonauting.html",
-    "privacy": null,
+    "privacy": "/randonauting-privacy.html",
     "terms": null,
     "support": null
   },
@@ -90,7 +90,6 @@
     ]
   },
   "issues": [
-    "App Store Developer Website points to https://orlproducts.pages.dev, which does not resolve.",
-    "No app-specific privacy policy page on orlproducts.com."
+    "App Store Developer Website points to https://orlproducts.pages.dev, which does not resolve."
   ]
 }

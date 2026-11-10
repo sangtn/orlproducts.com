@@ -29,7 +29,7 @@ const en: Dict = {
   apps: 'Apps', company: 'Company', asDev: 'App Store developer page', gpDev: 'Google Play developer page',
   shot: (n, i) => `${n} screenshot ${i}`, shotIpad: (n, i) => `${n} on iPad, screenshot ${i}`, icon: (n) => `${n} app icon`,
   widgets: 'Widgets', liveActivities: 'Live Activities', controlCenter: 'Control Center',
-  legal: 'Apple, the Apple logo, iPhone, iPad, Apple Watch, Mac and Apple Vision Pro are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.',
+  legal: 'Apple, the Apple logo, iPhone, iPad, Apple Watch, Mac, Apple Vision Pro and CarPlay are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. Google Play and the Google Play logo are trademarks of Google LLC.',
   machineNote: '',
   categories: {},
 };
@@ -45,7 +45,7 @@ const ja: Dict = {
   apps: 'アプリ', company: '会社情報', asDev: 'App Store のデベロッパページ', gpDev: 'Google Play のデベロッパページ',
   shot: (n, i) => `${n} のスクリーンショット ${i}`, shotIpad: (n, i) => `iPad 版 ${n} のスクリーンショット ${i}`, icon: (n) => `${n} のアプリアイコン`,
   widgets: 'ウィジェット', liveActivities: 'ライブアクティビティ', controlCenter: 'コントロールセンター',
-  legal: 'Apple、Apple のロゴ、iPhone、iPad、Apple Watch、Mac、Apple Vision Pro は、米国およびその他の国で登録された Apple Inc. の商標です。App Store は Apple Inc. のサービスマークです。Google Play および Google Play ロゴは Google LLC の商標です。',
+  legal: 'Apple、Apple のロゴ、iPhone、iPad、Apple Watch、Mac、Apple Vision Pro、CarPlay は、米国およびその他の国で登録された Apple Inc. の商標です。App Store は Apple Inc. のサービスマークです。Google Play および Google Play ロゴは Google LLC の商標です。',
   machineNote: 'このページの説明文は英語の原文から翻訳したものです。',
   categories: { Lifestyle: 'ライフスタイル', 'Graphics & Design': 'グラフィック＆デザイン', Education: '教育', Utilities: 'ユーティリティ', Productivity: '仕事効率化', Finance: 'ファイナンス', Entertainment: 'エンターテインメント', Sports: 'スポーツ', Weather: '天気', Business: 'ビジネス', Medical: 'メディカル', 'Photo & Video': '写真／ビデオ', Music: 'ミュージック', 'Magazines & Newspapers': '雑誌／新聞' },
 };
@@ -61,7 +61,7 @@ const es: Dict = {
   apps: 'Apps', company: 'Empresa', asDev: 'Página de desarrollador en el App Store', gpDev: 'Página de desarrollador en Google Play',
   shot: (n, i) => `Captura de pantalla ${i} de ${n}`, shotIpad: (n, i) => `${n} en el iPad, captura ${i}`, icon: (n) => `Icono de la app ${n}`,
   widgets: 'Widgets', liveActivities: 'Actividades en vivo', controlCenter: 'Centro de control',
-  legal: 'Apple, el logotipo de Apple, iPhone, iPad, Apple Watch, Mac y Apple Vision Pro son marcas comerciales de Apple Inc., registradas en EE. UU. y en otros países. App Store es una marca de servicio de Apple Inc. Google Play y el logotipo de Google Play son marcas comerciales de Google LLC.',
+  legal: 'Apple, el logotipo de Apple, iPhone, iPad, Apple Watch, Mac, Apple Vision Pro y CarPlay son marcas comerciales de Apple Inc., registradas en EE. UU. y en otros países. App Store es una marca de servicio de Apple Inc. Google Play y el logotipo de Google Play son marcas comerciales de Google LLC.',
   machineNote: 'La descripción de esta página está traducida del original en inglés.',
   categories: { Lifestyle: 'Estilo de vida', 'Graphics & Design': 'Diseño gráfico', Education: 'Educación', Utilities: 'Utilidades', Productivity: 'Productividad', Finance: 'Finanzas', Entertainment: 'Entretenimiento', Sports: 'Deportes', Weather: 'Tiempo', Business: 'Negocios', Medical: 'Medicina', 'Photo & Video': 'Foto y vídeo', Music: 'Música', 'Magazines & Newspapers': 'Revistas y periódicos' },
 };
@@ -77,7 +77,7 @@ const fr: Dict = {
   apps: 'Apps', company: 'Société', asDev: 'Page développeur sur l’App Store', gpDev: 'Page développeur sur Google Play',
   shot: (n, i) => `Capture d’écran ${i} de ${n}`, shotIpad: (n, i) => `${n} sur iPad, capture ${i}`, icon: (n) => `Icône de l’app ${n}`,
   widgets: 'Widgets', liveActivities: 'Activités en direct', controlCenter: 'Centre de contrôle',
-  legal: 'Apple, le logo Apple, iPhone, iPad, Apple Watch, Mac et Apple Vision Pro sont des marques d’Apple Inc., déposées aux États-Unis et dans d’autres pays. App Store est une marque de service d’Apple Inc. Google Play et le logo Google Play sont des marques de Google LLC.',
+  legal: 'Apple, le logo Apple, iPhone, iPad, Apple Watch, Mac, Apple Vision Pro et CarPlay sont des marques d’Apple Inc., déposées aux États-Unis et dans d’autres pays. App Store est une marque de service d’Apple Inc. Google Play et le logo Google Play sont des marques de Google LLC.',
   machineNote: 'La description de cette page est traduite de l’original anglais.',
   categories: { Lifestyle: 'Style de vie', 'Graphics & Design': 'Graphisme et design', Education: 'Éducation', Utilities: 'Utilitaires', Productivity: 'Productivité', Finance: 'Finance', Entertainment: 'Divertissement', Sports: 'Sports', Weather: 'Météo', Business: 'Économie et entreprise', Medical: 'Médecine', 'Photo & Video': 'Photo et vidéo', Music: 'Musique', 'Magazines & Newspapers': 'Magazines et journaux' },
 };
@@ -93,7 +93,7 @@ const de: Dict = {
   apps: 'Apps', company: 'Unternehmen', asDev: 'Entwicklerseite im App Store', gpDev: 'Entwicklerseite bei Google Play',
   shot: (n, i) => `${n} Bildschirmfoto ${i}`, shotIpad: (n, i) => `${n} auf dem iPad, Bildschirmfoto ${i}`, icon: (n) => `App-Symbol von ${n}`,
   widgets: 'Widgets', liveActivities: 'Live-Aktivitäten', controlCenter: 'Kontrollzentrum',
-  legal: 'Apple, das Apple Logo, iPhone, iPad, Apple Watch, Mac und Apple Vision Pro sind Marken der Apple Inc., die in den USA und weiteren Ländern eingetragen sind. App Store ist eine Dienstleistungsmarke der Apple Inc. Google Play und das Google Play-Logo sind Marken von Google LLC.',
+  legal: 'Apple, das Apple Logo, iPhone, iPad, Apple Watch, Mac, Apple Vision Pro und CarPlay sind Marken der Apple Inc., die in den USA und weiteren Ländern eingetragen sind. App Store ist eine Dienstleistungsmarke der Apple Inc. Google Play und das Google Play-Logo sind Marken von Google LLC.',
   machineNote: 'Die Beschreibung auf dieser Seite ist aus dem englischen Original übersetzt.',
   categories: { Lifestyle: 'Lifestyle', 'Graphics & Design': 'Grafik und Design', Education: 'Bildung', Utilities: 'Dienstprogramme', Productivity: 'Produktivität', Finance: 'Finanzen', Entertainment: 'Unterhaltung', Sports: 'Sport', Weather: 'Wetter', Business: 'Wirtschaft', Medical: 'Medizin', 'Photo & Video': 'Foto und Video', Music: 'Musik', 'Magazines & Newspapers': 'Zeitungen und Zeitschriften' },
 };
@@ -109,7 +109,7 @@ const vi: Dict = {
   apps: 'Ứng dụng', company: 'Công ty', asDev: 'Trang nhà phát triển trên App Store', gpDev: 'Trang nhà phát triển trên Google Play',
   shot: (n, i) => `Ảnh màn hình ${i} của ${n}`, shotIpad: (n, i) => `${n} trên iPad, ảnh ${i}`, icon: (n) => `Biểu tượng ứng dụng ${n}`,
   widgets: 'Tiện ích', liveActivities: 'Hoạt động trực tiếp', controlCenter: 'Trung tâm điều khiển',
-  legal: 'Apple, logo Apple, iPhone, iPad, Apple Watch, Mac và Apple Vision Pro là nhãn hiệu của Apple Inc., đã đăng ký tại Hoa Kỳ và các quốc gia khác. App Store là nhãn hiệu dịch vụ của Apple Inc. Google Play và logo Google Play là nhãn hiệu của Google LLC.',
+  legal: 'Apple, logo Apple, iPhone, iPad, Apple Watch, Mac, Apple Vision Pro và CarPlay là nhãn hiệu của Apple Inc., đã đăng ký tại Hoa Kỳ và các quốc gia khác. App Store là nhãn hiệu dịch vụ của Apple Inc. Google Play và logo Google Play là nhãn hiệu của Google LLC.',
   machineNote: '',
   categories: { Finance: 'Tài chính', Lifestyle: 'Phong cách sống', Education: 'Giáo dục', Utilities: 'Tiện ích', Productivity: 'Năng suất', Entertainment: 'Giải trí', Sports: 'Thể thao', Weather: 'Thời tiết', Business: 'Kinh doanh', Medical: 'Y tế', 'Photo & Video': 'Ảnh và video', Music: 'Âm nhạc', 'Graphics & Design': 'Đồ họa và thiết kế', 'Magazines & Newspapers': 'Báo và tạp chí' },
 };

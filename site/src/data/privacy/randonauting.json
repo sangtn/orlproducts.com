@@ -1,0 +1,54 @@
+{
+  "slug": "randonauting",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Used to Track You",
+      "items": [
+        "Identifiers",
+        "Usage Data"
+      ]
+    },
+    {
+      "type": "Data Linked to You",
+      "items": [
+        "User Content"
+      ]
+    },
+    {
+      "type": "Data Not Linked to You",
+      "items": [
+        "Location",
+        "Identifiers",
+        "Usage Data"
+      ]
+    }
+  ],
+  "basis": "The App Store privacy label for this app and the app's App Store description. Draft prepared 10 November 2026; awaiting the developer's confirmation.",
+  "confirmed": false,
+  "summary": "Randonauting creates a random point on the map near you for you to visit.",
+  "onDevice": [
+    "Your trips and settings"
+  ],
+  "permissions": [
+    {
+      "name": "Location",
+      "why": "To generate a random point near you and show it on the map.",
+      "optional": false
+    }
+  ],
+  "services": [
+    {
+      "name": "AI Randonauting chat",
+      "what": "Messages you send to the AI chat are processed to create your adventure ideas."
+    },
+    {
+      "name": "Maps",
+      "what": "To show the generated point on a map."
+    }
+  ],
+  "purchases": "Premium is sold through the App Store as a subscription. Apple handles payment.",
+  "extra": [],
+  "icloud": false,
+  "tracking": true
+}

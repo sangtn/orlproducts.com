@@ -61,7 +61,7 @@
   },
   "web": {
     "landing": "/volumebooster.html",
-    "privacy": null,
+    "privacy": "/volumebooster-privacy.html",
     "terms": null,
     "support": "/howtovb.html"
   },
@@ -87,7 +87,5 @@
       "/assets/apps/volumebooster/ipad-06.webp"
     ]
   },
-  "issues": [
-    "No app-specific privacy policy page on orlproducts.com."
-  ]
+  "issues": []
 }

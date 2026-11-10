@@ -1,0 +1,150 @@
+---
+// Per-app privacy policies -> /<slug>-privacy.html for apps that had none on this site.
+// Sources: site/src/data/privacy/<slug>.json (built from the App Store privacy label and the app's own
+// store description) or site/src/content/privacy/<slug>.html (an existing policy moved from Wix, unchanged).
+import Base from '../layouts/Base.astro';
+import { bySlug, shortName, type App } from '../lib/apps';
+
+interface Permission { name: string; why: string; optional: boolean }
+interface PrivacyData {
+  slug: string; effective: string; summary: string; tracking: boolean; icloud: boolean;
+  storeLabel: { type: string; items: string[] }[];
+  onDevice: string[]; permissions: Permission[]; services: { name: string; what: string }[];
+  purchases: string | null; extra: string[]; confirmed: boolean;
+}
+
+const data = import.meta.glob<PrivacyData>('../data/privacy/*.json', { eager: true, import: 'default' });
+const ported = import.meta.glob<string>('../content/privacy/*.html', { eager: true, query: '?raw', import: 'default' });
+
+export function getStaticPaths() {
+  const d = import.meta.glob('../data/privacy/*.json', { eager: true });
+  const p = import.meta.glob('../content/privacy/*.html', { eager: true });
+  const slugs = [...Object.keys(d), ...Object.keys(p)].map((k) => k.split('/').pop()!.replace(/\.(json|html)$/, ''));
+  return [...new Set(slugs)].map((slug) => ({ params: { app: slug }, props: { slug } }));
+}
+
+const { slug } = Astro.props as { slug: string };
+const app: App = bySlug(slug);
+const name = shortName(app);
+const pd = data[`../data/privacy/${slug}.json`];
+const portedHtml = ported[`../content/privacy/${slug}.html`];
+const site = Astro.site!.origin;
+const path = `/${slug}-privacy.html`;
+
+const LABEL_TEXT: Record<string, string> = {
+  'Data Not Collected': 'The developer does not collect any data from this app.',
+  'Data Used to Track You': 'May be used to track you across apps and websites owned by other companies.',
+  'Data Linked to You': 'May be collected and linked to your identity.',
+  'Data Not Linked to You': 'May be collected but is not linked to your identity.',
+};
+const appStoreLabel = app.appStore ? `${app.appStore.url.replace('/app/', '/us/app/')}#privacy` : null;
+const effective = new Date(pd?.effective ?? '2026-11-10').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const description = pd
+  ? `How ${name} handles your data: ${pd.tracking ? 'what its App Store privacy label lists, the permissions it asks for, and your choices.' : 'what stays on your device, the permissions it asks for, and how to contact us.'}`
+  : `The privacy policy for ${name}: what data is collected, how it is used and protected, and how to contact ORIENTPRO.`;
+const ld = {
+  '@context': 'https://schema.org', '@type': 'WebPage', name: `${name} Privacy Policy`, url: `${site}${path}`,
+  about: { '@id': `${site}/${slug}.html#app` }, isPartOf: { '@id': `${site}/#website` }, publisher: { '@id': `${site}/#org` },
+  dateModified: pd?.effective,
+};
+---
+<Base title={`Privacy Policy — ${app.name}`.slice(0, 70)} description={description.slice(0, 158)} path={path} app={slug} jsonLd={[ld]}>
+  <div class="op-wrap op-legal">
+    <nav class="op-legal__toc" aria-label="On this page">
+      {pd ? (
+        <ol>
+          <li><a href="#summary">Summary</a></li>
+          <li><a href="#label">App Store privacy label</a></li>
+          <li><a href="#device">What stays on your device</a></li>
+          {pd.permissions.length > 0 && <li><a href="#permissions">Permissions</a></li>}
+          {pd.services.length > 0 && <li><a href="#services">Services the app connects to</a></li>}
+          <li><a href="#tracking">Tracking and advertising</a></li>
+          {pd.purchases && <li><a href="#purchases">Purchases</a></li>}
+          <li><a href="#children">Children</a></li>
+          <li><a href="#choices">Your choices</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      ) : (
+        <ol><li><a href={`/${slug}.html`}>About {name}</a></li><li><a href="#contact">Contact</a></li></ol>
+      )}
+    </nav>
+    <article>
+      <p class="op-eyebrow">{app.name}</p>
+      <h1>Privacy Policy</h1>
+      <p class="op-legal__meta">{pd ? `Effective ${effective}` : 'Policy text unchanged from the version previously published at orlincproducts.wixsite.com'} · <a href={`/${slug}.html`}>{name}</a> · ORIENTPRO (Lam An Investment and Trade JSC)</p>
+
+      {portedHtml && <div class="op-legal__body" set:html={portedHtml} />}
+
+      {pd && (
+        <div class="op-legal__body">
+          <h2 id="summary">Summary</h2>
+          <p>{pd.summary}</p>
+
+          <h2 id="label">App Store privacy label</h2>
+          <p>This is what we declared to Apple for {name}. Apple shows the same information on the app's App Store page{appStoreLabel && <> (<a href={appStoreLabel}>App Privacy</a>)</>}.</p>
+          <div class="op-tablewrap"><table>
+            <thead><tr><th>Category</th><th>Meaning</th><th>Data types</th></tr></thead>
+            <tbody>
+              {pd.storeLabel.map((c) => <tr><td>{c.type}</td><td>{LABEL_TEXT[c.type] ?? ''}</td><td>{c.items.length ? c.items.join(', ') : '—'}</td></tr>)}
+            </tbody>
+          </table></div>
+
+          <h2 id="device">What stays on your device</h2>
+          <ul>{pd.onDevice.map((x) => <li>{x}</li>)}</ul>
+          {pd.icloud && <p>If you turn on iCloud sync, this data is stored in your own private iCloud account, which Apple protects under its own privacy policy. We cannot read it.</p>}
+          {pd.extra.map((x) => <p>{x}</p>)}
+
+          {pd.permissions.length > 0 && (
+            <>
+              <h2 id="permissions">Permissions</h2>
+              <p>{name} asks for these only when you use the feature that needs them. You can change them at any time in Settings on your device.</p>
+              <div class="op-tablewrap"><table>
+                <thead><tr><th>Permission</th><th>Why</th><th>Needed?</th></tr></thead>
+                <tbody>{pd.permissions.map((p) => <tr><td>{p.name}</td><td>{p.why}</td><td>{p.optional ? 'Optional' : 'Needed for the main feature'}</td></tr>)}</tbody>
+              </table></div>
+            </>
+          )}
+
+          {pd.services.length > 0 && (
+            <>
+              <h2 id="services">Services the app connects to</h2>
+              <ul>{pd.services.map((x) => <li><strong>{x.name}.</strong> {x.what}</li>)}</ul>
+            </>
+          )}
+
+          <h2 id="tracking">Tracking and advertising</h2>
+          {pd.tracking ? (
+            <>
+              <p>The App Store label for {name} lists data used to track you: {pd.storeLabel.find((c) => c.type === 'Data Used to Track You')?.items.join(', ')}. This data is handled by third-party advertising and analytics services built into the app, as described in the <a href="/privacy.html">ORIENTPRO Privacy Policy</a>.</p>
+              <p>On iPhone and iPad, the app asks your permission through App Tracking Transparency before any tracking. If you choose "Ask App Not to Track", the advertising identifier is not shared. You can change this at any time in Settings › Privacy &amp; Security › Tracking.</p>
+            </>
+          ) : (
+            <p>{name} does not track you, shows no third-party advertising and contains no advertising or analytics SDK.</p>
+          )}
+
+          {pd.purchases && (
+            <>
+              <h2 id="purchases">Purchases</h2>
+              <p>{pd.purchases} Subscriptions renew until you cancel them in Settings › Apple Account › Subscriptions.</p>
+            </>
+          )}
+
+          <h2 id="children">Children</h2>
+          <p>{name} is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
+
+          <h2 id="choices">Your choices</h2>
+          <ul>
+            <li>Turn permissions on or off in Settings on your device.</li>
+            <li>Deleting the app removes the data it stores on your device{pd.icloud ? '; data in your iCloud can be deleted in Settings › Apple Account › iCloud' : ''}.</li>
+            <li>Ask us any question about your data, or ask us to delete data we hold, at info@orlproducts.com.</li>
+          </ul>
+          <p>If we change how {name} handles data, we will update this page and its effective date, and the App Store label at the same time.</p>
+        </div>
+      )}
+
+      <div class="op-contact" id="contact" style="margin-top:var(--space-6)">
+        <p style="margin:0">Questions about {name} and your privacy: <a href={`mailto:info@orlproducts.com?subject=${encodeURIComponent(name + ' privacy')}`}>info@orlproducts.com</a>. ORIENTPRO's general policy: <a href="/privacy.html">Privacy Policy</a>.</p>
+      </div>
+    </article>
+  </div>
+</Base>

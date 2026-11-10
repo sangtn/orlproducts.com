@@ -169,7 +169,13 @@ export function prerenderTranslations(dist) {
       markPicker(root, lang, urls);
       mkdirSync(join(dist, lang), { recursive: true });
       // Inline CSS (fonts, backgrounds) also uses relative URLs that break one folder down
-      const out = root.toString().replace(/url\((['"]?)(?:\.\/)?(assets\/)/g, 'url($1/$2');
+      const APPLE = { vi: 'vi-vn', ja: 'ja-jp', es: 'es-es', fr: 'fr-fr', de: 'de-de' };
+      let out = root.toString().replace(/url\((['"]?)(?:\.\/)?(assets\/)/g, 'url($1/$2');
+      // Official store badges in the page's language (assets/badges has en, vi, ja, es, fr, de)
+      if (APPLE[lang]) out = out.replace(/\/assets\/badges\/app-store-(black|white)-en-us\.svg/g, `/assets/badges/app-store-$1-${APPLE[lang]}.svg`)
+        .replace(/\/assets\/badges\/google-play-en\.png/g, `/assets/badges/google-play-${lang}.png`)
+        // Older pages keep their own English Google Play PNG next to the app's images
+        .replace(/\/assets\/(?:images\/[a-z0-9]+|chemistry3d)\/google-play-badge(?:-en)?\.png/g, `/assets/badges/google-play-${lang}.png`);
       writeFileSync(join(dist, lang, file), out);
       written.push(`${lang}/${file}`);
     }

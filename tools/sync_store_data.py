@@ -173,8 +173,9 @@ def main():
             },
             "androidStatus": "live" if m.get("playPackage") else m.get("androidStatus"),
             "platforms": {**(platforms(a) if a else {}), **({"vision": "native"} if m.get("visionNative") else {}), "android": bool(m.get("playPackage")), "wearOs": m.get("wearOs", False)},
-            # CarPlay is never inferred from text: the word appears in some descriptions as an audio output.
-            "surfaces": {**{k: bool(re.search(p, desc, re.I)) for k, p in SURFACES.items()}, "carPlay": False},
+            # CarPlay is never inferred from text (Volume Booster mentions it only as an audio output):
+            # it comes from apps.manual.json, set for apps whose store text describes a CarPlay feature.
+            "surfaces": {**{k: bool(re.search(p, desc, re.I)) for k, p in SURFACES.items()}, "carPlay": bool(m.get("carPlay"))},
             "web": m["web"],
             "generatePage": bool(m.get("generatePage")),
             "contentLang": m.get("contentLang", "en"),

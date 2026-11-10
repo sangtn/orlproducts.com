@@ -1,0 +1,53 @@
+{
+  "slug": "pixeai",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Used to Track You",
+      "items": [
+        "Diagnostics"
+      ]
+    },
+    {
+      "type": "Data Linked to You",
+      "items": [
+        "Usage Data",
+        "Diagnostics"
+      ]
+    },
+    {
+      "type": "Data Not Linked to You",
+      "items": [
+        "Identifiers"
+      ]
+    }
+  ],
+  "basis": "The App Store privacy label for this app and the app's App Store description. Draft prepared 10 November 2026; awaiting the developer's confirmation.",
+  "confirmed": false,
+  "summary": "PixeAI edits photos and makes AI videos and images from photos you choose.",
+  "onDevice": [
+    "Your edited photos and generated results that you save"
+  ],
+  "permissions": [
+    {
+      "name": "Photos",
+      "why": "To choose photos to edit and to save results.",
+      "optional": true
+    },
+    {
+      "name": "Camera",
+      "why": "Only if you take a new photo in the app.",
+      "optional": true
+    }
+  ],
+  "services": [
+    {
+      "name": "AI generation",
+      "what": "Photos and prompts you submit for AI video or image generation are processed to create your result."
+    }
+  ],
+  "purchases": "Premium is sold through the App Store. Apple handles payment.",
+  "extra": [],
+  "icloud": false,
+  "tracking": true
+}

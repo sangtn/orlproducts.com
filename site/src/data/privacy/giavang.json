@@ -1,0 +1,42 @@
+{
+  "slug": "giavang",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Used to Track You",
+      "items": [
+        "Usage Data"
+      ]
+    },
+    {
+      "type": "Data Linked to You",
+      "items": [
+        "Usage Data"
+      ]
+    }
+  ],
+  "basis": "The App Store privacy label for this app and the app's App Store description. Draft prepared 10 November 2026; awaiting the developer's confirmation.",
+  "confirmed": false,
+  "summary": "Giá Vàng Live shows live gold and currency prices. Your investment wallet entries are created by you in the app.",
+  "onDevice": [
+    "Your investment wallet entries and calculator inputs",
+    "Your watchlist and settings"
+  ],
+  "permissions": [
+    {
+      "name": "Notifications",
+      "why": "For price alerts, if you turn them on.",
+      "optional": true
+    }
+  ],
+  "services": [
+    {
+      "name": "Gold and currency price sources",
+      "what": "Prices from gold sellers and banks (SJC, DOJI, PNJ, Vietcombank and others) and market news."
+    }
+  ],
+  "purchases": null,
+  "extra": [],
+  "icloud": false,
+  "tracking": true
+}

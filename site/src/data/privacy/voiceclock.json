@@ -1,0 +1,47 @@
+{
+  "slug": "voiceclock",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Not Linked to You",
+      "items": [
+        "User Content"
+      ]
+    }
+  ],
+  "basis": "The App Store privacy label for this app and the app's App Store description. Draft prepared 10 November 2026; awaiting the developer's confirmation.",
+  "confirmed": false,
+  "summary": "Voice Clock has no ad identifiers. Your recordings, photos, schedules and settings stay on your device and sync only through your own private iCloud.",
+  "onDevice": [
+    "Your voice recordings and imported audio",
+    "Background photos you choose (copied into the app; they never leave your device)",
+    "Schedules, the Delivery Log and settings"
+  ],
+  "permissions": [
+    {
+      "name": "Microphone",
+      "why": "Only when you record your own announcement.",
+      "optional": true
+    },
+    {
+      "name": "Photos or Camera",
+      "why": "Only when you choose a background photo.",
+      "optional": true
+    },
+    {
+      "name": "Notifications",
+      "why": "To deliver announcements and the five-minute heads-up.",
+      "optional": true
+    },
+    {
+      "name": "Personal Voice",
+      "why": "Only if you choose to use your Personal Voice for announcements.",
+      "optional": true
+    }
+  ],
+  "services": [],
+  "purchases": "Pro is sold through the App Store. Apple handles payment.",
+  "icloud": true,
+  "extra": [],
+  "tracking": false
+}

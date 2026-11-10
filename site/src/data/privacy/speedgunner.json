@@ -1,0 +1,36 @@
+{
+  "slug": "speedgunner",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Not Collected",
+      "items": []
+    }
+  ],
+  "basis": "The App Store privacy label for this app and the app's App Store description. Draft prepared 10 November 2026; awaiting the developer's confirmation.",
+  "confirmed": false,
+  "summary": "SpeedGunner AI collects no data. Video is processed on your device and is never uploaded.",
+  "onDevice": [
+    "Camera video while you measure, processed on your device and not stored or sent anywhere",
+    "Your measurements, sessions, Spots, athlete profiles and exports"
+  ],
+  "permissions": [
+    {
+      "name": "Camera",
+      "why": "To measure speed. Frames are analysed on your device.",
+      "optional": false
+    },
+    {
+      "name": "LiDAR depth (Pro devices)",
+      "why": "To check distance for vehicles within 10 m, on supported iPhone and iPad models.",
+      "optional": true
+    }
+  ],
+  "services": [],
+  "purchases": "Pro is sold through the App Store as a subscription or a one-time Lifetime purchase. Apple handles payment.",
+  "icloud": false,
+  "extra": [
+    "Exports (summary images, PDF, CSV) are created on your device and shared only where you send them."
+  ],
+  "tracking": false
+}

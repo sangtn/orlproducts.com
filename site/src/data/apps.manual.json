@@ -196,7 +196,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/babi-privacy.html",
         "terms": null,
         "support": null
       },
@@ -215,7 +215,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/somavue-privacy.html",
         "terms": null,
         "support": null
       },
@@ -234,7 +234,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/speedgunner-privacy.html",
         "terms": null,
         "support": null
       },
@@ -254,7 +254,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/videoupscale-privacy.html",
         "terms": null,
         "support": null
       },
@@ -273,7 +273,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/voiceclock-privacy.html",
         "terms": null,
         "support": null
       },
@@ -284,7 +284,8 @@
       "accentInk": "#CC413C",
       "accentInkDark": "#D25954",
       "accentOn": "#FFFFFF",
-      "generatePage": true
+      "generatePage": true,
+      "carPlay": true
     },
     {
       "slug": "aurora",
@@ -292,7 +293,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/aurora-privacy.html",
         "terms": null,
         "support": null
       },
@@ -303,7 +304,8 @@
       "accentInk": "#94112C",
       "accentInkDark": "#E93C5F",
       "accentOn": "#FFFFFF",
-      "generatePage": true
+      "generatePage": true,
+      "carPlay": true
     },
     {
       "slug": "pinbord",
@@ -311,7 +313,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/pinbord-privacy.html",
         "terms": null,
         "support": null
       },
@@ -322,7 +324,8 @@
       "accentInk": "#886E0D",
       "accentInkDark": "#EBC534",
       "accentOn": "#1B1814",
-      "generatePage": true
+      "generatePage": true,
+      "carPlay": true
     },
     {
       "slug": "giavang",
@@ -330,7 +333,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/giavang-privacy.html",
         "terms": null,
         "support": null
       },
@@ -356,7 +359,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/livemate-privacy.html",
         "terms": null,
         "support": null
       },
@@ -376,7 +379,7 @@
       "playPackage": null,
       "web": {
         "landing": "/randonauting.html",
-        "privacy": null,
+        "privacy": "/randonauting-privacy.html",
         "terms": null,
         "support": null
       },
@@ -395,7 +398,7 @@
       "playPackage": null,
       "web": {
         "landing": "/volumebooster.html",
-        "privacy": null,
+        "privacy": "/volumebooster-privacy.html",
         "terms": null,
         "support": "/howtovb.html"
       },
@@ -414,7 +417,7 @@
       "playPackage": null,
       "web": {
         "landing": "/offlinefiles.html",
-        "privacy": null,
+        "privacy": "/offlinefiles-privacy.html",
         "terms": null,
         "support": null
       },
@@ -433,7 +436,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/pixeai-privacy.html",
         "terms": null,
         "support": null
       },
@@ -453,7 +456,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/cartoonphoto-privacy.html",
         "terms": null,
         "support": null
       },
@@ -473,7 +476,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/compressphoto-privacy.html",
         "terms": null,
         "support": null
       },
@@ -498,7 +501,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/compressvideos-privacy.html",
         "terms": null,
         "support": null
       },
@@ -518,7 +521,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/contactsbackup-privacy.html",
         "terms": null,
         "support": null
       },
@@ -538,7 +541,7 @@
       "playPackage": null,
       "web": {
         "landing": null,
-        "privacy": null,
+        "privacy": "/idpassport-privacy.html",
         "terms": null,
         "support": null
       },

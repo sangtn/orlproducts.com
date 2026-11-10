@@ -1,0 +1,44 @@
+{
+  "slug": "idpassport",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Used to Track You",
+      "items": [
+        "Usage Data"
+      ]
+    },
+    {
+      "type": "Data Not Linked to You",
+      "items": [
+        "User Content",
+        "Identifiers",
+        "Usage Data",
+        "Diagnostics"
+      ]
+    }
+  ],
+  "basis": "The App Store privacy label for this app and the app's App Store description. Draft prepared 10 November 2026; awaiting the developer's confirmation.",
+  "confirmed": false,
+  "summary": "ID Passport Photo Booth makes passport, ID and visa photos from pictures you take or choose.",
+  "onDevice": [
+    "The photos you take or choose, and the finished photo sheets you save or share"
+  ],
+  "permissions": [
+    {
+      "name": "Camera",
+      "why": "To take your photo.",
+      "optional": true
+    },
+    {
+      "name": "Photos",
+      "why": "To choose an existing photo and to save finished photos.",
+      "optional": true
+    }
+  ],
+  "services": [],
+  "purchases": "Premium is sold through the App Store as a subscription. Apple handles payment.",
+  "extra": [],
+  "icloud": false,
+  "tracking": true
+}

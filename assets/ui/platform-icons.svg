@@ -13,5 +13,6 @@
   <symbol id="live-activities" viewBox="0 0 24 24"><rect x="2.5" y="8" width="19" height="8" rx="4"/><circle cx="7" cy="12" r="1.4"/><path d="M11 12h7"/></symbol>
   <symbol id="control-center" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="3.75"/><rect x="13" y="3.5" width="7.5" height="17" rx="3.75"/><rect x="3.5" y="13" width="7.5" height="7.5" rx="3.75"/></symbol>
   <symbol id="voice" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0013 0M12 17.5V21"/></symbol>
+  <symbol id="carplay" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2.5"/><path d="M7 13.5l1.2-3.2c.2-.5.6-.8 1.1-.8h5.4c.5 0 .9.3 1.1.8l1.2 3.2M7 13.5h10M8.5 13.5v1.5M15.5 13.5v1.5M9 19.5h6"/></symbol>
   <symbol id="cloud" viewBox="0 0 24 24"><path d="M7 18.5h10a4 4 0 00.6-7.95A5.5 5.5 0 006.9 9.6 4.5 4.5 0 007 18.5z"/></symbol>
 </svg>

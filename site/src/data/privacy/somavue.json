@@ -1,0 +1,24 @@
+{
+  "slug": "somavue",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Not Collected",
+      "items": []
+    }
+  ],
+  "basis": "The App Store privacy label for this app and the app's App Store description. Draft prepared 10 November 2026; awaiting the developer's confirmation.",
+  "confirmed": false,
+  "summary": "Somavue collects no data. There is nothing to sign in to and no analytics, advertising or crash-reporting SDK of any kind. Everything works offline.",
+  "onDevice": [
+    "Your study progress, reviews, Study Sets, syllabi and annotations"
+  ],
+  "permissions": [],
+  "services": [],
+  "purchases": "Premium is sold through the App Store as a subscription (with a free trial) or a one-time Lifetime purchase. Apple handles payment.",
+  "icloud": false,
+  "extra": [
+    "The 3D anatomical models come from BodyParts3D (© The Database Center for Life Science, CC BY 4.0) and are bundled in the app."
+  ],
+  "tracking": false
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "pinbord",
+  "effective": "2026-11-10",
+  "storeLabel": [
+    {
+      "type": "Data Not Collected",
+      "items": []
+    }
+  ],
+  "basis": "The App Store privacy label for this app and the app's App Store description. Draft prepared 10 November 2026; awaiting the developer's confirmation.",
+  "confirmed": false,
+  "summary": "Pinbord collects no data. There are no servers, no accounts and no third-party trackers. Your notes stay on your device, or in your own private iCloud if you turn sync on.",
+  "onDevice": [
+    "Your notes, boards, checklists, photos and stickers",
+    "Deleted notes, kept for 30 days so you can restore them"
+  ],
+  "permissions": [
+    {
+      "name": "Photos",
+      "why": "Only when you add a photo to a note.",
+      "optional": true
+    }
+  ],
+  "services": [],
+  "purchases": "Studio Pass is sold through the App Store as a one-time purchase or a subscription. Apple handles payment.",
+  "icloud": true,
+  "extra": [
+    "Pinbord sends no notifications."
+  ],
+  "tracking": false
+}
