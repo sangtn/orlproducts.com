@@ -154,7 +154,8 @@ def main():
             "category": a["primaryGenreName"] if a else m.get("category"),
             "appStore": None if not a else {
                 "id": a["trackId"],
-                "url": f'https://apps.apple.com/app/id{a["trackId"]}',
+                # a fixed storefront link when the owner wants one (Raykin: the US listing)
+                "url": m.get("appStoreUrl") or f'https://apps.apple.com/app/id{a["trackId"]}',
                 "bundleId": a["bundleId"],
                 "version": a["version"],
                 "released": a["releaseDate"][:10],

@@ -5,13 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n="meta.title">DICOM Viewer: Raykin — Your family’s scans, kept private</title>
 <meta name="description" data-i18n-content="meta.description" content="Open the CD, USB, ZIP or hospital link you were given and see X-ray, CT, MRI and ultrasound images. No account; scans stay on your device.">
-<!-- ================= APP STORE LINK: the one place to change =================
-     When Raykin is live, paste its App Store URL into content="" below, e.g.
-     https://apps.apple.com/app/id0000000000 . Every "Coming soon to the App Store"
-     badge on this page then turns into a "Download on the App Store" link.
-     Also un-comment the Smart App Banner line and put the numeric ID in it. -->
-<meta name="raykin-app-store-url" content="">
-<!-- <meta name="apple-itunes-app" content="app-id=0000000000"> -->
+<!-- APP STORE LINK (US listing). The badges below carry it in their href; the script at the end keeps them in step with this tag. -->
+<meta name="raykin-app-store-url" content="https://apps.apple.com/us/app/dicom-viewer-mri-ct-raykin/id6817050346">
+<meta name="apple-itunes-app" content="app-id=6817050346">
 <meta name="apple-mobile-web-app-title" content="ORIENTPRO">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="color-scheme" content="dark light">
@@ -52,15 +48,16 @@
   {
    "@type": "MobileApplication",
    "@id": "https://orlproducts.com/raykin.html#app",
-   "name": "DICOM Viewer: Raykin",
-   "alternateName": "Raykin",
+   "name": "DICOM Viewer MRI CT: Raykin",
+   "alternateName": ["Raykin", "DICOM Viewer: Raykin"],
    "description": "Open the CD, USB drive, ZIP or hospital link you were given and see your family’s X-ray, CT, MRI and ultrasound images in plain language, on iPhone, iPad, Mac and Apple Watch, and on Android and Wear OS. No account, and your scans stay on your device. For viewing only, not for diagnosis.",
    "url": "https://orlproducts.com/raykin.html",
    "image": "https://orlproducts.com/assets/images/raykin/og.jpg",
    "thumbnailUrl": "https://orlproducts.com/assets/images/raykin/icon.png",
    "applicationCategory": "MedicalApplication",
    "operatingSystem": "iOS 26, iPadOS 26, macOS 26, watchOS 26, Android 10",
-   "installUrl": "https://play.google.com/store/apps/details?id=com.orientpro.dicomviewer",
+   "installUrl": "https://apps.apple.com/us/app/dicom-viewer-mri-ct-raykin/id6817050346",
+   "downloadUrl": ["https://apps.apple.com/us/app/dicom-viewer-mri-ct-raykin/id6817050346", "https://play.google.com/store/apps/details?id=com.orientpro.dicomviewer"],
    "inLanguage": [
     "en",
     "vi",
@@ -513,7 +510,7 @@ footer .copy{color:var(--foot-line);font-size:12.5px;margin:0}
       <h1 data-i18n="hero.h1">Your family’s scans, kept private.</h1>
       <p class="lede" data-i18n="hero.lede">Open the CD, USB drive, ZIP or hospital link you were given, and see your family’s X-ray, CT, MRI and ultrasound images in plain language — on iPhone, iPad, Mac and Apple Watch.</p>
       <div class="cta">
-        <a class="store" data-appstore style="background:none;border:0;padding:0;box-shadow:none;height:auto;color:inherit"><span class="soon" style="font-size:15px;color:var(--ink-soft,#57504A)"><span data-i18n="store.soon.top">Coming soon to the</span> <span data-i18n="store.soon.name">App Store</span></span><picture class="live"><source srcset="/assets/badges/app-store-white-en-us.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-en-us.svg" alt="Download on the App Store" width="162" height="54" style="height:54px;width:auto;display:block"></picture></a>
+        <a class="store is-live" data-appstore href="https://apps.apple.com/us/app/dicom-viewer-mri-ct-raykin/id6817050346" target="_blank" rel="noopener" style="background:none;border:0;padding:0;box-shadow:none;height:auto;color:inherit"><span class="soon" style="font-size:15px;color:var(--ink-soft,#57504A)"><span data-i18n="store.soon.top">Coming soon to the</span> <span data-i18n="store.soon.name">App Store</span></span><picture class="live"><source srcset="/assets/badges/app-store-white-en-us.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-en-us.svg" alt="Download on the App Store" width="162" height="54" style="height:54px;width:auto;display:block"></picture></a>
         <!-- Google Play listing: live after review -->
         <a class="store-play" href="https://play.google.com/store/apps/details?id=com.orientpro.dicomviewer" target="_blank" rel="noopener" aria-label="Get Raykin on Google Play"><img src="./assets/images/raykin/google-play-badge.png" width="564" height="168" alt="Get it on Google Play"></a>
         <a class="btn btn-ghost" href="#import" data-i18n="hero.cta.secondary">See how it works</a>
@@ -904,7 +901,7 @@ footer .copy{color:var(--foot-line);font-size:12.5px;margin:0}
     <h2 data-i18n="band.h2">Your family’s scans, kept private.</h2>
     <p data-i18n="band.p">Free on iPhone, iPad, Mac and Apple Watch, and free with ads on Android. No account needed.</p>
     <div class="cta">
-      <a class="store" data-appstore style="background:none;border:0;padding:0;box-shadow:none;height:auto;color:inherit"><span class="soon" style="font-size:15px;color:var(--ink-soft,#57504A)"><span data-i18n="store.soon.top">Coming soon to the</span> <span data-i18n="store.soon.name">App Store</span></span><picture class="live"><source srcset="/assets/badges/app-store-white-en-us.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-en-us.svg" alt="Download on the App Store" width="162" height="54" style="height:54px;width:auto;display:block"></picture></a>
+      <a class="store is-live" data-appstore href="https://apps.apple.com/us/app/dicom-viewer-mri-ct-raykin/id6817050346" target="_blank" rel="noopener" style="background:none;border:0;padding:0;box-shadow:none;height:auto;color:inherit"><span class="soon" style="font-size:15px;color:var(--ink-soft,#57504A)"><span data-i18n="store.soon.top">Coming soon to the</span> <span data-i18n="store.soon.name">App Store</span></span><picture class="live"><source srcset="/assets/badges/app-store-white-en-us.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-en-us.svg" alt="Download on the App Store" width="162" height="54" style="height:54px;width:auto;display:block"></picture></a>
       <a class="store-play" href="https://play.google.com/store/apps/details?id=com.orientpro.dicomviewer" target="_blank" rel="noopener" aria-label="Get Raykin on Google Play"><img src="./assets/images/raykin/google-play-badge.png" width="564" height="168" alt="Get it on Google Play" loading="lazy"></a>
     </div>
     <p class="small" data-i18n="hero.req">Requires iOS 26, iPadOS 26, macOS 26 or watchOS 26 or later, or Android 10 or later.</p>
@@ -936,8 +933,8 @@ footer .copy{color:var(--foot-line);font-size:12.5px;margin:0}
       <div class="apps">
         <h3><span data-i18n="footer.apps">Get FREE Our Apps 💬</span></h3>
         <p data-i18n="footer.apps.sub">Available on the App Store and Google Play.</p>
-        <a class="getapp" href="https://apps.apple.com/us/developer/orientpro-lam-an-investment-trade-jsc/id1614396757" target="_blank" rel="noopener" aria-label="Download on the App Store" style="background:none;border:0;padding:0;box-shadow:none;height:auto"><picture><source srcset="/assets/badges/app-store-white-en-us.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-en-us.svg" alt="Download on the App Store" width="120" height="40" style="height:40px;width:auto;display:block"></picture></a>
-        <a class="getapp" href="https://play.google.com/store/apps/details?id=com.orientpro.dicomviewer" target="_blank" rel="noopener" aria-label="Download on the App Store" style="background:none;border:0;padding:0;box-shadow:none;height:auto"><picture><source srcset="/assets/badges/app-store-white-en-us.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-en-us.svg" alt="Download on the App Store" width="120" height="40" style="height:40px;width:auto;display:block"></picture></a>
+        <a class="getapp" href="https://apps.apple.com/us/app/dicom-viewer-mri-ct-raykin/id6817050346" target="_blank" rel="noopener" aria-label="Download on the App Store" style="background:none;border:0;padding:0;box-shadow:none;height:auto"><picture><source srcset="/assets/badges/app-store-white-en-us.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-en-us.svg" alt="Download on the App Store" width="120" height="40" style="height:40px;width:auto;display:block"></picture></a>
+        <a class="getapp" href="https://play.google.com/store/apps/details?id=com.orientpro.dicomviewer" target="_blank" rel="noopener" aria-label="Get it on Google Play" style="background:none;border:0;padding:0;box-shadow:none;height:auto"><picture><source srcset="/assets/badges/app-store-white-en-us.svg" media="(prefers-color-scheme: dark)"><img src="/assets/badges/app-store-black-en-us.svg" alt="Download on the App Store" width="120" height="40" style="height:40px;width:auto;display:block"></picture></a>
       </div>
     </div>
     <div class="legalline">

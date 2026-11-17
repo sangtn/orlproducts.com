@@ -26,7 +26,8 @@
     },
     {
       "slug": "raykin",
-      "appStoreId": null,
+      "appStoreId": 6817050346,
+      "appStoreUrl": "https://apps.apple.com/us/app/dicom-viewer-mri-ct-raykin/id6817050346",
       "playPackage": "com.orientpro.dicomviewer",
       "web": {
         "landing": "/raykin.html",
@@ -38,7 +39,6 @@
       "group": "current",
       "accent": "#1B609A",
       "wearOs": true,
-      "iosStatus": "in-review",
       "name": "DICOM Viewer: Raykin",
       "subtitle": null,
       "category": "Medical",

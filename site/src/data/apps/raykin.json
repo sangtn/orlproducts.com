@@ -1,7 +1,7 @@
 {
   "_generated": "by tools/sync_store_data.py — edit apps.manual.json instead",
   "slug": "raykin",
-  "name": "DICOM Viewer: Raykin",
+  "name": "DICOM Viewer MRI CT: Raykin",
   "subtitle": null,
   "brand": "Raykin",
   "tagline": "DICOM Viewer",
@@ -14,26 +14,61 @@
     "on": "#FFFFFF"
   },
   "category": "Medical",
-  "appStore": null,
-  "iosStatus": "in-review",
+  "appStore": {
+    "id": 6817050346,
+    "url": "https://apps.apple.com/us/app/dicom-viewer-mri-ct-raykin/id6817050346",
+    "bundleId": "com.orientpro.DICOMViewer",
+    "version": "1.0",
+    "released": "2026-11-16",
+    "updated": "2026-11-17",
+    "minimumOs": "26.0",
+    "languages": [
+      "en",
+      "fr",
+      "de",
+      "it",
+      "ja",
+      "ko",
+      "pt",
+      "zh",
+      "es",
+      "zh",
+      "vi"
+    ],
+    "price": "Free",
+    "rating": null,
+    "contentRating": "17+",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/79/ff/2d/79ff2d18-b058-a0f4-760a-23dc6901387e/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "developerWebsite": "https://orlproducts.com/raykin.html",
+    "screenshots": {
+      "iphone": 10,
+      "ipad": 10
+    }
+  },
+  "iosStatus": "live",
   "googlePlay": {
     "package": "com.orientpro.dicomviewer",
     "url": "https://play.google.com/store/apps/details?id=com.orientpro.dicomviewer"
   },
   "androidStatus": "live",
   "platforms": {
+    "iphone": true,
+    "ipad": true,
+    "mac": "ipad-app",
+    "watch": true,
+    "vision": "ipad-app",
     "android": true,
     "wearOs": true
   },
   "surfaces": {
     "widgets": true,
-    "liveActivities": false,
+    "liveActivities": true,
     "dynamicIsland": false,
-    "controlCenter": false,
+    "controlCenter": true,
     "standBy": false,
     "complications": false,
-    "siri": false,
-    "shortcuts": false,
+    "siri": true,
+    "shortcuts": true,
     "spotlight": false,
     "iCloud": false,
     "carPlay": false
@@ -48,7 +83,7 @@
   "generateSupport": false,
   "contentLang": "en",
   "metaDescription": null,
-  "description": "Raykin opens the scans hospitals give you — copied from a CD, on a USB drive, in a ZIP file or behind a QR code — and keeps your family's X-ray, CT, MRI and ultrasound images in one private place on your Android phone, tablet and Wear OS watch. Your scans stay on your device: no account, nothing uploaded.\n\nOPEN WHAT THE HOSPITAL GAVE YOU\n• Files, folders, ZIP and DICOMDIR from your phone, Google Drive or a USB-C drive\n• Hospital QR codes and links: DICOM and ZIP files download straight into Raykin\n• Got a CD? Copy the disc to a USB drive on any computer, then import the drive\n• A photo of an old film, or a scanned paper report (text recognised on your device)\n• Scans are sorted into people and visits for you\n\nSEE IT CLEARLY\n• Scroll through slices, adjust brightness and contrast with presets, zoom, rotate and invert\n• Play ultrasound and other moving images\n• Compare up to 4 images, with cross-reference lines and a mini-map\n• The hospital's saved views and marks, shown as saved\n• A plain-language Series Explainer and glossary: what an MRI sequence or CT series shows\n• Show the Doctor: one visit full screen; leaving it needs your fingerprint, face or screen lock\n\nKEEP TRACK\n• Star key images and keep notes\n• Follow-up reminders with a checklist of questions for the doctor\n• An Imaging Notes card for implants, allergies and past contrast reactions, also on your watch\n\nUNLOCK MORE, FREE\nWatch two short ads to use any of these for 24 hours:\n• Then & Now: compare two dates side by side, with flicker and blend, kept in position\n• Pro Tools: measurements in mm, angles, areas and CT density (HU), multi-image layouts, MPR in any plane and 3D volume rendering\n• Clean Share: a copy without names, IDs or birth dates, dates shifted, burned-in text flagged for you to cover — as a ZIP, images, a video or a second-opinion PDF packet\n• Unlimited family members (2 are always included) and per-person lock\n• Smart Search in plain words\nEverything is free on the built-in sample family.\n\nON YOUR ANDROID DEVICES\n• Phones, tablets and foldables, with layouts for large screens\n• Wear OS watch app, used with Raykin on your phone: the next follow-up with questions, Imaging Notes and the key images you choose\n• Wear OS tile: the Next follow-up tile shows the days until your next follow-up; tap it to open the watch app\n• Home-screen widgets for your family, the next follow-up, recent visits and key images\n• Nearby Transfer between your own Android devices, end-to-end encrypted, never through the internet\n• Encrypted Raykin Archive backups with your own passphrase\n• 12 languages: English (US), English (UK), Tiếng Việt, Español, Português (Brasil), Deutsch, Français, Italiano, 日本語, 한국어, 简体中文 and 繁體中文 — switch inside the app\n\nPRIVATE BY DESIGN\nFingerprint or face lock, per-person lock, hidden details on widgets and the watch, and scans hidden from Recents and screenshots. Raykin is free and shows ads from Google AdMob; ads never see your scans. In the EU, UK and Switzerland you choose how ads use your data.\n\nTerms of Use: https://orlproducts.com/raykin-terms.html\nPrivacy Policy: https://orlproducts.com/raykin-privacy.html\n\nFor viewing only. Raykin is not a medical device and is not intended for diagnosis or treatment. Always ask your doctor about your results.",
+  "description": "Raykin opens the scans hospitals give you — on a CD, a USB drive, a ZIP file or a QR code — and keeps your family's X-ray, CT, MRI and ultrasound images in one private place on your iPhone, iPad, Mac and Apple Watch. Everything happens on your device: no account, no ads, no tracking, nothing uploaded.\n\nOPEN WHAT THE HOSPITAL GAVE YOU\n• Files, folders, ZIP and DICOMDIR from the Files app, a USB-C drive or AirDrop\n• Hospital QR codes and links: DICOM and ZIP files download straight into Raykin\n• On Mac, insert the hospital CD: Raykin copies it first and never runs programs from the disc\n• A photo of an old film, or a scanned paper report\n• Scans are sorted into people and visits for you\n\nSEE IT CLEARLY\n• Scroll through slices, adjust brightness and contrast with presets, zoom, rotate and invert\n• Play ultrasound and other moving images\n• Compare up to 4 images, with cross-reference lines and a mini-map\n• The hospital's saved views and marks, shown as saved\n• A plain-language Series Explainer and glossary: what an MRI sequence or CT series shows\n• Show the Doctor: one visit full screen; leaving it needs Face ID or your passcode\n\nKEEP TRACK\n• Star key images and keep notes\n• Follow-up reminders with a checklist of questions for the doctor, and Add to Calendar\n• An Imaging Notes card for implants, allergies and past contrast reactions, also on Apple Watch\n\nRAYKIN PRO\n• Unlimited family members (2 are free)\n• Then & Now: compare two dates side by side, with flicker and blend, kept in position\n• Measurements in mm, angles, areas and CT density (HU)\n• MPR in any plane and 3D volume rendering\n• Clean Share: a copy without names, IDs or birth dates, dates shifted, burned-in text flagged for you to cover — as a ZIP, images, a video or a second-opinion PDF packet\n• Smart Search in plain words\nTry every Pro feature free on the built-in sample family.\n\nON EVERY APPLE DEVICE\n• Apple Watch: next follow-up, Imaging Notes and the key images you choose\n• Widgets, Lock Screen, Live Activities, Control Center, Siri and Shortcuts\n• Mac: Quick Look previews and Finder thumbnails for DICOM files, menu bar helper, drag and drop\n• Nearby Transfer between your own devices, end-to-end encrypted, never through the internet\n• Encrypted Raykin Archive backups with your own passphrase\n• 12 languages: English, Tiếng Việt, Español, Português, Deutsch, Français, Italiano, 日本語, 한국어, 简体中文 and 繁體中文 — switch inside the app\n\nPRIVATE BY DESIGN\nFace ID lock, per-person lock, hidden details on widgets and the Watch, and a warning when the screen is being recorded. Data Not Collected.\n\nPRICES\nRaykin Pro: weekly, monthly or yearly subscription, or a one-time Lifetime purchase that works with Family Sharing. Prices are shown in the app in your currency. Subscriptions renew automatically unless canceled at least 24 hours before the end of the period; manage or cancel them in Settings › Apple Account › Subscriptions. Payment is charged to your Apple Account at confirmation.\n\nEducational Disclaimer\nThis app is for educational purposes only and does not provide medical diagnosis, treatment, or professional medical advice.\n\nTerms of Use: https://orlproducts.com/raykin-terms.html\nPrivacy Policy: https://orlproducts.com/raykin-privacy.html\n\nFor viewing only. Raykin is not a medical device and is not intended for diagnosis or treatment. Always ask your doctor about your results.\nSupport email: info@orlproducts.com",
   "screenshots": {},
   "issues": []
 }
