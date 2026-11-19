@@ -1,0 +1,221 @@
+{
+ "videos": [
+  {
+   "file": "N1_Auroline_2026-11-17.mp4",
+   "app": "aurora",
+   "icon": "aurora.png",
+   "name": "Aurora Forecast: Auroline",
+   "search": "Auroline",
+   "top": "#04121a",
+   "bot": "#0f4a3f",
+   "accent": "#7CFFB2",
+   "music": "music_3.m4a",
+   "hook": "Stop driving out for northern lights that never show.",
+   "scenes": [
+    {
+     "shot": 1,
+     "text": "Check before you leave the house"
+    },
+    {
+     "shot": 2,
+     "text": "Cloud cover where you'll stand"
+    },
+    {
+     "shot": 7,
+     "text": "Alerts when it's worth going"
+    },
+    {
+     "shot": 3,
+     "text": "A clear Go or Wait for your spot"
+    }
+   ],
+   "sub": "Aurora alerts for your exact location"
+  },
+  {
+   "file": "N2_Somavue_2026-11-18.mp4",
+   "app": "somavue",
+   "icon": "somavue.png",
+   "name": "3D Anatomy Learning: Somavue",
+   "search": "Somavue",
+   "top": "#1a0f14",
+   "bot": "#6b1f3a",
+   "accent": "#FF9DB8",
+   "music": "music_5.m4a",
+   "hook": "Anatomy exam next week? Study it in 3D.",
+   "scenes": [
+    {
+     "shot": 1,
+     "text": "Quiz yourself on the real 3D body"
+    },
+    {
+     "shot": 4,
+     "text": "Every muscle: origin to nerve"
+    },
+    {
+     "shot": 2,
+     "text": "Peel layers with one slider"
+    },
+    {
+     "shot": 5,
+     "text": "Built for nursing and pre-med"
+    }
+   ],
+   "sub": "Rotate, peel and quiz on your iPhone"
+  },
+  {
+   "file": "N3_VideoUpscale_2026-11-19.mp4",
+   "app": "videoupscale",
+   "icon": "videoupscale.png",
+   "name": "Video Upscale",
+   "search": "Video Upscale",
+   "top": "#101418",
+   "bot": "#3b4a5a",
+   "accent": "#FFD08A",
+   "music": "music_7.m4a",
+   "hook": "That blurry wedding video from 1998? Fix it tonight.",
+   "scenes": [
+    {
+     "shot": 1,
+     "text": "Your library of old clips, in one place"
+    },
+    {
+     "shot": 3,
+     "text": "It tells you when 4K won't help"
+    },
+    {
+     "shot": 5,
+     "text": "Restore, then compare side by side"
+    },
+    {
+     "shot": 6,
+     "text": "Grain and faded color repaired"
+    }
+   ],
+   "sub": "Restores old videos on your iPhone"
+  },
+  {
+   "file": "N4_SpeedGunner_2026-11-20.mp4",
+   "app": "speedgunner",
+   "icon": "speedgunner.png",
+   "name": "SpeedGunner AI",
+   "search": "SpeedGunner",
+   "top": "#14100a",
+   "bot": "#5a3a12",
+   "accent": "#FFE066",
+   "music": "music_1.m4a",
+   "hook": "Cars flying down your street? See how fast.",
+   "scenes": [
+    {
+     "shot": 1,
+     "text": "Point your iPhone, it tracks the car"
+    },
+    {
+     "shot": 3,
+     "text": "Works at night too"
+    },
+    {
+     "shot": 4,
+     "text": "Speed estimate in real time"
+    },
+    {
+     "shot": 8,
+     "text": "Every session saved in your library"
+    }
+   ],
+   "sub": "Camera estimate, not a certified device"
+  },
+  {
+   "file": "N5_Bumpline_2026-11-21.mp4",
+   "app": "turbulenceforecast",
+   "icon": "turbulenceforecast.png",
+   "name": "Turbulence Forecast: Bumpline",
+   "search": "Bumpline",
+   "top": "#0a1420",
+   "bot": "#1d3d5c",
+   "accent": "#FFC86B",
+   "music": "music_2.m4a",
+   "hook": "Nervous flyer? See the bumps before boarding.",
+   "scenes": [
+    {
+     "shot": 8,
+     "text": "Enter your flight number"
+    },
+    {
+     "shot": 5,
+     "text": "Smooth and bumpy parts of the route"
+    },
+    {
+     "shot": 2,
+     "text": "Jet stream and storm areas"
+    },
+    {
+     "shot": 4,
+     "text": "Saved offline for the flight"
+    }
+   ],
+   "sub": "Turbulence forecast for your flight"
+  },
+  {
+   "file": "N6_Randonauting_2026-11-22.mp4",
+   "app": "randonauting",
+   "icon": "randonauting.png",
+   "name": "Randonauting Adventure Around",
+   "search": "Randonauting",
+   "top": "#0c1a10",
+   "bot": "#2f6b3a",
+   "accent": "#FFE27A",
+   "music": "music_4.m4a",
+   "hook": "Bored this Sunday? Let a random point decide.",
+   "scenes": [
+    {
+     "shot": 1,
+     "text": "Ask the AI for an adventure"
+    },
+    {
+     "shot": 5,
+     "text": "A point near you, picked at random"
+    },
+    {
+     "shot": 2,
+     "text": "Walk there and see what's there"
+    },
+    {
+     "shot": 6,
+     "text": "Log what you found"
+    }
+   ],
+   "sub": "Stay safe. Respect private property."
+  },
+  {
+   "file": "N7_VideoUpscale_2026-11-23.mp4",
+   "app": "videoupscale",
+   "icon": "videoupscale.png",
+   "name": "Video Upscale",
+   "search": "Video Upscale",
+   "top": "#1c120a",
+   "bot": "#5c2e14",
+   "accent": "#FFC27A",
+   "music": "music_6.m4a",
+   "hook": "Show the family old home videos this Thanksgiving.",
+   "scenes": [
+    {
+     "shot": 2,
+     "text": "Import the old tapes you digitized"
+    },
+    {
+     "shot": 4,
+     "text": "See what's wrong in each clip"
+    },
+    {
+     "shot": 7,
+     "text": "Before and after, side by side"
+    },
+    {
+     "shot": 1,
+     "text": "Ready to share at the table"
+    }
+   ],
+   "sub": "Free: clips up to 3 min at 1080p"
+  }
+ ]
+}

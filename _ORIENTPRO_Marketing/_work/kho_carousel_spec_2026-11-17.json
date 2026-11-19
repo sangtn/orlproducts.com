@@ -1,0 +1,353 @@
+{
+ "videos": [],
+ "carousels": [
+  {
+   "prefix": "CA_Auroline",
+   "app": "aurora",
+   "top": "#04121a",
+   "bot": "#0f4a3f",
+   "footer": "Auroline \u00b7 Search \"Auroline\" on the App Store",
+   "slides": [
+    {
+     "title": "Will you see the northern lights tonight?",
+     "body": "Swipe for the 3 things to check."
+    },
+    {
+     "title": "1. The verdict for your spot",
+     "shot": 3
+    },
+    {
+     "title": "2. Kp and Bz, live",
+     "shot": 6
+    },
+    {
+     "title": "3. Camera settings for the shot",
+     "shot": 4
+    },
+    {
+     "title": "Aurora Forecast: Auroline",
+     "body": "Search \"Auroline\" on the App Store. #Auroline"
+    }
+   ]
+  },
+  {
+   "prefix": "CB_Auroline",
+   "app": "aurora",
+   "top": "#0b0620",
+   "bot": "#2a1450",
+   "footer": "Auroline \u00b7 Search \"Auroline\" on the App Store",
+   "slides": [
+    {
+     "title": "Chasing the aurora this winter?",
+     "body": "Keep every spot in one place."
+    },
+    {
+     "title": "All your spots, one list",
+     "shot": 5
+    },
+    {
+     "title": "The forecast on a globe",
+     "shot": 1
+    },
+    {
+     "title": "Know if alerts can reach you",
+     "shot": 7
+    },
+    {
+     "title": "Aurora Forecast: Auroline",
+     "body": "Search \"Auroline\" on the App Store. #Auroline"
+    }
+   ]
+  },
+  {
+   "prefix": "CA_Somavue",
+   "app": "somavue",
+   "top": "#1a0f14",
+   "bot": "#6b1f3a",
+   "footer": "Somavue \u00b7 Search \"Somavue\" on the App Store",
+   "slides": [
+    {
+     "title": "Anatomy exam coming?",
+     "body": "Study the 3D body, not flat diagrams."
+    },
+    {
+     "title": "Peel down to the muscle",
+     "shot": 2
+    },
+    {
+     "title": "Quiz on the 3D body",
+     "shot": 1
+    },
+    {
+     "title": "Every structure on one card",
+     "shot": 4
+    },
+    {
+     "title": "3D Anatomy Learning: Somavue",
+     "body": "Search \"Somavue\" on the App Store. #Somavue"
+    }
+   ]
+  },
+  {
+   "prefix": "CB_Somavue",
+   "app": "somavue",
+   "top": "#0d1b2a",
+   "bot": "#1b4965",
+   "footer": "Somavue \u00b7 Search \"Somavue\" on the App Store",
+   "slides": [
+    {
+     "title": "5 minutes of anatomy a day",
+     "body": "Reviews that show up when they are due."
+    },
+    {
+     "title": "Reviews due today",
+     "shot": 3
+    },
+    {
+     "title": "Search by Latin or synonym",
+     "shot": 5
+    },
+    {
+     "title": "Origin, insertion, nerve",
+     "shot": 4
+    },
+    {
+     "title": "3D Anatomy Learning: Somavue",
+     "body": "Search \"Somavue\" on the App Store. #Somavue"
+    }
+   ]
+  },
+  {
+   "prefix": "CA_VideoUpscale",
+   "app": "videoupscale",
+   "top": "#101418",
+   "bot": "#3b4a5a",
+   "footer": "Video Upscale \u00b7 Search \"Video Upscale\" on the App Store",
+   "slides": [
+    {
+     "title": "Old family videos look blurry?",
+     "body": "Restore them on your iPhone."
+    },
+    {
+     "title": "1. It names what's wrong",
+     "shot": 4
+    },
+    {
+     "title": "2. Real repairs, not just bigger",
+     "shot": 6
+    },
+    {
+     "title": "3. Compare side by side",
+     "shot": 7
+    },
+    {
+     "title": "Video Upscale",
+     "body": "Search \"Video Upscale\" on the App Store. #VideoUpscale"
+    }
+   ]
+  },
+  {
+   "prefix": "CB_VideoUpscale",
+   "app": "videoupscale",
+   "top": "#2a1408",
+   "bot": "#8a4a20",
+   "footer": "Video Upscale \u00b7 Search \"Video Upscale\" on the App Store",
+   "slides": [
+    {
+     "title": "Before you upscale an old tape",
+     "body": "Read this first."
+    },
+    {
+     "title": "4K won't always help",
+     "shot": 1
+    },
+    {
+     "title": "The sound stays as it was",
+     "shot": 3
+    },
+    {
+     "title": "Everything stays on your iPhone",
+     "shot": 2
+    },
+    {
+     "title": "Video Upscale",
+     "body": "Search \"Video Upscale\" on the App Store. #VideoUpscale"
+    }
+   ]
+  },
+  {
+   "prefix": "CA_SpeedGunner",
+   "app": "speedgunner",
+   "top": "#14100a",
+   "bot": "#5a3a12",
+   "footer": "SpeedGunner AI \u00b7 Camera estimate, not a certified device",
+   "slides": [
+    {
+     "title": "Your iPhone as a speed camera",
+     "body": "Camera estimate, not a certified device."
+    },
+    {
+     "title": "Cars on your street",
+     "shot": 1
+    },
+    {
+     "title": "Even at night",
+     "shot": 3
+    },
+    {
+     "title": "A report with speeds and peaks",
+     "shot": 7
+    },
+    {
+     "title": "SpeedGunner AI",
+     "body": "Search \"SpeedGunner\" on the App Store. #SpeedGunner"
+    }
+   ]
+  },
+  {
+   "prefix": "CB_SpeedGunner",
+   "app": "speedgunner",
+   "top": "#0b1320",
+   "bot": "#123a5e",
+   "footer": "SpeedGunner AI \u00b7 Camera estimate, not a certified device",
+   "slides": [
+    {
+     "title": "How fast was that throw?",
+     "body": "Camera estimate, not a certified device."
+    },
+    {
+     "title": "Sport mode tracks the ball",
+     "shot": 2
+    },
+    {
+     "title": "Measure videos you already shot",
+     "shot": 6
+    },
+    {
+     "title": "Every session saved",
+     "shot": 8
+    },
+    {
+     "title": "SpeedGunner AI",
+     "body": "Search \"SpeedGunner\" on the App Store. #SpeedGunner"
+    }
+   ]
+  },
+  {
+   "prefix": "CA_Bumpline",
+   "app": "turbulenceforecast",
+   "top": "#0a1420",
+   "bot": "#1d3d5c",
+   "footer": "Bumpline \u00b7 Search \"Bumpline\" on the App Store",
+   "slides": [
+    {
+     "title": "Nervous flyer?",
+     "body": "See the bumps before you board."
+    },
+    {
+     "title": "Your flight as one line",
+     "shot": 5
+    },
+    {
+     "title": "When, how strong, how long",
+     "shot": 3
+    },
+    {
+     "title": "Works in the air, no signal",
+     "shot": 4
+    },
+    {
+     "title": "Turbulence Forecast: Bumpline",
+     "body": "Search \"Bumpline\" on the App Store. #Bumpline"
+    }
+   ]
+  },
+  {
+   "prefix": "CB_Bumpline",
+   "app": "turbulenceforecast",
+   "top": "#2b3f63",
+   "bot": "#4f77a6",
+   "footer": "Bumpline \u00b7 Search \"Bumpline\" on the App Store",
+   "slides": [
+    {
+     "title": "Why planes bump",
+     "body": "The chart pilots look at, on your phone."
+    },
+    {
+     "title": "Official SIGMETs",
+     "shot": 1
+    },
+    {
+     "title": "Jet core and CAT areas",
+     "shot": 2
+    },
+    {
+     "title": "Airport weather on top",
+     "shot": 7
+    },
+    {
+     "title": "Turbulence Forecast: Bumpline",
+     "body": "Search \"Bumpline\" on the App Store. #Bumpline"
+    }
+   ]
+  },
+  {
+   "prefix": "CA_Randonauting",
+   "app": "randonauting",
+   "top": "#0c1a10",
+   "bot": "#2f6b3a",
+   "footer": "Randonauting \u00b7 Stay safe. Respect private property.",
+   "slides": [
+    {
+     "title": "Bored this weekend?",
+     "body": "Let a random point decide. Stay safe, respect private property."
+    },
+    {
+     "title": "Pick a generator",
+     "shot": 4
+    },
+    {
+     "title": "Set your radius",
+     "shot": 3
+    },
+    {
+     "title": "Navigate to the point",
+     "shot": 5
+    },
+    {
+     "title": "Randonauting Adventure Around",
+     "body": "Search \"Randonauting\" on the App Store. #Randonauting"
+    }
+   ]
+  },
+  {
+   "prefix": "CB_Randonauting",
+   "app": "randonauting",
+   "top": "#20103a",
+   "bot": "#6a2fa0",
+   "footer": "Randonauting \u00b7 Stay safe. Respect private property.",
+   "slides": [
+    {
+     "title": "Adventure, picked at random",
+     "body": "Stay safe, respect private property."
+    },
+    {
+     "title": "Ask the AI",
+     "shot": 1
+    },
+    {
+     "title": "Pick a point type",
+     "shot": 2
+    },
+    {
+     "title": "Classic or AI mode",
+     "shot": 6
+    },
+    {
+     "title": "Randonauting Adventure Around",
+     "body": "Search \"Randonauting\" on the App Store. #Randonauting"
+    }
+   ]
+  }
+ ]
+}

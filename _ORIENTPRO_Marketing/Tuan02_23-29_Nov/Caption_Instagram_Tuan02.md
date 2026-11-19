@@ -1,0 +1,14 @@
+# Instagram @orientpro_26 — Reels tuần 2 (18–24/11/2026), hẹn 00:00 VN
+
+Cách hẹn nhanh: Meta Business Suite > Planner > Create reel (hoặc "bulk upload reels"), chọn Instagram, dán caption, Schedule. Hoặc app Instagram trên điện thoại > Reel > Advanced settings > Schedule.
+Mỗi caption: tên app ở đầu + 4 hashtag ngách + 1 hashtag tên app (đúng QUY TẮC BÀI ĐĂNG).
+
+| Ngày | Video | Caption |
+|---|---|---|
+| 18/11 00:00 | V1_Somavue_2026-11-18.mp4 | Somavue 3D Anatomy \| Peel the human body, layer by layer. Somavue lets you slide down to the muscle, quiz yourself on the 3D model and review what's due before the exam. Send this to a friend in nursing school. Search "Somavue" on the App Store. #anatomy #nursingschool #premed #studytok #Somavue |
+| 19/11 00:00 | V2_VideoUpscale_2026-11-19.mp4 | Video Upscale \| Bringing the old family tapes to Thanksgiving? Video Upscale names what's wrong and repairs it right on your iPhone. Original and restored, side by side. Send this to whoever has the box of tapes. Search "Video Upscale" on the App Store. #vhs #homevideo #nostalgia #thanksgiving #VideoUpscale |
+| 20/11 00:00 | V3_SpeedGunner_2026-11-20.mp4 | SpeedGunner AI \| How fast was that throw? SpeedGunner AI tracks the ball with your iPhone camera and shows speed, distance and peaks. Camera estimate, not a certified device. Send this to the team parent who always asks. Search "SpeedGunner" on the App Store. #baseball #softball #speedcheck #iphonehack #SpeedGunner |
+| 21/11 00:00 | V4_Bumpline_2026-11-21.mp4 | Bumpline Turbulence Forecast \| Ever wonder why the plane bumps over mountains? Bumpline shows the official reports, the jet stream and clear-air turbulence areas for your altitude. Send this to the friend who grips the armrest. Search "Bumpline" on the App Store. #turbulence #fearofflying #travelhacks #aviation #Bumpline |
+| 22/11 00:00 | V5_Auroline_2026-11-22.mp4 | Auroline Aurora Forecast \| Northern lights this weekend? Auroline gives one verdict for your exact spot, live Kp and Bz, and camera settings for the shot. Send this to your aurora-chasing friend. Search "Auroline" on the App Store. #northernlights #aurora #auroraborealis #spaceweather #Auroline |
+| 23/11 00:00 | V6_Randonauting_2026-11-23.mp4 | Randonauting \| Too full to sit still after the big dinner? Pick a radius and let random coordinates choose your walk. Stay safe and respect private property. Send this to the friend who's always down. Search "Randonauting" on the App Store. #randonaut #adventure #exploring #weekendplans #Randonauting |
+| 24/11 00:00 | V7_Bumpline_2026-11-24.mp4 | Bumpline Turbulence Forecast \| Flying for Thanksgiving? See your whole flight as one line: when it may bump, how strong, how long. Works in the air with no signal. Send this to someone flying this week. Search "Bumpline" on the App Store. #thanksgivingtravel #turbulence #fearofflying #travelhacks #Bumpline |

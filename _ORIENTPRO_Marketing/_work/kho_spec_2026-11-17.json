@@ -1,0 +1,1425 @@
+{
+ "apps": {
+  "somavue": {
+   "folder": "Somavue",
+   "icon": "somavue.png",
+   "short": "Somavue",
+   "name": "3D Anatomy Learning: Somavue",
+   "search": "Somavue",
+   "crop_top": 0.15,
+   "raw": false,
+   "tag": "Somavue"
+  },
+  "vizmath": {
+   "folder": "VizMath",
+   "icon": "vizmath.png",
+   "short": "VizMath",
+   "name": "VizMath",
+   "search": "VizMath",
+   "raw": true,
+   "android": true,
+   "tag": "VizMath"
+  },
+  "videoupscale": {
+   "folder": "VideoUpscale",
+   "icon": "videoupscale.png",
+   "short": "Video Upscale",
+   "name": "Video Upscale",
+   "search": "Video Upscale",
+   "crop_top": 0.175,
+   "raw": false,
+   "tag": "VideoUpscale"
+  },
+  "speedgunner": {
+   "folder": "SpeedGunner",
+   "icon": "speedgunner.png",
+   "short": "SpeedGunner AI",
+   "name": "SpeedGunner AI",
+   "search": "SpeedGunner",
+   "crop_top": 0.175,
+   "raw": false,
+   "tag": "SpeedGunner",
+   "disclaimer": "Camera estimate, not a certified device"
+  },
+  "turbulenceforecast": {
+   "folder": "Bumpline",
+   "icon": "turbulenceforecast.png",
+   "short": "Bumpline",
+   "name": "Turbulence Forecast: Bumpline",
+   "search": "Bumpline",
+   "crop_top": 0.19,
+   "raw": false,
+   "tag": "Bumpline"
+  },
+  "aurora": {
+   "folder": "Auroline",
+   "icon": "aurora.png",
+   "short": "Auroline",
+   "name": "Aurora Forecast: Auroline",
+   "search": "Auroline",
+   "raw": true,
+   "tag": "Auroline"
+  },
+  "randonauting": {
+   "folder": "Randonauting",
+   "icon": "randonauting.png",
+   "short": "Randonauting",
+   "name": "Randonauting Adventure Around",
+   "search": "Randonauting",
+   "raw": true,
+   "tag": "Randonauting",
+   "disclaimer": "Stay safe. Respect private property."
+  },
+  "origamilearn": {
+   "folder": "OrigamiLearn",
+   "icon": "origamilearn.png",
+   "short": "Origami Learn",
+   "name": "Origami Learn",
+   "search": "Origami Learn",
+   "raw": true,
+   "tag": "OrigamiLearn"
+  }
+ },
+ "videos": [
+  {
+   "hook": "Northern lights tonight? Get one word.",
+   "scenes": [
+    {
+     "shot": "assets/apps/aurora/iphone-03.webp",
+     "text": "Tonight's verdict for your spot"
+    },
+    {
+     "shot": "assets/apps/aurora/iphone-01.webp",
+     "text": "The forecast on a 3D globe"
+    },
+    {
+     "shot": "assets/apps/aurora/iphone-04.webp",
+     "text": "Camera settings for the shot"
+    }
+   ],
+   "cta": "Where are you watching from?",
+   "app": "aurora",
+   "tpl": "A",
+   "music": "music_3.m4a",
+   "top": "#04121a",
+   "bot": "#0b2c33",
+   "accent": "#7CFFB2",
+   "fx": "stars",
+   "fxcolor": "#FFFFFF",
+   "set": "A",
+   "file": "A_01_Auroline_HookApp.mp4",
+   "angle": false,
+   "aurora": true,
+   "accent2": "#3FD0FF"
+  },
+  {
+   "hook": "Study anatomy in 3D, not flashcards",
+   "scenes": [
+    {
+     "shot": "assets/apps/somavue/iphone-02.webp",
+     "text": "Peel skin down to muscle with one slider"
+    },
+    {
+     "shot": "assets/apps/somavue/iphone-01.webp",
+     "text": "Find-It quiz on the 3D body"
+    },
+    {
+     "shot": "assets/apps/somavue/iphone-04.webp",
+     "text": "Origin, insertion, nerve, blood supply"
+    }
+   ],
+   "cta": "Send this to your study group",
+   "app": "somavue",
+   "tpl": "A",
+   "music": "music_5.m4a",
+   "top": "#1a0f14",
+   "bot": "#6b1f3a",
+   "accent": "#FF9DB8",
+   "fx": "rise",
+   "fxcolor": "#FF9DB8",
+   "set": "A",
+   "file": "A_02_Somavue_HookApp.mp4",
+   "angle": false
+  },
+  {
+   "hook": "Old family videos, restored on iPhone",
+   "scenes": [
+    {
+     "shot": "assets/apps/videoupscale/iphone-04.webp",
+     "text": "It names what's wrong first"
+    },
+    {
+     "shot": "assets/apps/videoupscale/iphone-06.webp",
+     "text": "Real repairs, not just bigger"
+    },
+    {
+     "shot": "assets/apps/videoupscale/iphone-07.webp",
+     "text": "Original and restored, side by side"
+    }
+   ],
+   "cta": "Tag whoever has the old tapes",
+   "app": "videoupscale",
+   "tpl": "A",
+   "music": "music_7.m4a",
+   "top": "#101418",
+   "bot": "#3b4a5a",
+   "accent": "#FFD08A",
+   "fx": "grain",
+   "fxcolor": "#ffffff",
+   "set": "A",
+   "file": "A_03_VideoUpscale_HookApp.mp4",
+   "angle": false
+  },
+  {
+   "hook": "How fast is that car, really?",
+   "scenes": [
+    {
+     "shot": "assets/apps/speedgunner/iphone-01.webp",
+     "text": "Point your iPhone at the street"
+    },
+    {
+     "shot": "assets/apps/speedgunner/iphone-03.webp",
+     "text": "Works at night too"
+    },
+    {
+     "shot": "assets/apps/speedgunner/iphone-07.webp",
+     "text": "Speeds and peaks as a report"
+    }
+   ],
+   "cta": "Guess the speed first, then comment",
+   "app": "speedgunner",
+   "tpl": "A",
+   "music": "music_1.m4a",
+   "top": "#14100a",
+   "bot": "#5a3a12",
+   "accent": "#FFE066",
+   "fx": "drift",
+   "fxcolor": "#FFE066",
+   "set": "A",
+   "file": "A_04_SpeedGunner_HookApp.mp4",
+   "angle": false
+  },
+  {
+   "hook": "See the bumps before you board",
+   "scenes": [
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-05.webp",
+     "text": "Your whole flight as one line"
+    },
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-03.webp",
+     "text": "When, how strong, how long"
+    },
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-04.webp",
+     "text": "Works in the air, no signal"
+    }
+   ],
+   "cta": "Send this to a nervous flyer",
+   "app": "turbulenceforecast",
+   "tpl": "A",
+   "music": "music_2.m4a",
+   "top": "#0a1420",
+   "bot": "#1d3d5c",
+   "accent": "#FFC86B",
+   "fx": "drift",
+   "fxcolor": "#BFE3FF",
+   "set": "A",
+   "file": "A_05_Bumpline_HookApp.mp4",
+   "angle": false
+  },
+  {
+   "hook": "Let a random point plan your walk",
+   "scenes": [
+    {
+     "shot": "assets/apps/randonauting/iphone-04.webp",
+     "text": "Pick a random number generator"
+    },
+    {
+     "shot": "assets/apps/randonauting/iphone-03.webp",
+     "text": "Choose how far you will go"
+    },
+    {
+     "shot": "assets/apps/randonauting/iphone-05.webp",
+     "text": "Navigate to the point"
+    }
+   ],
+   "cta": "Where did yours land?",
+   "app": "randonauting",
+   "tpl": "A",
+   "music": "music_4.m4a",
+   "top": "#0c1a10",
+   "bot": "#2f6b3a",
+   "accent": "#FFE27A",
+   "fx": "rise",
+   "fxcolor": "#FFE27A",
+   "set": "A",
+   "file": "A_06_Randonauting_HookApp.mp4",
+   "angle": false
+  },
+  {
+   "hook": "Watch equations turn into 3D shapes",
+   "scenes": [
+    {
+     "shot": "assets/images/vizmath/iphone-03-3d-wave-surface.jpg",
+     "text": "Type z = a·sin(x)·cos(y)"
+    },
+    {
+     "shot": "assets/images/vizmath/iphone-06-surface-intersection.jpg",
+     "text": "Intersect surfaces in 3D"
+    },
+    {
+     "shot": "assets/images/vizmath/iphone-05-3d-pyramid-section.jpg",
+     "text": "Slice a pyramid with a plane"
+    }
+   ],
+   "cta": "Which shape should we graph next?",
+   "app": "vizmath",
+   "tpl": "A",
+   "music": "music_3.m4a",
+   "top": "#1b1446",
+   "bot": "#4b3bbd",
+   "accent": "#FFD166",
+   "fx": "grid",
+   "fxcolor": "#B9AEFF",
+   "set": "A",
+   "file": "A_07_VizMath_HookApp.mp4",
+   "angle": false
+  },
+  {
+   "hook": "Fold origami by dragging the paper",
+   "scenes": [
+    {
+     "shot": "assets/images/origamilearn/shot-fold.jpg",
+     "text": "One fold per step"
+    },
+    {
+     "shot": "assets/images/origamilearn/shot-model.jpg",
+     "text": "Drag the paper to make the fold"
+    },
+    {
+     "shot": "assets/images/origamilearn/shot-studio.jpg",
+     "text": "Finish it, color it"
+    }
+   ],
+   "cta": "What should we fold next?",
+   "app": "origamilearn",
+   "tpl": "A",
+   "music": "music_5.m4a",
+   "top": "#2a1a10",
+   "bot": "#8a4a1c",
+   "accent": "#FFB067",
+   "fx": "paper",
+   "fxcolor": "#FF9A3D",
+   "set": "A",
+   "file": "A_08_OrigamiLearn_HookApp.mp4",
+   "angle": false
+  },
+  {
+   "hook": "Drove out. Clouds. No aurora.",
+   "problem2": "Two hours in the cold for nothing.",
+   "scenes": [
+    {
+     "shot": "assets/apps/aurora/iphone-05.webp",
+     "text": "Watch every place you might go"
+    },
+    {
+     "shot": "assets/apps/aurora/iphone-07.webp",
+     "text": "See if alerts can reach you"
+    }
+   ],
+   "app": "aurora",
+   "tpl": "B",
+   "music": "music_2.m4a",
+   "top": "#0b0620",
+   "bot": "#2a1450",
+   "accent": "#C79BFF",
+   "fx": "stars",
+   "fxcolor": "#FFFFFF",
+   "set": "B",
+   "file": "B_01_Auroline_ProblemFix.mp4",
+   "angle": true,
+   "aurora": true,
+   "accent2": "#7CFFB2"
+  },
+  {
+   "hook": "Can't picture where a muscle attaches?",
+   "problem2": "Origin, insertion, nerve... all from a flat page.",
+   "scenes": [
+    {
+     "shot": "assets/apps/somavue/iphone-04.webp",
+     "text": "Origin and insertion on one card"
+    },
+    {
+     "shot": "assets/apps/somavue/iphone-02.webp",
+     "text": "Then see it on the 3D body"
+    }
+   ],
+   "app": "somavue",
+   "tpl": "B",
+   "music": "music_2.m4a",
+   "top": "#0d1b2a",
+   "bot": "#1b4965",
+   "accent": "#62D2FF",
+   "fx": "grid",
+   "fxcolor": "#9AD9FF",
+   "set": "B",
+   "file": "B_02_Somavue_ProblemFix.mp4",
+   "angle": true
+  },
+  {
+   "hook": "Uploading family videos to random sites?",
+   "problem2": "Your memories on someone else's server.",
+   "scenes": [
+    {
+     "shot": "assets/apps/videoupscale/iphone-02.webp",
+     "text": "Everything stays on your iPhone"
+    },
+    {
+     "shot": "assets/apps/videoupscale/iphone-06.webp",
+     "text": "Real repairs, not just bigger"
+    }
+   ],
+   "app": "videoupscale",
+   "tpl": "B",
+   "music": "music_5.m4a",
+   "top": "#2a1408",
+   "bot": "#8a4a20",
+   "accent": "#FFE2B0",
+   "fx": "rise",
+   "fxcolor": "#FFC89A",
+   "set": "B",
+   "file": "B_03_VideoUpscale_ProblemFix.mp4",
+   "angle": true
+  },
+  {
+   "hook": "Is everyone speeding down your street?",
+   "problem2": "You hear it every night. Nobody has numbers.",
+   "scenes": [
+    {
+     "shot": "assets/apps/speedgunner/iphone-07.webp",
+     "text": "A street report with speeds and peaks"
+    },
+    {
+     "shot": "assets/apps/speedgunner/iphone-08.webp",
+     "text": "Every session in your library"
+    }
+   ],
+   "app": "speedgunner",
+   "tpl": "B",
+   "music": "music_6.m4a",
+   "top": "#0b1320",
+   "bot": "#123a5e",
+   "accent": "#4FF0B4",
+   "fx": "drift",
+   "fxcolor": "#8FF3FF",
+   "set": "B",
+   "file": "B_04_SpeedGunner_ProblemFix.mp4",
+   "angle": true
+  },
+  {
+   "hook": "Turbulence ruins every flight for you?",
+   "problem2": "Every bump feels like a surprise.",
+   "scenes": [
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-01.webp",
+     "text": "Official SIGMETs worldwide"
+    },
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-02.webp",
+     "text": "Jet stream and clear-air turbulence"
+    }
+   ],
+   "app": "turbulenceforecast",
+   "tpl": "B",
+   "music": "music_7.m4a",
+   "top": "#2b3f63",
+   "bot": "#7fa7d6",
+   "accent": "#FFFFFF",
+   "fx": "rise",
+   "fxcolor": "#FFFFFF",
+   "set": "B",
+   "file": "B_05_Bumpline_ProblemFix.mp4",
+   "angle": true
+  },
+  {
+   "hook": "Bored of the same weekend plans?",
+   "problem2": "Same café. Same park. Again.",
+   "scenes": [
+    {
+     "shot": "assets/apps/randonauting/iphone-01.webp",
+     "text": "Ask the AI for an adventure"
+    },
+    {
+     "shot": "assets/apps/randonauting/iphone-05.webp",
+     "text": "Navigate to a random point"
+    }
+   ],
+   "app": "randonauting",
+   "tpl": "B",
+   "music": "music_3.m4a",
+   "top": "#20103a",
+   "bot": "#6a2fa0",
+   "accent": "#7CF0FF",
+   "fx": "paper",
+   "fxcolor": "#E0B8FF",
+   "set": "B",
+   "file": "B_06_Randonauting_ProblemFix.mp4",
+   "angle": true
+  },
+  {
+   "hook": "Homework says 'graph it'. You're stuck.",
+   "problem2": "Plotting points by hand at 11 pm.",
+   "scenes": [
+    {
+     "shot": "assets/images/vizmath/iphone-09-solve-problem.jpg",
+     "text": "Type it, scan it or snap a photo"
+    },
+    {
+     "shot": "assets/images/vizmath/iphone-02-sliders-vertex-form.jpg",
+     "text": "Graph it and play with the sliders"
+    }
+   ],
+   "app": "vizmath",
+   "tpl": "B",
+   "music": "music_6.m4a",
+   "top": "#0f2f2a",
+   "bot": "#1f7a63",
+   "accent": "#FFE38A",
+   "fx": "paper",
+   "fxcolor": "#A8F0D8",
+   "set": "B",
+   "file": "B_07_VizMath_ProblemFix.mp4",
+   "angle": true
+  },
+  {
+   "hook": "Stuck on step 3 of a fold video?",
+   "problem2": "Pause. Rewind. Pause. Still lost.",
+   "scenes": [
+    {
+     "shot": "assets/images/origamilearn/shot-fold.jpg",
+     "text": "One step, one fold"
+    },
+    {
+     "shot": "assets/images/origamilearn/shot-model.jpg",
+     "text": "Drag the paper yourself"
+    }
+   ],
+   "app": "origamilearn",
+   "tpl": "B",
+   "music": "music_1.m4a",
+   "top": "#13324a",
+   "bot": "#b85c24",
+   "accent": "#FFD9A8",
+   "fx": "paper",
+   "fxcolor": "#FFFFFF",
+   "set": "B",
+   "file": "B_08_OrigamiLearn_ProblemFix.mp4",
+   "angle": true
+  },
+  {
+   "hook": "3 tips to actually see the aurora",
+   "scenes": [
+    {
+     "shot": "assets/apps/aurora/iphone-03.webp",
+     "text": "Check the verdict before you drive"
+    },
+    {
+     "shot": "assets/apps/aurora/iphone-06.webp",
+     "text": "Watch Kp and Bz live"
+    },
+    {
+     "shot": "assets/apps/aurora/iphone-04.webp",
+     "text": "Use the right camera settings"
+    }
+   ],
+   "cta": "Save this for the next storm",
+   "app": "aurora",
+   "tpl": "C",
+   "music": "music_5.m4a",
+   "top": "#04121a",
+   "bot": "#0b2c33",
+   "accent": "#7CFFB2",
+   "fx": "stars",
+   "fxcolor": "#FFFFFF",
+   "set": "A",
+   "file": "A_09_Auroline_3Tips.mp4",
+   "angle": false,
+   "aurora": true,
+   "accent2": "#3FD0FF"
+  },
+  {
+   "hook": "3 ways to pass anatomy",
+   "scenes": [
+    {
+     "shot": "assets/apps/somavue/iphone-01.webp",
+     "text": "Quiz on a real 3D body"
+    },
+    {
+     "shot": "assets/apps/somavue/iphone-03.webp",
+     "text": "Reviews due today, in 5 min"
+    },
+    {
+     "shot": "assets/apps/somavue/iphone-05.webp",
+     "text": "Search by Latin name or synonym"
+    }
+   ],
+   "cta": "Save this for exam week",
+   "app": "somavue",
+   "tpl": "C",
+   "music": "music_3.m4a",
+   "top": "#1a0f14",
+   "bot": "#6b1f3a",
+   "accent": "#FF9DB8",
+   "fx": "rise",
+   "fxcolor": "#FF9DB8",
+   "set": "A",
+   "file": "A_10_Somavue_3Tips.mp4",
+   "angle": false
+  },
+  {
+   "hook": "3 things before upscaling old video",
+   "scenes": [
+    {
+     "shot": "assets/apps/videoupscale/iphone-04.webp",
+     "text": "Know what is wrong first"
+    },
+    {
+     "shot": "assets/apps/videoupscale/iphone-01.webp",
+     "text": "4K won't always help"
+    },
+    {
+     "shot": "assets/apps/videoupscale/iphone-03.webp",
+     "text": "Keep the original sound"
+    }
+   ],
+   "cta": "Save this before you restore",
+   "app": "videoupscale",
+   "tpl": "C",
+   "music": "music_6.m4a",
+   "top": "#101418",
+   "bot": "#3b4a5a",
+   "accent": "#FFD08A",
+   "fx": "grain",
+   "fxcolor": "#ffffff",
+   "set": "A",
+   "file": "A_11_VideoUpscale_3Tips.mp4",
+   "angle": false
+  },
+  {
+   "hook": "3 ways to clock speed with iPhone",
+   "scenes": [
+    {
+     "shot": "assets/apps/speedgunner/iphone-01.webp",
+     "text": "Street mode for cars"
+    },
+    {
+     "shot": "assets/apps/speedgunner/iphone-02.webp",
+     "text": "Sport mode for throws"
+    },
+    {
+     "shot": "assets/apps/speedgunner/iphone-06.webp",
+     "text": "Measure videos you already shot"
+    }
+   ],
+   "cta": "Which one would you try first?",
+   "app": "speedgunner",
+   "tpl": "C",
+   "music": "music_4.m4a",
+   "top": "#14100a",
+   "bot": "#5a3a12",
+   "accent": "#FFE066",
+   "fx": "drift",
+   "fxcolor": "#FFE066",
+   "set": "A",
+   "file": "A_12_SpeedGunner_3Tips.mp4",
+   "angle": false
+  },
+  {
+   "hook": "3 tips for nervous flyers",
+   "scenes": [
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-05.webp",
+     "text": "Check your flight the night before"
+    },
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-03.webp",
+     "text": "Know when the bumps may come"
+    },
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-04.webp",
+     "text": "Keep it open in the air, offline"
+    }
+   ],
+   "cta": "Save this for your next flight",
+   "app": "turbulenceforecast",
+   "tpl": "C",
+   "music": "music_6.m4a",
+   "top": "#0a1420",
+   "bot": "#1d3d5c",
+   "accent": "#FFC86B",
+   "fx": "drift",
+   "fxcolor": "#BFE3FF",
+   "set": "A",
+   "file": "A_13_Bumpline_3Tips.mp4",
+   "angle": false
+  },
+  {
+   "hook": "3 ways to randonaut this weekend",
+   "scenes": [
+    {
+     "shot": "assets/apps/randonauting/iphone-02.webp",
+     "text": "Pick a point type: anomaly, void..."
+    },
+    {
+     "shot": "assets/apps/randonauting/iphone-03.webp",
+     "text": "Set your radius"
+    },
+    {
+     "shot": "assets/apps/randonauting/iphone-01.webp",
+     "text": "Or chat with the AI"
+    }
+   ],
+   "cta": "Try one and tell us what you found",
+   "app": "randonauting",
+   "tpl": "C",
+   "music": "music_1.m4a",
+   "top": "#0c1a10",
+   "bot": "#2f6b3a",
+   "accent": "#FFE27A",
+   "fx": "rise",
+   "fxcolor": "#FFE27A",
+   "set": "A",
+   "file": "A_14_Randonauting_3Tips.mp4",
+   "angle": false
+  },
+  {
+   "hook": "3 VizMath tricks for algebra",
+   "scenes": [
+    {
+     "shot": "assets/images/vizmath/iphone-02-sliders-vertex-form.jpg",
+     "text": "Drag sliders, watch the graph move"
+    },
+    {
+     "shot": "assets/images/vizmath/iphone-09-solve-problem.jpg",
+     "text": "Snap a problem, get the steps"
+    },
+    {
+     "shot": "assets/images/vizmath/iphone-10-solve-system.jpg",
+     "text": "Solve systems, see the graph"
+    }
+   ],
+   "cta": "Save this for homework night",
+   "app": "vizmath",
+   "tpl": "C",
+   "music": "music_1.m4a",
+   "top": "#1b1446",
+   "bot": "#4b3bbd",
+   "accent": "#FFD166",
+   "fx": "grid",
+   "fxcolor": "#B9AEFF",
+   "set": "A",
+   "file": "A_15_VizMath_3Tips.mp4",
+   "angle": false
+  },
+  {
+   "hook": "3 reasons origami finally clicks",
+   "scenes": [
+    {
+     "shot": "assets/images/origamilearn/shot-explore.jpg",
+     "text": "Pick a model by level"
+    },
+    {
+     "shot": "assets/images/origamilearn/shot-model.jpg",
+     "text": "Drag the fold yourself"
+    },
+    {
+     "shot": "assets/images/origamilearn/shot-path.jpg",
+     "text": "Follow a path, keep a streak"
+    }
+   ],
+   "cta": "Save this for Sunday",
+   "app": "origamilearn",
+   "tpl": "C",
+   "music": "music_7.m4a",
+   "top": "#2a1a10",
+   "bot": "#8a4a1c",
+   "accent": "#FFB067",
+   "fx": "paper",
+   "fxcolor": "#FF9A3D",
+   "set": "A",
+   "file": "A_16_OrigamiLearn_3Tips.mp4",
+   "angle": false
+  },
+  {
+   "hook": "POV: Kp just jumped at midnight",
+   "question": "What do you do?",
+   "options": [
+    "Go now",
+    "Wait",
+    "Sleep"
+   ],
+   "scenes": [
+    {
+     "shot": "assets/apps/aurora/iphone-06.webp",
+     "text": "Live Kp, Bz and solar wind"
+    },
+    {
+     "shot": "assets/apps/aurora/iphone-03.webp",
+     "text": "Then check your verdict"
+    }
+   ],
+   "app": "aurora",
+   "tpl": "E",
+   "music": "music_4.m4a",
+   "top": "#0b0620",
+   "bot": "#2a1450",
+   "accent": "#C79BFF",
+   "fx": "stars",
+   "fxcolor": "#FFFFFF",
+   "set": "B",
+   "file": "B_09_Auroline_POVPoll.mp4",
+   "angle": true,
+   "aurora": true,
+   "accent2": "#7CFFB2"
+  },
+  {
+   "hook": "POV: anatomy practical tomorrow",
+   "question": "Which region trips you up?",
+   "options": [
+    "Upper limb",
+    "Back",
+    "Thorax"
+   ],
+   "scenes": [
+    {
+     "shot": "assets/apps/somavue/iphone-01.webp",
+     "text": "\"Find the pronator teres.\""
+    },
+    {
+     "shot": "assets/apps/somavue/iphone-03.webp",
+     "text": "Your weakest topics, tracked"
+    }
+   ],
+   "app": "somavue",
+   "tpl": "E",
+   "music": "music_7.m4a",
+   "top": "#0d1b2a",
+   "bot": "#1b4965",
+   "accent": "#62D2FF",
+   "fx": "grid",
+   "fxcolor": "#9AD9FF",
+   "set": "B",
+   "file": "B_10_Somavue_POVPoll.mp4",
+   "angle": true
+  },
+  {
+   "hook": "POV: you found Dad's old camcorder tapes",
+   "question": "Oldest video in your family?",
+   "options": [
+    "The 80s",
+    "The 90s",
+    "The 2000s"
+   ],
+   "scenes": [
+    {
+     "shot": "assets/apps/videoupscale/iphone-05.webp",
+     "text": "Your library of old clips"
+    },
+    {
+     "shot": "assets/apps/videoupscale/iphone-07.webp",
+     "text": "Then compare side by side"
+    }
+   ],
+   "app": "videoupscale",
+   "tpl": "E",
+   "music": "music_3.m4a",
+   "top": "#2a1408",
+   "bot": "#8a4a20",
+   "accent": "#FFE2B0",
+   "fx": "rise",
+   "fxcolor": "#FFC89A",
+   "set": "B",
+   "file": "B_11_VideoUpscale_POVPoll.mp4",
+   "angle": true
+  },
+  {
+   "hook": "POV: you guess the pitch speed",
+   "question": "How fast is your best throw?",
+   "options": [
+    "Under 50 mph",
+    "50–70 mph",
+    "70+ mph"
+   ],
+   "scenes": [
+    {
+     "shot": "assets/apps/speedgunner/iphone-02.webp",
+     "text": "Sport mode tracks the ball"
+    },
+    {
+     "shot": "assets/apps/speedgunner/iphone-05.webp",
+     "text": "AI follows objects in motion"
+    }
+   ],
+   "app": "speedgunner",
+   "tpl": "E",
+   "music": "music_1.m4a",
+   "top": "#0b1320",
+   "bot": "#123a5e",
+   "accent": "#4FF0B4",
+   "fx": "drift",
+   "fxcolor": "#8FF3FF",
+   "set": "B",
+   "file": "B_12_SpeedGunner_POVPoll.mp4",
+   "angle": true
+  },
+  {
+   "hook": "POV: the seatbelt sign just came on",
+   "question": "Where do you sit on a bumpy flight?",
+   "options": [
+    "Window",
+    "Aisle",
+    "Over the wing"
+   ],
+   "scenes": [
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-04.webp",
+     "text": "\"Smooth now. Light in 1h08.\""
+    },
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-05.webp",
+     "text": "Your trip, bump by bump"
+    }
+   ],
+   "app": "turbulenceforecast",
+   "tpl": "E",
+   "music": "music_5.m4a",
+   "top": "#2b3f63",
+   "bot": "#7fa7d6",
+   "accent": "#FFFFFF",
+   "fx": "rise",
+   "fxcolor": "#FFFFFF",
+   "set": "B",
+   "file": "B_13_Bumpline_POVPoll.mp4",
+   "angle": true
+  },
+  {
+   "hook": "POV: the app picks your destination",
+   "question": "What do you hope to find?",
+   "options": [
+    "A view",
+    "A hidden café",
+    "Nothing at all"
+   ],
+   "scenes": [
+    {
+     "shot": "assets/apps/randonauting/iphone-05.webp",
+     "text": "A point near you, picked at random"
+    },
+    {
+     "shot": "assets/apps/randonauting/iphone-06.webp",
+     "text": "Randonauting or AI Randonauting"
+    }
+   ],
+   "app": "randonauting",
+   "tpl": "E",
+   "music": "music_7.m4a",
+   "top": "#20103a",
+   "bot": "#6a2fa0",
+   "accent": "#7CF0FF",
+   "fx": "paper",
+   "fxcolor": "#E0B8FF",
+   "set": "B",
+   "file": "B_14_Randonauting_POVPoll.mp4",
+   "angle": true
+  },
+  {
+   "hook": "POV: parabolas finally make sense",
+   "question": "What clicks best for you?",
+   "options": [
+    "2D graphs",
+    "3D surfaces",
+    "Geometry"
+   ],
+   "scenes": [
+    {
+     "shot": "assets/images/vizmath/iphone-02-sliders-vertex-form.jpg",
+     "text": "Vertex form with live sliders"
+    },
+    {
+     "shot": "assets/images/vizmath/iphone-03-3d-wave-surface.jpg",
+     "text": "Or go full 3D"
+    }
+   ],
+   "app": "vizmath",
+   "tpl": "E",
+   "music": "music_4.m4a",
+   "top": "#0f2f2a",
+   "bot": "#1f7a63",
+   "accent": "#FFE38A",
+   "fx": "paper",
+   "fxcolor": "#A8F0D8",
+   "set": "B",
+   "file": "B_15_VizMath_POVPoll.mp4",
+   "angle": true
+  },
+  {
+   "hook": "POV: Sunday, one sheet of paper",
+   "question": "What do you fold first?",
+   "options": [
+    "Cat face",
+    "Swan",
+    "Penguin"
+   ],
+   "scenes": [
+    {
+     "shot": "assets/images/origamilearn/shot-explore.jpg",
+     "text": "Animals, from beginner up"
+    },
+    {
+     "shot": "assets/images/origamilearn/shot-studio.jpg",
+     "text": "Make it yours"
+    }
+   ],
+   "app": "origamilearn",
+   "tpl": "E",
+   "music": "music_3.m4a",
+   "top": "#13324a",
+   "bot": "#b85c24",
+   "accent": "#FFD9A8",
+   "fx": "paper",
+   "fxcolor": "#FFFFFF",
+   "set": "B",
+   "file": "B_16_OrigamiLearn_POVPoll.mp4",
+   "angle": true
+  },
+  {
+   "hook": "5 aurora sites vs one answer",
+   "before": "Refreshing five websites at midnight.",
+   "scenes": [
+    {
+     "shot": "assets/apps/aurora/iphone-03.webp",
+     "text": "One verdict: Go, Maybe, Wait or Sleep"
+    },
+    {
+     "shot": "assets/apps/aurora/iphone-05.webp",
+     "text": "Every place you might go"
+    }
+   ],
+   "app": "aurora",
+   "tpl": "D",
+   "music": "music_7.m4a",
+   "top": "#04121a",
+   "bot": "#0b2c33",
+   "accent": "#7CFFB2",
+   "fx": "stars",
+   "fxcolor": "#FFFFFF",
+   "set": "A",
+   "file": "A_17_Auroline_BeforeAfter.mp4",
+   "angle": false,
+   "aurora": true,
+   "accent2": "#3FD0FF"
+  },
+  {
+   "hook": "Flat diagrams vs a 3D body",
+   "before": "Flat textbook diagrams. Memorize and hope.",
+   "scenes": [
+    {
+     "shot": "assets/apps/somavue/iphone-02.webp",
+     "text": "Rotate and peel the 3D model"
+    },
+    {
+     "shot": "assets/apps/somavue/iphone-04.webp",
+     "text": "Every structure on one card"
+    }
+   ],
+   "app": "somavue",
+   "tpl": "D",
+   "music": "music_6.m4a",
+   "top": "#1a0f14",
+   "bot": "#6b1f3a",
+   "accent": "#FF9DB8",
+   "fx": "rise",
+   "fxcolor": "#FF9DB8",
+   "set": "A",
+   "file": "A_18_Somavue_BeforeAfter.mp4",
+   "angle": false
+  },
+  {
+   "hook": "Grandma's tape: before and after",
+   "before": "Grain. Faded color. Interlace lines.",
+   "scenes": [
+    {
+     "shot": "assets/apps/videoupscale/iphone-07.webp",
+     "text": "Hold to compare with the original"
+    },
+    {
+     "shot": "assets/apps/videoupscale/iphone-06.webp",
+     "text": "Restored on your iPhone"
+    }
+   ],
+   "app": "videoupscale",
+   "tpl": "D",
+   "music": "music_2.m4a",
+   "top": "#101418",
+   "bot": "#3b4a5a",
+   "accent": "#FFD08A",
+   "fx": "grain",
+   "fxcolor": "#ffffff",
+   "set": "A",
+   "file": "A_19_VideoUpscale_BeforeAfter.mp4",
+   "angle": false
+  },
+  {
+   "hook": "Guessing vs measuring speed",
+   "before": "\"He was going like 80!\" ...was he?",
+   "scenes": [
+    {
+     "shot": "assets/apps/speedgunner/iphone-04.webp",
+     "text": "A speed estimate in real time"
+    },
+    {
+     "shot": "assets/apps/speedgunner/iphone-08.webp",
+     "text": "Every session saved"
+    }
+   ],
+   "app": "speedgunner",
+   "tpl": "D",
+   "music": "music_2.m4a",
+   "top": "#14100a",
+   "bot": "#5a3a12",
+   "accent": "#FFE066",
+   "fx": "drift",
+   "fxcolor": "#FFE066",
+   "set": "A",
+   "file": "A_20_SpeedGunner_BeforeAfter.mp4",
+   "angle": false
+  },
+  {
+   "hook": "Boarding blind vs boarding ready",
+   "before": "\"Will it be bumpy?\" No idea until it is.",
+   "scenes": [
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-03.webp",
+     "text": "Light bumps, and roughly when"
+    },
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-05.webp",
+     "text": "Smooth and bumpy parts at a glance"
+    }
+   ],
+   "app": "turbulenceforecast",
+   "tpl": "D",
+   "music": "music_3.m4a",
+   "top": "#0a1420",
+   "bot": "#1d3d5c",
+   "accent": "#FFC86B",
+   "fx": "drift",
+   "fxcolor": "#BFE3FF",
+   "set": "A",
+   "file": "A_21_Bumpline_BeforeAfter.mp4",
+   "angle": false
+  },
+  {
+   "hook": "Same walk vs a random walk",
+   "before": "Same walk. Same streets. Every day.",
+   "scenes": [
+    {
+     "shot": "assets/apps/randonauting/iphone-05.webp",
+     "text": "A random point you'd never choose"
+    },
+    {
+     "shot": "assets/apps/randonauting/iphone-04.webp",
+     "text": "Set your intention, press Start"
+    }
+   ],
+   "app": "randonauting",
+   "tpl": "D",
+   "music": "music_6.m4a",
+   "top": "#0c1a10",
+   "bot": "#2f6b3a",
+   "accent": "#FFE27A",
+   "fx": "rise",
+   "fxcolor": "#FFE27A",
+   "set": "A",
+   "file": "A_22_Randonauting_BeforeAfter.mp4",
+   "angle": false
+  },
+  {
+   "hook": "Symbols vs seeing the math",
+   "before": "x² + y² = 25, y = x + 1 ... just symbols on a page.",
+   "scenes": [
+    {
+     "shot": "assets/images/vizmath/iphone-10-solve-system.jpg",
+     "text": "See where the circle and line meet"
+    },
+    {
+     "shot": "assets/images/vizmath/iphone-04-geometry-thales.jpg",
+     "text": "Geometry you can move"
+    }
+   ],
+   "app": "vizmath",
+   "tpl": "D",
+   "music": "music_5.m4a",
+   "top": "#1b1446",
+   "bot": "#4b3bbd",
+   "accent": "#FFD166",
+   "fx": "grid",
+   "fxcolor": "#B9AEFF",
+   "set": "A",
+   "file": "A_23_VizMath_BeforeAfter.mp4",
+   "angle": false
+  },
+  {
+   "hook": "Paper diagrams vs dragging the fold",
+   "before": "Arrows on paper you can't follow.",
+   "scenes": [
+    {
+     "shot": "assets/images/origamilearn/shot-model.jpg",
+     "text": "Drag the fold, step by step"
+    },
+    {
+     "shot": "assets/images/origamilearn/shot-fold.jpg",
+     "text": "A hint when you need it"
+    }
+   ],
+   "app": "origamilearn",
+   "tpl": "D",
+   "music": "music_4.m4a",
+   "top": "#2a1a10",
+   "bot": "#8a4a1c",
+   "accent": "#FFB067",
+   "fx": "paper",
+   "fxcolor": "#FF9A3D",
+   "set": "A",
+   "file": "A_24_OrigamiLearn_BeforeAfter.mp4",
+   "angle": false
+  },
+  {
+   "hook": "Your aurora forecast on a globe",
+   "scenes": [
+    {
+     "shot": "assets/apps/aurora/iphone-01.webp",
+     "text": "Forecast over the whole planet"
+    },
+    {
+     "shot": "assets/apps/aurora/iphone-02.webp",
+     "text": "Zoom into Europe"
+    },
+    {
+     "shot": "assets/apps/aurora/iphone-05.webp",
+     "text": "All your spots in one list"
+    }
+   ],
+   "app": "aurora",
+   "tpl": "F",
+   "music": "music_6.m4a",
+   "top": "#0b0620",
+   "bot": "#2a1450",
+   "accent": "#C79BFF",
+   "fx": "stars",
+   "fxcolor": "#FFFFFF",
+   "set": "B",
+   "file": "B_17_Auroline_Tilt3D.mp4",
+   "angle": true,
+   "aurora": true,
+   "accent2": "#7CFFB2"
+  },
+  {
+   "hook": "Your anatomy atlas, in your pocket",
+   "scenes": [
+    {
+     "shot": "assets/apps/somavue/iphone-02.webp",
+     "text": "Skeletal, muscular, organs"
+    },
+    {
+     "shot": "assets/apps/somavue/iphone-04.webp",
+     "text": "Function and attachments"
+    },
+    {
+     "shot": "assets/apps/somavue/iphone-05.webp",
+     "text": "Find any structure fast"
+    }
+   ],
+   "app": "somavue",
+   "tpl": "F",
+   "music": "music_4.m4a",
+   "top": "#0d1b2a",
+   "bot": "#1b4965",
+   "accent": "#62D2FF",
+   "fx": "grid",
+   "fxcolor": "#9AD9FF",
+   "set": "B",
+   "file": "B_18_Somavue_Tilt3D.mp4",
+   "angle": true
+  },
+  {
+   "hook": "Not bigger. Repaired.",
+   "scenes": [
+    {
+     "shot": "assets/apps/videoupscale/iphone-06.webp",
+     "text": "Grain and color fixed"
+    },
+    {
+     "shot": "assets/apps/videoupscale/iphone-07.webp",
+     "text": "Original vs restored"
+    },
+    {
+     "shot": "assets/apps/videoupscale/iphone-05.webp",
+     "text": "Keep browsing while it works"
+    }
+   ],
+   "app": "videoupscale",
+   "tpl": "F",
+   "music": "music_1.m4a",
+   "top": "#2a1408",
+   "bot": "#8a4a20",
+   "accent": "#FFE2B0",
+   "fx": "rise",
+   "fxcolor": "#FFC89A",
+   "set": "B",
+   "file": "B_19_VideoUpscale_Tilt3D.mp4",
+   "angle": true
+  },
+  {
+   "hook": "Your camera. Your speed gun.",
+   "scenes": [
+    {
+     "shot": "assets/apps/speedgunner/iphone-01.webp",
+     "text": "Cars on your street"
+    },
+    {
+     "shot": "assets/apps/speedgunner/iphone-03.webp",
+     "text": "Even after dark"
+    },
+    {
+     "shot": "assets/apps/speedgunner/iphone-05.webp",
+     "text": "AI tracks what moves"
+    }
+   ],
+   "app": "speedgunner",
+   "tpl": "F",
+   "music": "music_4.m4a",
+   "top": "#0b1320",
+   "bot": "#123a5e",
+   "accent": "#4FF0B4",
+   "fx": "drift",
+   "fxcolor": "#8FF3FF",
+   "set": "B",
+   "file": "B_20_SpeedGunner_Tilt3D.mp4",
+   "angle": true
+  },
+  {
+   "hook": "A real aviation chart, on your phone",
+   "scenes": [
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-02.webp",
+     "text": "Wind, jet core and CAT areas"
+    },
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-06.webp",
+     "text": "Change the level, chart follows"
+    },
+    {
+     "shot": "assets/apps/turbulenceforecast/iphone-07.webp",
+     "text": "Add the airport weather"
+    }
+   ],
+   "app": "turbulenceforecast",
+   "tpl": "F",
+   "music": "music_1.m4a",
+   "top": "#2b3f63",
+   "bot": "#7fa7d6",
+   "accent": "#FFFFFF",
+   "fx": "rise",
+   "fxcolor": "#FFFFFF",
+   "set": "B",
+   "file": "B_21_Bumpline_Tilt3D.mp4",
+   "angle": true
+  },
+  {
+   "hook": "Adventure starts around the corner",
+   "scenes": [
+    {
+     "shot": "assets/apps/randonauting/iphone-06.webp",
+     "text": "Two ways to start"
+    },
+    {
+     "shot": "assets/apps/randonauting/iphone-02.webp",
+     "text": "Anomaly, attractor, void..."
+    },
+    {
+     "shot": "assets/apps/randonauting/iphone-04.webp",
+     "text": "Temporal or ANU QRNG"
+    }
+   ],
+   "app": "randonauting",
+   "tpl": "F",
+   "music": "music_2.m4a",
+   "top": "#20103a",
+   "bot": "#6a2fa0",
+   "accent": "#7CF0FF",
+   "fx": "paper",
+   "fxcolor": "#E0B8FF",
+   "set": "B",
+   "file": "B_22_Randonauting_Tilt3D.mp4",
+   "angle": true
+  },
+  {
+   "hook": "Turn equations into worlds",
+   "scenes": [
+    {
+     "shot": "assets/images/vizmath/iphone-08-gallery.jpg",
+     "text": "102 templates to start from"
+    },
+    {
+     "shot": "assets/images/vizmath/iphone-04-geometry-thales.jpg",
+     "text": "Thales' theorem, live"
+    },
+    {
+     "shot": "assets/images/vizmath/iphone-05-3d-pyramid-section.jpg",
+     "text": "3D sections you can rotate"
+    }
+   ],
+   "app": "vizmath",
+   "tpl": "F",
+   "music": "music_7.m4a",
+   "top": "#0f2f2a",
+   "bot": "#1f7a63",
+   "accent": "#FFE38A",
+   "fx": "paper",
+   "fxcolor": "#A8F0D8",
+   "set": "B",
+   "file": "B_23_VizMath_Tilt3D.mp4",
+   "angle": true
+  },
+  {
+   "hook": "Drag the fold. Hold it halfway.",
+   "scenes": [
+    {
+     "shot": "assets/images/origamilearn/shot-explore.jpg",
+     "text": "Pick a model"
+    },
+    {
+     "shot": "assets/images/origamilearn/shot-model.jpg",
+     "text": "Fold it with your finger"
+    },
+    {
+     "shot": "assets/images/origamilearn/shot-path.jpg",
+     "text": "Level up your skills"
+    }
+   ],
+   "app": "origamilearn",
+   "tpl": "F",
+   "music": "music_6.m4a",
+   "top": "#13324a",
+   "bot": "#b85c24",
+   "accent": "#FFD9A8",
+   "fx": "paper",
+   "fxcolor": "#FFFFFF",
+   "set": "B",
+   "file": "B_24_OrigamiLearn_Tilt3D.mp4",
+   "angle": true
+  }
+ ]
+}
