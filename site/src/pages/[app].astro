@@ -1,6 +1,7 @@
 ---
 // One landing page per app with generatePage: true in apps.manual.json -> /<slug>.html, in the app's own language
 import AppPage from '../components/AppPage.astro';
+import GlobalSdrPage from '../components/GlobalSdrPage.astro';
 import { apps, type App } from '../lib/apps';
 
 export function getStaticPaths() {
@@ -8,4 +9,4 @@ export function getStaticPaths() {
 }
 const { app } = Astro.props as { app: App };
 ---
-<AppPage app={app} lang={app.contentLang} />
+{app.slug === 'globalsdr' ? <GlobalSdrPage app={app} /> : <AppPage app={app} lang={app.contentLang} />}

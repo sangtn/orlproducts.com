@@ -103,6 +103,24 @@
   }
 }
 
+/* Pages that pass theme="dark" to Base get the dark palette in any system setting */
+:root[data-theme="dark"] {
+  --paper: #17140F;
+  --paper-2: #1F1B15;
+  --paper-3: #29241C;
+  --ink: #F5EFE6;
+  --ink-soft: #B6ADA2;
+  --ink-faint: #958B80;
+  --rule: #2E2820;
+  --rule-strong: #43392E;
+  --ok: #5FD39A;
+  --warn: #F2B35B;
+  --danger: #FF8A75;
+  --shadow-1: 0 1px 2px rgb(0 0 0 / 40%);
+  --shadow-2: 0 2px 6px rgb(0 0 0 / 40%), 0 16px 40px rgb(0 0 0 / 45%);
+  color-scheme: dark;
+}
+
 @media (prefers-reduced-motion: reduce) {
   :root { --dur-fast: 0ms; --dur-base: 0ms; --dur-slow: 0ms; }
 }

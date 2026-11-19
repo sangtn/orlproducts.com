@@ -11,10 +11,8 @@ const apple = { en: 'en-us', vi: 'vi-vn', ja: 'ja-jp', es: 'es-es', fr: 'fr-fr',
   {label && <p class="op-devbadges__label">{label}</p>}
   <div class="op-badges">
     <a href="https://apps.apple.com/us/developer/orientpro-lam-an-investment-trade-jsc/id1614396757" aria-label="ORIENTPRO apps on the App Store">
-      <picture>
-        <source srcset={`/assets/badges/app-store-white-${apple}.svg`} media="(prefers-color-scheme: dark)" />
-        <img class="op-badge-apple" src={`/assets/badges/app-store-black-${apple}.svg`} alt="Download on the App Store" width="132" height="44" loading="lazy" />
-      </picture>
+      <img class="op-badge-apple op-on-light" src={`/assets/badges/app-store-black-${apple}.svg`} alt="Download on the App Store" width="132" height="44" loading="lazy" />
+      <img class="op-badge-apple op-on-dark" src={`/assets/badges/app-store-white-${apple}.svg`} alt="Download on the App Store" width="132" height="44" loading="lazy" />
     </a>
     <a href="https://play.google.com/store/apps/developer?id=ORIENTPRO" aria-label="ORIENTPRO apps on Google Play">
       <img class="op-badge-google" src={`/assets/badges/google-play-${l}.png`} alt="Get it on Google Play" width="148" height="44" loading="lazy" />

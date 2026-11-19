@@ -19,15 +19,16 @@ interface Props {
   lang?: string;
   noindex?: boolean;
   alternates?: [string, string][];   // [hreflang, path], including x-default
+  theme?: 'dark';           // force the dark palette whatever the system setting (immersive pages)
 }
-const { title, description, path, image = '/assets/images/favicon.png', imageAlt, app, appStoreId, jsonLd = [], lang = 'en', noindex = false, alternates = [] } = Astro.props;
+const { title, description, path, image = '/assets/images/favicon.png', imageAlt, app, appStoreId, jsonLd = [], lang = 'en', noindex = false, alternates = [], theme } = Astro.props;
 const site = Astro.site!.origin;
 const canonical = new URL(path, site).href;
 const ogImage = new URL(image, site).href;
 const large = !image.endsWith('favicon.png') && !image.includes('/icons/');
 ---
 <!doctype html>
-<html lang={lang} data-app={app}>
+<html lang={lang} data-app={app} data-theme={theme}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -37,8 +38,9 @@ const large = !image.endsWith('favicon.png') && !image.includes('/icons/');
   <meta name="robots" content={noindex ? 'noindex' : 'index, follow, max-image-preview:large'}>
   <link rel="icon" href="/assets/images/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+  {theme === 'dark' ? <meta name="theme-color" content="#0B0A09"> : <>
   <meta name="theme-color" content="#FDFBF7" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#17140F" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#17140F" media="(prefers-color-scheme: dark)"></>}
   {alternates.map(([hl, p]) => <link rel="alternate" hreflang={hl} href={new URL(p, site).href} />)}
   {appStoreId && <meta name="apple-itunes-app" content={`app-id=${appStoreId}`}>}
   <meta property="og:type" content="website">

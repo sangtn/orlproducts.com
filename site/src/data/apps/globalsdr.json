@@ -18,9 +18,9 @@
     "id": 6815033866,
     "url": "https://apps.apple.com/app/id6815033866",
     "bundleId": "com.orientpro.GlobalSDR",
-    "version": "1.0",
+    "version": "1.1",
     "released": "2026-10-05",
-    "updated": "2026-10-05",
+    "updated": "2026-11-18",
     "minimumOs": "18.6",
     "languages": [
       "nl",
@@ -34,11 +34,11 @@
     ],
     "price": "Free",
     "rating": {
-      "value": 5,
-      "count": 2
+      "value": 4.67,
+      "count": 3
     },
     "contentRating": "4+",
-    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e5/01/3d/e5013d86-7090-2e6c-91cd-96d51afd9547/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/df/9b/24/df9b2411-e44a-d7f7-0506-09d70039dfc3/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
     "developerWebsite": "https://orlproducts.com/",
     "screenshots": {
       "iphone": 6,

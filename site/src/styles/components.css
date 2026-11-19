@@ -59,6 +59,10 @@
 .op-badges { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
 .op-badges a { display: inline-flex; line-height: 0; border-radius: var(--radius-sm); }
 .op-badge-apple, .op-badge-google { height: var(--badge-height); width: auto; }
+.op-on-dark { display: none !important; }
+@media (prefers-color-scheme: dark) { .op-on-light { display: none !important; } .op-on-dark { display: block !important; } }
+:root[data-theme="dark"] .op-on-light { display: none !important; }
+:root[data-theme="dark"] .op-on-dark { display: block !important; }
 .op-badges-legal { font-size: var(--text-xs); color: var(--ink-faint); margin-top: var(--space-2); }
 
 /* Platform chips: only for platforms the app data says are supported */

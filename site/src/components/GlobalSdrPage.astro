@@ -1,0 +1,658 @@
+---
+// GlobalSDR's own English landing page (/globalsdr.html): an immersive dark page built from the
+// real App Store media (App Previews, iPhone Duo stills, Apple Watch shots, live screen clips).
+// Media lives in /assets/apps/globalsdr/media (made from ~/Desktop/2026/GlobalSDRReceiver with
+// AVFoundation + Pillow). Translations (/ja/, /es/, /fr/, /de/) still use the generic AppPage.
+// Copy follows the 1.1 store text: no recording promises, no prices beyond "free download".
+import Base from '../layouts/Base.astro';
+import AppCard from './AppCard.astro';
+import { apps, type App } from '../lib/apps';
+import { translatedLangs } from '../lib/translations';
+
+interface Props { app: App }
+const { app } = Astro.props;
+const site = Astro.site!.origin;
+const M = '/assets/apps/globalsdr/media';
+const store = app.appStore!;
+const rating = store.rating;
+const ratingText = rating && rating.count > 0 ? rating.value.toFixed(1) : null;
+const updated = new Date(store.updated).toLocaleDateString('en', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const title = 'GlobalSDR — Live Shortwave & Ham Radio on iPhone';
+const description = 'Tune 1,300+ real KiwiSDR and OpenWebRX receivers worldwide from iPhone, iPad and Apple Watch. Live waterfall, on-air schedule, NOAA band conditions.';
+
+const versions: [string, string][] = [['en', '/globalsdr.html'], ...translatedLangs(app.slug).filter((l) => l !== 'en').map((l) => [l, `/${l}/globalsdr.html`] as [string, string])];
+const alternates: [string, string][] = versions.length > 1 ? [...versions, ['x-default', '/globalsdr.html']] : [];
+const LANG_LABEL: Record<string, string> = { en: 'English', ja: '日本語', es: 'Español', fr: 'Français', de: 'Deutsch', vi: 'Tiếng Việt' };
+
+const stations = [
+  { f: '6070.00', m: 'AM', n: 'CFRX Toronto', w: 'Broadcast · Canada' },
+  { f: '9395.00', m: 'AM', n: 'WRMI Radio Miami Intl.', w: 'Broadcast · USA' },
+  { f: '5910.00', m: 'AM', n: 'Alcaravan Radio', w: 'Broadcast · Colombia' },
+  { f: '15000.00', m: 'AM', n: 'WWV Fort Collins', w: 'Time signal' },
+  { f: '8992.00', m: 'USB', n: 'HF-GCS', w: 'Military aviation' },
+  { f: '4625.00', m: 'USB', n: 'UVB-76 “The Buzzer”', w: 'Numbers & mystery' },
+  { f: '14200.00', m: 'USB', n: '20 m amateur band', w: 'Ham radio' },
+  { f: '9420.00', m: 'AM', n: 'Radio Romania International', w: 'Broadcast · Romania' },
+];
+
+const stats: [string, string][] = [
+  ['1,300+', 'live receivers'],
+  ['2', 'SDR networks'],
+  ['6', 'demodulation modes'],
+  ['8', 'app languages'],
+  ['0', 'accounts, ads or trackers'],
+];
+
+const features = [
+  {
+    id: 'spectrum', clip: 1, eyebrow: 'Spectrum & waterfall',
+    h: 'Tune with your thumb, see every signal',
+    p: 'A native, hardware-accelerated spectrum and waterfall drawn the way radio operators know it. Station names appear right on the waterfall, and the S-meter moves with the real signal.',
+    li: ['Drag to tune, pinch to zoom, drag the passband edges', 'AM, SAM, LSB, USB, CW and NFM', 'AGC, filter width and waterfall speed', '10 kHz steps in AM, 10 Hz steps in SSB and CW'],
+    alt: 'GlobalSDR radio console tuned to 5910 kHz with a live blue waterfall, S-meter and mode keys',
+  },
+  {
+    id: 'receivers', clip: 2, eyebrow: 'Receivers',
+    h: 'The right receiver, picked for you',
+    p: 'Type a frequency and GlobalSDR connects to a free receiver that covers it. If one is full or goes offline, it moves you to the next best one on its own.',
+    li: ['World map with the day and night terminator', 'Filter by network, free slots, coverage or distance', 'Favorites and “Best for…” any place on Earth', 'KiwiSDR and OpenWebRX networks'],
+    alt: 'Map of volunteer SDR receivers along the US west coast in GlobalSDR',
+  },
+  {
+    id: 'onair', clip: 4, eyebrow: 'On air now',
+    h: 'Know what you are hearing',
+    p: 'GlobalSDR reads the clock as well as the dial. Tune any shortwave frequency and see which station is scheduled, from which country, in which language and for how much longer.',
+    li: ['Everything on air worldwide, in your language', 'What starts in the next hour, with reminders', 'One tap on Listen tunes the best receiver', 'The schedule works offline'],
+    alt: 'GlobalSDR showing what is on 5910 kHz, with actions to log the catch and see band conditions',
+  },
+  {
+    id: 'bands', clip: 3, eyebrow: 'Band conditions',
+    h: 'Know which bands are open tonight',
+    p: 'A dashboard built from live NOAA space-weather data tells you where to listen before you start turning the dial.',
+    li: ['K index, solar flux, sunspots and X-ray flares', 'Band-by-band day and night outlook', 'Time of your next greyline', 'The same view on Apple Watch and in a widget'],
+    alt: 'Band conditions in GlobalSDR: Kp 0.7, solar flux 129, good on 80 to 40 metres',
+  },
+  {
+    id: 'memories', clip: 5, eyebrow: 'Memories, scan & logbook',
+    h: 'Keep every catch',
+    p: 'Save numbered memory channels, scan whole groups of frequencies and log a catch with one tap: frequency, mode, station, receiver and the space weather at that moment.',
+    li: ['Built-in scan groups with signal hold', 'An audible cue before each scan step', 'Logbook export as CSV or ADIF (Pro)', 'One-tap channels in widgets and on the Watch'],
+    alt: 'GlobalSDR memory channels: 14200 kHz 20 m SSB, 7074 kHz FT8, 8992 kHz HF-GCS, 4625 kHz UVB-76',
+  },
+];
+
+const poses = [
+  { k: 'Open', img: 1, alt: 'iPhone Duo open: GlobalSDR console beside the live “Now on air worldwide” schedule' },
+  { k: 'Book', img: 2, alt: 'iPhone Duo half open like a book: console on the left page, schedule on the right' },
+  { k: 'Laptop', img: 3, alt: 'iPhone Duo standing like a laptop: waterfall above the fold, tuning dial and keys below' },
+  { k: 'Map', img: 4, alt: 'iPhone Duo open with the receiver map beside the console' },
+  { k: 'Bands', img: 5, alt: 'iPhone Duo open with band conditions beside the console' },
+  { k: 'Memories', img: 6, alt: 'iPhone Duo open with memory channels beside the console' },
+];
+
+const previews = [
+  { k: 'iPhone', file: 'iphone', w: 590, h: 1278, label: 'GlobalSDR App Preview on iPhone' },
+  { k: 'iPhone Duo', file: 'duo', w: 1280, h: 590, label: 'GlobalSDR App Preview on iPhone Duo' },
+  { k: 'iPad', file: 'ipad', w: 1200, h: 900, label: 'GlobalSDR App Preview on iPad' },
+];
+
+const hear = [
+  { t: 'International broadcasters', f: '2–26 MHz', d: 'News, music and culture from every continent, with the live schedule telling you who is on.' },
+  { t: 'Ham radio', f: '160 m – 10 m', d: 'SSB and CW contacts, contests and digital modes like FT8 on 7074 kHz.' },
+  { t: 'Aviation', f: 'HF-GCS · VOLMET', d: 'Oceanic air traffic, weather broadcasts and military aviation networks.' },
+  { t: 'Time signals', f: 'WWV · 5–25 MHz', d: 'Atomic-clock time stations, a favourite for checking propagation.' },
+  { t: 'Numbers & mystery', f: 'UVB-76 · 4625 kHz', d: 'The famous buzzers and numbers stations, in a built-in scan group.' },
+  { t: 'Marine & utility', f: 'Weatherfax · coast', d: 'Coastal stations, maritime weather and utility traffic.' },
+];
+
+const surfaces = [
+  { t: 'Background audio', d: 'Keeps playing with the screen off, with lock-screen controls and a sleep timer.', i: 'M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4' },
+  { t: 'Live Activities & Dynamic Island', d: 'Frequency, station and signal at a glance while you use other apps.', i: 'M7 9h10a3 3 0 0 1 0 6H7a3 3 0 0 1 0-6Z' },
+  { t: 'Widgets', d: 'Now listening, band conditions and one-tap channels on the Home Screen.', i: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z' },
+  { t: 'Control Center', d: 'Play, stop and step channels without opening the app.', i: 'M5 8h14M5 16h14M9 5v6M15 13v6' },
+  { t: 'Siri & Shortcuts', d: 'Tune a frequency, start a scan or open conditions by voice or automation.', i: 'M12 4a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V7a3 3 0 0 1 3-3ZM6 12a6 6 0 0 0 12 0M12 18v3' },
+  { t: 'Apple Watch remote', d: 'Tune with the Digital Crown, jump channels and check conditions on your wrist.', i: 'M8 3h8l1 4v10l-1 4H8l-1-4V7zM12 9v3l2 1' },
+];
+
+const pro = [
+  ['Live audio from 1,300+ receivers', true, true],
+  ['Spectrum, waterfall and all six modes', true, true],
+  ['On-air schedule, reminders and band conditions', true, true],
+  ['Widgets, Live Activities, Siri and Apple Watch', true, true],
+  ['Memory channels, logbook and scan groups', 'Starter', 'Unlimited'],
+  ['Logbook export as CSV or ADIF', false, true],
+  ['Add your own KiwiSDR or OpenWebRX receivers', false, true],
+  ['Best receiver to hear a chosen place', false, true],
+  ['Sonified spectrum: hear the waterfall as tones', false, true],
+] as const;
+
+const specs: [string, string][] = [
+  ['Networks', 'KiwiSDR and OpenWebRX volunteer receivers'],
+  ['Modes', 'AM, SAM, LSB, USB, CW, NFM'],
+  ['Data', 'EiBi broadcast schedule (offline), NOAA SWPC space weather'],
+  ['Devices', 'iPhone, iPad, Apple Watch; Mac and Apple Vision Pro (iPad app); made for iPhone Duo'],
+  ['Requires', `iOS ${store.minimumOs} or later, watchOS 11.6 or later`],
+  ['Languages', 'English, Dutch, German, Italian, Japanese, Portuguese, Spanish, Vietnamese'],
+  ['Version', `${store.version}, updated ${updated}`],
+  ['Price', 'Free download. GlobalSDR Pro is optional (weekly, monthly, yearly or lifetime)'],
+  ['Age rating', store.contentRating ?? '4+'],
+  ['Developer', 'ORIENTPRO (LA Investment and Trade JSC)'],
+];
+
+const faq: [string, string][] = [
+  ['Do I need a radio, antenna or SDR dongle?', 'No. GlobalSDR plays audio from real receivers that volunteers run around the world. All you need is an internet connection.'],
+  ['Is GlobalSDR free?', 'Yes, it is a free download with live listening, the waterfall, the on-air schedule, band conditions, widgets and the Apple Watch app. GlobalSDR Pro adds unlimited memories, logbook export, your own receivers and more, as a subscription or a one-time lifetime purchase.'],
+  ['Can I transmit with GlobalSDR?', 'No. GlobalSDR is receive-only. It is a listening app for shortwave, amateur, aviation and utility signals.'],
+  ['Why is a receiver sometimes full or offline?', 'Each receiver allows a few listeners at a time and is run on a volunteer’s own hardware. When one is full or offline, GlobalSDR switches you to the next best receiver that covers the same frequency.'],
+  ['Does it work offline?', 'The broadcast schedule is stored on your device, so you can browse what is on air without a connection. Listening needs the internet.'],
+  ['What does GlobalSDR collect about me?', 'Nothing. There is no account, no analytics, no ads and no tracking. Your location and logbook stay on your device.'],
+  ['Is there an Android version?', 'An Android and Wear OS version is in the works. Today GlobalSDR runs on iPhone, iPad, Apple Watch, Mac and Apple Vision Pro.'],
+];
+
+const related = apps.filter((a) => a.slug !== app.slug && a.group === 'current')
+  .sort((a, b) => Number(b.priority) - Number(a.priority)).slice(0, 3);
+
+const appLd = {
+  '@context': 'https://schema.org', '@type': 'MobileApplication', '@id': `${site}/globalsdr.html#app`,
+  name: app.name, alternateName: 'GlobalSDR', description, url: `${site}/globalsdr.html`,
+  image: `${site}/assets/icons/globalsdr.png`,
+  screenshot: app.screenshots.iphone?.slice(0, 4).map((x) => `${site}${x}`),
+  applicationCategory: 'UtilitiesApplication', operatingSystem: `iOS ${store.minimumOs}, watchOS, iPadOS`,
+  installUrl: store.url, inLanguage: 'en', softwareVersion: store.version,
+  datePublished: store.released, dateModified: store.updated, contentRating: store.contentRating,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  author: { '@id': `${site}/#org` },
+  publisher: { '@type': 'Organization', '@id': `${site}/#org`, name: 'ORIENTPRO', url: `${site}/` },
+  ...(rating && rating.count > 0 ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: rating.value, ratingCount: rating.count, bestRating: 5, worstRating: 1 } } : {}),
+};
+const videoLd = previews.map((v) => ({
+  '@context': 'https://schema.org', '@type': 'VideoObject', name: v.label,
+  description: `${v.label}: live shortwave radio from volunteer SDR receivers, the on-air schedule and band conditions.`,
+  thumbnailUrl: `${site}${M}/preview-${v.file}.webp`, contentUrl: `${site}${M}/preview-${v.file}.mp4`,
+  uploadDate: `${store.updated}T00:00:00Z`, duration: 'PT28S', inLanguage: 'en',
+}));
+const faqLd = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+};
+const crumbsLd = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'ORIENTPRO', item: `${site}/` },
+    { '@type': 'ListItem', position: 2, name: 'All apps', item: `${site}/apps.html` },
+    { '@type': 'ListItem', position: 3, name: 'GlobalSDR', item: `${site}/globalsdr.html` },
+  ],
+};
+const badge = (cls = '') => `<a class="sdr-store ${cls}" href="${store.url}" aria-label="Download GlobalSDR on the App Store"><img src="/assets/badges/app-store-white-en-us.svg" alt="Download on the App Store" width="150" height="50" /></a>`;
+---
+<Base title={title} description={description} path="/globalsdr.html" image={`${M}/og.jpg`} imageAlt="GlobalSDR on iPad, iPhone Duo and iPhone showing a live shortwave waterfall" app="globalsdr" appStoreId={store.id} jsonLd={[appLd, crumbsLd, faqLd, ...videoLd]} lang="en" alternates={alternates} theme="dark">
+<div class="sdr">
+
+  <!-- Hero -->
+  <section class="sdr-hero" aria-labelledby="sdr-title">
+    <div class="sdr-hero__glow" aria-hidden="true"></div>
+    <div class="op-wrap sdr-hero__copy">
+      <div class="sdr-appline">
+        <img src="/assets/icons/globalsdr.png" alt="GlobalSDR app icon" width="56" height="56" />
+        <div>
+          <p class="sdr-appline__name">GlobalSDR</p>
+          <p class="sdr-appline__sub">Shortwave SDR Radio</p>
+        </div>
+        <span class="sdr-new">New in {store.version}: made for iPhone Duo</span>
+      </div>
+      <h1 id="sdr-title">Hear the world’s radio,<br /><span>live.</span></h1>
+      <p class="sdr-lead">1,300+ real receivers on every continent, on your iPhone, iPad and Apple Watch. Shortwave, ham radio, aviation and time signals. No radio, no antenna, no hardware to buy.</p>
+      <div class="sdr-cta">
+        <Fragment set:html={badge()} />
+        {ratingText && (
+          <a class="sdr-rating" href={store.url} aria-label={`Rated ${ratingText} out of 5 on the App Store`}>
+            <span class="sdr-stars" aria-hidden="true" style={`--r:${rating!.value}`}>★★★★★</span>
+            <span><b>{ratingText}</b> on the App Store</span>
+          </a>
+        )}
+      </div>
+      <div class="sdr-dial" aria-live="off">
+        <span class="sdr-dial__led" aria-hidden="true"></span>
+        <span class="sdr-dial__label">Tuned to</span>
+        <span class="sdr-dial__freq" data-freq>{stations[0].f}</span><span class="sdr-dial__unit">kHz</span>
+        <span class="sdr-dial__mode" data-mode>{stations[0].m}</span>
+        <span class="sdr-dial__name" data-name>{stations[0].n}</span>
+        <span class="sdr-dial__what" data-what>{stations[0].w}</span>
+      </div>
+    </div>
+    <div class="sdr-stage">
+      <video class="sdr-stage__video" data-hero muted loop playsinline preload="none" poster={`${M}/hero-poster.webp`} width="1600" height="686" aria-label="GlobalSDR running on iPad, iPhone Duo and iPhone with live waterfalls">
+        <source data-src={`${M}/hero-devices.mp4`} type="video/mp4" />
+      </video>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="op-wrap sdr-stats" aria-label="GlobalSDR in numbers">
+    {stats.map(([n, l]) => <div><b>{n}</b><span>{l}</span></div>)}
+  </section>
+
+  <!-- App Previews -->
+  <section class="op-wrap sdr-sec sdr-preview" aria-labelledby="sdr-watch">
+    <div class="sdr-head">
+      <p class="op-eyebrow">See it in action</p>
+      <h2 id="sdr-watch">Real receivers, real signals, recorded in the app</h2>
+      <p>Every frame below is GlobalSDR running live: tuning across the band, the on-air schedule and band conditions. Press play to hear it.</p>
+    </div>
+    <div class="sdr-tabs" role="tablist" aria-label="App Preview device">
+      {previews.map((v, i) => <button role="tab" id={`pv-tab-${i}`} aria-controls={`pv-${i}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} data-group="pv">{v.k}</button>)}
+    </div>
+    {previews.map((v, i) => (
+      <div class={`sdr-pv sdr-pv--${v.file}`} role="tabpanel" id={`pv-${i}`} aria-labelledby={`pv-tab-${i}`} hidden={i !== 0}>
+        <div class="sdr-frame">
+          <video controls playsinline preload="none" poster={`${M}/preview-${v.file}.webp`} width={v.w} height={v.h} aria-label={v.label}>
+            <source src={`${M}/preview-${v.file}.mp4`} type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <!-- Features -->
+  {features.map((f, i) => (
+    <section class={`op-wrap sdr-sec sdr-feature ${i % 2 ? 'is-flip' : ''}`} aria-labelledby={`sdr-${f.id}`}>
+      <div class="sdr-feature__media">
+        <div class="sdr-phone">
+          <video data-auto muted loop playsinline preload="none" poster={`${M}/clip-${f.clip}.webp`} width="432" height="960" aria-label={f.alt}>
+            <source data-src={`${M}/clip-${f.clip}.mp4`} type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <div class="sdr-feature__copy">
+        <p class="op-eyebrow">{f.eyebrow}</p>
+        <h2 id={`sdr-${f.id}`}>{f.h}</h2>
+        <p>{f.p}</p>
+        <ul class="sdr-checks">{f.li.map((x) => <li>{x}</li>)}</ul>
+      </div>
+    </section>
+  ))}
+
+  <!-- iPhone Duo -->
+  <section class="sdr-band sdr-duo" aria-labelledby="sdr-duo">
+    <div class="op-wrap">
+      <div class="sdr-head sdr-head--center">
+        <p class="op-eyebrow">New in GlobalSDR {store.version}</p>
+        <h2 id="sdr-duo">Made for iPhone Duo, in every pose</h2>
+        <p>Closed, the whole console fits the outer display. Open it and the console stays beside Servers, On Air, Memories and Bands. Half open, nothing you tap sits on the fold, and the audio keeps playing as you fold and unfold.</p>
+      </div>
+      <div class="sdr-tabs sdr-tabs--center" role="tablist" aria-label="iPhone Duo pose">
+        {poses.map((p, i) => <button role="tab" id={`duo-tab-${i}`} aria-controls={`duo-${i}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} data-group="duo">{p.k}</button>)}
+      </div>
+      <div class="sdr-duo__stage">
+        {poses.map((p, i) => (
+          <figure role="tabpanel" id={`duo-${i}`} aria-labelledby={`duo-tab-${i}`} hidden={i !== 0}>
+            <img src={`${M}/duo-${p.img}.webp`} srcset={`${M}/duo-${p.img}-800.webp 800w, ${M}/duo-${p.img}.webp 1600w`} sizes="(max-width: 1120px) 100vw, 1088px" alt={p.alt} width="1600" height="1126" loading="lazy" decoding="async" />
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What you can hear -->
+  <section class="op-wrap sdr-sec" aria-labelledby="sdr-hear">
+    <div class="sdr-head">
+      <p class="op-eyebrow">What’s out there</p>
+      <h2 id="sdr-hear">A whole world on the dial</h2>
+      <p>Built-in scan groups cover time signals, aviation, military and utility, numbers stations, amateur digital modes and marine. Or build your own.</p>
+    </div>
+    <div class="sdr-hear">
+      {hear.map((h) => <article><p class="sdr-hear__f">{h.f}</p><h3>{h.t}</h3><p>{h.d}</p></article>)}
+    </div>
+  </section>
+
+  <!-- Surfaces + Watch -->
+  <section class="sdr-band" aria-labelledby="sdr-anywhere">
+    <div class="op-wrap sdr-anywhere">
+      <div>
+        <div class="sdr-head">
+          <p class="op-eyebrow">Listen anywhere</p>
+          <h2 id="sdr-anywhere">Built into iPhone, all the way down</h2>
+        </div>
+        <ul class="sdr-surfaces">
+          {surfaces.map((s) => (
+            <li>
+              <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d={s.i} fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              <div><h3>{s.t}</h3><p>{s.d}</p></div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="sdr-watches" aria-label="GlobalSDR on Apple Watch">
+        <div class="sdr-watch"><img src={`${M}/watch-1.webp`} alt="Apple Watch: Radio Romania International on 9420 kHz AM, signal S7, with play controls" width="416" height="496" loading="lazy" /></div>
+        <div class="sdr-watch"><img src={`${M}/watch-2.webp`} alt="Apple Watch: memory channels 15000 kHz WWV and 8992 kHz HF-GCS" width="416" height="496" loading="lazy" /></div>
+        <div class="sdr-watch"><img src={`${M}/watch-3.webp`} alt="Apple Watch: band conditions, good on 20 m, Kp 3, solar flux 142" width="416" height="496" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free vs Pro -->
+  <section class="op-wrap sdr-sec" aria-labelledby="sdr-pro">
+    <div class="sdr-head sdr-head--center">
+      <p class="op-eyebrow">Free and Pro</p>
+      <h2 id="sdr-pro">Free to listen. Pro when you go deeper.</h2>
+      <p>GlobalSDR Pro is a weekly, monthly or yearly subscription, or a one-time lifetime purchase.</p>
+    </div>
+    <div class="sdr-table-wrap">
+      <table class="sdr-table">
+        <thead><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col" class="is-pro">Pro</th></tr></thead>
+        <tbody>
+          {pro.map(([n, a, b]) => (
+            <tr>
+              <th scope="row">{n}</th>
+              {[a, b].map((v, j) => <td class={j ? 'is-pro' : ''}>{v === true ? <span class="sdr-yes" aria-label="Included">✓</span> : v === false ? <span class="sdr-no" aria-label="Not included">—</span> : v}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Respect + privacy -->
+  <section class="op-wrap sdr-sec sdr-values" aria-label="Principles">
+    <article>
+      <p class="op-eyebrow">Built on respect</p>
+      <h2>A good guest on every receiver</h2>
+      <p>Every receiver is run by a volunteer paying for their own hardware and bandwidth. GlobalSDR identifies itself honestly, opens one connection at a time and releases its slot the moment you stop. Receiver rules and donation links are one tap away.</p>
+      <p class="sdr-thanks">With thanks to the KiwiSDR and OpenWebRX communities, EiBi and NOAA SWPC.</p>
+    </article>
+    <article>
+      <p class="op-eyebrow">Private by design</p>
+      <h2>No account. No ads. No tracking.</h2>
+      <p>No analytics and no third-party SDKs either. Your location and logbook stay on your device.</p>
+      <a class="op-button op-button--secondary" href={app.web.privacy}>Read the privacy policy</a>
+    </article>
+  </section>
+
+  <!-- Specs + FAQ -->
+  <section class="op-wrap sdr-sec sdr-split" aria-label="Details">
+    <div>
+      <h2 id="sdr-specs">Specifications</h2>
+      <dl class="sdr-specs">{specs.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
+    </div>
+    <div>
+      <h2 id="sdr-faq">Questions</h2>
+      <div class="sdr-faq">
+        {faq.map(([q, a]) => <details><summary>{q}</summary><p>{a}</p></details>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="op-wrap sdr-final" aria-labelledby="sdr-final">
+    <img src="/assets/icons/globalsdr.png" alt="" width="96" height="96" loading="lazy" />
+    <h2 id="sdr-final">Tonight, listen to the other side of the world.</h2>
+    <p>GlobalSDR for iPhone, iPad and Apple Watch.</p>
+    <Fragment set:html={badge('sdr-store--lg')} />
+    <p class="sdr-fine">GlobalSDR is an independent app, not affiliated with the operators of the receivers or networks it connects to. Receiver availability varies. Not for emergency use. Reception laws vary by country. Band forecasts are estimates.</p>
+  </section>
+
+  <!-- Help + more -->
+  <section class="op-wrap sdr-sec sdr-help" aria-labelledby="sdr-help">
+    <h2 id="sdr-help">Help and policies</h2>
+    <ul class="op-links">
+      {app.web.support && <li><a class="op-button op-button--secondary" href={app.web.support}>Support</a></li>}
+      <li><a class="op-button op-button--secondary" href={app.web.privacy}>Privacy policy</a></li>
+      <li><a class="op-button op-button--secondary" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of use</a></li>
+      <li><a class="op-button op-button--secondary" href="mailto:info@orlproducts.com?subject=GlobalSDR">info@orlproducts.com</a></li>
+    </ul>
+    {versions.length > 1 && (
+      <ul class="op-lang" aria-label="Language">
+        {versions.map(([l, p]) => <li><a href={p} hreflang={l} lang={l} aria-current={l === 'en' ? 'page' : undefined}>{LANG_LABEL[l] ?? l}</a></li>)}
+      </ul>
+    )}
+    <h2 class="sdr-more">More apps from ORIENTPRO</h2>
+    <div class="op-appgrid">{related.map((a) => <AppCard app={a} lang="en" />)}</div>
+  </section>
+</div>
+
+<script is:inline define:vars={{ stations }}>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const save = navigator.connection && navigator.connection.saveData;
+  const load = (v) => { v.querySelectorAll('source[data-src]').forEach((s) => { s.src = s.dataset.src; s.removeAttribute('data-src'); }); v.load(); };
+
+  // Hero device video: only on wide screens without reduced motion or data saver
+  const hero = document.querySelector('[data-hero]');
+  if (hero && !reduce && !save && matchMedia('(min-width: 720px)').matches) { load(hero); hero.play().catch(() => {}); }
+
+  // Feature clips: load and play while on screen
+  const autos = document.querySelectorAll('[data-auto]');
+  if (!reduce && !save && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => {
+      const v = e.target;
+      if (e.isIntersecting) { if (v.querySelector('source[data-src]')) load(v); v.play().catch(() => {}); } else v.pause();
+    }), { rootMargin: '120px 0px' });
+    autos.forEach((v) => io.observe(v));
+  }
+
+  // Tabs (App Preview device, iPhone Duo pose)
+  document.querySelectorAll('[role="tablist"]').forEach((list) => {
+    const tabs = [...list.querySelectorAll('[role="tab"]')];
+    const pick = (t, focus) => {
+      tabs.forEach((x) => {
+        const on = x === t, panel = document.getElementById(x.getAttribute('aria-controls'));
+        x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; panel.hidden = !on;
+        if (!on) panel.querySelectorAll('video').forEach((v) => v.pause());
+      });
+      if (focus) t.focus();
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => pick(t));
+      t.addEventListener('keydown', (e) => {
+        const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (d) { e.preventDefault(); pick(tabs[(i + d + tabs.length) % tabs.length], true); }
+      });
+    });
+  });
+
+  // Hero dial: steps through stations heard on GlobalSDR
+  const dial = document.querySelector('.sdr-dial');
+  if (dial && !reduce) {
+    const q = (k) => dial.querySelector(`[data-${k}]`);
+    let i = 0;
+    setInterval(() => {
+      if (document.hidden) return;
+      i = (i + 1) % stations.length;
+      const s = stations[i], from = parseFloat(q('freq').textContent), to = parseFloat(s.f), t0 = performance.now();
+      dial.classList.add('is-tuning');
+      const step = (now) => {
+        const k = Math.min(1, (now - t0) / 700), e = 1 - Math.pow(1 - k, 3);
+        q('freq').textContent = (from + (to - from) * e).toFixed(2);
+        if (k < 1) requestAnimationFrame(step);
+        else { q('freq').textContent = s.f; q('mode').textContent = s.m; q('name').textContent = s.n; q('what').textContent = s.w; dial.classList.remove('is-tuning'); }
+      };
+      requestAnimationFrame(step);
+    }, 3600);
+  }
+})();
+</script>
+
+<style>
+  :global(html[data-app="globalsdr"][data-theme]) {
+    --sdr-bg: #0B0A09; --sdr-bg-2: #14110D; --sdr-card: #1A1611; --sdr-line: #2C251C;
+    --sdr-amber: #F5A524; --sdr-amber-2: #FFC25C; --sdr-wood: #8C4426; --sdr-blue: #2F7BFF;
+    --app-accent: #F5A524; --app-accent-ink: #F5A524; --app-on-accent: #1B1209;
+    --paper: #0B0A09; --paper-2: #14110D; --paper-3: #1F1A14; --rule: #2A231B; --rule-strong: #3D3328;
+  }
+  :global(html[data-app="globalsdr"] .op-header) { background: rgb(11 10 9 / 80%); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); position: sticky; top: 0; z-index: 20; }
+  .sdr { overflow-x: clip; }
+  .sdr :global(.op-eyebrow) { color: var(--sdr-amber); }
+
+  /* Hero */
+  .sdr-hero { position: relative; padding-top: clamp(40px, 7vw, 88px); text-align: center; isolation: isolate; }
+  .sdr-hero__glow { position: absolute; inset: -10% -20% auto; height: 120%; z-index: -1; pointer-events: none;
+    background: radial-gradient(60% 45% at 50% 30%, rgb(245 165 36 / 16%), transparent 70%),
+                radial-gradient(40% 35% at 20% 70%, rgb(47 123 255 / 12%), transparent 70%),
+                radial-gradient(40% 35% at 85% 65%, rgb(140 68 38 / 22%), transparent 70%); }
+  .sdr-appline { display: inline-flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; justify-content: center; margin-bottom: var(--space-6); text-align: left; }
+  .sdr-appline img { border-radius: var(--radius-icon); box-shadow: 0 8px 30px rgb(245 120 36 / 30%); }
+  .sdr-appline p { margin: 0; line-height: 1.25; }
+  .sdr-appline__name { font-weight: 700; }
+  .sdr-appline__sub { font-size: var(--text-sm); color: var(--ink-soft); }
+  .sdr-new { margin-left: var(--space-2); padding: 6px 12px; border-radius: var(--radius-pill); font-size: var(--text-xs); font-weight: 700; color: var(--sdr-amber-2); background: rgb(245 165 36 / 12%); border: 1px solid rgb(245 165 36 / 35%); }
+  .sdr-hero h1 { font-size: clamp(2.4rem, 7.4vw, 5.25rem); line-height: 1.02; letter-spacing: -0.03em; }
+  .sdr-hero h1 span { background: linear-gradient(90deg, var(--sdr-amber-2), #FF7A2F 60%, var(--sdr-wood)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sdr-lead { font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--ink-soft); max-width: 46ch !important; margin: var(--space-5) auto var(--space-6) !important; }
+  .sdr-cta { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-5); }
+  .sdr-store { display: inline-flex; line-height: 0; border-radius: 10px; transition: transform var(--dur-fast) var(--ease-out); }
+  .sdr-store:hover { transform: translateY(-2px); }
+  .sdr-store img { height: 50px; width: auto; }
+  .sdr-store--lg img { height: 58px; }
+  .sdr-rating { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px; color: var(--ink-soft) !important; text-decoration: none; font-size: var(--text-sm); }
+  .sdr-rating b { color: var(--ink); }
+  .sdr-stars { font-size: 18px; letter-spacing: 2px; background: linear-gradient(90deg, var(--sdr-amber) calc(var(--r) / 5 * 100%), #4A3F33 0); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  .sdr-dial { display: inline-grid; grid-template-columns: auto auto auto auto auto; align-items: baseline; column-gap: var(--space-2); row-gap: 2px; margin-top: var(--space-7);
+    padding: 14px 22px; border-radius: 18px; background: linear-gradient(180deg, #1D1912, #110E0A); border: 1px solid var(--sdr-line); box-shadow: inset 0 1px 0 rgb(255 255 255 / 4%), 0 20px 50px rgb(0 0 0 / 40%); text-align: left; }
+  .sdr-dial__led { width: 8px; height: 8px; border-radius: 50%; background: #3BD16F; box-shadow: 0 0 10px #3BD16F; align-self: center; animation: sdr-pulse 2s infinite; }
+  .sdr-dial__label { font-size: var(--text-xs); color: var(--ink-faint); text-transform: uppercase; letter-spacing: .08em; }
+  .sdr-dial__freq { font: 600 clamp(1.6rem, 4vw, 2.2rem)/1 var(--font-mono); color: var(--sdr-amber); font-variant-numeric: tabular-nums; min-width: 8.2ch; text-align: right; text-shadow: 0 0 18px rgb(245 165 36 / 45%); }
+  .sdr-dial__unit { font-size: var(--text-xs); color: var(--ink-faint); }
+  .sdr-dial__mode { font: 700 11px/1 var(--font-mono); padding: 4px 6px; border-radius: 5px; background: var(--sdr-amber); color: #1B1209; align-self: center; }
+  .sdr-dial__name { grid-column: 3 / -1; font-weight: 700; font-size: var(--text-sm); transition: opacity var(--dur-base); }
+  .sdr-dial__what { grid-column: 3 / -1; font-size: var(--text-xs); color: var(--ink-faint); transition: opacity var(--dur-base); }
+  .sdr-dial.is-tuning .sdr-dial__name, .sdr-dial.is-tuning .sdr-dial__what { opacity: .25; }
+  @keyframes sdr-pulse { 50% { opacity: .35; } }
+
+  .sdr-stage { margin: clamp(24px, 5vw, 56px) auto 0; max-width: 1440px; padding-inline: var(--gutter); }
+  .sdr-stage { -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+  .sdr-stage__video { display: block; width: 100%; height: auto; aspect-ratio: 1600 / 686; object-fit: cover; background: var(--sdr-bg);
+    -webkit-mask-image: linear-gradient(180deg, transparent, #000 14%, #000 80%, transparent); mask-image: linear-gradient(180deg, transparent, #000 14%, #000 80%, transparent); }
+  @media (max-width: 719px) { .sdr-stage { padding: 0; } .sdr-stage__video { width: 150%; margin-left: -25%; } }
+
+  /* Stats */
+  .sdr-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; margin-top: var(--space-6); background: var(--sdr-line); border: 1px solid var(--sdr-line); border-radius: var(--radius-lg); overflow: hidden; padding: 0 !important; }
+  .sdr-stats div { background: var(--sdr-bg-2); padding: var(--space-5) var(--space-4); text-align: center; display: grid; gap: 4px; }
+  .sdr-stats b { font: 600 clamp(1.6rem, 3.4vw, 2.3rem)/1 var(--font-mono); color: var(--sdr-amber); }
+  .sdr-stats span { font-size: var(--text-xs); color: var(--ink-soft); }
+  @media (max-width: 760px) { .sdr-stats { grid-template-columns: repeat(2, 1fr); margin-inline: 16px; } .sdr-stats div:last-child { grid-column: 1 / -1; } }
+
+  /* Sections */
+  .sdr-sec { padding-block: clamp(56px, 9vw, 112px); }
+  .sdr-band { background: linear-gradient(180deg, var(--sdr-bg), var(--sdr-bg-2) 18%, var(--sdr-bg-2) 82%, var(--sdr-bg)); padding-block: clamp(56px, 9vw, 112px); }
+  .sdr-head { max-width: 680px; margin-bottom: var(--space-7); }
+  .sdr-head h2, .sdr-feature h2, .sdr-values h2 { font-size: clamp(1.75rem, 4.2vw, 2.75rem); letter-spacing: -0.02em; margin: var(--space-3) 0 var(--space-4); }
+  .sdr-head p { color: var(--ink-soft); }
+  .sdr-head--center { margin-inline: auto; text-align: center; }
+  .sdr-head--center p { margin-inline: auto; }
+
+  /* Tabs */
+  .sdr-tabs { display: inline-flex; gap: 4px; padding: 4px; border-radius: var(--radius-pill); background: var(--sdr-card); border: 1px solid var(--sdr-line); margin-bottom: var(--space-6); flex-wrap: wrap; }
+  .sdr-tabs--center { display: flex; width: fit-content; margin-inline: auto; justify-content: center; }
+  .sdr-tabs button { font: 700 var(--text-sm)/1 var(--font); color: var(--ink-soft); background: none; border: 0; padding: 11px 18px; border-radius: var(--radius-pill); cursor: pointer; min-height: 40px; transition: background-color var(--dur-fast), color var(--dur-fast); }
+  .sdr-tabs button:hover { color: var(--ink); }
+  .sdr-tabs button[aria-selected="true"] { background: var(--sdr-amber); color: #1B1209; }
+
+  /* Previews */
+  .sdr-pv .sdr-frame { margin-inline: auto; background: #050505; border: 1px solid #2a2a2a; box-shadow: 0 30px 80px rgb(0 0 0 / 55%), 0 0 0 8px #111; overflow: hidden; }
+  .sdr-pv video { display: block; width: 100%; height: auto; }
+  .sdr-pv--iphone .sdr-frame { width: min(340px, 80vw); border-radius: 46px; padding: 0; }
+  .sdr-pv--duo .sdr-frame { width: min(1000px, 100%); border-radius: 28px; }
+  .sdr-pv--ipad .sdr-frame { width: min(820px, 100%); border-radius: 26px; }
+  .sdr-preview { text-align: center; }
+  .sdr-preview .sdr-head { margin-inline: auto; }
+  .sdr-preview .sdr-head p { margin-inline: auto; }
+
+  /* Feature rows */
+  .sdr-feature { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 7vw, 96px); align-items: center; padding-block: clamp(40px, 6vw, 72px) !important; }
+  .sdr-feature.is-flip .sdr-feature__media { order: 2; }
+  .sdr-feature__media { position: relative; display: flex; justify-content: center; }
+  .sdr-feature__media::before { content: ''; position: absolute; inset: 8% 0; border-radius: 50%; background: radial-gradient(closest-side, rgb(47 123 255 / 22%), rgb(245 165 36 / 8%) 60%, transparent); filter: blur(10px); z-index: -1; }
+  .sdr-phone { width: min(268px, 68vw); aspect-ratio: 1080 / 2400; border-radius: 44px; padding: 10px; background: linear-gradient(145deg, #2a2724, #0c0b0a); box-shadow: 0 0 0 1px #3a352f, 0 40px 80px rgb(0 0 0 / 60%); }
+  .sdr-phone video { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 34px; background: #000; }
+  .sdr-feature__copy p { color: var(--ink-soft); }
+  .sdr-checks { list-style: none; padding: 0; margin: var(--space-5) 0 0; display: grid; gap: var(--space-3); }
+  .sdr-checks li { position: relative; padding-left: 30px; }
+  .sdr-checks li::before { content: ''; position: absolute; left: 0; top: .35em; width: 18px; height: 18px; border-radius: 50%; background: rgb(245 165 36 / 16%) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23F5A524' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px no-repeat; }
+  @media (max-width: 800px) {
+    .sdr-feature { grid-template-columns: 1fr; text-align: left; }
+    .sdr-feature.is-flip .sdr-feature__media { order: 0; }
+  }
+
+  /* Duo */
+  .sdr-duo__stage figure { margin: 0; }
+  .sdr-duo__stage img { display: block; width: 100%; height: auto; border-radius: var(--radius-xl); box-shadow: 0 40px 90px rgb(0 0 0 / 55%); border: 1px solid var(--sdr-line); }
+
+  /* What you can hear */
+  .sdr-hear { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: var(--space-4); }
+  .sdr-hear article { padding: var(--space-6); border-radius: var(--radius-lg); background: linear-gradient(180deg, var(--sdr-card), var(--sdr-bg-2)); border: 1px solid var(--sdr-line); transition: border-color var(--dur-base), transform var(--dur-base) var(--ease-out); }
+  .sdr-hear article:hover { border-color: rgb(245 165 36 / 45%); transform: translateY(-3px); }
+  .sdr-hear h3 { margin: var(--space-2) 0 !important; }
+  .sdr-hear p { color: var(--ink-soft); margin: 0 !important; }
+  .sdr-hear .sdr-hear__f { font: 600 var(--text-sm)/1.2 var(--font-mono); color: var(--sdr-amber) !important; }
+
+  /* Anywhere */
+  .sdr-anywhere { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .sdr-surfaces { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5) var(--space-6); }
+  .sdr-surfaces li { display: flex; gap: var(--space-3); }
+  .sdr-surfaces svg { flex: none; color: var(--sdr-amber); padding: 8px; box-sizing: content-box; border-radius: 12px; background: rgb(245 165 36 / 10%); }
+  .sdr-surfaces h3 { font-size: var(--text-md) !important; margin-bottom: 4px !important; }
+  .sdr-surfaces p { font-size: var(--text-sm); color: var(--ink-soft); margin: 0 !important; }
+  .sdr-watches { display: flex; justify-content: center; align-items: center; }
+  .sdr-watch { width: 48%; aspect-ratio: 416 / 496; border-radius: 30%/26%; padding: 9px; background: linear-gradient(145deg, #3a3631, #121110); box-shadow: 0 0 0 1px #4a443d, 0 30px 60px rgb(0 0 0 / 55%); flex: none; }
+  .sdr-watch img { display: block; width: 100%; height: 100%; border-radius: 27%/23%; object-fit: cover; }
+  .sdr-watch:nth-child(1) { transform: translateX(22%) scale(.86) rotate(-6deg); z-index: 1; opacity: .9; }
+  .sdr-watch:nth-child(2) { z-index: 2; }
+  .sdr-watch:nth-child(3) { transform: translateX(-22%) scale(.86) rotate(6deg); z-index: 1; opacity: .9; }
+  @media (max-width: 860px) { .sdr-anywhere { grid-template-columns: 1fr; } .sdr-surfaces { grid-template-columns: 1fr; } .sdr-watches { order: -1; } }
+
+  /* Pro table */
+  .sdr-table-wrap { max-width: 820px; margin-inline: auto; border-radius: var(--radius-lg); border: 1px solid var(--sdr-line); overflow: hidden; }
+  .sdr-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+  .sdr-table th, .sdr-table td { padding: 14px 18px; border-bottom: 1px solid var(--sdr-line); text-align: center; }
+  .sdr-table tbody tr:last-child > * { border-bottom: 0; }
+  .sdr-table th[scope="row"], .sdr-table thead th:first-child { text-align: left; font-weight: 400; }
+  .sdr-table thead th { font-weight: 700; background: var(--sdr-card); }
+  .sdr-table .is-pro { background: rgb(245 165 36 / 7%); color: var(--sdr-amber-2); font-weight: 700; width: 18%; }
+  .sdr-table td:not(.is-pro) { width: 18%; }
+  .sdr-yes { color: var(--sdr-amber); font-weight: 700; }
+  .sdr-no { color: var(--ink-faint); }
+  @media (max-width: 560px) { .sdr-table th, .sdr-table td { padding: 12px 10px; } }
+
+  /* Values */
+  .sdr-values { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); padding-top: 0 !important; }
+  .sdr-values article { padding: clamp(24px, 4vw, 44px); border-radius: var(--radius-xl); border: 1px solid var(--sdr-line); background: radial-gradient(120% 100% at 0% 0%, rgb(140 68 38 / 22%), transparent 60%), var(--sdr-bg-2); }
+  .sdr-values article:last-child { background: radial-gradient(120% 100% at 100% 0%, rgb(47 123 255 / 14%), transparent 60%), var(--sdr-bg-2); }
+  .sdr-values h2 { font-size: clamp(1.4rem, 3vw, 1.9rem) !important; }
+  .sdr-values p { color: var(--ink-soft); }
+  .sdr-thanks { font-size: var(--text-sm); }
+  @media (max-width: 760px) { .sdr-values { grid-template-columns: 1fr; } }
+
+  /* Specs + FAQ */
+  .sdr-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 72px); border-top: 1px solid var(--sdr-line); }
+  .sdr-split h2 { margin-bottom: var(--space-5); }
+  .sdr-specs { margin: 0; }
+  .sdr-specs div { display: grid; grid-template-columns: 9rem 1fr; gap: var(--space-4); padding: 12px 0; border-bottom: 1px solid var(--sdr-line); font-size: var(--text-sm); }
+  .sdr-specs dt { color: var(--ink-faint); }
+  .sdr-specs dd { margin: 0; }
+  .sdr-faq details { border-bottom: 1px solid var(--sdr-line); }
+  .sdr-faq summary { cursor: pointer; padding: 16px 32px 16px 0; font-weight: 700; list-style: none; position: relative; }
+  .sdr-faq summary::-webkit-details-marker { display: none; }
+  .sdr-faq summary::after { content: '+'; position: absolute; right: 4px; top: 12px; font: 400 24px/1 var(--font-mono); color: var(--sdr-amber); transition: transform var(--dur-base) var(--ease-out); }
+  .sdr-faq details[open] summary::after { transform: rotate(45deg); }
+  .sdr-faq details p { color: var(--ink-soft); font-size: var(--text-sm); }
+  @media (max-width: 860px) { .sdr-split { grid-template-columns: 1fr; } .sdr-specs div { grid-template-columns: 7rem 1fr; } }
+
+  /* Final CTA */
+  .sdr-final { text-align: center; padding-block: clamp(64px, 10vw, 128px); position: relative; isolation: isolate; }
+  .sdr-final::before { content: ''; position: absolute; inset: 0; z-index: -1; background: radial-gradient(50% 60% at 50% 40%, rgb(245 165 36 / 14%), transparent 70%); }
+  .sdr-final img { border-radius: var(--radius-icon); box-shadow: 0 20px 60px rgb(245 120 36 / 35%); }
+  .sdr-final h2 { font-size: clamp(1.9rem, 5vw, 3.25rem); letter-spacing: -0.02em; margin: var(--space-5) auto var(--space-3); max-width: 18ch; }
+  .sdr-final p { margin-inline: auto; color: var(--ink-soft); }
+  .sdr-final .sdr-fine { font-size: var(--text-xs); color: var(--ink-faint); max-width: 70ch; margin-top: var(--space-6); }
+
+  .sdr-help { border-top: 1px solid var(--sdr-line); }
+  .sdr-help h2 { margin-bottom: var(--space-5); }
+  .sdr-help .op-lang { margin-top: var(--space-5); }
+  .sdr-more { margin-top: var(--space-8) !important; }
+
+  @media (prefers-reduced-motion: reduce) { .sdr-dial__led { animation: none; } }
+  @media (max-width: 520px) { .sdr-watch { width: 36%; } .sdr-dial__label { display: none; } .sdr-dial { grid-template-columns: auto auto auto auto; } .sdr-dial__name, .sdr-dial__what { grid-column: 2 / -1; } }
+</style>
+</Base>
